@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5M6-st-6kI">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller - Main View-->
+        <scene sceneID="Shu-mk-anV">
+            <objects>
+                <viewController id="7uE-MQ-V0L" customClass="HEALMainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="afE-MJ-Bsx">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuM-jg-JIk">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrD-T8-ELz">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GrD-T8-ELz" firstAttribute="centerX" secondItem="afE-MJ-Bsx" secondAttribute="centerX" type="default" id="66Z-e1-2eL"/>
+                            <constraint firstItem="RuM-jg-JIk" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="151" id="ibX-0h-8hE"/>
+                            <constraint firstItem="GrD-T8-ELz" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="207" id="r9p-Tk-MNa"/>
+                            <constraint firstItem="GrD-T8-ELz" firstAttribute="leading" secondItem="RuM-jg-JIk" secondAttribute="leading" type="default" id="yeg-cN-0rI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Main View" id="LzM-wj-3Gc">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="oNY-vm-vcK">
+                            <connections>
+                                <segue destination="n6c-Jc-Bd9" kind="modal" id="Q5N-Sv-pzk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sexText" destination="GrD-T8-ELz" id="jMY-xY-t1y"/>
+                        <outlet property="weightText" destination="RuM-jg-JIk" id="0jW-ER-3wE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-mj-Qyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="507" y="-13"/>
+        </scene>
+        <!--Edit Settings View Controller - Edit Settings View-->
+        <scene sceneID="tNc-8H-LdE">
+            <objects>
+                <viewController id="MqT-Dv-oNL" customClass="HEALEditSettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GwV-ve-lSs">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="in lbs eg. 150" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5k-4F-wvV">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter F or M" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6f7-RE-c1l">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXW-gS-2Wi">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="7jC-Tz-1Vl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zN2-2T-njE">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="c0D-M6-XtY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="so0-0h-rJI">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="JzQ-pO-UF1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-W1-GhK">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="Nev-B4-tdg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PKw-W1-GhK" firstAttribute="leading" secondItem="C5k-4F-wvV" secondAttribute="leading" type="default" id="4Ax-SA-B78"/>
+                            <constraint firstItem="6f7-RE-c1l" firstAttribute="top" secondItem="C5k-4F-wvV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7AI-Xt-HoL"/>
+                            <constraint firstItem="6f7-RE-c1l" firstAttribute="trailing" secondItem="C5k-4F-wvV" secondAttribute="trailing" type="default" id="7Yd-El-5dP"/>
+                            <constraint firstItem="6f7-RE-c1l" firstAttribute="leading" secondItem="C5k-4F-wvV" secondAttribute="leading" type="default" id="8rv-nS-ghw"/>
+                            <constraint firstItem="so0-0h-rJI" firstAttribute="baseline" secondItem="PKw-W1-GhK" secondAttribute="baseline" type="default" id="Bqq-Pb-fL3"/>
+                            <constraint firstItem="C5k-4F-wvV" firstAttribute="top" secondItem="PKw-W1-GhK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="DuP-bt-GtP"/>
+                            <constraint firstItem="PKw-W1-GhK" firstAttribute="top" secondItem="GwV-ve-lSs" secondAttribute="top" constant="107" id="XV6-OS-es8"/>
+                            <constraint firstItem="zXW-gS-2Wi" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="36" id="eGf-Dq-hnF"/>
+                            <constraint firstItem="PKw-W1-GhK" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="141" id="gco-VH-HHA"/>
+                            <constraint firstItem="so0-0h-rJI" firstAttribute="trailing" secondItem="zXW-gS-2Wi" secondAttribute="trailing" type="default" id="hrH-bv-Pen"/>
+                            <constraint firstItem="zN2-2T-njE" firstAttribute="trailing" secondItem="zXW-gS-2Wi" secondAttribute="trailing" type="default" id="iuQ-AE-CMV"/>
+                            <constraint firstItem="6f7-RE-c1l" firstAttribute="baseline" secondItem="zN2-2T-njE" secondAttribute="baseline" type="default" id="odm-OW-Kmt"/>
+                            <constraint firstItem="PKw-W1-GhK" firstAttribute="trailing" secondItem="C5k-4F-wvV" secondAttribute="trailing" type="default" id="sK6-t7-tdF"/>
+                            <constraint firstItem="C5k-4F-wvV" firstAttribute="baseline" secondItem="zXW-gS-2Wi" secondAttribute="baseline" type="default" id="vXk-8S-FnZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Settings View" id="lEE-ps-550">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Bgr-Ej-POX">
+                            <connections>
+                                <segue destination="8bD-cG-gu2" kind="unwind" unwindAction="unwindToMain:" id="MUC-Nq-4Uj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="I8K-3N-MGc">
+                            <connections>
+                                <action selector="doneButton:" destination="MqT-Dv-oNL" id="s4Y-2O-jA1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="PKw-W1-GhK" id="qNb-Vr-86v"/>
+                        <outlet property="sexTextField" destination="6f7-RE-c1l" id="0LX-Ox-zKx"/>
+                        <outlet property="weightTextField" destination="C5k-4F-wvV" id="0fg-6L-DmT"/>
+                        <segue destination="8bD-cG-gu2" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMain:" id="mBL-1e-UnD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAf-sU-l2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8bD-cG-gu2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1597" y="-11"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xjd-Oh-6yf">
+            <objects>
+                <navigationController id="5M6-st-6kI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LL2-j3-DwS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7uE-MQ-V0L" kind="relationship" relationship="rootViewController" id="0Ce-Hx-N0o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xk4-pd-yS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-19" y="-13"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BQI-51-2Zf">
+            <objects>
+                <navigationController id="n6c-Jc-Bd9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DQO-fX-exT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MqT-Dv-oNL" kind="relationship" relationship="rootViewController" id="8J0-7W-cFt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgP-hu-wfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="-11"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="HEALEditSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALEditSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButton:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sexTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="HEALMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unwindToMain:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="sexText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weightText" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
