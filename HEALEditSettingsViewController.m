@@ -92,8 +92,17 @@
     if([defaults objectForKey:@"userName"] != nil) {
         self.nameTextField.placeholder = [defaults objectForKey:@"userName"];
     }
+    
+    UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
+    [self.view addGestureRecognizer:tapBackground];
 }
 
+- (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
+{
+    [[self nameTextField] resignFirstResponder];
+    [[self sexTextField] resignFirstResponder];
+    [[self weightTextField] resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -112,7 +121,6 @@
 {
     [self animateTextField: textField up: NO];
 }
-
 
 // The animation with bool for moving up or down. Source: user Amagrammer at stackoverflow. Post URL: http://stackoverflow.com/questions/1247113/iphone-keyboard-covers-uitextfield
 - (void) animateTextField: (UITextField*) textField up: (BOOL) up
