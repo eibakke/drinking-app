@@ -8,11 +8,70 @@
 
 #import "HEALMainViewController.h"
 
-@interface HEALMainViewController ()
+@interface HEALMainViewController () {
+
+bool first;
+
+NSTimer *timer;
+
+int mainInt;
+
+float startTime;
+
+float currentTime;
+    
+}
 
 @end
 
 @implementation HEALMainViewController
+
+- (void)startTimer {
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+}
+
+- (IBAction)valueChanged:(UIStepper *)sender
+{
+    double value = [sender value];
+    [myLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
+    if (first){
+        NSDate *myDate = [[NSDate alloc] init];
+        NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
+        [dFormatter setDateFormat:@"hh:mm a"];
+        NSString *t = [dFormatter stringFromDate: myDate];
+        [timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
+        NSDateFormatter *startFormat = [[NSDateFormatter alloc] init];
+        [startFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
+        NSString *nicerDate = [startFormat stringFromDate:myDate];
+        NSDate *startDate = [startFormat dateFromString:nicerDate];
+        startTime = [startDate timeIntervalSince1970];
+        [self startTimer];
+        first = false;
+        float labelVal = [[myLabel text] floatValue];
+        [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / 109.5))]];
+    } else {
+        float labelVal = [[myLabel text] floatValue];
+        [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / 109.5) - (0.15 * ((currentTime - startTime)/ 3600)))]];
+    }
+}
+
+- (IBAction)addNight:(UIButton *)sender
+{
+    first = true;
+    [bacLabel setText:@"0.000"];
+    [timeLabel setText:@"Ready to start? Press the plus below!"];
+}
+
+- (void) countUp {
+    NSDate *cTime = [NSDate date];
+    NSDateFormatter *currentFormat = [[NSDateFormatter alloc] init];
+    [currentFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
+    NSString *nicerDate = [currentFormat stringFromDate:cTime];
+    NSDate *currentDate = [currentFormat dateFromString:nicerDate];
+    currentTime = [currentDate timeIntervalSince1970];
+    float labelVal = [[myLabel text] floatValue];
+    [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / 109.5) - (0.15 * ((currentTime - startTime)/ 3600)))]];
+}
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue {
     [self setLabels];
@@ -29,18 +88,11 @@
 
 // An example of how to get user settings from NSUserDefaults
 - (void) setLabels{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if([defaults objectForKey:@"userWeight"] != nil) {
-        self.weightText.text = [[defaults objectForKey:@"userWeight"] stringValue];
-    }
-    if([defaults objectForKey:@"userSex"] != nil) {
-        self.sexText.text = [defaults objectForKey:@"userSex"];
-    }
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    first = true;
     
     // ONLY WHILE IN DEV: This little snippet clears all the settings in the beginning, so that it'll be as if you've opened the app for the very first time.
 	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];

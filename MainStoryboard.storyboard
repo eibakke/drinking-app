@@ -12,23 +12,66 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuM-jg-JIk">
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rFK-Ix-bPj">
+                                <connections>
+                                    <action selector="valueChanged:" destination="7uE-MQ-V0L" eventType="valueChanged" id="WBQ-6w-lHw"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-RN-o9b">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="U5Z-pJ-0FX"/>
+                                    <constraint firstAttribute="width" constant="301" id="dND-U2-rOr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrD-T8-ELz">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAC-UB-fqj">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="PZ8-ch-XYZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnB-j1-dks">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="oAx-Ca-rwW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKf-wY-iYb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="4Hk-Y6-Isc"/>
+                                    <constraint firstAttribute="height" constant="28" id="J1p-lQ-T4W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="New Night">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNight:" destination="7uE-MQ-V0L" eventType="touchUpInside" id="ZHC-0T-KC9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GrD-T8-ELz" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="213" id="37m-Xk-Fwn"/>
-                            <constraint firstItem="GrD-T8-ELz" firstAttribute="centerX" secondItem="afE-MJ-Bsx" secondAttribute="centerX" type="default" id="66Z-e1-2eL"/>
-                            <constraint firstItem="RuM-jg-JIk" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="151" id="ibX-0h-8hE"/>
-                            <constraint firstItem="GrD-T8-ELz" firstAttribute="leading" secondItem="RuM-jg-JIk" secondAttribute="leading" type="default" id="yeg-cN-0rI"/>
+                            <constraint firstItem="xnB-j1-dks" firstAttribute="centerX" secondItem="rFK-Ix-bPj" secondAttribute="centerX" type="default" id="6Zu-qW-Okj"/>
+                            <constraint firstItem="xnB-j1-dks" firstAttribute="centerX" secondItem="YAC-UB-fqj" secondAttribute="centerX" type="default" id="DuA-x0-dLX"/>
+                            <constraint firstItem="YAC-UB-fqj" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="208" id="H9k-7p-hAO"/>
+                            <constraint firstItem="NUb-RN-o9b" firstAttribute="centerX" secondItem="afE-MJ-Bsx" secondAttribute="centerX" type="default" id="SYQ-VR-Pbi"/>
+                            <constraint firstAttribute="bottom" secondItem="rFK-Ix-bPj" secondAttribute="bottom" constant="95" id="Usn-jU-0Ev"/>
+                            <constraint firstAttribute="bottom" secondItem="xnB-j1-dks" secondAttribute="bottom" constant="178" id="agf-mA-2Aq"/>
+                            <constraint firstItem="oKf-wY-iYb" firstAttribute="leading" secondItem="afE-MJ-Bsx" secondAttribute="leading" constant="15" id="b2Z-u7-sga"/>
+                            <constraint firstItem="oKf-wY-iYb" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="20" symbolic="YES" type="default" id="iBD-FU-2uC"/>
+                            <constraint firstItem="NUb-RN-o9b" firstAttribute="centerX" secondItem="YAC-UB-fqj" secondAttribute="centerX" type="default" id="oCH-Zn-Mk9"/>
+                            <constraint firstItem="NUb-RN-o9b" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="124" id="sXa-nc-aED"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main View" id="LzM-wj-3Gc">
@@ -39,8 +82,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="sexText" destination="GrD-T8-ELz" id="jMY-xY-t1y"/>
-                        <outlet property="weightText" destination="RuM-jg-JIk" id="0jW-ER-3wE"/>
+                        <outlet property="bacLabel" destination="YAC-UB-fqj" id="VN1-UW-V52"/>
+                        <outlet property="myLabel" destination="xnB-j1-dks" id="aBl-iV-d5U"/>
+                        <outlet property="timeLabel" destination="NUb-RN-o9b" id="qpX-So-zYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-mj-Qyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,15 +223,28 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALEditSettingsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="doneButton:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sexTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="HEALMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALMainViewController.h"/>
             <relationships>
+                <relationship kind="action" name="addNight:" candidateClass="UIButton"/>
                 <relationship kind="action" name="unwindToMain:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="sexText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weightText" candidateClass="UILabel"/>
+                <relationship kind="action" name="valueChanged:" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="bacLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

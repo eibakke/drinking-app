@@ -8,9 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HEALMainViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *weightText;
-@property (weak, nonatomic) IBOutlet UILabel *sexText;
+@interface HEALMainViewController : UIViewController {
+
+IBOutlet UILabel *myLabel;
+
+IBOutlet UILabel *bacLabel;
+
+IBOutlet UILabel *timeLabel;
+
+}
+
+- (IBAction)valueChanged:(UIStepper *)sender;
+
+- (IBAction)addNight:(UIButton *)sender;
+
+- (void)countUp;
+
+- (void)startTimer;
 
 -(IBAction)unwindToMain:(UIStoryboardSegue *)segue;
+
 @end
