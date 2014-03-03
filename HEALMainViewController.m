@@ -73,12 +73,18 @@ NSUserDefaults *defaults;
 
 - (IBAction)addNight:(UIButton *)sender
 {
+    [timer invalidate];
+    timer = nil;
     first = true;
     [bacLabel setText:@"0.000"];
     [timeLabel setText:@"Ready to start? Press the plus below!"];
 }
 
 - (void) countUp {
+   // if ([bacLabel getText] <>):
+    //    [buttonLabel setText: tipsy];
+  //  else if(
+   //     drunk)
     NSDate *cTime = [NSDate date];
     NSDateFormatter *currentFormat = [[NSDateFormatter alloc] init];
     [currentFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
@@ -87,6 +93,8 @@ NSUserDefaults *defaults;
     currentTime = [currentDate timeIntervalSince1970];
     float labelVal = [[myLabel text] floatValue];
     [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sex * weight)) - (0.15 * ((currentTime - startTime)/ 3600)))]];
+    
+    
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue {
@@ -120,6 +128,18 @@ NSUserDefaults *defaults;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString:@"stateSegue"]){
+        UINavigationController *navController = (UINavigationController*)segue.destinationViewController;
+        DrunkStateViewController * controller = (DrunkStateViewController*)navController.topViewController;
+        controller.labelText = @"Test";
+        
+    }
+    
 }
 
 @end

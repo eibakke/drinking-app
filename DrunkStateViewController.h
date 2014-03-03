@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrunkStateViewController : UIViewController
+@interface DrunkStateViewController : UIViewController {
+    NSString *labelText;
+}
+
+@property (weak, nonatomic) IBOutlet UITextView *stateDetails;
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+
 
 @end
