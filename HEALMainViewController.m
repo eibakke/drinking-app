@@ -133,12 +133,12 @@ NSUserDefaults *defaults;
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if([segue.identifier isEqualToString:@"stateSegue"]){
-        UINavigationController *navController = (UINavigationController*)segue.destinationViewController;
-        DrunkStateViewController * controller = (DrunkStateViewController*)navController.topViewController;
-        controller.labelText = @"Test";
-        
-    }
+//    if([segue.identifier isEqualToString:@"stateSegue"]){
+//        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+//        DrunkStateViewController *controller = (DrunkStateViewController *)navController.topViewController;
+//        controller.labelText = @"Test";
+//        
+//    }
     
 }
 
