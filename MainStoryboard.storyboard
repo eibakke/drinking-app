@@ -25,9 +25,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GrD-T8-ELz" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="213" id="37m-Xk-Fwn"/>
                             <constraint firstItem="GrD-T8-ELz" firstAttribute="centerX" secondItem="afE-MJ-Bsx" secondAttribute="centerX" type="default" id="66Z-e1-2eL"/>
                             <constraint firstItem="RuM-jg-JIk" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="151" id="ibX-0h-8hE"/>
-                            <constraint firstItem="GrD-T8-ELz" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="207" id="r9p-Tk-MNa"/>
                             <constraint firstItem="GrD-T8-ELz" firstAttribute="leading" secondItem="RuM-jg-JIk" secondAttribute="leading" type="default" id="yeg-cN-0rI"/>
                         </constraints>
                     </view>
@@ -174,32 +174,6 @@
             <point key="canvasLocation" x="1071" y="-11"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="HEALEditSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALEditSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButton:"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="sexTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="HEALMainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALMainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="unwindToMain:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="sexText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weightText" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
