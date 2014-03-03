@@ -40,8 +40,8 @@ NSUserDefaults *defaults;
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
-    weight = [[defaults objectForKey:@"userWeight"] intValue];
-    sexy = [[defaults objectForKey:@"userSex"] stringValue];
+    weight = [[defaults objectForKey:@"userWeight"] doubleValue];
+    sexy = [defaults stringForKey:@"userSex"];
     if ([sexy isEqualToString:@"F"]) {
         sex = 0.66;
     }
