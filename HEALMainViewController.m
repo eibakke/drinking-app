@@ -51,6 +51,7 @@ NSUserDefaults *defaults;
     double value = [sender value];
     [myLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
     if (first){
+        first = false;
         NSDate *myDate = [[NSDate alloc] init];
         NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
         [dFormatter setDateFormat:@"hh:mm a"];
@@ -62,12 +63,9 @@ NSUserDefaults *defaults;
         NSDate *startDate = [startFormat dateFromString:nicerDate];
         startTime = [startDate timeIntervalSince1970];
         [self startTimer];
-        first = false;
-        float labelVal = [[myLabel text] floatValue];
-        [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sex * weight)))]];
+        [self countUp];
     } else {
-        float labelVal = [[myLabel text] floatValue];
-        [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sex * weight)) - (0.15 * ((currentTime - startTime)/ 3600)))]];
+        [self countUp];
     }
 }
 
@@ -81,10 +79,6 @@ NSUserDefaults *defaults;
 }
 
 - (void) countUp {
-   // if ([bacLabel getText] <>):
-    //    [buttonLabel setText: tipsy];
-  //  else if(
-   //     drunk)
     NSDate *cTime = [NSDate date];
     NSDateFormatter *currentFormat = [[NSDateFormatter alloc] init];
     [currentFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
