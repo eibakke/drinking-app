@@ -13,12 +13,20 @@
 bool first;
 
 NSTimer *timer;
+    
+double sex;
+    
+double weight;
+    
+NSString *sexy;
 
 int mainInt;
 
 float startTime;
 
 float currentTime;
+    
+NSUserDefaults *defaults;
     
 }
 
@@ -32,6 +40,14 @@ float currentTime;
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
+    weight = [[defaults objectForKey:@"userWeight"] intValue];
+    sexy = [[defaults objectForKey:@"userSex"] stringValue];
+    if ([sexy isEqualToString:@"F"]) {
+        sex = 0.66;
+    }
+    else{
+        sex = 0.73;
+    }
     double value = [sender value];
     [myLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
     if (first){
@@ -48,10 +64,10 @@ float currentTime;
         [self startTimer];
         first = false;
         float labelVal = [[myLabel text] floatValue];
-        [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / 109.5))]];
+        [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sex * weight)))]];
     } else {
         float labelVal = [[myLabel text] floatValue];
-        [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / 109.5) - (0.15 * ((currentTime - startTime)/ 3600)))]];
+        [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sex * weight)) - (0.15 * ((currentTime - startTime)/ 3600)))]];
     }
 }
 
@@ -70,7 +86,7 @@ float currentTime;
     NSDate *currentDate = [currentFormat dateFromString:nicerDate];
     currentTime = [currentDate timeIntervalSince1970];
     float labelVal = [[myLabel text] floatValue];
-    [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / 109.5) - (0.15 * ((currentTime - startTime)/ 3600)))]];
+    [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sex * weight)) - (0.15 * ((currentTime - startTime)/ 3600)))]];
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue {
@@ -92,6 +108,7 @@ float currentTime;
 
 - (void)viewDidLoad
 {
+    defaults = [NSUserDefaults standardUserDefaults];
     first = true;
     
     // ONLY WHILE IN DEV: This little snippet clears all the settings in the beginning, so that it'll be as if you've opened the app for the very first time.
