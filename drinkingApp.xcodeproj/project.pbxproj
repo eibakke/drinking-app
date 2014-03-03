@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0B7B9518C45B6E00419E78 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D0B7B9418C45B6E00419E78 /* background.jpg */; };
 		8956FC5618BBD6D70018F32B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5518BBD6D70018F32B /* UIKit.framework */; };
 		8956FC5818BBD6D70018F32B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5718BBD6D70018F32B /* Foundation.framework */; };
 		8956FC5A18BBD6D70018F32B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5918BBD6D70018F32B /* CoreGraphics.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D0B7B9418C45B6E00419E78 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		8956FC5218BBD6D70018F32B /* drinkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drinkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8956FC5518BBD6D70018F32B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8956FC5718BBD6D70018F32B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,7 @@
 		8956FC4918BBD6D70018F32B = {
 			isa = PBXGroup;
 			children = (
+				6D0B7B9418C45B6E00419E78 /* background.jpg */,
 				89D32C5318BE759C003920FE /* MainStoryboard.storyboard */,
 				89D32C5818BE7B54003920FE /* HEALMainViewController.h */,
 				89D32C5918BE7B54003920FE /* HEALMainViewController.m */,
@@ -249,6 +252,7 @@
 				8956FC6218BBD6D70018F32B /* InfoPlist.strings in Resources */,
 				8956FC6A18BBD6D70018F32B /* Default.png in Resources */,
 				8956FC6C18BBD6D70018F32B /* Default@2x.png in Resources */,
+				6D0B7B9518C45B6E00419E78 /* background.jpg in Resources */,
 				8956FC6E18BBD6D70018F32B /* Default-568h@2x.png in Resources */,
 				89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */,
 			);
