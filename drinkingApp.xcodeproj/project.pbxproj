@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6D0B7B9518C45B6E00419E78 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D0B7B9418C45B6E00419E78 /* background.jpg */; };
 		6D0B7B9818C48A7B00419E78 /* DrunkStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0B7B9718C48A7B00419E78 /* DrunkStateViewController.m */; };
+		8908588418C538D40020383C /* HEALUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908588318C538D40020383C /* HEALUser.m */; };
 		8956FC5618BBD6D70018F32B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5518BBD6D70018F32B /* UIKit.framework */; };
 		8956FC5818BBD6D70018F32B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5718BBD6D70018F32B /* Foundation.framework */; };
 		8956FC5A18BBD6D70018F32B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5918BBD6D70018F32B /* CoreGraphics.framework */; };
@@ -45,6 +46,8 @@
 		6D0B7B9418C45B6E00419E78 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		6D0B7B9618C48A7B00419E78 /* DrunkStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrunkStateViewController.h; sourceTree = "<group>"; };
 		6D0B7B9718C48A7B00419E78 /* DrunkStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrunkStateViewController.m; sourceTree = "<group>"; };
+		8908588218C538D40020383C /* HEALUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALUser.h; sourceTree = "<group>"; };
+		8908588318C538D40020383C /* HEALUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALUser.m; sourceTree = "<group>"; };
 		8956FC5218BBD6D70018F32B /* drinkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drinkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8956FC5518BBD6D70018F32B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8956FC5718BBD6D70018F32B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,8 @@
 				6D0B7B9718C48A7B00419E78 /* DrunkStateViewController.m */,
 				89D32C5818BE7B54003920FE /* HEALMainViewController.h */,
 				89D32C5918BE7B54003920FE /* HEALMainViewController.m */,
+				8908588218C538D40020383C /* HEALUser.h */,
+				8908588318C538D40020383C /* HEALUser.m */,
 				89D32C5518BE7AA1003920FE /* HEALEditSettingsViewController.h */,
 				89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */,
 				8956FC5D18BBD6D70018F32B /* drinkingApp */,
@@ -300,6 +305,7 @@
 				89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */,
 				89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */,
 				6D0B7B9818C48A7B00419E78 /* DrunkStateViewController.m in Sources */,
+				8908588418C538D40020383C /* HEALUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
