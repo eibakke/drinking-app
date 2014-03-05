@@ -40,6 +40,10 @@ NSUserDefaults *defaults;
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
+    if(![defaults objectForKey:@"userSex"] || ![defaults objectForKey:@"userWeight"])
+    {
+        [self alertUser:@"Please enter weight and sex in settings."];
+    } else {
     weight = [[defaults objectForKey:@"userWeight"] doubleValue];
     sexy = [defaults stringForKey:@"userSex"];
     if ([sexy isEqualToString:@"F"]) {
@@ -66,6 +70,7 @@ NSUserDefaults *defaults;
         [self countUp];
     } else {
         [self countUp];
+    }
     }
 }
 
@@ -110,13 +115,16 @@ NSUserDefaults *defaults;
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     defaults = [NSUserDefaults standardUserDefaults];
     first = true;
     
-    // ONLY WHILE IN DEV: This little snippet clears all the settings in the beginning, so that it'll be as if you've opened the app for the very first time.
 	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -124,6 +132,14 @@ NSUserDefaults *defaults;
     // Dispose of any resources that can be recreated.
 }
 
+-(void)alertUser:(NSString*) alertMessage{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
+                                                    message:alertMessage
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     

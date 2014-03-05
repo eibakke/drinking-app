@@ -30,19 +30,9 @@
     
     // Check user input and pop up alerts with directions if the user input is invalid
     if (([[self.weightTextField text] isEqualToString:@""]) || ([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location != NSNotFound)) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
-                                                        message:@"Please enter a whole number for weight."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        [self alertUser:@"Please enter a whole number for weight in lbs."];
     } else if(!([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"])){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
-                                                        message:@"Please enter F or M for sex."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        [self alertUser:@"Please enter F or M for sex."];
     }
     
     // If user input is in order store the textfield values and unwind back to the main view
@@ -60,6 +50,15 @@
         }
         [self performSegueWithIdentifier:@"unwindToMain" sender:self];
     }
+}
+
+-(void)alertUser:(NSString*) alertMessage{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
+                                                    message:alertMessage
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

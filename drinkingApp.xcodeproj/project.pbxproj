@@ -30,6 +30,7 @@
 		89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D32C5318BE759C003920FE /* MainStoryboard.storyboard */; };
 		89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */; };
 		89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5918BE7B54003920FE /* HEALMainViewController.m */; };
+		89F89D3518C7B37E00143AD4 /* HEALNight.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F89D3418C7B37E00143AD4 /* HEALNight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALEditSettingsViewController.m; sourceTree = "<group>"; };
 		89D32C5818BE7B54003920FE /* HEALMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALMainViewController.h; sourceTree = "<group>"; };
 		89D32C5918BE7B54003920FE /* HEALMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALMainViewController.m; sourceTree = "<group>"; };
+		89F89D3318C7B37E00143AD4 /* HEALNight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALNight.h; sourceTree = "<group>"; };
+		89F89D3418C7B37E00143AD4 /* HEALNight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALNight.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 		8956FC4918BBD6D70018F32B = {
 			isa = PBXGroup;
 			children = (
+				89F89D3318C7B37E00143AD4 /* HEALNight.h */,
+				89F89D3418C7B37E00143AD4 /* HEALNight.m */,
 				6D0B7B9418C45B6E00419E78 /* background.jpg */,
 				89D32C5318BE759C003920FE /* MainStoryboard.storyboard */,
 				6D0B7B9618C48A7B00419E78 /* DrunkStateViewController.h */,
@@ -306,6 +311,7 @@
 				89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */,
 				6D0B7B9818C48A7B00419E78 /* DrunkStateViewController.m in Sources */,
 				8908588418C538D40020383C /* HEALUser.m in Sources */,
+				89F89D3518C7B37E00143AD4 /* HEALNight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
