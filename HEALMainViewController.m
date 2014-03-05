@@ -121,6 +121,10 @@ NSUserDefaults *defaults;
 	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
+//    if(![defaults objectForKey:@"userSex"] || ![defaults objectForKey:@"userWeight"])
+//    {
+//        [self performSegueWithIdentifier:@"toSettingsSegue" sender:self];
+//    }
 }
 
 
