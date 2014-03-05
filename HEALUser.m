@@ -9,9 +9,4 @@
 #import "HEALUser.h"
 
 @implementation HEALUser
-
--(NSNumber*)getUserBAC
-{
-    return 0;
-}
 @end

@@ -14,6 +14,4 @@
 @property(strong,nonatomic) NSNumber *userWeight;
 @property(strong,nonatomic) NSString *userName;
 
--(NSNumber*)getUserBAC;
-
 @end

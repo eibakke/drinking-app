@@ -10,5 +10,6 @@
 
 @interface HEALNight : NSObject
 @property(strong, nonatomic)NSNumber *drinks;
+-(NSNumber*)getUserBAC;
 
 @end

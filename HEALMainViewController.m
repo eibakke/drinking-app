@@ -92,8 +92,6 @@ NSUserDefaults *defaults;
     currentTime = [currentDate timeIntervalSince1970];
     float labelVal = [[myLabel text] floatValue];
     [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sex * weight)) - (0.15 * ((currentTime - startTime)/ 3600)))]];
-    
-    
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue {
