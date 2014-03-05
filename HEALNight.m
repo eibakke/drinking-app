@@ -12,7 +12,7 @@
 
 -(NSNumber*)getUserBAC
 {
-    return 0.28;
+    return 0;
 }
 
 @end
