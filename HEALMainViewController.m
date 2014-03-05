@@ -44,33 +44,34 @@ NSUserDefaults *defaults;
     {
         [self alertUser:@"Please enter weight and sex in settings."];
     } else {
-    weight = [[defaults objectForKey:@"userWeight"] doubleValue];
-    sexy = [defaults stringForKey:@"userSex"];
-    if ([sexy isEqualToString:@"F"]) {
-        sex = 0.66;
-    }
-    else{
-        sex = 0.73;
-    }
-    double value = [sender value];
-    [myLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
-    if (first){
-        first = false;
-        NSDate *myDate = [[NSDate alloc] init];
-        NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
-        [dFormatter setDateFormat:@"hh:mm a"];
-        NSString *t = [dFormatter stringFromDate: myDate];
-        [timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
-        NSDateFormatter *startFormat = [[NSDateFormatter alloc] init];
-        [startFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
-        NSString *nicerDate = [startFormat stringFromDate:myDate];
-        NSDate *startDate = [startFormat dateFromString:nicerDate];
-        startTime = [startDate timeIntervalSince1970];
-        [self startTimer];
-        [self countUp];
-    } else {
-        [self countUp];
-    }
+        
+        weight = [[defaults objectForKey:@"userWeight"] doubleValue];
+        sexy = [defaults stringForKey:@"userSex"];
+        if ([sexy isEqualToString:@"F"]) {
+            sex = 0.66;
+        }
+        else{
+            sex = 0.73;
+        }
+        double value = [sender value];
+        [myLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
+        if (first){
+            first = false;
+            NSDate *myDate = [[NSDate alloc] init];
+            NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
+            [dFormatter setDateFormat:@"hh:mm a"];
+            NSString *t = [dFormatter stringFromDate: myDate];
+            [timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
+            NSDateFormatter *startFormat = [[NSDateFormatter alloc] init];
+            [startFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
+            NSString *nicerDate = [startFormat stringFromDate:myDate];
+            NSDate *startDate = [startFormat dateFromString:nicerDate];
+            startTime = [startDate timeIntervalSince1970];
+            [self startTimer];
+            [self countUp];
+        } else {
+            [self countUp];
+        }
     }
 }
 
