@@ -9,6 +9,9 @@
 #import "NewUserViewController.h"
 
 @interface NewUserViewController ()
+{
+    NSCharacterSet *notDigits;
+}
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
@@ -26,8 +29,8 @@
 // Called when the doneButton is pressed
 - (IBAction)doneButton:(id)sender{
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSCharacterSet *notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    defaults = [NSUserDefaults standardUserDefaults];
+    notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     
     // Check user input and pop up alerts with directions if the user input is invalid
     if (([[self.weightTextField text] isEqualToString:@""]) || ([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location != NSNotFound)) {
@@ -75,6 +78,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.navigationItem.hidesBackButton = YES;
     
     // We want the textfields to delegate back to this view controller
     [[self weightTextField] setDelegate:self];

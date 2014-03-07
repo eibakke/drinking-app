@@ -9,7 +9,12 @@
 #import "HEALEditSettingsViewController.h"
 
 @interface HEALEditSettingsViewController ()
+{
+    NSCharacterSet *notDigits;
+}
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+
 - (IBAction)doneButton:(id)sender;
 
 @end
@@ -25,8 +30,8 @@
 // Called when the doneButton is pressed
 - (IBAction)doneButton:(id)sender{
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSCharacterSet* notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    defaults = [NSUserDefaults standardUserDefaults];
+    notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     
     // Check user input and pop up alerts with directions if the user input is invalid
     if (([[self.weightTextField text] isEqualToString:@""]) || ([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location != NSNotFound)) {
@@ -80,8 +85,8 @@
     [[self sexTextField] setDelegate:self];
     [[self nameTextField] setDelegate:self];
     
-    // Set the placeholder text in the textfields to come from the user defaults, if they have been set yet
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // Set the text in the textfields to come from the user defaults, if they have been set yet
+    defaults = [NSUserDefaults standardUserDefaults];
     if([defaults objectForKey:@"userWeight"] != nil) {
         self.weightTextField.text = [[defaults objectForKey:@"userWeight"] stringValue];
     }

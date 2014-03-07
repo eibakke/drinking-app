@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface HEALEditSettingsViewController : UIViewController <UITextFieldDelegate>
+{
+    NSUserDefaults *defaults;
+}
 @property (weak, nonatomic) IBOutlet UITextField *weightTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
