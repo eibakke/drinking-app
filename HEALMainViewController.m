@@ -34,11 +34,13 @@ NSUserDefaults *defaults;
 
 @implementation HEALMainViewController
 
-- (void)startTimer {
+- (void)startTimer
+{
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
 }
 
-- (float)getTimeSec:(NSDate*)date{
+- (float)getTimeSec:(NSDate*)date
+{
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
     NSString *nicerDate = [dateFormat stringFromDate:date];
@@ -46,7 +48,8 @@ NSUserDefaults *defaults;
     return [timeDate timeIntervalSince1970];
 }
 
-- (void)setLabel:(NSDate*)date{
+- (void)setLabel:(NSDate*)date
+{
     NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
     [dFormatter setDateFormat:@"hh:mm a"];
     NSString *t = [dFormatter stringFromDate: date];
@@ -92,14 +95,16 @@ NSUserDefaults *defaults;
     [timeLabel setText:@"Ready to start? Press the plus below!"];
 }
 
-- (void) countUp {
+- (void)countUp
+{
     NSDate *cTime = [NSDate date];
     currentTime = [self getTimeSec:cTime];
     float labelVal = [[myLabel text] floatValue];
     [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sexVal * weight)) - (0.15 * ((currentTime - startTime)/ 3600)))]];
 }
 
-- (IBAction)unwindToMain:(UIStoryboardSegue *)segue {
+- (IBAction)unwindToMain:(UIStoryboardSegue *)segue
+{
     [self setLabels];
 }
 
@@ -112,8 +117,8 @@ NSUserDefaults *defaults;
     return self;
 }
 
-// An example of how to get user settings from NSUserDefaults
-- (void) setLabels{
+- (void) setLabels
+{
 }
 
 - (void)viewDidLoad
@@ -139,7 +144,8 @@ NSUserDefaults *defaults;
     // Dispose of any resources that can be recreated.
 }
 
--(void)alertUser:(NSString*) alertMessage{
+- (void)alertUser:(NSString*) alertMessage
+{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
                                                     message:alertMessage
                                                    delegate:nil
@@ -148,7 +154,8 @@ NSUserDefaults *defaults;
     [alert show];
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     
 //    if([segue.identifier isEqualToString:@"stateSegue"]){
 //        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
