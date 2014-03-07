@@ -14,11 +14,11 @@ bool first;
 
 NSTimer *timer;
     
-double sex;
+double sexVal;
     
 double weight;
     
-NSString *sexy;
+NSString *sex;
 
 int mainInt;
 
@@ -38,6 +38,21 @@ NSUserDefaults *defaults;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
 }
 
+- (float)getTimeSec:(NSDate*)date{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
+    NSString *nicerDate = [dateFormat stringFromDate:date];
+    NSDate *timeDate = [dateFormat dateFromString:nicerDate];
+    return [timeDate timeIntervalSince1970];
+}
+
+- (void)setLabel:(NSDate*)date{
+    NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
+    [dFormatter setDateFormat:@"hh:mm a"];
+    NSString *t = [dFormatter stringFromDate: date];
+    [timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
+}
+
 - (IBAction)valueChanged:(UIStepper *)sender
 {
     if(![defaults objectForKey:@"userSex"] || ![defaults objectForKey:@"userWeight"])
@@ -46,27 +61,20 @@ NSUserDefaults *defaults;
     } else {
         
         weight = [[defaults objectForKey:@"userWeight"] doubleValue];
-        sexy = [defaults stringForKey:@"userSex"];
-        if ([sexy isEqualToString:@"F"]) {
-            sex = 0.66;
+        sex = [defaults stringForKey:@"userSex"];
+        if ([sex isEqualToString:@"F"]) {
+            sexVal = 0.66;
         }
         else{
-            sex = 0.73;
+            sexVal = 0.73;
         }
         double value = [sender value];
         [myLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
         if (first){
             first = false;
             NSDate *myDate = [[NSDate alloc] init];
-            NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
-            [dFormatter setDateFormat:@"hh:mm a"];
-            NSString *t = [dFormatter stringFromDate: myDate];
-            [timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
-            NSDateFormatter *startFormat = [[NSDateFormatter alloc] init];
-            [startFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
-            NSString *nicerDate = [startFormat stringFromDate:myDate];
-            NSDate *startDate = [startFormat dateFromString:nicerDate];
-            startTime = [startDate timeIntervalSince1970];
+            startTime = [self getTimeSec:myDate];
+            [self setLabel:myDate];
             [self startTimer];
             [self countUp];
         } else {
@@ -86,13 +94,9 @@ NSUserDefaults *defaults;
 
 - (void) countUp {
     NSDate *cTime = [NSDate date];
-    NSDateFormatter *currentFormat = [[NSDateFormatter alloc] init];
-    [currentFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
-    NSString *nicerDate = [currentFormat stringFromDate:cTime];
-    NSDate *currentDate = [currentFormat dateFromString:nicerDate];
-    currentTime = [currentDate timeIntervalSince1970];
+    currentTime = [self getTimeSec:cTime];
     float labelVal = [[myLabel text] floatValue];
-    [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sex * weight)) - (0.15 * ((currentTime - startTime)/ 3600)))]];
+    [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sexVal * weight)) - (0.15 * ((currentTime - startTime)/ 3600)))]];
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue {
