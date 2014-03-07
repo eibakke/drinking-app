@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HEALNight : NSObject
-@property(strong, nonatomic)NSNumber *drinks;
--(NSNumber*)getUserBAC;
+@interface HEALNight : NSObject {
+    @public int drinks;
+    @public float startTime;
+}
 
 @end

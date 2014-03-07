@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HEALNight.h"
 
 @interface HEALUser : NSObject
+{
+    NSString *userSex;
+    NSNumber *userWeight;
+    NSString *userName;
+    HEALNight *userNight;
+}
 
-@property(strong, nonatomic) NSString *userSex;
-@property(strong,nonatomic) NSNumber *userWeight;
-@property(strong,nonatomic) NSString *userName;
+-(void)makeNight:(HEALNight*)night;
+//-(NSNumber*)getUserBAC;
 
 @end

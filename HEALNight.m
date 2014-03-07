@@ -10,9 +10,4 @@
 
 @implementation HEALNight
 
--(NSNumber*)getUserBAC
-{
-    return 0;
-}
-
 @end
