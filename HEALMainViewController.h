@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "DrunkStateViewController.h"
+#import "HEALUser.h"
 
 
 @interface HEALMainViewController : UIViewController {
-
-IBOutlet UILabel *myLabel;
-
-IBOutlet UILabel *bacLabel;
-
-IBOutlet UILabel *timeLabel;
-
+    
+    IBOutlet UILabel *myLabel;
+    IBOutlet UILabel *bacLabel;
+    IBOutlet UILabel *timeLabel;
+    
+    @public HEALUser *user;
 }
 
 - (IBAction)valueChanged:(UIStepper *)sender;

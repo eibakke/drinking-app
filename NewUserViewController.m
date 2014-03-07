@@ -7,10 +7,13 @@
 //
 
 #import "NewUserViewController.h"
+#import "HEALUser.h"
+#import "HEALMainViewController.h"
 
 @interface NewUserViewController ()
 {
     NSCharacterSet *notDigits;
+    HEALUser *newUser;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
@@ -46,6 +49,12 @@
         [defaults setObject:weight forKey:@"userWeight"];
         [defaults setObject:[self.sexTextField text] forKey:@"userSex"];
         [defaults setObject:[self.nameTextField text] forKey:@"userName"];
+        
+        newUser = [[HEALUser alloc] init];
+        [newUser setUserName:[self.nameTextField text]];
+        [newUser setUserSex:[self.sexTextField text]];
+        [newUser setUserWeight:weight];
+        
         @try {
             [defaults synchronize];
         }
@@ -54,6 +63,16 @@
         }
         [self performSegueWithIdentifier:@"newToMainSegue" sender:self];
     }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"newToMainSegue"]){
+        HEALMainViewController *controller = [segue destinationViewController];
+        controller->user = newUser;
+
+    }
+    
 }
 
 - (void)alertUser:(NSString*) alertMessage{

@@ -292,7 +292,6 @@ Lowered alertness</string>
         <!--Navigation Controller-->
         <scene sceneID="hu9-XL-E5n">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PKM-lI-kqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="bED-9H-xtw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jB7-1T-ynN">
                         <autoresizingMask key="autoresizingMask"/>
@@ -301,6 +300,7 @@ Lowered alertness</string>
                         <segue destination="zsP-YM-Xat" kind="relationship" relationship="rootViewController" id="5oE-mI-ABy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PKM-lI-kqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1115" y="-403"/>
         </scene>

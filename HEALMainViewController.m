@@ -57,21 +57,22 @@
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
-    if(![defaults objectForKey:@"userSex"] || ![defaults objectForKey:@"userWeight"])
+    if([user getUserSex] == nil)
     {
         [self alertUser:@"Please enter weight and sex in settings."];
     } else {
         
-        weight = [[defaults objectForKey:@"userWeight"] doubleValue];
-        sex = [defaults stringForKey:@"userSex"];
-        if ([sex isEqualToString:@"F"]) {
-            sexVal = 0.66;
-        }
-        else{
-            sexVal = 0.73;
-        }
+//        weight = [[defaults objectForKey:@"userWeight"] doubleValue];
+//        sex = [defaults stringForKey:@"userSex"];
+//        if ([sex isEqualToString:@"F"]) {
+//            sexVal = 0.66;
+//        }
+//        else{
+//            sexVal = 0.73;
+//        }
         double value = [sender value];
         [myLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
+        [self->user setDrinks:(int)value];
         if (first){
             first = false;
             NSDate *myDate = [[NSDate alloc] init];
@@ -96,10 +97,10 @@
 
 - (void)countUp
 {
-    NSDate *cTime = [NSDate date];
-    currentTime = [self getTimeSec:cTime];
-    float labelVal = [[myLabel text] floatValue];
-    [bacLabel setText:[NSString stringWithFormat:@"%f", (((labelVal * 3.084) / (sexVal * weight)) - (0.15 * ((currentTime - startTime)/ 3600)))]];
+//    NSDate *cTime = [NSDate date];
+//    currentTime = [self getTimeSec:cTime];
+//    float labelVal = [[myLabel text] floatValue];
+    [bacLabel setText:[NSString stringWithFormat:@"%f", [self->user getUserBAC]]];
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue

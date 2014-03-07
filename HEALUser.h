@@ -17,7 +17,17 @@
     HEALNight *userNight;
 }
 
+-(void)setUserSex:(NSString*)sex;
+-(void)setUserWeight:(NSNumber*)weight;
+-(void)setUserName:(NSString*)name;
+-(void)setDrinks:(int)drinks;
+
+-(NSString*)getUserSex;
+-(NSNumber*)getUserWeight;
+-(NSString*)getUserName;
+-(int)getDrinks;
+
 -(void)makeNight:(HEALNight*)night;
-//-(NSNumber*)getUserBAC;
+-(float)getUserBAC;
 
 @end
