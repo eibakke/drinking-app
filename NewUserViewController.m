@@ -1,14 +1,14 @@
 //
-//  HEALEditSettingsViewController.m
+//  NewUserViewController.m
 //  drinkingApp
 //
-//  Created by Eivind Bakke on 2/26/14.
+//  Created by Leo Zoeckler on 3/6/14.
 //  Copyright (c) 2014 Halealei. All rights reserved.
 //
 
-#import "HEALEditSettingsViewController.h"
+#import "NewUserViewController.h"
 
-@interface HEALEditSettingsViewController ()
+@interface NewUserViewController ()
 {
     NSCharacterSet *notDigits;
 }
@@ -19,9 +19,8 @@
 
 @end
 
-@implementation HEALEditSettingsViewController
+@implementation NewUserViewController
 
-// To get the keyboard to collapse when return is pressed
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     return [textField resignFirstResponder];
@@ -40,7 +39,7 @@
         [self alertUser:@"Please enter F or M for sex."];
     }
     
-    // If user input is in order store the textfield values and unwind back to the main view
+    // If user input is in order store the textfield values and proceed to main view
     if (([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location == NSNotFound) && ([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"])) {
         
         NSNumber *weight = [NSNumber numberWithDouble:[[self.weightTextField text] doubleValue]];
@@ -53,11 +52,11 @@
         @catch (NSException *exception) {
             NSLog(@"Data save failed.");
         }
-        [self performSegueWithIdentifier:@"unwindToMain" sender:self];
+        [self performSegueWithIdentifier:@"newToMainSegue" sender:self];
     }
 }
 
--(void)alertUser:(NSString*) alertMessage{
+- (void)alertUser:(NSString*) alertMessage{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
                                                     message:alertMessage
                                                    delegate:nil
@@ -79,23 +78,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.navigationItem.hidesBackButton = YES;
     
     // We want the textfields to delegate back to this view controller
     [[self weightTextField] setDelegate:self];
     [[self sexTextField] setDelegate:self];
     [[self nameTextField] setDelegate:self];
-    
-    // Set the text in the textfields to come from the user defaults, if they have been set yet
-    defaults = [NSUserDefaults standardUserDefaults];
-    if([defaults objectForKey:@"userWeight"] != nil) {
-        self.weightTextField.text = [[defaults objectForKey:@"userWeight"] stringValue];
-    }
-    if([defaults objectForKey:@"userSex"] != nil) {
-        self.sexTextField.text = [defaults objectForKey:@"userSex"];
-    }
-    if([defaults objectForKey:@"userName"] != nil) {
-        self.nameTextField.text = [defaults objectForKey:@"userName"];
-    }
     
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
     [self.view addGestureRecognizer:tapBackground];
@@ -140,4 +129,6 @@
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
 }
+
+
 @end
