@@ -8,26 +8,25 @@
 
 #import "HEALMainViewController.h"
 
-@interface HEALMainViewController () {
+@interface HEALMainViewController ()
+{
+    bool first;
 
-bool first;
+    NSTimer *timer;
+    
+    double sexVal;
+    
+    double weight;
+    
+    NSString *sex;
 
-NSTimer *timer;
-    
-double sexVal;
-    
-double weight;
-    
-NSString *sex;
+    int mainInt;
 
-int mainInt;
+    float startTime;
 
-float startTime;
-
-float currentTime;
+    float currentTime;
     
-NSUserDefaults *defaults;
-    
+    NSUserDefaults *defaults;
 }
 
 @end
@@ -124,6 +123,9 @@ NSUserDefaults *defaults;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.hidesBackButton = YES;
+    
     defaults = [NSUserDefaults standardUserDefaults];
     first = true;
     
