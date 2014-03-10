@@ -141,6 +141,9 @@ Lowered alertness</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bNI-a8-0W6" kind="push" identifier="toStateViewController" id="kW0-q7-qGA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -164,7 +167,7 @@ Lowered alertness</string>
                     <navigationItem key="navigationItem" title="Main View" id="LzM-wj-3Gc">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="oNY-vm-vcK">
                             <connections>
-                                <segue destination="SHW-WS-6QP" kind="modal" id="fCM-pP-GeL"/>
+                                <segue destination="MqT-Dv-oNL" kind="modal" identifier="toSettingsView" id="WdB-ws-YMO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -173,34 +176,18 @@ Lowered alertness</string>
                         <outlet property="myLabel" destination="xnB-j1-dks" id="aBl-iV-d5U"/>
                         <outlet property="stateButton" destination="mpD-Xb-xLH" id="y0Z-5e-5e2"/>
                         <outlet property="timeLabel" destination="NUb-RN-o9b" id="qpX-So-zYO"/>
-                        <segue destination="bNI-a8-0W6" kind="push" id="VjY-0Z-bvt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-mj-Qyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="529" y="-405"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7j9-RE-c1Z">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="SHW-WS-6QP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VpI-6j-LpT">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="MqT-Dv-oNL" kind="relationship" relationship="rootViewController" id="Spi-RI-4cT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="azg-WX-Ter" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1076" y="-884"/>
-        </scene>
         <!--Edit Settings View Controller - Edit Settings View-->
         <scene sceneID="tNc-8H-LdE">
             <objects>
                 <viewController id="MqT-Dv-oNL" customClass="HEALEditSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GwV-ve-lSs">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YaY-Rn-Mcp"/>
@@ -243,11 +230,38 @@ Lowered alertness</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-Yl-kbo">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="V9i-HI-Ybt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-QR-UZM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="muh-ND-ap0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="YaY-Rn-Mcp" secondAttribute="trailing" type="default" id="45N-DJ-jmB"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="leading" secondItem="C5k-4F-wvV" secondAttribute="leading" type="default" id="4Ax-SA-B78"/>
+                            <constraint firstAttribute="trailing" secondItem="NMa-Yl-kbo" secondAttribute="trailing" constant="57" id="4Sd-is-5Nr"/>
                             <constraint firstAttribute="bottom" secondItem="YaY-Rn-Mcp" secondAttribute="bottom" type="default" id="69z-wD-Nwb"/>
                             <constraint firstItem="6f7-RE-c1l" firstAttribute="top" secondItem="C5k-4F-wvV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7AI-Xt-HoL"/>
                             <constraint firstItem="6f7-RE-c1l" firstAttribute="trailing" secondItem="C5k-4F-wvV" secondAttribute="trailing" type="default" id="7Yd-El-5dP"/>
@@ -255,7 +269,10 @@ Lowered alertness</string>
                             <constraint firstItem="so0-0h-rJI" firstAttribute="baseline" secondItem="PKw-W1-GhK" secondAttribute="baseline" type="default" id="Bqq-Pb-fL3"/>
                             <constraint firstItem="C5k-4F-wvV" firstAttribute="top" secondItem="PKw-W1-GhK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="DuP-bt-GtP"/>
                             <constraint firstItem="YaY-Rn-Mcp" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" type="default" id="Kmk-IU-XYL"/>
+                            <constraint firstItem="fyf-QR-UZM" firstAttribute="leading" secondItem="zN2-2T-njE" secondAttribute="leading" type="default" id="P8b-5h-DbS"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="top" secondItem="GwV-ve-lSs" secondAttribute="top" constant="107" id="XV6-OS-es8"/>
+                            <constraint firstAttribute="bottom" secondItem="fyf-QR-UZM" secondAttribute="bottom" constant="198" id="ZDr-20-DMy"/>
+                            <constraint firstItem="fyf-QR-UZM" firstAttribute="baseline" secondItem="NMa-Yl-kbo" secondAttribute="baseline" type="default" id="ZbU-ek-A4R"/>
                             <constraint firstItem="zXW-gS-2Wi" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="36" id="eGf-Dq-hnF"/>
                             <constraint firstItem="YaY-Rn-Mcp" firstAttribute="top" secondItem="GwV-ve-lSs" secondAttribute="top" type="default" id="fr2-xw-UBe"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="141" id="gco-VH-HHA"/>
@@ -288,7 +305,7 @@ Lowered alertness</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAf-sU-l2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8bD-cG-gu2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1736" y="-884"/>
+            <point key="canvasLocation" x="1076" y="-792"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hu9-XL-E5n">

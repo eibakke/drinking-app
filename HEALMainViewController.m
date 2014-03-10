@@ -57,7 +57,7 @@
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
-    if([user getUserSex] == nil)
+    if([self.user getUserSex] == nil)
     {
         [self alertUser:@"Please enter weight and sex in settings."];
     } else {
@@ -72,7 +72,7 @@
 //        }
         double value = [sender value];
         [myLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
-        [self->user setDrinks:(int)value];
+        [self.user setDrinks:(int)value];
         if (first){
             first = false;
             NSDate *myDate = [[NSDate alloc] init];
@@ -101,7 +101,7 @@
 //    NSDate *cTime = [NSDate date];
 //    currentTime = [self getTimeSec:cTime];
 //    float labelVal = [[myLabel text] floatValue];
-    [bacLabel setText:[NSString stringWithFormat:@"%f", [self->user getUserBAC]]];
+    [bacLabel setText:[NSString stringWithFormat:@"%f", [self.user getUserBAC]]];
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
@@ -120,13 +120,13 @@
 
 - (void) setLabels
 {
-    if([user getUserBAC] < 0.06)
+    if([self.user getUserBAC] < 0.06)
     {
         [stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
-    } else if (0.06 < [user getUserBAC] && [user getUserBAC] < 0.2)
+    } else if (0.06 < [self.user getUserBAC] && [self.user getUserBAC] < 0.2)
     {
         [stateButton setTitle:@"Drunk" forState:UIControlStateNormal];
-    } else if (0.2 < [user getUserBAC])
+    } else if (0.2 < [self.user getUserBAC])
     {
         [stateButton setTitle:@"Danger" forState:UIControlStateNormal];
     }
@@ -173,6 +173,17 @@
 //        controller.labelText = @"Test";
 //        
 //    }
+    
+    if([segue.identifier isEqualToString:@"toStateViewController"])
+    {
+        DrunkStateViewController *controller = [segue destinationViewController];
+        controller.user = self.user;
+    }
+    if([segue.identifier isEqualToString:@"toSettingsViewController"])
+    {
+        HEALEditSettingsViewController *controller = [segue destinationViewController];
+        controller.user = self.user;
+    }
     
 }
 

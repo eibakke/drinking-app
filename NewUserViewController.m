@@ -69,7 +69,7 @@
 {
     if([segue.identifier isEqualToString:@"newToMainSegue"]){
         HEALMainViewController *controller = [segue destinationViewController];
-        controller->user = newUser;
+        controller.user = newUser;
 
     }
     

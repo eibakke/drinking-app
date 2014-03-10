@@ -47,6 +47,11 @@
         [defaults setObject:weight forKey:@"userWeight"];
         [defaults setObject:[self.sexTextField text] forKey:@"userSex"];
         [defaults setObject:[self.nameTextField text] forKey:@"userName"];
+        
+        [self.user setUserWeight:weight];
+        [self.user setUserSex:[self.sexTextField text]];
+        [self.user setUserName:[self.nameTextField text]];
+        
         @try {
             [defaults synchronize];
         }

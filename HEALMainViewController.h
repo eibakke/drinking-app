@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DrunkStateViewController.h"
 #import "HEALUser.h"
+#import "HEALEditSettingsViewController.h"
 
 
 @interface HEALMainViewController : UIViewController {
@@ -17,9 +18,9 @@
     IBOutlet UILabel *bacLabel;
     IBOutlet UILabel *timeLabel;
     __weak IBOutlet UIButton *stateButton;
-    
-    @public HEALUser *user;
 }
+
+@property (strong, nonatomic) HEALUser *user;
 
 - (IBAction)valueChanged:(UIStepper *)sender;
 

@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HEALUser.h"
 
 @interface DrunkStateViewController : UIViewController {
     NSString *labelText;
+    
 }
 
 @property (weak, nonatomic) IBOutlet UITextView *stateDetails;
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+@property (weak, nonatomic) id parent;
+@property (strong, nonatomic) HEALUser *user;
 
 
 @end
