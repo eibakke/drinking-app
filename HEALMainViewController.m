@@ -83,6 +83,7 @@
         } else {
             [self countUp];
         }
+        [self setLabels];
     }
 }
 
@@ -119,6 +120,16 @@
 
 - (void) setLabels
 {
+    if([user getUserBAC] < 0.06)
+    {
+        [stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
+    } else if (0.06 < [user getUserBAC] && [user getUserBAC] < 0.2)
+    {
+        [stateButton setTitle:@"Drunk" forState:UIControlStateNormal];
+    } else if (0.2 < [user getUserBAC])
+    {
+        [stateButton setTitle:@"Danger" forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewDidLoad

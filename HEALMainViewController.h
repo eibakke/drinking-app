@@ -16,6 +16,7 @@
     IBOutlet UILabel *myLabel;
     IBOutlet UILabel *bacLabel;
     IBOutlet UILabel *timeLabel;
+    __weak IBOutlet UIButton *stateButton;
     
     @public HEALUser *user;
 }

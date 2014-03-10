@@ -171,6 +171,7 @@ Lowered alertness</string>
                     <connections>
                         <outlet property="bacLabel" destination="YAC-UB-fqj" id="VN1-UW-V52"/>
                         <outlet property="myLabel" destination="xnB-j1-dks" id="aBl-iV-d5U"/>
+                        <outlet property="stateButton" destination="mpD-Xb-xLH" id="y0Z-5e-5e2"/>
                         <outlet property="timeLabel" destination="NUb-RN-o9b" id="qpX-So-zYO"/>
                         <segue destination="bNI-a8-0W6" kind="push" id="VjY-0Z-bvt"/>
                     </connections>
@@ -461,6 +462,7 @@ Lowered alertness</string>
                 <relationship kind="action" name="valueChanged:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bacLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="myLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="stateButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
