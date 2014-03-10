@@ -19,7 +19,7 @@ NSUserDefaults *defaults;
 - (void)checkSettings
 {
     [NSThread sleepForTimeInterval:2.0f];
-    if (![defaults objectForKey:@"userSex"] || ![defaults objectForKey:@"userWeight"]) {
+    if ([defaults objectForKey:@"userSex"] == nil) {
         [self performSegueWithIdentifier:@"newUserSegue" sender:self];
     } else {
         [self performSegueWithIdentifier:@"mainSegue" sender:self];

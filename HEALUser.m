@@ -29,6 +29,8 @@
     
     if (self) {
         userNight = [[HEALNight alloc] init];
+        NSDate *myDate = [[NSDate alloc] init];
+        userNight->startTime = [self getTimeSec:myDate];
     }
     return self;
 }
