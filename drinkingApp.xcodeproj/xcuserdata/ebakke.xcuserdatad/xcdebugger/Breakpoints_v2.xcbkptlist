@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HEALMainViewController.m"
-            timestampString = "415521092.108578"
+            timestampString = "416199103.851267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "@interface HEALMainViewController()"
             landmarkType = "2">
          </BreakpointContent>

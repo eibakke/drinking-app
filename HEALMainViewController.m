@@ -10,21 +10,7 @@
 
 @interface HEALMainViewController ()
 {
-    bool first;
-
     NSTimer *timer;
-    
-    double sexVal;
-    
-    double weight;
-    
-    NSString *sex;
-
-    int mainInt;
-
-    float startTime;
-
-    float currentTime;
 }
 
 @end
@@ -36,16 +22,8 @@
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
 }
 
-- (float)getTimeSec:(NSDate*)date
-{
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
-    NSString *nicerDate = [dateFormat stringFromDate:date];
-    NSDate *timeDate = [dateFormat dateFromString:nicerDate];
-    return [timeDate timeIntervalSince1970];
-}
 
-- (void)setLabel:(NSDate*)date
+- (void)setDateLabel:(NSDate*)date
 {
     NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
     [dFormatter setDateFormat:@"hh:mm a"];
@@ -66,16 +44,6 @@
         }
         self.user.currentNight.drinks = [NSNumber numberWithDouble:[sender value]];
         [self updateLabels];
-        
-        if (first){
-            first = false;
-            NSDate *myDate = [[NSDate alloc] init];
-            startTime = [self getTimeSec:myDate];
-            [self setLabel:myDate];
-            [self countUp];
-        } else {
-            
-        }
     }
 }
 
@@ -83,7 +51,6 @@
 {
     [timer invalidate];
     timer = nil;
-    first = true;
     [bacLabel setText:@"0.000"];
     [timeLabel setText:@"Ready to start? Press the plus below!"];
 }
@@ -110,7 +77,7 @@
 - (void) updateLabels
 {
     [myLabel setText:[NSString stringWithFormat:@"%d", [self.user.currentNight.drinks intValue]]];
-    [self setLabel:[NSDate dateWithTimeIntervalSince1970:[self.user.currentNight.startTime doubleValue]]];
+    [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:[self.user.currentNight.startTime doubleValue]]];
     [self countUp];
     
     if([self.user getUserBAC] < 0.06)
@@ -131,8 +98,6 @@
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
-    
-    first = true;
 }
 
 

@@ -26,14 +26,6 @@
 
 - (IBAction)addNight:(UIButton *)sender;
 
-- (void)countUp;
-
-- (void)startTimer;
-
-- (float)getTimeSec:(NSDate*)date;
-
-- (void)setLabel:(NSDate*)date;
-
 -(IBAction)unwindToMain:(UIStoryboardSegue *)segue;
 
 @end
