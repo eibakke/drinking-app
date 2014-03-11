@@ -11,23 +11,21 @@
 
 @interface HEALUser : NSObject
 {
-    NSString *userSex;
-    NSNumber *userWeight;
-    NSString *userName;
-    HEALNight *userNight;
 }
 
--(void)setUserSex:(NSString*)sex;
--(void)setUserWeight:(NSNumber*)weight;
--(void)setUserName:(NSString*)name;
--(void)setDrinks:(int)drinks;
+@property(strong, nonatomic) NSString *userSex;
+@property(strong, nonatomic) NSNumber *userWeight;
+@property(strong, nonatomic) NSString *userName;
+@property(strong, nonatomic) HEALNight *currentNight;
 
--(NSString*)getUserSex;
--(NSNumber*)getUserWeight;
--(NSString*)getUserName;
+
+-(void)setDrinks:(int)drinks;
+-(void)setUserSex:(NSString *)sex;
 -(int)getDrinks;
 
 -(void)makeNight:(HEALNight*)night;
 -(float)getUserBAC;
+
+-(id)init:(NSString*)userName userSex:(NSString*)userSex userWeight:(NSNumber*)userWeight;
 
 @end
