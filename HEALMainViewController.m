@@ -123,12 +123,19 @@
     if([self.user getUserBAC] < 0.06)
     {
         [stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
+       //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Tipsy.jpg"]];
+        
+
     } else if (0.06 < [self.user getUserBAC] && [self.user getUserBAC] < 0.2)
     {
         [stateButton setTitle:@"Drunk" forState:UIControlStateNormal];
+        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Drunk.jpg"]];
+        
+        
     } else if (0.2 < [self.user getUserBAC])
     {
         [stateButton setTitle:@"Danger" forState:UIControlStateNormal];
+        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Danger.jpg"]];
     }
 }
 

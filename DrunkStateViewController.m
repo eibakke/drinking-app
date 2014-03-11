@@ -34,14 +34,35 @@
 {
     if([self.user getUserBAC] < 0.06)
     {
-        self.stateLabel.text = @"Tipsy";
-        self.stateDetails.text = @"Slight euphoria \n \n Sense of relaxation \n \n Lower inhibitions \n \n Thought process slowed \n \n Lowered alertness";
+        //self.stateLabel.text = @"Tipsy";
+        //self.stateDetails.text = @"Slight euphoria \n \n Sense of relaxation \n \n Lower inhibitions \n \n Thought process slowed \n \n Lowered alertness";
+
+        
+        
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:@"TipsyInfo.jpg"] drawInRect:self.view.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+        
+        
+        
     } else if(0.06 < [self.user getUserBAC] && [self.user getUserBAC] < 0.2){
-        self.stateLabel.text = @"Drunk";
-        self.stateDetails.text = @"Now you are drunk";
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:@"DrunkInfo.jpg"] drawInRect:self.view.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+        
     } else if(0.2 < [self.user getUserBAC]) {
-        self.stateLabel.text = @"Danger";
-        self.stateDetails.text = @"Now you should stop drinking";
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:@"DangerInfo.jpg"] drawInRect:self.view.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     }
 }
 

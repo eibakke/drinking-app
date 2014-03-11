@@ -32,6 +32,14 @@
 		89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */; };
 		89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5918BE7B54003920FE /* HEALMainViewController.m */; };
 		89F89D3518C7B37E00143AD4 /* HEALNight.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F89D3418C7B37E00143AD4 /* HEALNight.m */; };
+		A855253E18CEA23E00567BDA /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855253D18CEA23E00567BDA /* Logo.jpg */; };
+		A855254718CEAB7900567BDA /* Danger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254018CEAB7900567BDA /* Danger.jpg */; };
+		A855254818CEAB7900567BDA /* DangerInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254118CEAB7900567BDA /* DangerInfo.jpg */; };
+		A855254918CEAB7900567BDA /* Drunk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254218CEAB7900567BDA /* Drunk.jpg */; };
+		A855254A18CEAB7900567BDA /* DrunkInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254318CEAB7900567BDA /* DrunkInfo.jpg */; };
+		A855254B18CEAB7900567BDA /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254418CEAB7900567BDA /* Logo.jpg */; };
+		A855254C18CEAB7900567BDA /* Tipsy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254518CEAB7900567BDA /* Tipsy.jpg */; };
+		A855254D18CEAB7900567BDA /* TipsyInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254618CEAB7900567BDA /* TipsyInfo.jpg */; };
 		C4E4A51318C9725E0088A75E /* LogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E4A51218C9725E0088A75E /* LogoViewController.m */; };
 		C4E4A51618C97E970088A75E /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E4A51518C97E970088A75E /* NewUserViewController.m */; };
 /* End PBXBuildFile section */
@@ -81,6 +89,14 @@
 		89D32C5918BE7B54003920FE /* HEALMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALMainViewController.m; sourceTree = "<group>"; };
 		89F89D3318C7B37E00143AD4 /* HEALNight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALNight.h; sourceTree = "<group>"; };
 		89F89D3418C7B37E00143AD4 /* HEALNight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALNight.m; sourceTree = "<group>"; };
+		A855253D18CEA23E00567BDA /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Logo.jpg; path = UI/Logo.jpg; sourceTree = "<group>"; };
+		A855254018CEAB7900567BDA /* Danger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Danger.jpg; sourceTree = "<group>"; };
+		A855254118CEAB7900567BDA /* DangerInfo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DangerInfo.jpg; sourceTree = "<group>"; };
+		A855254218CEAB7900567BDA /* Drunk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Drunk.jpg; sourceTree = "<group>"; };
+		A855254318CEAB7900567BDA /* DrunkInfo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DrunkInfo.jpg; sourceTree = "<group>"; };
+		A855254418CEAB7900567BDA /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
+		A855254518CEAB7900567BDA /* Tipsy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tipsy.jpg; sourceTree = "<group>"; };
+		A855254618CEAB7900567BDA /* TipsyInfo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TipsyInfo.jpg; sourceTree = "<group>"; };
 		C4E4A51118C9725E0088A75E /* LogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoViewController.h; sourceTree = "<group>"; };
 		C4E4A51218C9725E0088A75E /* LogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoViewController.m; sourceTree = "<group>"; };
 		C4E4A51418C97E970088A75E /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
@@ -116,8 +132,10 @@
 		8956FC4918BBD6D70018F32B = {
 			isa = PBXGroup;
 			children = (
+				A855253F18CEAB7900567BDA /* UI */,
 				89F89D3418C7B37E00143AD4 /* HEALNight.m */,
 				89F89D3318C7B37E00143AD4 /* HEALNight.h */,
+				A855253D18CEA23E00567BDA /* Logo.jpg */,
 				6D0B7B9418C45B6E00419E78 /* background.jpg */,
 				89D32C5318BE759C003920FE /* MainStoryboard.storyboard */,
 				C4E4A51418C97E970088A75E /* NewUserViewController.h */,
@@ -205,6 +223,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A855253F18CEAB7900567BDA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A855254018CEAB7900567BDA /* Danger.jpg */,
+				A855254118CEAB7900567BDA /* DangerInfo.jpg */,
+				A855254218CEAB7900567BDA /* Drunk.jpg */,
+				A855254318CEAB7900567BDA /* DrunkInfo.jpg */,
+				A855254418CEAB7900567BDA /* Logo.jpg */,
+				A855254518CEAB7900567BDA /* Tipsy.jpg */,
+				A855254618CEAB7900567BDA /* TipsyInfo.jpg */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,12 +309,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A855253E18CEA23E00567BDA /* Logo.jpg in Resources */,
 				8956FC6218BBD6D70018F32B /* InfoPlist.strings in Resources */,
 				8956FC6A18BBD6D70018F32B /* Default.png in Resources */,
 				8956FC6C18BBD6D70018F32B /* Default@2x.png in Resources */,
+				A855254A18CEAB7900567BDA /* DrunkInfo.jpg in Resources */,
+				A855254B18CEAB7900567BDA /* Logo.jpg in Resources */,
+				A855254D18CEAB7900567BDA /* TipsyInfo.jpg in Resources */,
 				6D0B7B9518C45B6E00419E78 /* background.jpg in Resources */,
 				8956FC6E18BBD6D70018F32B /* Default-568h@2x.png in Resources */,
+				A855254818CEAB7900567BDA /* DangerInfo.jpg in Resources */,
+				A855254C18CEAB7900567BDA /* Tipsy.jpg in Resources */,
 				89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */,
+				A855254718CEAB7900567BDA /* Danger.jpg in Resources */,
+				A855254918CEAB7900567BDA /* Drunk.jpg in Resources */,
 				891FEB3018C7D97D00780C8A /* beer.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
