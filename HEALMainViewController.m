@@ -25,8 +25,6 @@
     float startTime;
 
     float currentTime;
-    
-    NSUserDefaults *defaults;
 }
 
 @end
@@ -57,33 +55,27 @@
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
-    if([self.user getUserSex] == nil)
+    if(self.user.userSex == nil)
     {
         [self alertUser:@"Please enter weight and sex in settings."];
+        sender.value = 0;
     } else {
+        if (timer == nil) {
+            [self startTimer];
+            [self.user.currentNight setStartTime];
+        }
+        self.user.currentNight.drinks = [NSNumber numberWithDouble:[sender value]];
+        [self updateLabels];
         
-//        weight = [[defaults objectForKey:@"userWeight"] doubleValue];
-//        sex = [defaults stringForKey:@"userSex"];
-//        if ([sex isEqualToString:@"F"]) {
-//            sexVal = 0.66;
-//        }
-//        else{
-//            sexVal = 0.73;
-//        }
-        double value = [sender value];
-        [myLabel setText:[NSString stringWithFormat:@"%d", (int)value]];
-        [self.user setDrinks:(int)value];
         if (first){
             first = false;
             NSDate *myDate = [[NSDate alloc] init];
             startTime = [self getTimeSec:myDate];
             [self setLabel:myDate];
-            [self startTimer];
             [self countUp];
         } else {
-            [self countUp];
+            
         }
-        [self setLabels];
     }
 }
 
@@ -98,15 +90,12 @@
 
 - (void)countUp
 {
-//    NSDate *cTime = [NSDate date];
-//    currentTime = [self getTimeSec:cTime];
-//    float labelVal = [[myLabel text] floatValue];
     [bacLabel setText:[NSString stringWithFormat:@"%f", [self.user getUserBAC]]];
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
-    [self setLabels];
+    [self updateLabels];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -118,8 +107,12 @@
     return self;
 }
 
-- (void) setLabels
+- (void) updateLabels
 {
+    [myLabel setText:[NSString stringWithFormat:@"%d", [self.user.currentNight.drinks intValue]]];
+    [self setLabel:[NSDate dateWithTimeIntervalSince1970:[self.user.currentNight.startTime doubleValue]]];
+    [self countUp];
+    
     if([self.user getUserBAC] < 0.06)
     {
         [stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
@@ -139,11 +132,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
     
-    defaults = [NSUserDefaults standardUserDefaults];
     first = true;
-    
-	NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 }
 
 
@@ -166,14 +155,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
-//    if([segue.identifier isEqualToString:@"stateSegue"]){
-//        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
-//        DrunkStateViewController *controller = (DrunkStateViewController *)navController.topViewController;
-//        controller.labelText = @"Test";
-//        
-//    }
-    
     if([segue.identifier isEqualToString:@"toStateViewController"])
     {
         DrunkStateViewController *controller = [segue destinationViewController];

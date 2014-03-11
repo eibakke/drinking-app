@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface HEALNight : NSObject {
-    @public int drinks;
-    @public float startTime;
 }
+
+@property(strong, nonatomic) NSNumber *drinks;
+@property(strong, nonatomic) NSNumber *startTime;
+
+-(void) setStartTime;
 
 @end

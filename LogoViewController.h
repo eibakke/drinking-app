@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HEALMainViewController.h"
+#import "HEALUser.h"
 
 @interface LogoViewController : UIViewController
 

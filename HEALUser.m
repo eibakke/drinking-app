@@ -20,33 +20,34 @@
 
 -(void)makeNight:(HEALNight*)night
 {
-    userNight = night;
+    self.currentNight = night;
 }
 
--(id)init
+-(id)init:(NSString*)name userSex:(NSString*)sex userWeight:(NSNumber*)weight
 {
     self = [super init];
     
     if (self) {
-        userNight = [[HEALNight alloc] init];
-        NSDate *myDate = [[NSDate alloc] init];
-        userNight->startTime = [self getTimeSec:myDate];
+        self.userName = name;
+        self.userWeight = weight;
+        self.userSex = sex;
+        self.currentNight = [[HEALNight alloc] init];
+        if([sex isEqualToString:@"F"])
+        {
+            userSexMetVal = 0.66;
+        } else {
+            userSexMetVal = 0.73;
+        }
     }
     return self;
 }
 
 -(float)getUserBAC
 {
-    if(userNight->drinks == 0)
-    {
-        NSDate *myDate = [[NSDate alloc] init];
-        userNight->startTime = [self getTimeSec:myDate];
-    }
-    
     NSDate *cTime = [NSDate date];
     [self getTimeSec:cTime];
     
-    return (((userNight->drinks * 3.084) / (userSexMetVal * [userWeight floatValue])) - (0.15 * ([self getTimeSec:cTime] - userNight->startTime)));
+    return ((([self.currentNight.drinks intValue] * 3.084) / (userSexMetVal * [self.userWeight floatValue])) - (0.15 * ([self getTimeSec:cTime] - [self.currentNight.startTime floatValue])));
 }
 
 - (float)getTimeSec:(NSDate*)date
@@ -59,50 +60,25 @@
 }
 
             
-- (void)setUserSex:(NSString *)sex
-{
-    userSex = sex;
-    if([sex isEqualToString:@"F"])
-    {
-        userSexMetVal = 0.66;
-    } else {
-        userSexMetVal = 0.73;
-    }
-}
-
-- (NSString*)getUserSex
-{
-    return userSex;
-}
-
-- (void)setUserName:(NSString *)name
-{
-    userName = name;
-}
-
-- (NSString*)getUserName
-{
-    return userName;
-}
-
-- (void)setUserWeight:(NSNumber *)weight
-{
-    userWeight = weight;
-}
-
-- (NSNumber*)getUserWeight
-{
-    return userWeight;
-}
+//- (void)setUserSex:(NSString*)sex
+//{
+//    self.userSex = sex;
+//    if([sex isEqualToString:@"F"])
+//    {
+//        userSexMetVal = 0.66;
+//    } else {
+//        userSexMetVal = 0.73;
+//    }
+//}
 
 - (void)setDrinks:(int)drinks
 {
-    userNight->drinks = drinks;
+    self.currentNight.drinks = [NSNumber numberWithInt:drinks];
 }
 
 - (int)getDrinks
 {
-    return userNight->drinks;
+    return [self.currentNight.drinks intValue];
 }
 
 

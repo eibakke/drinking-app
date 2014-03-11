@@ -10,7 +10,8 @@
 
 @interface LogoViewController ()
 {
-NSUserDefaults *defaults;
+    NSUserDefaults *defaults;
+    HEALUser *newUser;
 }
 @end
 
@@ -22,6 +23,8 @@ NSUserDefaults *defaults;
     if ([defaults objectForKey:@"userSex"] == nil) {
         [self performSegueWithIdentifier:@"newUserSegue" sender:self];
     } else {
+        newUser = [[HEALUser alloc] init:[defaults objectForKey:@"userName"] userSex:[defaults objectForKey:@"userSex"] userWeight:[defaults objectForKey:@"userWeight"]];
+
         [self performSegueWithIdentifier:@"mainSegue" sender:self];
     }
 }
@@ -52,5 +55,15 @@ NSUserDefaults *defaults;
 
 - (void)viewDidAppear:(BOOL)animated{
     [self checkSettings];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"mainSegue"]){
+        HEALMainViewController *controller = [segue destinationViewController];
+        controller.user = newUser;
+        
+    }
+    
 }
 @end

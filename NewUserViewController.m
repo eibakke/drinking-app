@@ -50,10 +50,7 @@
         [defaults setObject:[self.sexTextField text] forKey:@"userSex"];
         [defaults setObject:[self.nameTextField text] forKey:@"userName"];
         
-        newUser = [[HEALUser alloc] init];
-        [newUser setUserName:[self.nameTextField text]];
-        [newUser setUserSex:[self.sexTextField text]];
-        [newUser setUserWeight:weight];
+        newUser = [[HEALUser alloc] init:[self.nameTextField text] userSex:[self.sexTextField text] userWeight:weight];
         
         @try {
             [defaults synchronize];
@@ -109,16 +106,19 @@
     [self.view addGestureRecognizer:tapBackground];
 }
 
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
 - (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
 {
     [[self nameTextField] resignFirstResponder];
     [[self sexTextField] resignFirstResponder];
     [[self weightTextField] resignFirstResponder];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
