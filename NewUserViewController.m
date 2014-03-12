@@ -12,6 +12,7 @@
 
 @interface NewUserViewController ()
 {
+    NSUserDefaults *defaults;
     NSCharacterSet *notDigits;
     HEALUser *newUser;
 }
@@ -38,12 +39,12 @@
     // Check user input and pop up alerts with directions if the user input is invalid
     if (([[self.weightTextField text] isEqualToString:@""]) || ([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location != NSNotFound)) {
         [self alertUser:@"Please enter a whole number for weight in lbs."];
-    } else if(!([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"])){
+    } else if(!([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])){
         [self alertUser:@"Please enter F or M for sex."];
     }
     
     // If user input is in order store the textfield values and proceed to main view
-    if (([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location == NSNotFound) && ([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"])) {
+    if (([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location == NSNotFound) && ([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])) {
         
         NSNumber *weight = [NSNumber numberWithDouble:[[self.weightTextField text] doubleValue]];
         [defaults setObject:weight forKey:@"userWeight"];
@@ -137,7 +138,7 @@
 // The animation with bool for moving up or down. Source: user Amagrammer at stackoverflow. Post URL: http://stackoverflow.com/questions/1247113/iphone-keyboard-covers-uitextfield
 - (void) animateTextField: (UITextField*) textField up: (BOOL) up
 {
-    const int movementDistance = 80;
+    const int movementDistance = 50;
     const float movementDuration = 0.1f;
     
     int movement = (up ? -movementDistance : movementDistance);

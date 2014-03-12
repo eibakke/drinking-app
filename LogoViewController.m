@@ -44,6 +44,9 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     defaults = [NSUserDefaults standardUserDefaults];
 	// Do any additional setup after loading the view.
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +65,7 @@
     if([segue.identifier isEqualToString:@"mainSegue"]){
         HEALMainViewController *controller = [segue destinationViewController];
         controller.user = newUser;
-        
+    
     }
     
 }

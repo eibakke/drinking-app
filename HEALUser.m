@@ -12,6 +12,7 @@
 @interface HEALUser (){
     
     float userSexMetVal;
+    float bac;
 }
 
 @end
@@ -45,9 +46,17 @@
 -(float)getUserBAC
 {
     NSDate *cTime = [NSDate date];
-    [self getTimeSec:cTime];
     
-    return ((([self.currentNight.drinks intValue] * 3.084) / (userSexMetVal * [self.userWeight floatValue])) - (0.15 * ([self getTimeSec:cTime] - [self.currentNight.startTime floatValue])));
+    bac = (([self.currentNight.drinks intValue] * 3.084) / (userSexMetVal * [self.userWeight floatValue])) - (0.15 * ([self getTimeSec:cTime] - [self.currentNight.startTime floatValue]));
+    
+    if(bac < 0){
+        return (0);
+    }
+    
+    else{
+        return (bac);
+    }
+    
 }
 
 - (float)getTimeSec:(NSDate*)date
