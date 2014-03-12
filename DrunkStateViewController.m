@@ -34,11 +34,6 @@
 {
     if([self.user getUserBAC] < 0.06)
     {
-        //self.stateLabel.text = @"Tipsy";
-        //self.stateDetails.text = @"Slight euphoria \n \n Sense of relaxation \n \n Lower inhibitions \n \n Thought process slowed \n \n Lowered alertness";
-
-        
-        
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:@"TipsyInfo.jpg"] drawInRect:self.view.bounds];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -48,7 +43,8 @@
         
         
         
-    } else if(0.06 < [self.user getUserBAC] && [self.user getUserBAC] < 0.2){
+    } else if(0.06 < [self.user getUserBAC] && [self.user getUserBAC] < 0.2)
+    {
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:@"DrunkInfo.jpg"] drawInRect:self.view.bounds];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -56,7 +52,8 @@
         
         self.view.backgroundColor = [UIColor colorWithPatternImage:image];
         
-    } else if(0.2 < [self.user getUserBAC]) {
+    } else if(0.2 < [self.user getUserBAC])
+    {
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:@"DangerInfo.jpg"] drawInRect:self.view.bounds];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

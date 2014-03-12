@@ -133,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				A855253F18CEAB7900567BDA /* UI */,
-				89F89D3418C7B37E00143AD4 /* HEALNight.m */,
 				89F89D3318C7B37E00143AD4 /* HEALNight.h */,
+				89F89D3418C7B37E00143AD4 /* HEALNight.m */,
 				A855253D18CEA23E00567BDA /* Logo.jpg */,
 				6D0B7B9418C45B6E00419E78 /* background.jpg */,
 				89D32C5318BE759C003920FE /* MainStoryboard.storyboard */,

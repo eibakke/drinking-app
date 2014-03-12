@@ -49,23 +49,13 @@
     
     bac = (([self.currentNight.drinks intValue] * 3.084) / (userSexMetVal * [self.userWeight floatValue])) - (0.15 * ([self getTimeSec:cTime] - [self.currentNight.startTime floatValue]));
     
-    if(bac < 0){
-        return (0);
-    }
-    
-    else{
-        return (bac);
-    }
+    return(MAX(0, bac));
     
 }
 
 - (float)getTimeSec:(NSDate*)date
 {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
-    NSString *nicerDate = [dateFormat stringFromDate:date];
-    NSDate *timeDate = [dateFormat dateFromString:nicerDate];
-    return [timeDate timeIntervalSince1970];
+    return [date timeIntervalSince1970];
 }
 
 - (void)setDrinks:(int)drinks

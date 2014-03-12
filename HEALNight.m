@@ -28,15 +28,12 @@
 
 -(float)getTimeSec:(NSDate*)date
 {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
-    NSString *nicerDate = [dateFormat stringFromDate:date];
-    NSDate *timeDate = [dateFormat dateFromString:nicerDate];
-    return [timeDate timeIntervalSince1970];
+    return [date timeIntervalSince1970];
 }
 
 -(void)reset
 {
     self.drinks = 0;
+    self.startTime = nil;
 }
 @end
