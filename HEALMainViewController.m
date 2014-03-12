@@ -50,8 +50,10 @@
 - (IBAction)addNight:(UIButton *)sender
 {
     [timer invalidate];
-    timer = nil;
-    [bacLabel setText:@"0.000"];
+    timer = nil;    
+    [self.user.currentNight reset];
+    [self updateLabels];
+    drinkStepper.value = 0;
     [timeLabel setText:@"Ready to start? Press the plus below!"];
 }
 
@@ -76,14 +78,19 @@
 
 - (void) updateLabels
 {
-    [myLabel setText:[NSString stringWithFormat:@"%d", [self.user.currentNight.drinks intValue]]];
+    [drinkLabel setText:[NSString stringWithFormat:@"%d", [self.user.currentNight.drinks intValue]]];
     [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:[self.user.currentNight.startTime doubleValue]]];
     [self countUp];
     
-    if([self.user getUserBAC] < 0.06)
+    if ([self.user getUserBAC] < 0.02) {
+        [stateButton setTitle:@"Sober" forState:UIControlStateNormal];
+        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Sober.jpg"]];
+        
+        
+    } else if(0.02 < [self.user getUserBAC] && [self.user getUserBAC] < 0.06)
     {
         [stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
-       //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Tipsy.jpg"]];
+        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Tipsy.jpg"]];
         
 
     } else if (0.06 < [self.user getUserBAC] && [self.user getUserBAC] < 0.2)

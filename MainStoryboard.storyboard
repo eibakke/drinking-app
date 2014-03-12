@@ -34,7 +34,7 @@
                                     <action selector="valueChanged:" destination="7uE-MQ-V0L" eventType="valueChanged" id="WBQ-6w-lHw"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-RN-o9b">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ready to start? Press the plus below!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-RN-o9b">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="GlU-8T-vrn"/>
                                     <constraint firstAttribute="width" constant="301" id="dND-U2-rOr"/>
@@ -121,7 +121,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bacLabel" destination="YAC-UB-fqj" id="VN1-UW-V52"/>
-                        <outlet property="myLabel" destination="xnB-j1-dks" id="aBl-iV-d5U"/>
+                        <outlet property="drinkLabel" destination="xnB-j1-dks" id="oZf-eh-e4b"/>
+                        <outlet property="drinkStepper" destination="rFK-Ix-bPj" id="Ss2-so-wgH"/>
                         <outlet property="stateButton" destination="mpD-Xb-xLH" id="y0Z-5e-5e2"/>
                         <outlet property="timeLabel" destination="NUb-RN-o9b" id="qpX-So-zYO"/>
                     </connections>
@@ -414,7 +415,8 @@
                 <relationship kind="action" name="unwindToMain:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="valueChanged:" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="bacLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="myLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="drinkLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="drinkStepper" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="stateButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>

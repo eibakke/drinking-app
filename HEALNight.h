@@ -15,5 +15,6 @@
 @property(strong, nonatomic) NSNumber *startTime;
 
 -(void) setStartTime;
+-(void) reset;
 
 @end

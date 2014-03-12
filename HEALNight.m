@@ -10,7 +10,7 @@
 
 @implementation HEALNight
 
-- (id)init
+-(id)init
 {
     self = [super init];
     
@@ -20,18 +20,23 @@
     return self;
 }
 
-- (void)setStartTime
+-(void)setStartTime
 {
     NSDate *myDate = [[NSDate alloc] init];
     self.startTime = [NSNumber numberWithFloat:[self getTimeSec:myDate]];
 }
 
-- (float)getTimeSec:(NSDate*)date
+-(float)getTimeSec:(NSDate*)date
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"cccc, MMMM dd, yyyy, hh:mm aa"];
     NSString *nicerDate = [dateFormat stringFromDate:date];
     NSDate *timeDate = [dateFormat dateFromString:nicerDate];
     return [timeDate timeIntervalSince1970];
+}
+
+-(void)reset
+{
+    self.drinks = 0;
 }
 @end

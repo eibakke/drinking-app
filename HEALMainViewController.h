@@ -14,7 +14,8 @@
 
 @interface HEALMainViewController : UIViewController {
     
-    IBOutlet UILabel *myLabel;
+    IBOutlet UIStepper *drinkStepper;
+    IBOutlet UILabel *drinkLabel;
     IBOutlet UILabel *bacLabel;
     IBOutlet UILabel *timeLabel;
     __weak IBOutlet UIButton *stateButton;
