@@ -103,6 +103,12 @@
         [stateButton setTitle:@"Danger" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Danger.jpg"]];
     }
+    
+    if (drinkStepper.value == 100)
+    {
+        [stateButton setTitle:@"Dead" forState:UIControlStateNormal];
+        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Dead.jpg"]];
+    }
 }
 
 - (void)viewDidLoad
