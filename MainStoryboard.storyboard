@@ -98,16 +98,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rFK-Ix-bPj" firstAttribute="leading" secondItem="afE-MJ-Bsx" secondAttribute="leading" constant="117" id="42O-kJ-1NA"/>
                             <constraint firstItem="mpD-Xb-xLH" firstAttribute="centerX" secondItem="NUb-RN-o9b" secondAttribute="centerX" type="default" id="6hZ-ZJ-sJA"/>
                             <constraint firstItem="xnB-j1-dks" firstAttribute="centerX" secondItem="YAC-UB-fqj" secondAttribute="centerX" type="default" id="DuA-x0-dLX"/>
                             <constraint firstItem="oKf-wY-iYb" firstAttribute="leading" secondItem="afE-MJ-Bsx" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="FJJ-uK-ru3"/>
-                            <constraint firstItem="xnB-j1-dks" firstAttribute="centerX" secondItem="afE-MJ-Bsx" secondAttribute="centerX" type="default" id="KU3-sG-wQy"/>
+                            <constraint firstItem="rFK-Ix-bPj" firstAttribute="centerX" secondItem="xnB-j1-dks" secondAttribute="centerX" type="default" id="NlR-HC-03e"/>
                             <constraint firstItem="YAC-UB-fqj" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="248" id="XNj-tj-kVR"/>
                             <constraint firstItem="NUb-RN-o9b" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="204" id="cev-vE-pKh"/>
                             <constraint firstAttribute="bottom" secondItem="rFK-Ix-bPj" secondAttribute="bottom" constant="109" id="h64-mo-34F"/>
                             <constraint firstItem="NUb-RN-o9b" firstAttribute="centerX" secondItem="YAC-UB-fqj" secondAttribute="centerX" type="default" id="oCH-Zn-Mk9"/>
                             <constraint firstItem="mpD-Xb-xLH" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="108" id="qeA-8W-F2W"/>
+                            <constraint firstItem="rFK-Ix-bPj" firstAttribute="centerX" secondItem="afE-MJ-Bsx" secondAttribute="centerX" type="default" id="sPH-h0-h69"/>
                             <constraint firstItem="oKf-wY-iYb" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="72" id="srs-Ta-h2g"/>
                             <constraint firstAttribute="bottom" secondItem="xnB-j1-dks" secondAttribute="bottom" constant="180" id="uDn-DK-Cuc"/>
                         </constraints>

@@ -64,7 +64,6 @@
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
-    [self updateLabels];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
