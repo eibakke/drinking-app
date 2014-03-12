@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
-@property (weak, nonatomic) HEALUser *user;
+@property (strong, nonatomic) HEALUser *user;
 
 -(IBAction)doneButton:(id)sender;
 

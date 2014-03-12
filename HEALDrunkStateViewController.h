@@ -1,5 +1,5 @@
 //
-//  DrunkStateViewController.h
+//  HEALDrunkStateViewController.h
 //  drinkingApp
 //
 //  Created by Haroon Bokhary on 3/3/14.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HEALUser.h"
 
-@interface DrunkStateViewController : UIViewController {
+@interface HEALDrunkStateViewController : UIViewController {
     NSString *labelText;
     
 }

@@ -1,5 +1,5 @@
 //
-//  NewUserViewController.h
+//  HEALNewUserViewController.h
 //  drinkingApp
 //
 //  Created by Leo Zoeckler on 3/6/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewUserViewController : UIViewController <UITextFieldDelegate>
+@interface HEALNewUserViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *weightTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sexTextField;

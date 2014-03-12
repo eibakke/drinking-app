@@ -1,21 +1,21 @@
 //
-//  LogoViewController.m
+//  HEALLogoViewController.m
 //  drinkingApp
 //
 //  Created by Leo Zoeckler on 3/6/14.
 //  Copyright (c) 2014 Halealei. All rights reserved.
 //
 
-#import "LogoViewController.h"
+#import "HEALLogoViewController.h"
 
-@interface LogoViewController ()
+@interface HEALLogoViewController ()
 {
     NSUserDefaults *defaults;
     HEALUser *newUser;
 }
 @end
 
-@implementation LogoViewController
+@implementation HEALLogoViewController
 
 - (void)checkSettings
 {

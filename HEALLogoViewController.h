@@ -1,5 +1,5 @@
 //
-//  LogoViewController.h
+//  HEALLogoViewController.h
 //  drinkingApp
 //
 //  Created by Leo Zoeckler on 3/6/14.
@@ -10,6 +10,6 @@
 #import "HEALMainViewController.h"
 #import "HEALUser.h"
 
-@interface LogoViewController : UIViewController
+@interface HEALLogoViewController : UIViewController
 
 @end

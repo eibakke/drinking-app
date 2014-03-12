@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6D0B7B9518C45B6E00419E78 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D0B7B9418C45B6E00419E78 /* background.jpg */; };
-		6D0B7B9818C48A7B00419E78 /* DrunkStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0B7B9718C48A7B00419E78 /* DrunkStateViewController.m */; };
+		890792E118D0FDC1001EFA85 /* HEALDrunkStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */; };
+		890792E218D0FDC1001EFA85 /* HEALLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */; };
+		890792E318D0FDC1001EFA85 /* HEALNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */; };
 		8908588418C538D40020383C /* HEALUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908588318C538D40020383C /* HEALUser.m */; };
 		891FEB3018C7D97D00780C8A /* beer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 891FEB2F18C7D97D00780C8A /* beer.jpg */; };
 		8956FC5618BBD6D70018F32B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5518BBD6D70018F32B /* UIKit.framework */; };
@@ -40,8 +42,6 @@
 		A855254B18CEAB7900567BDA /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254418CEAB7900567BDA /* Logo.jpg */; };
 		A855254C18CEAB7900567BDA /* Tipsy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254518CEAB7900567BDA /* Tipsy.jpg */; };
 		A855254D18CEAB7900567BDA /* TipsyInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254618CEAB7900567BDA /* TipsyInfo.jpg */; };
-		C4E4A51318C9725E0088A75E /* LogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E4A51218C9725E0088A75E /* LogoViewController.m */; };
-		C4E4A51618C97E970088A75E /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4E4A51518C97E970088A75E /* NewUserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +55,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D0B7B9418C45B6E00419E78 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		6D0B7B9618C48A7B00419E78 /* DrunkStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrunkStateViewController.h; sourceTree = "<group>"; };
-		6D0B7B9718C48A7B00419E78 /* DrunkStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrunkStateViewController.m; sourceTree = "<group>"; };
-		8908588218C538D40020383C /* HEALUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALUser.h; sourceTree = "<group>"; };
-		8908588318C538D40020383C /* HEALUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALUser.m; sourceTree = "<group>"; };
-		891FEB2F18C7D97D00780C8A /* beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beer.jpg; sourceTree = "<group>"; };
+		6D0B7B9418C45B6E00419E78 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../background.jpg; sourceTree = "<group>"; };
+		890792DB18D0FDC1001EFA85 /* HEALDrunkStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALDrunkStateViewController.h; path = ../HEALDrunkStateViewController.h; sourceTree = "<group>"; };
+		890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALDrunkStateViewController.m; path = ../HEALDrunkStateViewController.m; sourceTree = "<group>"; };
+		890792DD18D0FDC1001EFA85 /* HEALLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALLogoViewController.h; path = ../HEALLogoViewController.h; sourceTree = "<group>"; };
+		890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALLogoViewController.m; path = ../HEALLogoViewController.m; sourceTree = "<group>"; };
+		890792DF18D0FDC1001EFA85 /* HEALNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALNewUserViewController.h; path = ../HEALNewUserViewController.h; sourceTree = "<group>"; };
+		890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALNewUserViewController.m; path = ../HEALNewUserViewController.m; sourceTree = "<group>"; };
+		8908588218C538D40020383C /* HEALUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALUser.h; path = ../HEALUser.h; sourceTree = "<group>"; };
+		8908588318C538D40020383C /* HEALUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALUser.m; path = ../HEALUser.m; sourceTree = "<group>"; };
+		891FEB2F18C7D97D00780C8A /* beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beer.jpg; path = ../beer.jpg; sourceTree = "<group>"; };
 		8956FC5218BBD6D70018F32B /* drinkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drinkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8956FC5518BBD6D70018F32B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8956FC5718BBD6D70018F32B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,13 +87,13 @@
 		8956FC8518BBD6D80018F32B /* drinkingAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drinkingAppTests.h; sourceTree = "<group>"; };
 		8956FC8618BBD6D80018F32B /* drinkingAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drinkingAppTests.m; sourceTree = "<group>"; };
 		89D32C5318BE759C003920FE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		89D32C5518BE7AA1003920FE /* HEALEditSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALEditSettingsViewController.h; sourceTree = "<group>"; };
-		89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALEditSettingsViewController.m; sourceTree = "<group>"; };
-		89D32C5818BE7B54003920FE /* HEALMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALMainViewController.h; sourceTree = "<group>"; };
-		89D32C5918BE7B54003920FE /* HEALMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALMainViewController.m; sourceTree = "<group>"; };
-		89F89D3318C7B37E00143AD4 /* HEALNight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALNight.h; sourceTree = "<group>"; };
-		89F89D3418C7B37E00143AD4 /* HEALNight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALNight.m; sourceTree = "<group>"; };
-		A855253D18CEA23E00567BDA /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Logo.jpg; path = UI/Logo.jpg; sourceTree = "<group>"; };
+		89D32C5518BE7AA1003920FE /* HEALEditSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALEditSettingsViewController.h; path = ../HEALEditSettingsViewController.h; sourceTree = "<group>"; };
+		89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALEditSettingsViewController.m; path = ../HEALEditSettingsViewController.m; sourceTree = "<group>"; };
+		89D32C5818BE7B54003920FE /* HEALMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALMainViewController.h; path = ../HEALMainViewController.h; sourceTree = "<group>"; };
+		89D32C5918BE7B54003920FE /* HEALMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALMainViewController.m; path = ../HEALMainViewController.m; sourceTree = "<group>"; };
+		89F89D3318C7B37E00143AD4 /* HEALNight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALNight.h; path = ../HEALNight.h; sourceTree = "<group>"; };
+		89F89D3418C7B37E00143AD4 /* HEALNight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALNight.m; path = ../HEALNight.m; sourceTree = "<group>"; };
+		A855253D18CEA23E00567BDA /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
 		A855254018CEAB7900567BDA /* Danger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Danger.jpg; sourceTree = "<group>"; };
 		A855254118CEAB7900567BDA /* DangerInfo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DangerInfo.jpg; sourceTree = "<group>"; };
 		A855254218CEAB7900567BDA /* Drunk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Drunk.jpg; sourceTree = "<group>"; };
@@ -97,10 +101,6 @@
 		A855254418CEAB7900567BDA /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
 		A855254518CEAB7900567BDA /* Tipsy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tipsy.jpg; sourceTree = "<group>"; };
 		A855254618CEAB7900567BDA /* TipsyInfo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TipsyInfo.jpg; sourceTree = "<group>"; };
-		C4E4A51118C9725E0088A75E /* LogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoViewController.h; sourceTree = "<group>"; };
-		C4E4A51218C9725E0088A75E /* LogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoViewController.m; sourceTree = "<group>"; };
-		C4E4A51418C97E970088A75E /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
-		C4E4A51518C97E970088A75E /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,28 +129,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		890792E418D0FDDA001EFA85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89F89D3318C7B37E00143AD4 /* HEALNight.h */,
+				89F89D3418C7B37E00143AD4 /* HEALNight.m */,
+				8908588218C538D40020383C /* HEALUser.h */,
+				8908588318C538D40020383C /* HEALUser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		890792E518D0FE12001EFA85 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				890792DB18D0FDC1001EFA85 /* HEALDrunkStateViewController.h */,
+				890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */,
+				890792DD18D0FDC1001EFA85 /* HEALLogoViewController.h */,
+				890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */,
+				890792DF18D0FDC1001EFA85 /* HEALNewUserViewController.h */,
+				890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */,
+				89D32C5818BE7B54003920FE /* HEALMainViewController.h */,
+				89D32C5918BE7B54003920FE /* HEALMainViewController.m */,
+				89D32C5518BE7AA1003920FE /* HEALEditSettingsViewController.h */,
+				89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		8956FC4918BBD6D70018F32B = {
 			isa = PBXGroup;
 			children = (
-				A855253F18CEAB7900567BDA /* UI */,
-				89F89D3318C7B37E00143AD4 /* HEALNight.h */,
-				89F89D3418C7B37E00143AD4 /* HEALNight.m */,
-				A855253D18CEA23E00567BDA /* Logo.jpg */,
-				6D0B7B9418C45B6E00419E78 /* background.jpg */,
 				89D32C5318BE759C003920FE /* MainStoryboard.storyboard */,
-				C4E4A51418C97E970088A75E /* NewUserViewController.h */,
-				C4E4A51518C97E970088A75E /* NewUserViewController.m */,
-				C4E4A51118C9725E0088A75E /* LogoViewController.h */,
-				C4E4A51218C9725E0088A75E /* LogoViewController.m */,
-				6D0B7B9618C48A7B00419E78 /* DrunkStateViewController.h */,
-				6D0B7B9718C48A7B00419E78 /* DrunkStateViewController.m */,
-				89D32C5818BE7B54003920FE /* HEALMainViewController.h */,
-				89D32C5918BE7B54003920FE /* HEALMainViewController.m */,
-				891FEB2F18C7D97D00780C8A /* beer.jpg */,
-				8908588218C538D40020383C /* HEALUser.h */,
-				8908588318C538D40020383C /* HEALUser.m */,
-				89D32C5518BE7AA1003920FE /* HEALEditSettingsViewController.h */,
-				89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */,
 				8956FC5D18BBD6D70018F32B /* drinkingApp */,
 				8956FC7F18BBD6D80018F32B /* drinkingAppTests */,
 				8956FC5418BBD6D70018F32B /* Frameworks */,
@@ -182,6 +192,9 @@
 		8956FC5D18BBD6D70018F32B /* drinkingApp */ = {
 			isa = PBXGroup;
 			children = (
+				890792E418D0FDDA001EFA85 /* Model */,
+				A855253F18CEAB7900567BDA /* GraphicsResources */,
+				890792E518D0FE12001EFA85 /* ViewControllers */,
 				8956FC6618BBD6D70018F32B /* HEALAppDelegate.h */,
 				8956FC6718BBD6D70018F32B /* HEALAppDelegate.m */,
 				8956FC6F18BBD6D70018F32B /* drinkingApp.xcdatamodeld */,
@@ -223,9 +236,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A855253F18CEAB7900567BDA /* UI */ = {
+		A855253F18CEAB7900567BDA /* GraphicsResources */ = {
 			isa = PBXGroup;
 			children = (
+				A855253D18CEA23E00567BDA /* Logo.jpg */,
+				6D0B7B9418C45B6E00419E78 /* background.jpg */,
+				891FEB2F18C7D97D00780C8A /* beer.jpg */,
 				A855254018CEAB7900567BDA /* Danger.jpg */,
 				A855254118CEAB7900567BDA /* DangerInfo.jpg */,
 				A855254218CEAB7900567BDA /* Drunk.jpg */,
@@ -234,7 +250,8 @@
 				A855254518CEAB7900567BDA /* Tipsy.jpg */,
 				A855254618CEAB7900567BDA /* TipsyInfo.jpg */,
 			);
-			path = UI;
+			name = GraphicsResources;
+			path = ../UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,11 +380,11 @@
 				8956FC7118BBD6D70018F32B /* drinkingApp.xcdatamodeld in Sources */,
 				89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */,
 				89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */,
-				6D0B7B9818C48A7B00419E78 /* DrunkStateViewController.m in Sources */,
 				8908588418C538D40020383C /* HEALUser.m in Sources */,
 				89F89D3518C7B37E00143AD4 /* HEALNight.m in Sources */,
-				C4E4A51318C9725E0088A75E /* LogoViewController.m in Sources */,
-				C4E4A51618C97E970088A75E /* NewUserViewController.m in Sources */,
+				890792E118D0FDC1001EFA85 /* HEALDrunkStateViewController.m in Sources */,
+				890792E218D0FDC1001EFA85 /* HEALLogoViewController.m in Sources */,
+				890792E318D0FDC1001EFA85 /* HEALNewUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

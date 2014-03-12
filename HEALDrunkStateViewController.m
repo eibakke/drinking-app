@@ -1,19 +1,19 @@
 //
-//  DrunkStateViewController.m
+//  HEALDrunkStateViewController.m
 //  drinkingApp
 //
 //  Created by Haroon Bokhary on 3/3/14.
 //  Copyright (c) 2014 Halealei. All rights reserved.
 //
 
-#import "DrunkStateViewController.h"
+#import "HEALDrunkStateViewController.h"
 
 
-@interface DrunkStateViewController ()
+@interface HEALDrunkStateViewController ()
 
 @end
 
-@implementation DrunkStateViewController
+@implementation HEALDrunkStateViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

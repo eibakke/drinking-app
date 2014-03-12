@@ -1,16 +1,16 @@
 //
-//  NewUserViewController.m
+//  HEALNewUserViewController.m
 //  drinkingApp
 //
 //  Created by Leo Zoeckler on 3/6/14.
 //  Copyright (c) 2014 Halealei. All rights reserved.
 //
 
-#import "NewUserViewController.h"
+#import "HEALNewUserViewController.h"
 #import "HEALUser.h"
 #import "HEALMainViewController.h"
 
-@interface NewUserViewController ()
+@interface HEALNewUserViewController ()
 {
     NSUserDefaults *defaults;
     NSCharacterSet *notDigits;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation NewUserViewController
+@implementation HEALNewUserViewController
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {

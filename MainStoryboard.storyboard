@@ -9,7 +9,7 @@
         <!--Drunk State View Controller-->
         <scene sceneID="a6j-rc-gSt">
             <objects>
-                <viewController id="bNI-a8-0W6" customClass="DrunkStateViewController" sceneMemberID="viewController">
+                <viewController id="bNI-a8-0W6" customClass="HEALDrunkStateViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gBn-qe-hIX">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -115,7 +115,7 @@
                     <navigationItem key="navigationItem" title="Main View" id="LzM-wj-3Gc">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="oNY-vm-vcK">
                             <connections>
-                                <segue destination="MqT-Dv-oNL" kind="modal" identifier="toSettingsView" id="WdB-ws-YMO"/>
+                                <segue destination="MqT-Dv-oNL" kind="modal" identifier="toSettingsViewController" id="WdB-ws-YMO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -267,7 +267,7 @@
         <!--Logo View Controller - Logo-->
         <scene sceneID="Iry-56-zRA">
             <objects>
-                <viewController title="Logo" id="zsP-YM-Xat" customClass="LogoViewController" sceneMemberID="viewController">
+                <viewController title="Logo" id="zsP-YM-Xat" customClass="HEALLogoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYp-Ve-SwF">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -295,7 +295,7 @@
         <!--New User View Controller-->
         <scene sceneID="bJ2-SP-3HI">
             <objects>
-                <viewController id="JyP-hY-54p" customClass="NewUserViewController" sceneMemberID="viewController">
+                <viewController id="JyP-hY-54p" customClass="HEALNewUserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nkn-F1-CF3">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -391,8 +391,8 @@
         <image name="Logo.jpg" width="685" height="1192"/>
     </resources>
     <classes>
-        <class className="DrunkStateViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DrunkStateViewController.h"/>
+        <class className="HEALDrunkStateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALDrunkStateViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="stateDetails" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="stateLabel" candidateClass="UILabel"/>
@@ -408,6 +408,9 @@
                 <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
+        <class className="HEALLogoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALLogoViewController.h"/>
+        </class>
         <class className="HEALMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALMainViewController.h"/>
             <relationships>
@@ -421,14 +424,8 @@
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="LogoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LogoViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NewUserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewUserViewController.h"/>
+        <class className="HEALNewUserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALNewUserViewController.h"/>
             <relationships>
                 <relationship kind="action" name="doneButton:"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
@@ -436,6 +433,9 @@
                 <relationship kind="outlet" name="sexTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
             </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="UIStoryboardSegue" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>

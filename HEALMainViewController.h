@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DrunkStateViewController.h"
+#import "HEALDrunkStateViewController.h"
 #import "HEALUser.h"
 #import "HEALEditSettingsViewController.h"
 

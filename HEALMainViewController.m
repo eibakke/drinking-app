@@ -141,7 +141,7 @@
 {
     if([segue.identifier isEqualToString:@"toStateViewController"])
     {
-        DrunkStateViewController *controller = [segue destinationViewController];
+        HEALDrunkStateViewController *controller = [segue destinationViewController];
         controller.user = self.user;
     }
     if([segue.identifier isEqualToString:@"toSettingsViewController"])
