@@ -52,6 +52,7 @@
         [self.user setUserWeight:weight];
         [self.user setUserSex:[self.sexTextField text]];
         [self.user setUserName:[self.nameTextField text]];
+        [self performSegueWithIdentifier:@"backToMain" sender:self];
         
         @try {
             [defaults synchronize];
@@ -59,7 +60,7 @@
         @catch (NSException *exception) {
             NSLog(@"Data save failed.");
         }
-        [self performSegueWithIdentifier:@"unwindToMain" sender:self];
+        
     }
 }
 
@@ -113,6 +114,8 @@
     [[self sexTextField] resignFirstResponder];
     [[self weightTextField] resignFirstResponder];
 }
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

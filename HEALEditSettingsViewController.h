@@ -17,4 +17,6 @@
 
 @property (weak, nonatomic) HEALUser *user;
 
+-(IBAction)doneButton:(id)sender;
+
 @end

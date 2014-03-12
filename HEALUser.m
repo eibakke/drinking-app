@@ -68,18 +68,6 @@
     return [timeDate timeIntervalSince1970];
 }
 
-            
-//- (void)setUserSex:(NSString*)sex
-//{
-//    self.userSex = sex;
-//    if([sex isEqualToString:@"F"])
-//    {
-//        userSexMetVal = 0.66;
-//    } else {
-//        userSexMetVal = 0.73;
-//    }
-//}
-
 - (void)setDrinks:(int)drinks
 {
     self.currentNight.drinks = [NSNumber numberWithInt:drinks];
