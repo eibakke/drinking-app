@@ -32,7 +32,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if([self.user getUserBAC] < 0.06)
+    if([self.user.BAC floatValue] < 0.06)
     {
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:@"TipsyInfo.jpg"] drawInRect:self.view.bounds];
@@ -43,7 +43,7 @@
         
         
         
-    } else if(0.06 < [self.user getUserBAC] && [self.user getUserBAC] < 0.2)
+    } else if(0.06 < [self.user.BAC floatValue] && [self.user.BAC floatValue] < 0.2)
     {
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:@"DrunkInfo.jpg"] drawInRect:self.view.bounds];
@@ -52,7 +52,7 @@
         
         self.view.backgroundColor = [UIColor colorWithPatternImage:image];
         
-    } else if(0.2 < [self.user getUserBAC])
+    } else if(0.2 < [self.user.BAC floatValue])
     {
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:@"DangerInfo.jpg"] drawInRect:self.view.bounds];

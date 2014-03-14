@@ -13,18 +13,14 @@
 {
 }
 
-@property(strong, nonatomic) NSString *userSex;
-@property(strong, nonatomic) NSNumber *userWeight;
-@property(strong, nonatomic) NSString *userName;
+@property(strong, nonatomic, setter = setSex:) NSString *sex;
+@property(strong, nonatomic) NSNumber *weight;
+@property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) HEALNight *currentNight;
 
-
--(void)setDrinks:(int)drinks;
--(void)setUserSex:(NSString *)sex;
--(int)getDrinks;
+@property(strong, nonatomic) NSNumber *BAC;
 
 -(void)makeNight:(HEALNight*)night;
--(float)getUserBAC;
 
 -(id)init:(NSString*)userName userSex:(NSString*)userSex userWeight:(NSNumber*)userWeight;
 

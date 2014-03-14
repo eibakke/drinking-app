@@ -12,7 +12,6 @@
 @interface HEALUser (){
     
     float userSexMetVal;
-    float bac;
 }
 
 @end
@@ -29,9 +28,9 @@
     self = [super init];
     
     if (self) {
-        self.userName = name;
-        self.userWeight = weight;
-        self.userSex = sex;
+        self.name = name;
+        self.weight = weight;
+        self.sex = sex;
         self.currentNight = [[HEALNight alloc] init];
         if([sex isEqualToString:@"F"])
         {
@@ -43,13 +42,12 @@
     return self;
 }
 
--(float)getUserBAC
+-(NSNumber*)BAC
 {
     NSDate *cTime = [NSDate date];
     
-    bac = (([self.currentNight.drinks intValue] * 3.084) / (userSexMetVal * [self.userWeight floatValue])) - (0.15 * ([self getTimeSec:cTime] - [self.currentNight.startTime floatValue]));
-    
-    return(MAX(0, bac));
+    _BAC = [NSNumber numberWithDouble:(([self.currentNight.drinks intValue] * 3.084) / (userSexMetVal * [self.weight floatValue])) - (0.15 * ([self getTimeSec:cTime] - [self.currentNight.startTime floatValue]))];
+    return(MAX([NSNumber numberWithInt:0], _BAC));
     
 }
 
@@ -58,16 +56,16 @@
     return [date timeIntervalSince1970];
 }
 
-- (void)setDrinks:(int)drinks
+-(void)setSex:(NSString*)sex
 {
-    self.currentNight.drinks = [NSNumber numberWithInt:drinks];
+    _sex = sex;
+    if([sex isEqualToString:@"F"])
+    {
+        userSexMetVal = 0.66;
+    } else {
+        userSexMetVal = 0.73;
+    }
 }
-
-- (int)getDrinks
-{
-    return [self.currentNight.drinks intValue];
-}
-
 
 
 @end
