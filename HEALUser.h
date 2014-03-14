@@ -13,7 +13,7 @@
 {
 }
 
-@property(strong, nonatomic, setter = setSex:) NSString *sex;
+@property(strong, nonatomic) NSString *sex;
 @property(strong, nonatomic) NSNumber *weight;
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) HEALNight *currentNight;

@@ -56,7 +56,7 @@
     return [date timeIntervalSince1970];
 }
 
--(void)setSex:(NSString*)sex
+-(void)sex:(NSString*)sex
 {
     _sex = sex;
     if([sex isEqualToString:@"F"])
