@@ -152,4 +152,29 @@
     
 }
 
+
+
+
+-(IBAction)sendSMS:(id)sender{
+    
+    MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
+    
+    [textComposer setMessageComposeDelegate:self];
+    
+    if ([MFMessageComposeViewController canSendText]){ //if text messages can be sent
+        [textComposer setRecipients:[NSArray arrayWithObjects: nil]]; //allows user to choose number to send text to (replace nil by number to send it to a predetermined number)
+        [textComposer setBody:@"I am drunk! HELP ME!!!"];
+        [self presentViewController:textComposer animated:YES completion:NULL];
+         
+    } else { //simulator will not allow text messages to be sent
+        NSLog(@"Cannot Open Text.");
+    }
+    
+}
+
+//for dismissing text messaging in app if we cancel or send it
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 @end

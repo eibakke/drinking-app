@@ -10,9 +10,10 @@
 #import "HEALDrunkStateViewController.h"
 #import "HEALUser.h"
 #import "HEALEditSettingsViewController.h"
+#import "MessageUI/MessageUI.h"
 
 
-@interface HEALMainViewController : UIViewController {
+@interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate> {
     
     IBOutlet UIStepper *drinkStepper;
     IBOutlet UILabel *drinkLabel;
@@ -23,10 +24,12 @@
 
 @property (strong, nonatomic) HEALUser *user;
 
-- (IBAction)valueChanged:(UIStepper *)sender;
+-(IBAction)valueChanged:(UIStepper *)sender;
 
-- (IBAction)addNight:(UIButton *)sender;
+-(IBAction)addNight:(UIButton *)sender;
 
 -(IBAction)unwindToMain:(UIStoryboardSegue *)segue;
+
+-(IBAction)sendSMS:(id)sender;
 
 @end
