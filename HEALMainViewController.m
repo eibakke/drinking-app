@@ -28,7 +28,7 @@
     NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
     [dFormatter setDateFormat:@"hh:mm a"];
     NSString *t = [dFormatter stringFromDate: date];
-    [timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
+    [_timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
 }
 
 - (IBAction)valueChanged:(UIStepper *)sender
@@ -53,13 +53,13 @@
     timer = nil;    
     [self.user.currentNight reset];
     [self updateLabels];
-    drinkStepper.value = 0;
-    [timeLabel setText:@"Ready to start? Press the plus below!"];
+    self.drinkStepper.value = 0;
+    [self.timeLabel setText:@"Ready to start? Press the plus below!"];
 }
 
 - (void)countUp
 {
-    [bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
+    [self.bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
@@ -77,36 +77,36 @@
 
 - (void) updateLabels
 {
-    [drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
+    [self.drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
     [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
     [self countUp];
     
     if (self.user.BAC < 0.02) {
-        [stateButton setTitle:@"Sober" forState:UIControlStateNormal];
+        [self.stateButton setTitle:@"Sober" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Sober.jpg"]];
         
         
     } else if(0.02 < self.user.BAC && self.user.BAC < 0.06)
     {
-        [stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
+        [self.stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Tipsy.jpg"]];
         
 
     } else if (0.06 < self.user.BAC && self.user.BAC < 0.2)
     {
-        [stateButton setTitle:@"Drunk" forState:UIControlStateNormal];
+        [self.stateButton setTitle:@"Drunk" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Drunk.jpg"]];
         
         
     } else if (0.2 < self.user.BAC)
     {
-        [stateButton setTitle:@"Danger" forState:UIControlStateNormal];
+        [self.stateButton setTitle:@"Danger" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Danger.jpg"]];
     }
     
-    if (drinkStepper.value == 100)
+    if (self.drinkStepper.value == 100)
     {
-        [stateButton setTitle:@"Dead" forState:UIControlStateNormal];
+        [self.stateButton setTitle:@"Dead" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Dead.jpg"]];
     }
 }

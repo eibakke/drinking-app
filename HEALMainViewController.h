@@ -14,17 +14,18 @@
 
 
 @interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate> {
-    
-    IBOutlet UIStepper *drinkStepper;
-    IBOutlet UILabel *drinkLabel;
-    IBOutlet UILabel *bacLabel;
-    IBOutlet UILabel *timeLabel;
-    __weak IBOutlet UIButton *stateButton;
-}
 
+}
 @property (strong, nonatomic) HEALUser *user;
+@property (weak, nonatomic) IBOutlet UIStepper *drinkStepper;
+@property (weak, nonatomic) IBOutlet UILabel *drinkLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bacLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *stateButton;
+
 
 -(IBAction)valueChanged:(UIStepper *)sender;
+
 
 -(IBAction)addNight:(UIButton *)sender;
 
