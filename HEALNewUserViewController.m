@@ -86,7 +86,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [_maleRadioButton setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+        [_maleRadioButton setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateSelected];
     }
     return self;
 }
@@ -105,6 +106,7 @@
     
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
     [self.view addGestureRecognizer:tapBackground];
+    
 }
 
 

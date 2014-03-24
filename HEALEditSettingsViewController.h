@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HEALUser.h"
+#import "RadioButton.h"
 
 @interface HEALEditSettingsViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 

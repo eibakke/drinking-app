@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
@@ -391,6 +391,35 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTn-si-EZ3" customClass="RadioButton">
+                                <rect key="frame" x="72" y="320" width="76" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="dKE-s8-foh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Male" image="unchecked.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="groupButtons" destination="hlG-c2-wvX" id="1b8-uw-0NQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlG-c2-wvX" customClass="RadioButton">
+                                <rect key="frame" x="180" y="320" width="94" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="p9t-2b-OBG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Female" image="unchecked.png">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -398,13 +427,17 @@
                             <constraint firstItem="bOs-YU-Za9" firstAttribute="top" secondItem="nkn-F1-CF3" secondAttribute="top" constant="100" id="8dt-kR-uaN"/>
                             <constraint firstItem="mz3-Sv-IQX" firstAttribute="centerY" secondItem="bOs-YU-Za9" secondAttribute="centerY" type="default" id="F0u-Kq-V0x"/>
                             <constraint firstItem="nxr-39-fmt" firstAttribute="leading" secondItem="bOs-YU-Za9" secondAttribute="leading" type="default" id="FZI-xg-JeI"/>
+                            <constraint firstItem="hlG-c2-wvX" firstAttribute="baseline" secondItem="oTn-si-EZ3" secondAttribute="baseline" type="user" id="HKU-1a-VbX"/>
+                            <constraint firstAttribute="bottom" secondItem="oTn-si-EZ3" secondAttribute="bottom" constant="160" id="Qwt-yw-SLw"/>
                             <constraint firstItem="4kh-RD-9Ea" firstAttribute="top" secondItem="nkn-F1-CF3" secondAttribute="top" constant="172" id="RHp-KD-cub"/>
                             <constraint firstItem="nxr-39-fmt" firstAttribute="trailing" secondItem="jXz-PS-xfd" secondAttribute="trailing" type="default" id="UcT-WC-hBW"/>
                             <constraint firstItem="mz3-Sv-IQX" firstAttribute="leading" secondItem="nkn-F1-CF3" secondAttribute="leading" constant="37" id="XPJ-qx-0kf"/>
                             <constraint firstItem="CA6-rf-O5R" firstAttribute="leading" secondItem="4kh-RD-9Ea" secondAttribute="leading" type="default" id="aCt-bp-9k2"/>
                             <constraint firstItem="jXz-PS-xfd" firstAttribute="centerY" secondItem="nkn-F1-CF3" secondAttribute="centerY" type="default" id="bfH-1w-gqK"/>
                             <constraint firstItem="jXz-PS-xfd" firstAttribute="baseline" secondItem="CA6-rf-O5R" secondAttribute="baseline" type="default" id="h9h-Nc-euo"/>
+                            <constraint firstItem="oTn-si-EZ3" firstAttribute="leading" secondItem="nkn-F1-CF3" secondAttribute="leading" constant="72" id="o8G-ly-RUN"/>
                             <constraint firstItem="jXz-PS-xfd" firstAttribute="leading" secondItem="nxr-39-fmt" secondAttribute="leading" type="default" id="qHg-ik-3h5"/>
+                            <constraint firstAttribute="trailing" secondItem="hlG-c2-wvX" secondAttribute="trailing" constant="46" id="qU7-a0-dbk"/>
                             <constraint firstItem="nxr-39-fmt" firstAttribute="trailing" secondItem="bOs-YU-Za9" secondAttribute="trailing" type="default" id="rfR-5A-Voo"/>
                             <constraint firstItem="bOs-YU-Za9" firstAttribute="leading" secondItem="nkn-F1-CF3" secondAttribute="leading" constant="144" id="tQ6-Uz-kun"/>
                             <constraint firstItem="nxr-39-fmt" firstAttribute="top" secondItem="4kh-RD-9Ea" secondAttribute="top" type="default" id="wkp-gq-8Ao"/>
@@ -419,6 +452,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="maleRadioButton" destination="HKU-1a-VbX" id="aoc-c1-Unv"/>
                         <outlet property="nameTextField" destination="bOs-YU-Za9" id="Jn3-01-CvR"/>
                         <outlet property="sexTextField" destination="jXz-PS-xfd" id="mIx-YT-mJW"/>
                         <outlet property="weightTextField" destination="nxr-39-fmt" id="RfS-Hz-eKm"/>
@@ -432,6 +466,7 @@
     </scenes>
     <resources>
         <image name="Logo.jpg" width="685" height="1192"/>
+        <image name="unchecked.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -439,6 +474,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vbM-9D-FZ7"/>
+        <segue reference="TZu-0B-IHY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RadioButton.h"
 
 @interface HEALNewUserViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *weightTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet RadioButton *maleRadioButton;
 
 @end
