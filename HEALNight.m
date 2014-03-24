@@ -20,10 +20,10 @@
     return self;
 }
 
--(void)setStartTime
+-(void)resetStartTime
 {
     NSDate *myDate = [[NSDate alloc] init];
-    self.startTime = [NSNumber numberWithFloat:[self getTimeSec:myDate]];
+    _startTime = [self getTimeSec:myDate];
 }
 
 -(float)getTimeSec:(NSDate*)date
@@ -34,6 +34,6 @@
 -(void)reset
 {
     self.drinks = 0;
-    self.startTime = nil;
+    self.startTime = 0;
 }
 @end

@@ -40,7 +40,6 @@
 		A855254818CEAB7900567BDA /* DangerInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254118CEAB7900567BDA /* DangerInfo.jpg */; };
 		A855254918CEAB7900567BDA /* Drunk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254218CEAB7900567BDA /* Drunk.jpg */; };
 		A855254A18CEAB7900567BDA /* DrunkInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254318CEAB7900567BDA /* DrunkInfo.jpg */; };
-		A855254B18CEAB7900567BDA /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254418CEAB7900567BDA /* Logo.jpg */; };
 		A855254C18CEAB7900567BDA /* Tipsy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254518CEAB7900567BDA /* Tipsy.jpg */; };
 		A855254D18CEAB7900567BDA /* TipsyInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254618CEAB7900567BDA /* TipsyInfo.jpg */; };
 /* End PBXBuildFile section */
@@ -304,7 +303,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HEAL;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Halealei;
 			};
 			buildConfigurationList = 8956FC4D18BBD6D70018F32B /* Build configuration list for PBXProject "drinkingApp" */;
@@ -335,7 +334,6 @@
 				8956FC6A18BBD6D70018F32B /* Default.png in Resources */,
 				8956FC6C18BBD6D70018F32B /* Default@2x.png in Resources */,
 				A855254A18CEAB7900567BDA /* DrunkInfo.jpg in Resources */,
-				A855254B18CEAB7900567BDA /* Logo.jpg in Resources */,
 				A855254D18CEAB7900567BDA /* TipsyInfo.jpg in Resources */,
 				6D0B7B9518C45B6E00419E78 /* background.jpg in Resources */,
 				8956FC6E18BBD6D70018F32B /* Default-568h@2x.png in Resources */,

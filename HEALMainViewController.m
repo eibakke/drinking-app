@@ -40,9 +40,9 @@
     } else {
         if (timer == nil) {
             [self startTimer];
-            [self.user.currentNight setStartTime];
+            [self.user.currentNight resetStartTime];
         }
-        self.user.currentNight.drinks = [NSNumber numberWithDouble:[sender value]];
+        self.user.currentNight.drinks = [sender value];
         [self updateLabels];
     }
 }
@@ -77,8 +77,8 @@
 
 - (void) updateLabels
 {
-    [drinkLabel setText:[NSString stringWithFormat:@"%d", [self.user.currentNight.drinks intValue]]];
-    [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:[self.user.currentNight.startTime doubleValue]]];
+    [drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
+    [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
     [self countUp];
     
     if ([self.user.BAC floatValue] < 0.02) {

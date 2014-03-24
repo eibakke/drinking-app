@@ -46,7 +46,7 @@
 {
     NSDate *cTime = [NSDate date];
     
-    _BAC = [NSNumber numberWithDouble:(([self.currentNight.drinks intValue] * 3.084) / (userSexMetVal * [self.weight floatValue])) - (0.15 * ([self getTimeSec:cTime] - [self.currentNight.startTime floatValue]))];
+    _BAC = [NSNumber numberWithDouble:((self.currentNight.drinks * 3.084) / (userSexMetVal * [self.weight floatValue])) - (0.15 * ([self getTimeSec:cTime] - self.currentNight.startTime))];
     return(MAX([NSNumber numberWithInt:0], _BAC));
     
 }

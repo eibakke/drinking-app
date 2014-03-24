@@ -11,10 +11,10 @@
 @interface HEALNight : NSObject {
 }
 
-@property(strong, nonatomic) NSNumber *drinks;
-@property(strong, nonatomic) NSNumber *startTime;
+@property(nonatomic) int drinks;
+@property(nonatomic) double startTime;
 
--(void) setStartTime;
 -(void) reset;
+-(void) resetStartTime;
 
 @end
