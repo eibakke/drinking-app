@@ -43,15 +43,22 @@
     
     // If user input is in order store the textfield values and unwind back to the main view
     if (([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location == NSNotFound) && ([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])) {
-        if (self.userInfoUpdated && (self.user.currentNight.drinks != 0)) {
+        
+        if ([self userInfoUpdated] && (self.user.currentNight.drinks != 0)) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
                                                             message:@"Changing your data will start a new night."
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
                                                   otherButtonTitles:@"OK", nil];
             [alert show];
-        } else if(self.userInfoUpdated && (self.user.currentNight.drinks == 0)) {
+        }
+        
+        else if([self userInfoUpdated] && (self.user.currentNight.drinks == 0)) {
             [self updateUser];
+            [self performSegueWithIdentifier:@"backToMain" sender:self];
+        }
+        
+        else {
             [self performSegueWithIdentifier:@"backToMain" sender:self];
         }
         
@@ -62,7 +69,7 @@
     int currWeight = self.user.weight;
     NSString *currSex = self.user.sex;
     
-    if ((currWeight == [[self.weightTextField text] intValue]) && (currSex == [self.sexTextField text])) {
+    if ((currWeight == [[self.weightTextField text] intValue]) && ([currSex isEqualToString:[self.sexTextField text]])) {
         return NO;
     } else {
         return YES;
