@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *weightTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+
 @property (weak, nonatomic) IBOutlet RadioButton *maleRadioButton;
+-(IBAction)sex:(id)sender; //new method for setting sex
 
 @end

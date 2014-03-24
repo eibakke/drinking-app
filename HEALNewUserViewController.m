@@ -153,4 +153,14 @@
 }
 
 
+/*
+
+//method for setting sex
+-(IBAction)sex:(id)sender{
+    
+    _sexTextField.text = _maleRadioButton.textInputContextIdentifier;
+    
+}
+*/
+
 @end
