@@ -1,0 +1,36 @@
+//
+//  HEALMainViewController.h
+//  drinkingApp
+//
+//  Created by Eivind Bakke on 2/26/14.
+//  Copyright (c) 2014 Halealei. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "HEALDrunkStateViewController.h"
+#import "HEALUser.h"
+#import "HEALEditSettingsViewController.h"
+#import "MessageUI/MessageUI.h"
+
+
+@interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate> {
+
+}
+@property (strong, nonatomic) HEALUser *user;
+@property (weak, nonatomic) IBOutlet UIStepper *drinkStepper;
+@property (weak, nonatomic) IBOutlet UILabel *drinkLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bacLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *stateButton;
+
+
+-(IBAction)valueChanged:(UIStepper *)sender;
+
+
+-(IBAction)addNight:(UIButton *)sender;
+
+-(IBAction)unwindToMain:(UIStoryboardSegue *)segue;
+
+-(IBAction)sendSMS:(id)sender;
+
+@end
