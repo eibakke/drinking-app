@@ -43,25 +43,49 @@
     
     // If user input is in order store the textfield values and unwind back to the main view
     if (([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location == NSNotFound) && ([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])) {
-        
-        NSNumber *weight = [NSNumber numberWithDouble:[[self.weightTextField text] doubleValue]];
-        [defaults setObject:weight forKey:@"userWeight"];
-        [defaults setObject:[self.sexTextField text] forKey:@"userSex"];
-        [defaults setObject:[self.nameTextField text] forKey:@"userName"];
-        
-        self.user.weight = [[self.weightTextField text] intValue];
-        self.user.sex = [self.sexTextField text];
-        self.user.name = [self.nameTextField text];
-        [self performSegueWithIdentifier:@"backToMain" sender:self];
-        
-        @try {
-            [defaults synchronize];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"Data save failed.");
+        if (self.userInfoUpdated && (self.user.currentNight.drinks != 0)) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
+                                                            message:@"Changing your data will start a new night."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"OK"];
+            [alert show];
         }
         
     }
+}
+
+-(BOOL)userInfoUpdated {
+    int currWeight = self.user.weight;
+    NSString *currSex = self.user.sex;
+    
+    if ((currWeight == [[self.weightTextField text] intValue]) && (currSex == [self.sexTextField text])) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+-(void)updateUser {
+    
+    NSNumber *weight = [NSNumber numberWithDouble:[[self.weightTextField text] doubleValue]];
+    [defaults setObject:weight forKey:@"userWeight"];
+    [defaults setObject:[self.sexTextField text] forKey:@"userSex"];
+    [defaults setObject:[self.nameTextField text] forKey:@"userName"];
+    
+    self.user.weight = [[self.weightTextField text] intValue];
+    self.user.sex = [self.sexTextField text];
+    self.user.name = [self.nameTextField text];
+    [self performSegueWithIdentifier:@"backToMain" sender:self];
+    
+    @try {
+        [defaults synchronize];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Data save failed.");
+    }
+    
+    
 }
 
 -(void)alertUser:(NSString*) alertMessage{
