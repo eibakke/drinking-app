@@ -59,7 +59,7 @@
 
 - (void)countUp
 {
-    [bacLabel setText:[NSString stringWithFormat:@"%f", [self.user.BAC floatValue]]];
+    [bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
 }
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
@@ -81,24 +81,24 @@
     [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
     [self countUp];
     
-    if ([self.user.BAC floatValue] < 0.02) {
+    if (self.user.BAC < 0.02) {
         [stateButton setTitle:@"Sober" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Sober.jpg"]];
         
         
-    } else if(0.02 < [self.user.BAC floatValue] && [self.user.BAC floatValue] < 0.06)
+    } else if(0.02 < self.user.BAC && self.user.BAC < 0.06)
     {
         [stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Tipsy.jpg"]];
         
 
-    } else if (0.06 < [self.user.BAC floatValue] && [self.user.BAC floatValue] < 0.2)
+    } else if (0.06 < self.user.BAC && self.user.BAC < 0.2)
     {
         [stateButton setTitle:@"Drunk" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Drunk.jpg"]];
         
         
-    } else if (0.2 < [self.user.BAC floatValue])
+    } else if (0.2 < self.user.BAC)
     {
         [stateButton setTitle:@"Danger" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Danger.jpg"]];

@@ -23,7 +23,7 @@
     self.currentNight = night;
 }
 
--(id)init:(NSString*)name userSex:(NSString*)sex userWeight:(NSNumber*)weight
+-(id)init:(NSString*)name userSex:(NSString*)sex userWeight:(int)weight
 {
     self = [super init];
     
@@ -42,12 +42,17 @@
     return self;
 }
 
--(NSNumber*)BAC
+-(float)BAC
 {
     NSDate *cTime = [NSDate date];
     
-    _BAC = [NSNumber numberWithDouble:((self.currentNight.drinks * 3.084) / (userSexMetVal * [self.weight floatValue])) - (0.15 * ([self getTimeSec:cTime] - self.currentNight.startTime))];
-    return(MAX([NSNumber numberWithInt:0], _BAC));
+    double timeDrinking = [self getTimeSec:cTime] - self.currentNight.startTime;
+    float drinkFactor = self.currentNight.drinks * 3.084;
+    float userFactor = userSexMetVal * self.weight;
+    
+    _BAC = (drinkFactor / userFactor) - (0.15 * timeDrinking);
+    
+    return(MAX(0, _BAC));
     
 }
 

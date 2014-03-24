@@ -14,14 +14,13 @@
 }
 
 @property(strong, nonatomic) NSString *sex;
-@property(strong, nonatomic) NSNumber *weight;
+@property(nonatomic) int weight;
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) HEALNight *currentNight;
-
-@property(strong, nonatomic) NSNumber *BAC;
+@property(nonatomic) float BAC;
 
 -(void)makeNight:(HEALNight*)night;
 
--(id)init:(NSString*)userName userSex:(NSString*)userSex userWeight:(NSNumber*)userWeight;
+-(id)init:(NSString*)userName userSex:(NSString*)userSex userWeight:(int)userWeight;
 
 @end

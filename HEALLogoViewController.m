@@ -23,7 +23,7 @@
     if ([defaults objectForKey:@"userSex"] == nil) {
         [self performSegueWithIdentifier:@"newUserSegue" sender:self];
     } else {
-        newUser = [[HEALUser alloc] init:[defaults objectForKey:@"userName"] userSex:[defaults objectForKey:@"userSex"] userWeight:[defaults objectForKey:@"userWeight"]];
+        newUser = [[HEALUser alloc] init:[defaults objectForKey:@"userName"] userSex:[defaults objectForKey:@"userSex"] userWeight:[[defaults objectForKey:@"userWeight"]intValue]];
 
         [self performSegueWithIdentifier:@"mainSegue" sender:self];
     }

@@ -49,7 +49,7 @@
         [defaults setObject:[self.sexTextField text] forKey:@"userSex"];
         [defaults setObject:[self.nameTextField text] forKey:@"userName"];
         
-        self.user.weight = weight;
+        self.user.weight = [[self.weightTextField text] intValue];
         self.user.sex = [self.sexTextField text];
         self.user.name = [self.nameTextField text];
         [self performSegueWithIdentifier:@"backToMain" sender:self];

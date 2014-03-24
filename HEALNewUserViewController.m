@@ -51,7 +51,7 @@
         [defaults setObject:[self.sexTextField text] forKey:@"userSex"];
         [defaults setObject:[self.nameTextField text] forKey:@"userName"];
         
-        newUser = [[HEALUser alloc] init:[self.nameTextField text] userSex:[self.sexTextField text] userWeight:weight];
+        newUser = [[HEALUser alloc] init:[self.nameTextField text] userSex:[self.sexTextField text] userWeight:[[self.weightTextField text] intValue]];
         
         @try {
             [defaults synchronize];
