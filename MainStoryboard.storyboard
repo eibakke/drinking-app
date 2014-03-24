@@ -483,6 +483,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALNewUserViewController.h"/>
             <relationships>
                 <relationship kind="action" name="doneButton:"/>
+                <relationship kind="action" name="sex:"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="maleRadioButton" candidateClass="RadioButton"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>

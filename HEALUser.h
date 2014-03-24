@@ -11,8 +11,17 @@
 
 @interface HEALUser : NSObject
 {
+ 
+   
 }
 
+//typedef enum
+//{
+//    MALE,
+//    FEMALE
+//}sexes;
+//
+//@property(nonatomic) sexes sex;
 @property(strong, nonatomic) NSString *sex;
 @property(nonatomic) int weight;
 @property(strong, nonatomic) NSString *name;
@@ -22,5 +31,7 @@
 -(void)makeNight:(HEALNight*)night;
 
 -(id)init:(NSString*)userName userSex:(NSString*)userSex userWeight:(int)userWeight;
+
+
 
 @end
