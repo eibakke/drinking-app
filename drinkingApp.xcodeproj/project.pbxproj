@@ -34,6 +34,11 @@
 		89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D32C5318BE759C003920FE /* MainStoryboard.storyboard */; };
 		89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */; };
 		89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5918BE7B54003920FE /* HEALMainViewController.m */; };
+		89F840D118DFFB1B0048AD95 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F840D018DFFB1B0048AD95 /* RadioButton.m */; };
+		89F840D718DFFCDC0048AD95 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F840D318DFFCDC0048AD95 /* checked.png */; };
+		89F840D818DFFCDC0048AD95 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F840D418DFFCDC0048AD95 /* checked@2x.png */; };
+		89F840D918DFFCDC0048AD95 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F840D518DFFCDC0048AD95 /* unchecked.png */; };
+		89F840DA18DFFCDC0048AD95 /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F840D618DFFCDC0048AD95 /* unchecked@2x.png */; };
 		89F89D3518C7B37E00143AD4 /* HEALNight.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F89D3418C7B37E00143AD4 /* HEALNight.m */; };
 		A855253E18CEA23E00567BDA /* Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855253D18CEA23E00567BDA /* Logo.jpg */; };
 		A855254718CEAB7900567BDA /* Danger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254018CEAB7900567BDA /* Danger.jpg */; };
@@ -92,6 +97,12 @@
 		89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALEditSettingsViewController.m; path = ../HEALEditSettingsViewController.m; sourceTree = "<group>"; };
 		89D32C5818BE7B54003920FE /* HEALMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALMainViewController.h; path = ../HEALMainViewController.h; sourceTree = "<group>"; };
 		89D32C5918BE7B54003920FE /* HEALMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALMainViewController.m; path = ../HEALMainViewController.m; sourceTree = "<group>"; };
+		89F840CF18DFFB1B0048AD95 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = SOURCE_ROOT; };
+		89F840D018DFFB1B0048AD95 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = SOURCE_ROOT; };
+		89F840D318DFFCDC0048AD95 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		89F840D418DFFCDC0048AD95 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
+		89F840D518DFFCDC0048AD95 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		89F840D618DFFCDC0048AD95 /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
 		89F89D3318C7B37E00143AD4 /* HEALNight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALNight.h; path = ../HEALNight.h; sourceTree = "<group>"; };
 		89F89D3418C7B37E00143AD4 /* HEALNight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALNight.m; path = ../HEALNight.m; sourceTree = "<group>"; };
 		A855253D18CEA23E00567BDA /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
@@ -195,6 +206,7 @@
 		8956FC5D18BBD6D70018F32B /* drinkingApp */ = {
 			isa = PBXGroup;
 			children = (
+				89F840CB18DFFA6C0048AD95 /* RadioButton */,
 				890792E418D0FDDA001EFA85 /* Model */,
 				A855253F18CEAB7900567BDA /* GraphicsResources */,
 				890792E518D0FE12001EFA85 /* ViewControllers */,
@@ -239,9 +251,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		89F840CB18DFFA6C0048AD95 /* RadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				89F840CF18DFFB1B0048AD95 /* RadioButton.h */,
+				89F840D018DFFB1B0048AD95 /* RadioButton.m */,
+			);
+			name = RadioButton;
+			sourceTree = "<group>";
+		};
+		89F840D218DFFCDC0048AD95 /* radio-res-ios */ = {
+			isa = PBXGroup;
+			children = (
+				89F840D318DFFCDC0048AD95 /* checked.png */,
+				89F840D418DFFCDC0048AD95 /* checked@2x.png */,
+				89F840D518DFFCDC0048AD95 /* unchecked.png */,
+				89F840D618DFFCDC0048AD95 /* unchecked@2x.png */,
+			);
+			name = "radio-res-ios";
+			path = "UI/radio-res-ios";
+			sourceTree = SOURCE_ROOT;
+		};
 		A855253F18CEAB7900567BDA /* GraphicsResources */ = {
 			isa = PBXGroup;
 			children = (
+				89F840D218DFFCDC0048AD95 /* radio-res-ios */,
 				A855253D18CEA23E00567BDA /* Logo.jpg */,
 				6D0B7B9418C45B6E00419E78 /* background.jpg */,
 				891FEB2F18C7D97D00780C8A /* beer.jpg */,
@@ -330,11 +364,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F840D718DFFCDC0048AD95 /* checked.png in Resources */,
 				A855253E18CEA23E00567BDA /* Logo.jpg in Resources */,
+				89F840D818DFFCDC0048AD95 /* checked@2x.png in Resources */,
+				89F840DA18DFFCDC0048AD95 /* unchecked@2x.png in Resources */,
 				8956FC6218BBD6D70018F32B /* InfoPlist.strings in Resources */,
 				8956FC6A18BBD6D70018F32B /* Default.png in Resources */,
 				8956FC6C18BBD6D70018F32B /* Default@2x.png in Resources */,
 				A855254A18CEAB7900567BDA /* DrunkInfo.jpg in Resources */,
+				89F840D918DFFCDC0048AD95 /* unchecked.png in Resources */,
 				A855254D18CEAB7900567BDA /* TipsyInfo.jpg in Resources */,
 				6D0B7B9518C45B6E00419E78 /* background.jpg in Resources */,
 				8956FC6E18BBD6D70018F32B /* Default-568h@2x.png in Resources */,
@@ -380,6 +418,7 @@
 			files = (
 				8956FC6418BBD6D70018F32B /* main.m in Sources */,
 				8956FC6818BBD6D70018F32B /* HEALAppDelegate.m in Sources */,
+				89F840D118DFFB1B0048AD95 /* RadioButton.m in Sources */,
 				8956FC7118BBD6D70018F32B /* drinkingApp.xcdatamodeld in Sources */,
 				89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */,
 				89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */,

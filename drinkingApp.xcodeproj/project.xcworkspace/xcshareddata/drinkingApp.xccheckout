@@ -12,6 +12,8 @@
 	<dict>
 		<key>75E6E1E8-3A83-4A07-AD23-D634B40E9309</key>
 		<string>git://github.com/eibakke/drinking-app.git</string>
+		<key>951BFEE7-2EDE-4E40-87B9-725468B13B83</key>
+		<string>https://github.com/onegray/RadioButton-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>drinkingApp.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>75E6E1E8-3A83-4A07-AD23-D634B40E9309</key>
 		<string>../..</string>
+		<key>951BFEE7-2EDE-4E40-87B9-725468B13B83</key>
+		<string>../../../Desktop/RadioButton-ios</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>git://github.com/eibakke/drinking-app.git</string>
@@ -35,6 +39,14 @@
 			<string>75E6E1E8-3A83-4A07-AD23-D634B40E9309</string>
 			<key>IDESourceControlWCCName</key>
 			<string>drinking-app</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>951BFEE7-2EDE-4E40-87B9-725468B13B83</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RadioButton-ios</string>
 		</dict>
 	</array>
 </dict>
