@@ -17,8 +17,12 @@
 
 @implementation HEALMainViewController
 
-- (void)startTimer
+- (void)resetTimer
 {
+    if (timer != nil) {
+        [timer invalidate];
+        timer = nil;
+    }
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
 }
 
@@ -28,7 +32,7 @@
     NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
     [dFormatter setDateFormat:@"hh:mm a"];
     NSString *t = [dFormatter stringFromDate: date];
-    [_timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
+    [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
 }
 
 - (IBAction)valueChanged:(UIStepper *)sender
@@ -38,8 +42,8 @@
         [self alertUser:@"Please enter weight and sex in settings."];
         sender.value = 0;
     } else {
-        if (timer == nil) {
-            [self startTimer];
+        if (self.user.currentNight.drinks == 0) {
+            [self resetTimer];
             [self.user.currentNight resetStartTime];
         }
         self.user.currentNight.drinks = [sender value];
@@ -47,13 +51,11 @@
     }
 }
 
-- (IBAction)addNight:(UIButton *)sender
+- (IBAction)newNight:(UIButton *)sender
 {
-    [timer invalidate];
-    timer = nil;    
+    [self resetTimer];
     [self.user.currentNight reset];
     [self updateLabels];
-    self.drinkStepper.value = 0;
     [self.timeLabel setText:@"Ready to start? Press the plus below!"];
 }
 
@@ -64,7 +66,7 @@
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
-    
+    [self updateLabels];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -78,6 +80,7 @@
 
 - (void) updateLabels
 {
+    self.drinkStepper.value = self.user.currentNight.drinks;
     [self.drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
     [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
     [self countUp];
@@ -92,7 +95,7 @@
         [self.stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
         //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Tipsy.jpg"]];
         
-
+        
     } else if (0.06 < self.user.BAC && self.user.BAC < 0.2)
     {
         [self.stateButton setTitle:@"Drunk" forState:UIControlStateNormal];
@@ -166,7 +169,7 @@
         [textComposer setRecipients:[NSArray arrayWithObjects: nil]]; //allows user to choose number to send text to (replace nil by number to send it to a predetermined number)
         [textComposer setBody:@"I am drunk! HELP ME!!!"];
         [self presentViewController:textComposer animated:YES completion:NULL];
-         
+        
     } else { //simulator will not allow text messages to be sent
         NSLog(@"Cannot Open Text.");
     }

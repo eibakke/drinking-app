@@ -303,6 +303,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HEAL;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Halealei;
 			};

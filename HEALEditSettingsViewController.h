@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HEALUser.h"
 
-@interface HEALEditSettingsViewController : UIViewController <UITextFieldDelegate>
+@interface HEALEditSettingsViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *weightTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sexTextField;

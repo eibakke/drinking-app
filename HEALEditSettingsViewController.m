@@ -44,12 +44,15 @@
     // If user input is in order store the textfield values and unwind back to the main view
     if (([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location == NSNotFound) && ([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])) {
         if (self.userInfoUpdated && (self.user.currentNight.drinks != 0)) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
                                                             message:@"Changing your data will start a new night."
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"OK"];
+                                                  otherButtonTitles:@"OK", nil];
             [alert show];
+        } else if(self.userInfoUpdated && (self.user.currentNight.drinks == 0)) {
+            [self updateUser];
+            [self performSegueWithIdentifier:@"backToMain" sender:self];
         }
         
     }
@@ -76,7 +79,6 @@
     self.user.weight = [[self.weightTextField text] intValue];
     self.user.sex = [self.sexTextField text];
     self.user.name = [self.nameTextField text];
-    [self performSegueWithIdentifier:@"backToMain" sender:self];
     
     @try {
         [defaults synchronize];
@@ -88,7 +90,8 @@
     
 }
 
--(void)alertUser:(NSString*) alertMessage{
+-(void)alertUser:(NSString*) alertMessage
+{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
                                                     message:alertMessage
                                                    delegate:nil
@@ -96,6 +99,17 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
+
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self updateUser];
+        [self.user.currentNight reset];
+        [self performSegueWithIdentifier:@"backToMain" sender:self];
+    }
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

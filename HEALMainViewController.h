@@ -14,7 +14,7 @@
 
 
 @interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate> {
-
+    
 }
 @property (strong, nonatomic) HEALUser *user;
 @property (weak, nonatomic) IBOutlet UIStepper *drinkStepper;
@@ -27,7 +27,7 @@
 -(IBAction)valueChanged:(UIStepper *)sender;
 
 
--(IBAction)addNight:(UIButton *)sender;
+-(IBAction)newNight:(UIButton *)sender;
 
 -(IBAction)unwindToMain:(UIStoryboardSegue *)segue;
 
