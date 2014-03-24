@@ -22,28 +22,14 @@
 
 @implementation HEALEditSettingsViewController
 
-// To get the keyboard to collapse when return is pressed
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    return [textField resignFirstResponder];
-}
+
 
 // Called when the doneButton is pressed
 - (IBAction)doneButton:(id)sender{
     
-    defaults = [NSUserDefaults standardUserDefaults];
-    notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
-    
-    // Check user input and pop up alerts with directions if the user input is invalid
-    if (([[self.weightTextField text] isEqualToString:@""]) || ([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location != NSNotFound)) {
-        [self alertUser:@"Please enter a whole number for weight in lbs."];
-    } else if(!([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])){
-        [self alertUser:@"Please enter F or M for sex."];
-    }
-    
-    // If user input is in order store the textfield values and unwind back to the main view
-    if (([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location == NSNotFound) && ([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])) {
+    if ([self validInfoEntered]) {
         
+            // If user input is in order store the textfield values and unwind back to the main view
         if ([self userInfoUpdated] && (self.user.currentNight.drinks != 0)) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
                                                             message:@"Changing your data will start a new night."
@@ -65,6 +51,26 @@
     }
 }
 
+// Check user input and pop up alerts with directions if the user input is invalid
+-(BOOL)validInfoEntered {
+    
+    notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    
+    if (([[self.weightTextField text] isEqualToString:@""]) || ([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location != NSNotFound)) {
+        [self alertUser:@"Please enter a whole number for weight in lbs."];
+        return NO;
+    }
+    
+    else if(!([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])){
+        [self alertUser:@"Please enter F or M for sex."];
+        return NO;
+    }
+    
+    return YES;
+}
+
+
+// Checks if the info the user has entered is different from what is stored
 -(BOOL)userInfoUpdated {
     int currWeight = self.user.weight;
     NSString *currSex = self.user.sex;
@@ -93,8 +99,6 @@
     @catch (NSException *exception) {
         NSLog(@"Data save failed.");
     }
-    
-    
 }
 
 -(void)alertUser:(NSString*) alertMessage
@@ -165,6 +169,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+// To get the keyboard to collapse when return is pressed
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return [textField resignFirstResponder];
 }
 
 
