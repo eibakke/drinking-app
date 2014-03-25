@@ -46,14 +46,18 @@
         [defaults setObject:weight forKey:@"userWeight"];
         [defaults setObject:[self.nameTextField text] forKey:@"userName"];
         
+        newUser = [[HEALUser alloc]init];
+        
         if([self.maleRadioButton isSelected]) {
-            newUser = [[HEALUser alloc] init:[self.nameTextField text] userSex:@"M" userWeight:[[self.weightTextField text] intValue]];
+            newUser.sex = MALE;
             [defaults setObject:@"M" forKey:@"userSex"];
         } else {
-            newUser = [[HEALUser alloc] init:[self.nameTextField text] userSex:@"F" userWeight:[[self.weightTextField text] intValue]];
+            newUser.sex = FEMALE;
             [defaults setObject:@"F" forKey:@"userSex"];
         }
         
+        newUser.name = [self.nameTextField text];
+        newUser.weight = [[self.weightTextField text] intValue];
         
         @try {
             [defaults synchronize];

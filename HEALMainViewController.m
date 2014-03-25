@@ -37,9 +37,9 @@
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
-    if(self.user.sex == nil)
+    if(self.user.weight == 0)
     {
-        [self alertUser:@"Please enter weight and sex in settings."];
+        [self alertUser:@"Please enter weight in settings."];
         sender.value = 0;
     } else {
         if (self.user.currentNight.drinks == 0) {
@@ -48,9 +48,10 @@
         }
         self.user.currentNight.drinks = [sender value];
         [self updateLabels];
+        NSLog(@"========== User sex is %d", self.user.sex);
     }
 }
-
+ 
 - (IBAction)newNight:(UIButton *)sender
 {
     [self resetTimer];

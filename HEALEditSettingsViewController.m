@@ -12,6 +12,7 @@
 {
     NSUserDefaults *defaults;
     NSCharacterSet *notDigits;
+    sexes newSex;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
@@ -26,6 +27,8 @@
 
 // Called when the doneButton is pressed
 - (IBAction)doneButton:(id)sender{
+    
+    [self setNewSex];
     
     if ([self validInfoEntered]) {
         
@@ -51,6 +54,18 @@
     }
 }
 
+-(void)setNewSex
+{
+    if ([self.maleRadioButton isSelected])
+    {
+        newSex = MALE;
+    }
+    else if([self.femaleRadioButton isSelected])
+    {
+        newSex = FEMALE;
+    }
+}
+
 // Check user input and pop up alerts with directions if the user input is invalid
 -(BOOL)validInfoEntered {
     
@@ -61,11 +76,6 @@
         return NO;
     }
     
-    else if(!([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])){
-        [self alertUser:@"Please enter F or M for sex."];
-        return NO;
-    }
-    
     return YES;
 }
 
@@ -73,9 +83,9 @@
 // Checks if the info the user has entered is different from what is stored
 -(BOOL)userInfoUpdated {
     int currWeight = self.user.weight;
-    NSString *currSex = self.user.sex;
+    sexes currSex = self.user.sex;
     
-    if ((currWeight == [[self.weightTextField text] intValue]) && ([currSex isEqualToString:[self.sexTextField text]])) {
+    if ((currWeight == [[self.weightTextField text] intValue]) && (currSex == newSex)) {
         return NO;
     } else {
         return YES;
@@ -86,12 +96,21 @@
     
     NSNumber *weight = [NSNumber numberWithDouble:[[self.weightTextField text] doubleValue]];
     [defaults setObject:weight forKey:@"userWeight"];
-    [defaults setObject:[self.sexTextField text] forKey:@"userSex"];
     [defaults setObject:[self.nameTextField text] forKey:@"userName"];
     
+    if ([self.maleRadioButton isSelected])
+    {
+        [defaults setObject:@"M" forKey:@"userSex"];
+    }
+    else if([self.femaleRadioButton isSelected])
+    {
+        [defaults setObject:@"F" forKey:@"userSex"];
+    }
+    
     self.user.weight = [[self.weightTextField text] intValue];
-    self.user.sex = [self.sexTextField text];
     self.user.name = [self.nameTextField text];
+    
+    self.user.sex = newSex;
     
     @try {
         [defaults synchronize];
@@ -138,7 +157,6 @@
     
     // We want the textfields to delegate back to this view controller
     [[self weightTextField] setDelegate:self];
-    [[self sexTextField] setDelegate:self];
     [[self nameTextField] setDelegate:self];
     
     // Set the text in the textfields to come from the user defaults, if they have been set yet
@@ -146,8 +164,12 @@
     if([defaults objectForKey:@"userWeight"] != nil) {
         self.weightTextField.text = [[defaults objectForKey:@"userWeight"] stringValue];
     }
-    if([defaults objectForKey:@"userSex"] != nil) {
-        self.sexTextField.text = [defaults objectForKey:@"userSex"];
+    if([[defaults objectForKey:@"userSex"] isEqualToString:@"F"])
+    {
+        [self.femaleRadioButton setSelected:YES];
+    } else if([[defaults objectForKey:@"userSex"] isEqualToString:@"M"])
+    {
+        [self.maleRadioButton setSelected:YES];
     }
     if([defaults objectForKey:@"userName"] != nil) {
         self.nameTextField.text = [defaults objectForKey:@"userName"];
@@ -160,7 +182,6 @@
 - (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
 {
     [[self nameTextField] resignFirstResponder];
-    [[self sexTextField] resignFirstResponder];
     [[self weightTextField] resignFirstResponder];
 }
 

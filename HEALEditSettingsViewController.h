@@ -13,8 +13,9 @@
 @interface HEALEditSettingsViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *weightTextField;
-@property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet RadioButton *maleRadioButton;
+@property (weak, nonatomic) IBOutlet RadioButton *femaleRadioButton;
 
 @property (strong, nonatomic) HEALUser *user;
 
