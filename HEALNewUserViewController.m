@@ -157,14 +157,4 @@
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
 }
-
-
-
-
-//method for setting sex
--(IBAction)sex:(RadioButton*)sender{
-    [self.sexLabel setText:sender.titleLabel.text];
-}
-
-
 @end

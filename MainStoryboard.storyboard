@@ -337,7 +337,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz3-Sv-IQX">
-                                <rect key="frame" x="37" y="104" width="52" height="20"/>
+                                <rect key="frame" x="37" y="140" width="52" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Ex6-M5-Eep"/>
                                     <constraint firstAttribute="width" constant="52" id="QOL-I7-9xS"/>
@@ -347,7 +347,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kh-RD-9Ea">
-                                <rect key="frame" x="37" y="172" width="60" height="20"/>
+                                <rect key="frame" x="37" y="176" width="60" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="6Wp-c6-irL"/>
                                     <constraint firstAttribute="height" constant="20" id="mHz-DF-6HH"/>
@@ -356,18 +356,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sex" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CA6-rf-O5R">
-                                <rect key="frame" x="37" y="240" width="42" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="YhX-CU-7ci"/>
-                                    <constraint firstAttribute="width" constant="42" id="xoW-ag-gVl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOs-YU-Za9">
-                                <rect key="frame" x="144" y="100" width="112" height="28"/>
+                                <rect key="frame" x="144" y="136" width="112" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="4bp-HJ-q3J"/>
                                 </constraints>
@@ -383,7 +373,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="m" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTn-si-EZ3" customClass="RadioButton">
-                                <rect key="frame" x="72" y="320" width="76" height="24"/>
+                                <rect key="frame" x="37" y="230" width="76" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="dKE-s8-foh"/>
                                 </constraints>
@@ -395,12 +385,11 @@
                                 </state>
                                 <state key="selected" image="checked.png"/>
                                 <connections>
-                                    <action selector="sex:" destination="JyP-hY-54p" eventType="touchUpInside" id="cBQ-hX-Z0D"/>
                                     <outletCollection property="groupButtons" destination="hlG-c2-wvX" id="1b8-uw-0NQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlG-c2-wvX" customClass="RadioButton">
-                                <rect key="frame" x="180" y="320" width="94" height="24"/>
+                                <rect key="frame" x="162" y="230" width="94" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="p9t-2b-OBG"/>
                                 </constraints>
@@ -411,36 +400,23 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="selected" image="checked.png"/>
-                                <connections>
-                                    <action selector="sex:" destination="JyP-hY-54p" eventType="touchUpInside" id="QzE-c7-ZFa"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTG-Ut-EOP">
-                                <rect key="frame" x="139" y="281" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4kh-RD-9Ea" firstAttribute="leading" secondItem="mz3-Sv-IQX" secondAttribute="leading" type="default" id="659-Xm-87W"/>
-                            <constraint firstItem="bOs-YU-Za9" firstAttribute="top" secondItem="nkn-F1-CF3" secondAttribute="top" constant="100" id="8dt-kR-uaN"/>
-                            <constraint firstItem="mz3-Sv-IQX" firstAttribute="centerY" secondItem="bOs-YU-Za9" secondAttribute="centerY" type="default" id="F0u-Kq-V0x"/>
+                            <constraint firstItem="oTn-si-EZ3" firstAttribute="top" secondItem="nkn-F1-CF3" secondAttribute="top" constant="230" id="8rY-KN-28e"/>
+                            <constraint firstItem="mz3-Sv-IQX" firstAttribute="centerY" secondItem="bOs-YU-Za9" secondAttribute="centerY" type="default" id="ClG-eV-InW"/>
                             <constraint firstItem="nxr-39-fmt" firstAttribute="leading" secondItem="bOs-YU-Za9" secondAttribute="leading" type="default" id="FZI-xg-JeI"/>
-                            <constraint firstItem="hlG-c2-wvX" firstAttribute="baseline" secondItem="oTn-si-EZ3" secondAttribute="baseline" type="user" id="HKU-1a-VbX"/>
-                            <constraint firstAttribute="bottom" secondItem="oTn-si-EZ3" secondAttribute="bottom" constant="160" id="Qwt-yw-SLw"/>
-                            <constraint firstItem="4kh-RD-9Ea" firstAttribute="top" secondItem="nkn-F1-CF3" secondAttribute="top" constant="172" id="RHp-KD-cub"/>
+                            <constraint firstItem="nxr-39-fmt" firstAttribute="top" secondItem="bOs-YU-Za9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Hyd-A1-aq1"/>
+                            <constraint firstItem="hlG-c2-wvX" firstAttribute="trailing" secondItem="nxr-39-fmt" secondAttribute="trailing" type="default" id="Tqy-6d-lIN"/>
                             <constraint firstItem="mz3-Sv-IQX" firstAttribute="leading" secondItem="nkn-F1-CF3" secondAttribute="leading" constant="37" id="XPJ-qx-0kf"/>
-                            <constraint firstItem="CA6-rf-O5R" firstAttribute="leading" secondItem="4kh-RD-9Ea" secondAttribute="leading" type="default" id="aCt-bp-9k2"/>
-                            <constraint firstItem="rTG-Ut-EOP" firstAttribute="centerX" secondItem="nkn-F1-CF3" secondAttribute="centerX" type="default" id="bg7-6r-Mom"/>
-                            <constraint firstItem="oTn-si-EZ3" firstAttribute="leading" secondItem="nkn-F1-CF3" secondAttribute="leading" constant="72" id="o8G-ly-RUN"/>
-                            <constraint firstAttribute="trailing" secondItem="hlG-c2-wvX" secondAttribute="trailing" constant="46" id="qU7-a0-dbk"/>
+                            <constraint firstItem="oTn-si-EZ3" firstAttribute="baseline" secondItem="hlG-c2-wvX" secondAttribute="baseline" type="default" id="bcG-Xy-6oN"/>
+                            <constraint firstItem="nxr-39-fmt" firstAttribute="centerY" secondItem="4kh-RD-9Ea" secondAttribute="centerY" type="default" id="lfa-p3-J9Q"/>
+                            <constraint firstItem="bOs-YU-Za9" firstAttribute="top" secondItem="nkn-F1-CF3" secondAttribute="top" constant="136" id="mg0-4B-3Nm"/>
                             <constraint firstItem="nxr-39-fmt" firstAttribute="trailing" secondItem="bOs-YU-Za9" secondAttribute="trailing" type="default" id="rfR-5A-Voo"/>
                             <constraint firstItem="bOs-YU-Za9" firstAttribute="leading" secondItem="nkn-F1-CF3" secondAttribute="leading" constant="144" id="tQ6-Uz-kun"/>
-                            <constraint firstAttribute="bottom" secondItem="rTG-Ut-EOP" secondAttribute="bottom" constant="202" id="vb3-O4-muk"/>
-                            <constraint firstItem="nxr-39-fmt" firstAttribute="top" secondItem="4kh-RD-9Ea" secondAttribute="top" type="default" id="wkp-gq-8Ao"/>
-                            <constraint firstItem="CA6-rf-O5R" firstAttribute="top" secondItem="nkn-F1-CF3" secondAttribute="top" constant="240" id="zcJ-62-ikn"/>
+                            <constraint firstItem="oTn-si-EZ3" firstAttribute="leading" secondItem="4kh-RD-9Ea" secondAttribute="leading" type="default" id="vli-FH-CuL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="51y-sv-Jqe">
@@ -454,7 +430,6 @@
                         <outlet property="femaleRadioButton" destination="hlG-c2-wvX" id="pC1-Rr-Cu2"/>
                         <outlet property="maleRadioButton" destination="oTn-si-EZ3" id="TT8-aO-dw6"/>
                         <outlet property="nameTextField" destination="bOs-YU-Za9" id="Jn3-01-CvR"/>
-                        <outlet property="sexLabel" destination="rTG-Ut-EOP" id="22u-8T-KPc"/>
                         <outlet property="weightTextField" destination="nxr-39-fmt" id="RfS-Hz-eKm"/>
                         <segue destination="7uE-MQ-V0L" kind="push" identifier="newToMainSegue" id="TZu-0B-IHY"/>
                     </connections>
