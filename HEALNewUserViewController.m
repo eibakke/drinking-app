@@ -37,21 +37,23 @@
     notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     
     // Check user input and pop up alerts with directions if the user input is invalid
-    if (([[self.weightTextField text] isEqualToString:@""]) || ([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location != NSNotFound)) {
-        [self alertUser:@"Please enter a whole number for weight in lbs."];
-    } else if(!([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])){
-        [self alertUser:@"Please enter F or M for sex."];
-    }
+  
     
     // If user input is in order store the textfield values and proceed to main view
-    if (([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location == NSNotFound) && ([[self.sexTextField text] isEqualToString:@"M"] || [[self.sexTextField text] isEqualToString:@"F"] || [[self.sexTextField text] isEqualToString:@"m"] || [[self.sexTextField text] isEqualToString:@"f"])) {
+    if ([self isValidWeight]) {
         
         NSNumber *weight = [NSNumber numberWithDouble:[[self.weightTextField text] doubleValue]];
         [defaults setObject:weight forKey:@"userWeight"];
-        [defaults setObject:[self.sexTextField text] forKey:@"userSex"];
         [defaults setObject:[self.nameTextField text] forKey:@"userName"];
         
-        newUser = [[HEALUser alloc] init:[self.nameTextField text] userSex:[self.sexTextField text] userWeight:[[self.weightTextField text] intValue]];
+        if([self.maleRadioButton isSelected]) {
+            newUser = [[HEALUser alloc] init:[self.nameTextField text] userSex:@"M" userWeight:[[self.weightTextField text] intValue]];
+            [defaults setObject:@"M" forKey:@"userSex"];
+        } else {
+            newUser = [[HEALUser alloc] init:[self.nameTextField text] userSex:@"F" userWeight:[[self.weightTextField text] intValue]];
+            [defaults setObject:@"F" forKey:@"userSex"];
+        }
+        
         
         @try {
             [defaults synchronize];
@@ -61,6 +63,15 @@
         }
         [self performSegueWithIdentifier:@"newToMainSegue" sender:self];
     }
+}
+
+-(BOOL)isValidWeight
+{
+    if (([[self.weightTextField text] isEqualToString:@""]) || ([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location != NSNotFound)) {
+        [self alertUser:@"Please enter a whole number for weight in lbs."];
+        return NO;
+    }
+    return YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -86,8 +97,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [_maleRadioButton setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
-        [_maleRadioButton setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateSelected];
     }
     return self;
 }
@@ -101,14 +110,12 @@
     
     // We want the textfields to delegate back to this view controller
     [[self weightTextField] setDelegate:self];
-    [[self sexTextField] setDelegate:self];
     [[self nameTextField] setDelegate:self];
     
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
     [self.view addGestureRecognizer:tapBackground];
     
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -120,7 +127,6 @@
 - (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
 {
     [[self nameTextField] resignFirstResponder];
-    [[self sexTextField] resignFirstResponder];
     [[self weightTextField] resignFirstResponder];
 }
 
@@ -153,14 +159,12 @@
 }
 
 
-/*
+
 
 //method for setting sex
--(IBAction)sex:(id)sender{
-    
-    _sexTextField.text = _maleRadioButton.textInputContextIdentifier;
-    
+-(IBAction)sex:(RadioButton*)sender{
+    [self.sexLabel setText:sender.titleLabel.text];
 }
-*/
+
 
 @end
