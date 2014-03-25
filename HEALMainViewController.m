@@ -12,6 +12,8 @@
 {
     NSTimer *timer;
 }
+@property (weak, nonatomic) IBOutlet UIView *centerView;
+@property (weak, nonatomic) IBOutlet UIView *rightView;
 
 @end
 
@@ -48,10 +50,22 @@
         }
         self.user.currentNight.drinks = [sender value];
         [self updateLabels];
-        NSLog(@"========== User sex is %d", self.user.sex);
     }
 }
- 
+
+- (IBAction)slideCenterViewAway:(id)sender {
+//    if(slidRight)
+//        return;
+//    
+//    slidRight = YES;
+    CGRect frame = self.centerView.frame;
+    frame.origin.x = -self.rightView.frame.size.width;
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.centerView.frame = frame;
+    }];
+}
+
 - (IBAction)newNight:(UIButton *)sender
 {
     [self resetTimer];
@@ -122,6 +136,7 @@
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
+    [self.view sendSubviewToBack:self.rightView];
 }
 
 

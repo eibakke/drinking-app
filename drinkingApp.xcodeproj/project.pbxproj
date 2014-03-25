@@ -14,6 +14,7 @@
 		890792E318D0FDC1001EFA85 /* HEALNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */; };
 		8908588418C538D40020383C /* HEALUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908588318C538D40020383C /* HEALUser.m */; };
 		891FEB3018C7D97D00780C8A /* beer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 891FEB2F18C7D97D00780C8A /* beer.jpg */; };
+		8944D52218E122C700E39EC7 /* gradiantRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8944D52118E122C700E39EC7 /* gradiantRight.png */; };
 		8956FC5618BBD6D70018F32B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5518BBD6D70018F32B /* UIKit.framework */; };
 		8956FC5818BBD6D70018F32B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5718BBD6D70018F32B /* Foundation.framework */; };
 		8956FC5A18BBD6D70018F32B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5918BBD6D70018F32B /* CoreGraphics.framework */; };
@@ -71,6 +72,7 @@
 		8908588218C538D40020383C /* HEALUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALUser.h; path = ../HEALUser.h; sourceTree = "<group>"; };
 		8908588318C538D40020383C /* HEALUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALUser.m; path = ../HEALUser.m; sourceTree = "<group>"; };
 		891FEB2F18C7D97D00780C8A /* beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beer.jpg; path = ../beer.jpg; sourceTree = "<group>"; };
+		8944D52118E122C700E39EC7 /* gradiantRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradiantRight.png; sourceTree = "<group>"; };
 		8956FC5218BBD6D70018F32B /* drinkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drinkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8956FC5518BBD6D70018F32B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8956FC5718BBD6D70018F32B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -275,6 +277,7 @@
 		A855253F18CEAB7900567BDA /* GraphicsResources */ = {
 			isa = PBXGroup;
 			children = (
+				8944D52118E122C700E39EC7 /* gradiantRight.png */,
 				89F840D218DFFCDC0048AD95 /* radio-res-ios */,
 				A855253D18CEA23E00567BDA /* Logo.jpg */,
 				6D0B7B9418C45B6E00419E78 /* background.jpg */,
@@ -381,6 +384,7 @@
 				89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */,
 				A855254718CEAB7900567BDA /* Danger.jpg in Resources */,
 				A855254918CEAB7900567BDA /* Drunk.jpg in Resources */,
+				8944D52218E122C700E39EC7 /* gradiantRight.png in Resources */,
 				891FEB3018C7D97D00780C8A /* beer.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
