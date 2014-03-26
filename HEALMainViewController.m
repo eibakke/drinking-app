@@ -11,6 +11,9 @@
 @interface HEALMainViewController ()
 {
     NSTimer *timer;
+    BOOL slidRight;
+    UIGestureRecognizer *tapRecognizer;
+
 }
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 @property (weak, nonatomic) IBOutlet UIView *rightView;
@@ -54,10 +57,14 @@
 }
 
 - (IBAction)slideCenterViewAway:(id)sender {
-//    if(slidRight)
-//        return;
-//    
-//    slidRight = YES;
+    if(slidRight)
+    {
+        [self viewTapped];
+        slidRight = NO;
+        return;
+    }
+    slidRight = YES;
+    
     CGRect frame = self.centerView.frame;
     frame.origin.x = -self.rightView.frame.size.width;
     
@@ -137,8 +144,25 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
     [self.view sendSubviewToBack:self.rightView];
+    slidRight = NO;
+    tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped)];
+    [self.view addGestureRecognizer:tapRecognizer];
+    tapRecognizer.delegate = self;
 }
 
+-(void)viewTapped
+{
+    if(!slidRight)
+        return;
+    
+    slidRight = NO;
+    
+    CGRect frame = self.centerView.frame;
+    frame.origin.x = 0;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.centerView.frame = frame;
+    }];
+}
 
 
 - (void)didReceiveMemoryWarning

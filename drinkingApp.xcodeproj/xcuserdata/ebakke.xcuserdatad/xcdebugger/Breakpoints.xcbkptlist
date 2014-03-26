@@ -21,13 +21,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HEALMainViewController.m"
-         timestampString = "415521092.108578"
+         timestampString = "417551585.9922"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "21"
-         endingLineNumber = "21"
-         landmarkName = "-resetTimer"
-         landmarkType = "5">
+         startingLineNumber = "24"
+         endingLineNumber = "24"
+         landmarkName = "@implementation HEALMainViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -39,8 +39,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "18"
          endingLineNumber = "18"
-         landmarkName = "sex"
-         landmarkType = "19">
+         landmarkName = "@interface HEALUser"
+         landmarkType = "2">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
