@@ -35,6 +35,7 @@
 		89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D32C5318BE759C003920FE /* MainStoryboard.storyboard */; };
 		89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */; };
 		89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5918BE7B54003920FE /* HEALMainViewController.m */; };
+		89D59E5C18E37BF500C013C1 /* threelines.png in Resources */ = {isa = PBXBuildFile; fileRef = 89D59E5B18E37BF400C013C1 /* threelines.png */; };
 		89F840D118DFFB1B0048AD95 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F840D018DFFB1B0048AD95 /* RadioButton.m */; };
 		89F840D718DFFCDC0048AD95 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F840D318DFFCDC0048AD95 /* checked.png */; };
 		89F840D818DFFCDC0048AD95 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F840D418DFFCDC0048AD95 /* checked@2x.png */; };
@@ -99,6 +100,7 @@
 		89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALEditSettingsViewController.m; path = ../HEALEditSettingsViewController.m; sourceTree = "<group>"; };
 		89D32C5818BE7B54003920FE /* HEALMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALMainViewController.h; path = ../HEALMainViewController.h; sourceTree = "<group>"; };
 		89D32C5918BE7B54003920FE /* HEALMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALMainViewController.m; path = ../HEALMainViewController.m; sourceTree = "<group>"; };
+		89D59E5B18E37BF400C013C1 /* threelines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = threelines.png; sourceTree = "<group>"; };
 		89F840CF18DFFB1B0048AD95 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = SOURCE_ROOT; };
 		89F840D018DFFB1B0048AD95 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = SOURCE_ROOT; };
 		89F840D318DFFCDC0048AD95 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 		A855253F18CEAB7900567BDA /* GraphicsResources */ = {
 			isa = PBXGroup;
 			children = (
+				89D59E5B18E37BF400C013C1 /* threelines.png */,
 				8944D52118E122C700E39EC7 /* gradiantRight.png */,
 				89F840D218DFFCDC0048AD95 /* radio-res-ios */,
 				A855253D18CEA23E00567BDA /* Logo.jpg */,
@@ -386,6 +389,7 @@
 				A855254918CEAB7900567BDA /* Drunk.jpg in Resources */,
 				8944D52218E122C700E39EC7 /* gradiantRight.png in Resources */,
 				891FEB3018C7D97D00780C8A /* beer.jpg in Resources */,
+				89D59E5C18E37BF500C013C1 /* threelines.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
