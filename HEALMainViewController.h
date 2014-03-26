@@ -27,7 +27,6 @@
 -(IBAction)valueChanged:(UIStepper *)sender;
 - (IBAction)slideCenterViewAway:(id)sender;
 
-
 -(IBAction)newNight:(UIButton *)sender;
 
 -(IBAction)unwindToMain:(UIStoryboardSegue *)segue;
