@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="-49"/>
         </scene>
-        <!--Main View Controller - Main View-->
+        <!--Main View Controller-->
         <scene sceneID="Shu-mk-anV">
             <objects>
                 <viewController id="7uE-MQ-V0L" customClass="HEALMainViewController" sceneMemberID="viewController">
@@ -208,7 +208,7 @@
                             <outletCollection property="gestureRecognizers" destination="dwd-Pl-Qgy" appends="YES" id="fyg-0A-QbK"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Main View" id="LzM-wj-3Gc">
+                    <navigationItem key="navigationItem" id="LzM-wj-3Gc">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="3bk-cO-wD7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rrc-A3-JQt">
                                 <rect key="frame" x="256" y="5" width="59" height="33"/>

@@ -22,6 +22,9 @@
 
 @implementation HEALMainViewController
 
+
+
+
 - (void)resetTimer
 {
     if (timer != nil) {
@@ -109,13 +112,14 @@
     
     if (self.user.BAC < 0.02) {
         [self.stateButton setTitle:@"Sober" forState:UIControlStateNormal];
-        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Sober.jpg"]];
+        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"noButtons.png"]];
         
         
     } else if(0.02 < self.user.BAC && self.user.BAC < 0.06)
     {
         [self.stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
-        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Tipsy.jpg"]];
+        //self.view.backgroundColor = [UIColor blueColor];
+        
         
         
     } else if (0.06 < self.user.BAC && self.user.BAC < 0.2)
@@ -140,7 +144,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
     [self.view sendSubviewToBack:self.rightView];
@@ -148,6 +152,10 @@
     tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped)];
     [self.view addGestureRecognizer:tapRecognizer];
     tapRecognizer.delegate = self;
+    
+    
+    
+    
 }
 
 -(void)viewTapped
