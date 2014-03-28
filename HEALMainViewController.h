@@ -29,11 +29,6 @@
 - (IBAction)swipedLeft:(id)sender;
 - (IBAction)swipedRight:(id)sender;
 
-
-- (IBAction)newNight:(UIButton *)sender;
-
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue;
-
-- (IBAction)sendSMS:(id)sender;
 
 @end

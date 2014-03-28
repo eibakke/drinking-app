@@ -59,7 +59,7 @@
                                 <rect key="frame" x="105" y="-1" width="218" height="505"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5u-nS-Rpc">
-                                        <rect key="frame" x="-2" y="72" width="218" height="37"/>
+                                        <rect key="frame" x="-2" y="77" width="218" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="Cta-s7-ovP"/>
@@ -77,11 +77,53 @@
                                             <action selector="rightViewButtonClicked:" destination="7uE-MQ-V0L" eventType="touchUpInside" id="DxB-TW-aKq"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMa-lq-n4s">
+                                        <rect key="frame" x="-2" y="117" width="218" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="BOr-og-BP3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Send SOS SMS">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rightViewButtonClicked:" destination="7uE-MQ-V0L" eventType="touchUpInside" id="RJE-Xm-vJ0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-xS-FlY">
+                                        <rect key="frame" x="-2" y="157" width="218" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="rJV-cv-kmG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="New Night">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rightViewButtonClicked:" destination="7uE-MQ-V0L" eventType="touchUpInside" id="SDL-IP-2XE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="EMa-lq-n4s" firstAttribute="top" secondItem="eEs-AX-o9k" secondAttribute="top" constant="117" id="2VF-LQ-mqN"/>
+                                    <constraint firstItem="y8m-xS-FlY" firstAttribute="leading" secondItem="EMa-lq-n4s" secondAttribute="leading" type="default" id="MH0-iQ-cWG"/>
                                     <constraint firstItem="n5u-nS-Rpc" firstAttribute="leading" secondItem="eEs-AX-o9k" secondAttribute="leading" constant="-2" id="aGd-7h-uG7"/>
-                                    <constraint firstItem="n5u-nS-Rpc" firstAttribute="top" secondItem="eEs-AX-o9k" secondAttribute="top" constant="72" id="cM5-2g-LH5"/>
+                                    <constraint firstItem="y8m-xS-FlY" firstAttribute="top" secondItem="eEs-AX-o9k" secondAttribute="top" constant="157" id="m3k-ww-rw6"/>
+                                    <constraint firstItem="n5u-nS-Rpc" firstAttribute="top" secondItem="eEs-AX-o9k" secondAttribute="top" constant="77" id="nqw-1S-nrX"/>
+                                    <constraint firstItem="EMa-lq-n4s" firstAttribute="trailing" secondItem="n5u-nS-Rpc" secondAttribute="trailing" type="default" id="qqj-ea-eUY"/>
+                                    <constraint firstItem="EMa-lq-n4s" firstAttribute="leading" secondItem="n5u-nS-Rpc" secondAttribute="leading" type="default" id="r5Z-I4-YCn"/>
+                                    <constraint firstItem="y8m-xS-FlY" firstAttribute="trailing" secondItem="EMa-lq-n4s" secondAttribute="trailing" type="default" id="uCG-9R-e0V"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6Z-PG-lOD">
@@ -123,42 +165,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKf-wY-iYb">
-                                        <rect key="frame" x="215" y="441" width="86" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="86" id="4Hk-Y6-Isc"/>
-                                            <constraint firstAttribute="height" constant="27" id="iGz-rS-uUR"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="New Night">
-                                            <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="newNight:" destination="7uE-MQ-V0L" eventType="touchUpInside" id="MoX-TX-DaY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2E-i8-ewt">
-                                        <rect key="frame" x="20" y="441" width="112" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="do3-Hy-1SO"/>
-                                            <constraint firstAttribute="width" constant="112" id="oGG-kr-9cP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
-                                        <state key="normal" title="Send SOS SMS">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sendSMS:" destination="7uE-MQ-V0L" eventType="touchUpInside" id="GCj-nS-AHq"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradiantRight.png" translatesAutoresizingMaskIntoConstraints="NO" id="s13-vD-TeQ">
                                         <rect key="frame" x="320" y="0.0" width="13" height="504"/>
                                         <constraints>
@@ -189,21 +195,19 @@
                                     <accessibilityTraits key="traits" none="YES" image="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstItem="oKf-wY-iYb" firstAttribute="top" secondItem="Y2E-i8-ewt" secondAttribute="top" type="default" id="3Oc-9E-Pn3"/>
                                     <constraint firstItem="YAC-UB-fqj" firstAttribute="centerX" secondItem="c6Z-PG-lOD" secondAttribute="centerX" type="default" id="4Vf-m0-EAq"/>
                                     <constraint firstItem="NUb-RN-o9b" firstAttribute="top" secondItem="c6Z-PG-lOD" secondAttribute="top" constant="179" id="7Ay-QX-str"/>
                                     <constraint firstItem="s13-vD-TeQ" firstAttribute="top" secondItem="c6Z-PG-lOD" secondAttribute="top" type="default" id="9Dx-hi-LKJ"/>
-                                    <constraint firstItem="oKf-wY-iYb" firstAttribute="baseline" secondItem="Y2E-i8-ewt" secondAttribute="baseline" type="default" id="BPI-Yp-pP8"/>
                                     <constraint firstItem="rFK-Ix-bPj" firstAttribute="centerX" secondItem="xnB-j1-dks" secondAttribute="centerX" type="default" id="JfW-VB-MGx"/>
-                                    <constraint firstItem="Y2E-i8-ewt" firstAttribute="leading" secondItem="c6Z-PG-lOD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NVo-UD-pNE"/>
-                                    <constraint firstAttribute="trailing" secondItem="oKf-wY-iYb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="WeZ-vj-iMW"/>
                                     <constraint firstItem="YAC-UB-fqj" firstAttribute="centerX" secondItem="NUb-RN-o9b" secondAttribute="centerX" type="default" id="Xpu-jU-3CT"/>
                                     <constraint firstItem="s13-vD-TeQ" firstAttribute="leading" secondItem="c6Z-PG-lOD" secondAttribute="leading" constant="320" id="erq-2B-BbO"/>
                                     <constraint firstItem="mpD-Xb-xLH" firstAttribute="top" secondItem="c6Z-PG-lOD" secondAttribute="top" constant="79" id="hDO-bT-gwW"/>
                                     <constraint firstItem="mpD-Xb-xLH" firstAttribute="centerX" secondItem="NUb-RN-o9b" secondAttribute="centerX" type="default" id="hrl-os-xRd"/>
                                     <constraint firstItem="YAC-UB-fqj" firstAttribute="centerX" secondItem="xnB-j1-dks" secondAttribute="centerX" type="default" id="htE-EY-r2U"/>
                                     <constraint firstAttribute="bottom" secondItem="xnB-j1-dks" secondAttribute="bottom" constant="166" id="iU5-e2-yGz"/>
-                                    <constraint firstAttribute="bottom" secondItem="oKf-wY-iYb" secondAttribute="bottom" constant="36" id="o1b-zj-Smh"/>
+
+                                    <constraint firstItem="mpD-Xb-xLH" firstAttribute="leading" secondItem="c6Z-PG-lOD" secondAttribute="leading" constant="95" id="mm4-5w-ZLo"/>
+
                                     <constraint firstItem="s13-vD-TeQ" firstAttribute="centerY" secondItem="YAC-UB-fqj" secondAttribute="centerY" type="default" id="q5b-dW-QlB"/>
                                     <constraint firstAttribute="bottom" secondItem="rFK-Ix-bPj" secondAttribute="bottom" constant="102" id="ueR-Mi-Ax9"/>
                                     <constraint firstAttribute="bottom" secondItem="s13-vD-TeQ" secondAttribute="bottom" type="default" id="y5S-ny-q6W"/>
@@ -267,8 +271,10 @@
                         <outlet property="centerView" destination="c6Z-PG-lOD" id="hg0-AP-SEA"/>
                         <outlet property="drinkLabel" destination="xnB-j1-dks" id="0Pp-1G-aNw"/>
                         <outlet property="drinkStepper" destination="rFK-Ix-bPj" id="xAU-C3-NNB"/>
+                        <outlet property="nightButton" destination="y8m-xS-FlY" id="XD7-Dh-RNh"/>
                         <outlet property="rightView" destination="eEs-AX-o9k" id="rZ8-hN-MQz"/>
                         <outlet property="settingsButton" destination="n5u-nS-Rpc" id="XV3-1U-693"/>
+                        <outlet property="smsButton" destination="EMa-lq-n4s" id="v78-bA-R1B"/>
                         <outlet property="stateButton" destination="mpD-Xb-xLH" id="Rci-eC-pjM"/>
                         <outlet property="timeLabel" destination="NUb-RN-o9b" id="iOk-Rh-k7R"/>
                         <segue destination="MqT-Dv-oNL" kind="push" identifier="toSettingsViewController" id="6bM-ju-Tuv"/>
@@ -355,7 +361,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8bD-cG-gu2" kind="unwind" unwindAction="unwindToMain:" id="asN-Kj-E2H"/>
+                                    <segue destination="8bD-cG-gu2" kind="unwind" identifier="backToMain" unwindAction="unwindToMain:" id="o5s-jb-I5Y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="m" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuU-4b-fYL" customClass="RadioButton">
