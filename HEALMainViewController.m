@@ -15,14 +15,14 @@
     UIGestureRecognizer *tapRecognizer;
 
 }
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 @property (weak, nonatomic) IBOutlet UIView *rightView;
+- (IBAction)rightViewButtonClicked:(id)sender;
 
 @end
 
 @implementation HEALMainViewController
-
-
 
 
 - (void)resetTimer
@@ -183,16 +183,15 @@
     
     tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewTapped)];
     [self.centerView addGestureRecognizer:tapRecognizer];
+    self.settingsButton.tag = 0;
     
-    
-    
-    
+
 }
 
 -(void)centerViewTapped
 {
     if(!slidRight) return;
-    else{
+    else {
         [self toggleRightView];
     }
 }
@@ -256,4 +255,11 @@
 
 
 
+- (IBAction)rightViewButtonClicked:(id)sender {
+    UIButton* senderButton = (UIButton*) sender;
+    
+    if (senderButton.tag == self.settingsButton.tag) {
+        [self performSegueWithIdentifier:@"toSettingsViewController" sender:sender];
+    }
+}
 @end

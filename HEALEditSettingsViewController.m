@@ -153,7 +153,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    self.navigationItem.hidesBackButton = YES;
     
     // We want the textfields to delegate back to this view controller
     [[self weightTextField] setDelegate:self];
