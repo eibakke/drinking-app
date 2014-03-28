@@ -138,49 +138,79 @@
  
     if ([State  isEqual: @"Sober"]){
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+        
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
+        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
+        
     }
 
     
     if ([State  isEqual: @"Tipsy"]){
         UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
         self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
+        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
     }
     
     
     if ([State  isEqual: @"Drunk"]){
         UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
         self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+        
+        
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
+        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
+
     }
     
     if ([State  isEqual: @"Danger"]){
         UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
         self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
+        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
     }
     
     if ([State  isEqual: @"Dead"]){
         UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
         self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
+        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
     }
     
     
