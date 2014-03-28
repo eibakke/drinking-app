@@ -103,6 +103,9 @@
     return self;
 }
 
+
+
+
 - (void) updateLabels
 {
     self.drinkStepper.value = self.user.currentNight.drinks;
@@ -118,7 +121,7 @@
     } else if(0.02 < self.user.BAC && self.user.BAC < 0.06)
     {
         [self.stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
-        //self.view.backgroundColor = [UIColor blueColor];
+        self.view.backgroundColor = [UIColor blueColor];
         
         
         
@@ -143,8 +146,9 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
 
+    
+    [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
     [self.view sendSubviewToBack:self.rightView];

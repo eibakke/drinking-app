@@ -20,4 +20,8 @@
 @property (strong, nonatomic) HEALUser *user;
 
 
+@property (weak, nonatomic) IBOutlet UIStepper *drinkStepper;
+
+
+
 @end

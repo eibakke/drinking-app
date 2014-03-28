@@ -555,6 +555,7 @@
         <image name="threelines.png" width="600" height="400"/>
         <image name="unchecked.png" width="24" height="24"/>
     </resources>
+    <color key="tintColor" red="0.76419005102040816" green="0.74041786530481246" blue="0.73161969290785278" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
