@@ -15,6 +15,8 @@
     UIGestureRecognizer *tapRecognizer;
 
 }
+@property (weak, nonatomic) IBOutlet UIButton *nightButton;
+@property (weak, nonatomic) IBOutlet UIButton *smsButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 @property (weak, nonatomic) IBOutlet UIView *rightView;
@@ -103,7 +105,7 @@
     }
 }
 
-- (IBAction)newNight:(UIButton *)sender
+- (void)newNight
 {
     [self resetTimer];
     [self.user.currentNight reset];
@@ -118,6 +120,7 @@
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
+    slidRight = NO;
     [self updateLabels];
 }
 
@@ -184,6 +187,8 @@
     tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewTapped)];
     [self.centerView addGestureRecognizer:tapRecognizer];
     self.settingsButton.tag = 0;
+    self.smsButton.tag = 1;
+    self.nightButton.tag = 2;
     
 
 }
@@ -231,7 +236,7 @@
 
 
 
--(IBAction)sendSMS:(id)sender{
+-(void)sendSMS{
     
     MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
     
@@ -260,6 +265,14 @@
     
     if (senderButton.tag == self.settingsButton.tag) {
         [self performSegueWithIdentifier:@"toSettingsViewController" sender:sender];
+        [self toggleRightView];
+    }
+    else if (senderButton.tag == self.smsButton.tag) {
+        [self sendSMS];
+    }
+    else if (senderButton.tag == self.nightButton.tag) {
+        [self newNight];
+        [self toggleRightView];
     }
 }
 @end
