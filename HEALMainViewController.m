@@ -82,6 +82,8 @@
     [self.user.currentNight reset];
     [self updateLabels];
     [self.timeLabel setText:@"Ready to start? Press the plus below!"];
+    [self updateBackground:@"Sober"];
+
 }
 
 - (void)countUp
@@ -92,17 +94,71 @@
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
     [self updateLabels];
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
     if (self) {
     }
     return self;
 }
 
+
+- (void) updateBackground:(NSString*) State
+{
+ 
+    if ([State  isEqual: @"Sober"]){
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+    }
+
+    
+    if ([State  isEqual: @"Tipsy"]){
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+    }
+    
+    
+    if ([State  isEqual: @"Drunk"]){
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+    }
+    
+    if ([State  isEqual: @"Danger"]){
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+    }
+    
+    if ([State  isEqual: @"Dead"]){
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"noButtons.png")] drawInRect:self.view.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+    }
+    
+    
+    
+}
 
 
 
@@ -115,37 +171,43 @@
     
     if (self.user.BAC < 0.02) {
         [self.stateButton setTitle:@"Sober" forState:UIControlStateNormal];
-        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"noButtons.png"]];
+        
+        [self updateBackground:@"Sober"];
+        
         
         
     } else if(0.02 < self.user.BAC && self.user.BAC < 0.06)
     {
         [self.stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
-        self.view.backgroundColor = [UIColor blueColor];
+        
+        [self updateBackground:@"Sober"];
+
         
         
         
     } else if (0.06 < self.user.BAC && self.user.BAC < 0.2)
     {
         [self.stateButton setTitle:@"Drunk" forState:UIControlStateNormal];
-        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Drunk.jpg"]];
+
         
         
     } else if (0.2 < self.user.BAC)
     {
         [self.stateButton setTitle:@"Danger" forState:UIControlStateNormal];
-        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Danger.jpg"]];
+
     }
     
     if (self.drinkStepper.value == 100)
     {
         [self.stateButton setTitle:@"Dead" forState:UIControlStateNormal];
-        //self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Dead.jpg"]];
+        
     }
 }
 
 - (void)viewDidLoad
 {
+
+    [self updateBackground:@"Sober"];
 
     
     [super viewDidLoad];

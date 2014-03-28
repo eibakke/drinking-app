@@ -19,7 +19,7 @@
 
 - (void)checkSettings
 {
-    [NSThread sleepForTimeInterval:10.0f];
+    [NSThread sleepForTimeInterval:1.0f];
     if ([defaults objectForKey:@"userSex"] == nil) {
         [self performSegueWithIdentifier:@"newUserSegue" sender:self];
     } else {
