@@ -15,14 +15,14 @@
     UIGestureRecognizer *tapRecognizer;
 
 }
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 @property (weak, nonatomic) IBOutlet UIView *rightView;
+- (IBAction)rightViewButtonClicked:(id)sender;
 
 @end
 
 @implementation HEALMainViewController
-
-
 
 
 - (void)resetTimer
@@ -59,21 +59,48 @@
     }
 }
 
-- (IBAction)slideCenterViewAway:(id)sender {
-    if(slidRight)
-    {
-        [self viewTapped];
-        slidRight = NO;
+- (IBAction)threeLinesButtonClicked:(id)sender {
+    [self toggleRightView];
+}
+
+- (IBAction)swipedLeft:(id)sender {
+    if (slidRight) {
+        return;
+    } else {
+        [self toggleRightView];
+    }
+}
+
+- (IBAction)swipedRight:(id)sender {
+    if (slidRight) {
+        [self toggleRightView];
+    } else {
         return;
     }
-    slidRight = YES;
-    
-    CGRect frame = self.centerView.frame;
-    frame.origin.x = -self.rightView.frame.size.width;
-    
-    [UIView animateWithDuration:0.25 animations:^{
-        self.centerView.frame = frame;
-    }];
+}
+
+- (void)toggleRightView
+{
+    if(slidRight)
+    {
+        CGRect frame = self.centerView.frame;
+        frame.origin.x = 0;
+        [UIView animateWithDuration:0.25 animations:^{
+            self.centerView.frame = frame;
+        }];
+        
+        slidRight = NO;
+    }
+    else if(!slidRight)
+    {
+        CGRect frame = self.centerView.frame;
+        frame.origin.x = -self.rightView.frame.size.width;
+        [UIView animateWithDuration:0.25 animations:^{
+            self.centerView.frame = frame;
+        }];
+        
+        slidRight = YES;
+    }
 }
 
 - (IBAction)newNight:(UIButton *)sender
@@ -215,27 +242,20 @@
     self.navigationItem.hidesBackButton = YES;
     [self.view sendSubviewToBack:self.rightView];
     slidRight = NO;
-    tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped)];
-    [self.view addGestureRecognizer:tapRecognizer];
-    tapRecognizer.delegate = self;
     
+    tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewTapped)];
+    [self.centerView addGestureRecognizer:tapRecognizer];
+    self.settingsButton.tag = 0;
     
-    
-    
+
 }
 
--(void)viewTapped
+-(void)centerViewTapped
 {
-    if(!slidRight)
-        return;
-    
-    slidRight = NO;
-    
-    CGRect frame = self.centerView.frame;
-    frame.origin.x = 0;
-    [UIView animateWithDuration:0.25 animations:^{
-        self.centerView.frame = frame;
-    }];
+    if(!slidRight) return;
+    else {
+        [self toggleRightView];
+    }
 }
 
 
@@ -297,4 +317,11 @@
 
 
 
+- (IBAction)rightViewButtonClicked:(id)sender {
+    UIButton* senderButton = (UIButton*) sender;
+    
+    if (senderButton.tag == self.settingsButton.tag) {
+        [self performSegueWithIdentifier:@"toSettingsViewController" sender:sender];
+    }
+}
 @end

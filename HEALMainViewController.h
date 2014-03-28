@@ -24,13 +24,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *stateButton;
 
 
--(IBAction)valueChanged:(UIStepper *)sender;
-- (IBAction)slideCenterViewAway:(id)sender;
+- (IBAction)valueChanged:(UIStepper *)sender;
+- (IBAction)threeLinesButtonClicked:(id)sender;
+- (IBAction)swipedLeft:(id)sender;
+- (IBAction)swipedRight:(id)sender;
 
--(IBAction)newNight:(UIButton *)sender;
 
--(IBAction)unwindToMain:(UIStoryboardSegue *)segue;
+- (IBAction)newNight:(UIButton *)sender;
 
--(IBAction)sendSMS:(id)sender;
+- (IBAction)unwindToMain:(UIStoryboardSegue *)segue;
+
+- (IBAction)sendSMS:(id)sender;
 
 @end
