@@ -153,6 +153,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
 	
     self.navigationItem.hidesBackButton = YES;
     
