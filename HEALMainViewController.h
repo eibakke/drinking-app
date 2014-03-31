@@ -11,6 +11,7 @@
 #import "HEALUser.h"
 #import "HEALEditSettingsViewController.h"
 #import "MessageUI/MessageUI.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate> {
