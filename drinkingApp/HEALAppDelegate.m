@@ -19,7 +19,7 @@
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"SampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     
     return YES;
 }

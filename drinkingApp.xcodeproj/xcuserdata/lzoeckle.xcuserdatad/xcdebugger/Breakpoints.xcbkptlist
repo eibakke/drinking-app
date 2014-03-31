@@ -34,12 +34,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HEALMainViewController.m"
-         timestampString = "416281958.368963"
+         timestampString = "417725668.515418"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
-         landmarkName = "-addNight:"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
+         landmarkName = "-valueChanged:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -13,6 +13,7 @@
     NSTimer *timer;
     BOOL slidRight;
     UIGestureRecognizer *tapRecognizer;
+    UIButton *button;
 
 }
 @property (weak, nonatomic) IBOutlet UIButton *nightButton;
@@ -25,6 +26,27 @@
 @end
 
 @implementation HEALMainViewController
+
+- (void)stateSegue
+{
+    [self performSegueWithIdentifier:@"toStateViewController" sender:self];
+}
+
+- (void)circleButton
+{
+    button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"" forState:UIControlStateNormal];
+    button.frame = CGRectMake(110.0, 75.0, 100.0, 100.0);
+    button.clipsToBounds = YES;
+    
+    button.layer.cornerRadius = 50;
+    button.layer.borderColor = [UIColor blackColor].CGColor;
+    button.layer.borderWidth = 2.0f;
+    
+    [self.centerView addSubview:button];
+}
 
 
 - (void)resetTimer
@@ -140,12 +162,12 @@
 {
  
     if ([State  isEqual: @"Sober"]){
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
     
-    self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
         
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
@@ -229,48 +251,44 @@
     [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
     [self countUp];
     
-    if (self.user.BAC < 0.02) {
-        [self.stateButton setTitle:@"Sober" forState:UIControlStateNormal];
+    if (self.user.BAC < 0.02)
+    {
+        [button setTitle:@"Sober" forState:UIControlStateNormal];
         
         [self updateBackground:@"Sober"];
-        
-        
         
     } else if(0.02 < self.user.BAC && self.user.BAC < 0.06)
     {
-        [self.stateButton setTitle:@"Tipsy" forState:UIControlStateNormal];
+        [button setTitle:@"Tipsy" forState:UIControlStateNormal];
         
-        [self updateBackground:@"Sober"];
-
-        
-        
-        
+        [self updateBackground:@"Tipsy"];
+   
     } else if (0.06 < self.user.BAC && self.user.BAC < 0.2)
     {
-        [self.stateButton setTitle:@"Drunk" forState:UIControlStateNormal];
-
+        [button setTitle:@"Drunk" forState:UIControlStateNormal];
         
+        [self updateBackground:@"Drunk"];
         
     } else if (0.2 < self.user.BAC)
     {
-        [self.stateButton setTitle:@"Danger" forState:UIControlStateNormal];
-
+        [button setTitle:@"Danger" forState:UIControlStateNormal];
+        
+        [self updateBackground:@"Danger"];
     }
-    
     if (self.drinkStepper.value == 100)
     {
-        [self.stateButton setTitle:@"Dead" forState:UIControlStateNormal];
+        [button setTitle:@"Dead" forState:UIControlStateNormal];
         
+        [self updateBackground:@"Dead"];
     }
 }
 
 - (void)viewDidLoad
 {
-
-    [self updateBackground:@"Sober"];
-
-    
     [super viewDidLoad];
+    [self circleButton];
+    [self updateBackground:@"Sober"];
+    [button setTitle:@"Sober" forState:UIControlStateNormal];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
     [self.view sendSubviewToBack:self.rightView];
