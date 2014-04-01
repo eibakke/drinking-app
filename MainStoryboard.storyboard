@@ -62,7 +62,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Settings">
+                                        <state key="normal" title="Settings" backgroundImage="empty.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
@@ -79,7 +79,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Send SOS SMS">
+                                        <state key="normal" title="Send SOS SMS" backgroundImage="empty.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
@@ -96,7 +96,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="New Night">
+                                        <state key="normal" title="New Night" backgroundImage="empty.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
@@ -130,7 +130,8 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rFK-Ix-bPj">
+                                    <stepper hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rFK-Ix-bPj">
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="valueChanged:" destination="7uE-MQ-V0L" eventType="valueChanged" id="WBQ-6w-lHw"/>
                                         </connections>
@@ -164,9 +165,8 @@
                                             <constraint firstAttribute="height" constant="44" id="xFP-Dj-EWS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                        <state key="normal" title="+1" backgroundImage="empty.png">
+                                        <state key="normal" backgroundImage="empty.png">
                                             <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -181,16 +181,16 @@
                                     <accessibilityTraits key="traits" none="YES" image="YES"/>
                                 </accessibility>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rFK-Ix-bPj" secondAttribute="bottom" constant="97" id="4fN-JT-g7o"/>
                                     <constraint firstItem="NUb-RN-o9b" firstAttribute="top" secondItem="c6Z-PG-lOD" secondAttribute="top" constant="179" id="7Ay-QX-str"/>
                                     <constraint firstItem="s13-vD-TeQ" firstAttribute="top" secondItem="c6Z-PG-lOD" secondAttribute="top" type="default" id="9Dx-hi-LKJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="rFK-Ix-bPj" secondAttribute="bottom" constant="97" id="9X0-vh-FwQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="xQK-8b-LdB" secondAttribute="bottom" constant="88" id="K0R-bO-V2o"/>
                                     <constraint firstItem="rFK-Ix-bPj" firstAttribute="centerX" secondItem="xnB-j1-dks" secondAttribute="centerX" type="default" id="OCG-fI-R25"/>
                                     <constraint firstItem="YAC-UB-fqj" firstAttribute="centerX" secondItem="NUb-RN-o9b" secondAttribute="centerX" type="default" id="Xpu-jU-3CT"/>
                                     <constraint firstItem="s13-vD-TeQ" firstAttribute="leading" secondItem="c6Z-PG-lOD" secondAttribute="leading" constant="320" id="erq-2B-BbO"/>
                                     <constraint firstItem="xQK-8b-LdB" firstAttribute="leading" secondItem="c6Z-PG-lOD" secondAttribute="leading" type="default" id="hX8-7C-TpY"/>
                                     <constraint firstItem="YAC-UB-fqj" firstAttribute="centerX" secondItem="xnB-j1-dks" secondAttribute="centerX" type="default" id="htE-EY-r2U"/>
                                     <constraint firstAttribute="bottom" secondItem="xnB-j1-dks" secondAttribute="bottom" constant="166" id="iU5-e2-yGz"/>
+                                    <constraint firstAttribute="bottom" secondItem="xQK-8b-LdB" secondAttribute="bottom" constant="88" id="kE8-NP-vtH"/>
                                     <constraint firstItem="s13-vD-TeQ" firstAttribute="centerY" secondItem="YAC-UB-fqj" secondAttribute="centerY" type="default" id="q5b-dW-QlB"/>
                                     <constraint firstItem="xQK-8b-LdB" firstAttribute="trailing" secondItem="c6Z-PG-lOD" secondAttribute="trailing" type="default" id="qGN-LV-Hk2"/>
                                     <constraint firstItem="xQK-8b-LdB" firstAttribute="centerX" secondItem="rFK-Ix-bPj" secondAttribute="centerX" type="default" id="ueS-nK-1FX"/>

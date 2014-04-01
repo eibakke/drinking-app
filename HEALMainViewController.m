@@ -38,10 +38,10 @@
     [button setImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"" forState:UIControlStateNormal];
-    button.frame = CGRectMake(110.0, 75.0, 100.0, 100.0);
+    button.frame = CGRectMake(60.0, 60.0, 200.0, 200.0);
     button.clipsToBounds = YES;
     
-    button.layer.cornerRadius = 50;
+    button.layer.cornerRadius = 100;
     button.layer.borderColor = [UIColor blackColor].CGColor;
     button.layer.borderWidth = 2.0f;
     
@@ -179,6 +179,7 @@
         [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
         UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        
         self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
         
     }
@@ -191,10 +192,12 @@
         UIGraphicsEndImageContext();
         
         self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+        
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
         UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        
         self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
     }
     
@@ -207,11 +210,11 @@
         
         self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
         
-        
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
         UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        
         self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
 
     }
@@ -223,10 +226,12 @@
         UIGraphicsEndImageContext();
         
         self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+        
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
         UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        
         self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
     }
     
@@ -237,10 +242,12 @@
         UIGraphicsEndImageContext();
         
         self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+        
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
         UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        
         self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
     }
     
