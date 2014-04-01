@@ -38,10 +38,13 @@
     [button setImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"" forState:UIControlStateNormal];
-    button.frame = CGRectMake(60.0, 60.0, 200.0, 200.0);
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screen.size.width;
+    CGFloat screenHeight = screen.size.height;
+    button.frame = CGRectMake((0.1*screenWidth), (0.1*screenHeight), (0.8*screenWidth), (0.8*screenWidth));
     button.clipsToBounds = YES;
     
-    button.layer.cornerRadius = 100;
+    button.layer.cornerRadius = (0.8*screenWidth)/2.0;
     button.layer.borderColor = [UIColor blackColor].CGColor;
     button.layer.borderWidth = 2.0f;
     
@@ -267,6 +270,7 @@
     if (self.user.BAC < 0.02)
     {
         [button setTitle:@"Sober" forState:UIControlStateNormal];
+        //[button setBackgroundImage:<#(UIImage *)#> forState:UIControlStateNormal];
         
         [self updateBackground:@"Sober"];
         
