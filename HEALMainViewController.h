@@ -22,13 +22,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *drinkLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bacLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UIButton *stateButton;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 
 - (IBAction)valueChanged:(UIStepper *)sender;
 - (IBAction)threeLinesButtonClicked:(id)sender;
 - (IBAction)swipedLeft:(id)sender;
 - (IBAction)swipedRight:(id)sender;
+- (IBAction)runAddValueChanged:(id)sender;
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue;
 

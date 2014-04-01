@@ -67,6 +67,12 @@
     [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
 }
 
+- (IBAction)runAddValueChanged:(id)sender
+{
+    self.drinkStepper.value += 1;
+    [self valueChanged:_drinkStepper];
+}
+
 - (IBAction)valueChanged:(UIStepper *)sender
 {
     if(self.user.weight == 0)
