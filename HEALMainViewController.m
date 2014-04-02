@@ -35,18 +35,15 @@
 - (void)circleButton
 {
     button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"CenterButtonSober.png"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:@"" forState:UIControlStateNormal];
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screen.size.width;
     CGFloat screenHeight = screen.size.height;
-    button.frame = CGRectMake((0.1*screenWidth), (0.1*screenHeight), (0.8*screenWidth), (0.8*screenWidth));
+    button.frame = CGRectMake((0.05*screenWidth), (0.2*screenHeight), (0.9*screenWidth), (0.9*screenWidth));
     button.clipsToBounds = YES;
     
     button.layer.cornerRadius = (0.8*screenWidth)/2.0;
-    button.layer.borderColor = [UIColor blackColor].CGColor;
-    button.layer.borderWidth = 2.0f;
     
     [self.centerView addSubview:button];
 }
@@ -67,7 +64,7 @@
     NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
     [dFormatter setDateFormat:@"hh:mm a"];
     NSString *t = [dFormatter stringFromDate: date];
-    [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"Drinking since: ", t]];
+    [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"You've been drinking since: ", t]];
 }
 
 - (IBAction)runAddValueChanged:(id)sender
@@ -267,36 +264,43 @@
     [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
     [self countUp];
     
-    if (self.user.BAC < 0.02)
+    if (self.drinkStepper.value == 100)
     {
-        [button setTitle:@"Sober" forState:UIControlStateNormal];
-        //[button setBackgroundImage:<#(UIImage *)#> forState:UIControlStateNormal];
+        //[button setTitle:@"Dead" forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"DangerButton.png"] forState:UIControlStateNormal];
         
-        [self updateBackground:@"Sober"];
+        
+        //[self updateBackground:@"Dead"];
+    } else if (self.user.BAC < 0.02)
+    {
+        //[button setTitle:@"Sober" forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"CenterButtonSober.png"] forState:UIControlStateNormal];
+        
+        //[self updateBackground:@"Sober"];
         
     } else if(0.02 < self.user.BAC && self.user.BAC < 0.06)
     {
-        [button setTitle:@"Tipsy" forState:UIControlStateNormal];
+        //[button setTitle:@"Tipsy" forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"TipsyButton.png"] forState:UIControlStateNormal];
+
         
-        [self updateBackground:@"Tipsy"];
+        //[self updateBackground:@"Tipsy"];
    
     } else if (0.06 < self.user.BAC && self.user.BAC < 0.2)
     {
-        [button setTitle:@"Drunk" forState:UIControlStateNormal];
+        //[button setTitle:@"Drunk" forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"DrunkButton.png"] forState:UIControlStateNormal];
+
         
-        [self updateBackground:@"Drunk"];
+        //[self updateBackground:@"Drunk"];
         
-    } else if (0.2 < self.user.BAC)
+    } else if (0.2 < self.user.BAC && self.user.BAC < 1)
     {
-        [button setTitle:@"Danger" forState:UIControlStateNormal];
+        //[button setTitle:@"Danger" forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
+
         
-        [self updateBackground:@"Danger"];
-    }
-    if (self.drinkStepper.value == 100)
-    {
-        [button setTitle:@"Dead" forState:UIControlStateNormal];
-        
-        [self updateBackground:@"Dead"];
+        //[self updateBackground:@"Danger"];
     }
 }
 
@@ -305,7 +309,6 @@
     [super viewDidLoad];
     [self circleButton];
     [self updateBackground:@"Sober"];
-    [button setTitle:@"Sober" forState:UIControlStateNormal];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
     [self.view sendSubviewToBack:self.rightView];

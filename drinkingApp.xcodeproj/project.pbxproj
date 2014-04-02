@@ -63,6 +63,20 @@
 		A855254A18CEAB7900567BDA /* DrunkInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254318CEAB7900567BDA /* DrunkInfo.jpg */; };
 		A855254C18CEAB7900567BDA /* Tipsy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254518CEAB7900567BDA /* Tipsy.jpg */; };
 		A855254D18CEAB7900567BDA /* TipsyInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254618CEAB7900567BDA /* TipsyInfo.jpg */; };
+		A8B7975918EBCE7B00686E79 /* SettingsScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975818EBCE7B00686E79 /* SettingsScreen.png */; };
+		A8B7975B18EC3EB300686E79 /* NewUserSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975A18EC3EB300686E79 /* NewUserSettings.png */; };
+		A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975C18EC42D900686E79 /* AddDrink.png */; };
+		A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975E18EC446300686E79 /* AddDrinkedited.png */; };
+		A8B7976318EC4DD700686E79 /* SoberState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7976218EC4DD700686E79 /* SoberState.png */; };
+		A8B7976518EC4F1D00686E79 /* DrunkMain.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7976418EC4F1D00686E79 /* DrunkMain.png */; };
+		A8B7976718EC4F2100686E79 /* DangerMain.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7976618EC4F2100686E79 /* DangerMain.png */; };
+		A8B7976918EC4F2700686E79 /* SoberMain.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7976818EC4F2700686E79 /* SoberMain.png */; };
+		A8B7976B18EC4F4A00686E79 /* TipsyMain.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7976A18EC4F4A00686E79 /* TipsyMain.png */; };
+		A8B7977118EC594000686E79 /* TipsyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977018EC594000686E79 /* TipsyButton.png */; };
+		A8B7977318EC594500686E79 /* DrunkButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977218EC594500686E79 /* DrunkButton.png */; };
+		A8B7977618EC5A6A00686E79 /* CenterButtonSober.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977518EC5A6A00686E79 /* CenterButtonSober.png */; };
+		A8B7977818EC5F6900686E79 /* DangerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977718EC5F6900686E79 /* DangerButton.png */; };
+		A8B7977A18EC612000686E79 /* DangerButtonSMS.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977918EC612000686E79 /* DangerButtonSMS.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +159,20 @@
 		A855254418CEAB7900567BDA /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
 		A855254518CEAB7900567BDA /* Tipsy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tipsy.jpg; sourceTree = "<group>"; };
 		A855254618CEAB7900567BDA /* TipsyInfo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TipsyInfo.jpg; sourceTree = "<group>"; };
+		A8B7975818EBCE7B00686E79 /* SettingsScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SettingsScreen.png; path = Images/SettingsScreen.png; sourceTree = SOURCE_ROOT; };
+		A8B7975A18EC3EB300686E79 /* NewUserSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewUserSettings.png; path = Images/NewUserSettings.png; sourceTree = SOURCE_ROOT; };
+		A8B7975C18EC42D900686E79 /* AddDrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrink.png; path = Images/AddDrink.png; sourceTree = SOURCE_ROOT; };
+		A8B7975E18EC446300686E79 /* AddDrinkedited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrinkedited.png; path = Images/AddDrinkedited.png; sourceTree = SOURCE_ROOT; };
+		A8B7976218EC4DD700686E79 /* SoberState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SoberState.png; path = Images/SoberState.png; sourceTree = SOURCE_ROOT; };
+		A8B7976418EC4F1D00686E79 /* DrunkMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkMain.png; path = Images/DrunkMain.png; sourceTree = SOURCE_ROOT; };
+		A8B7976618EC4F2100686E79 /* DangerMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DangerMain.png; path = Images/DangerMain.png; sourceTree = SOURCE_ROOT; };
+		A8B7976818EC4F2700686E79 /* SoberMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SoberMain.png; path = Images/SoberMain.png; sourceTree = SOURCE_ROOT; };
+		A8B7976A18EC4F4A00686E79 /* TipsyMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TipsyMain.png; path = Images/TipsyMain.png; sourceTree = SOURCE_ROOT; };
+		A8B7977018EC594000686E79 /* TipsyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TipsyButton.png; path = "Images/round buttons/TipsyButton.png"; sourceTree = SOURCE_ROOT; };
+		A8B7977218EC594500686E79 /* DrunkButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkButton.png; path = "Images/round buttons/DrunkButton.png"; sourceTree = SOURCE_ROOT; };
+		A8B7977518EC5A6A00686E79 /* CenterButtonSober.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CenterButtonSober.png; path = "Images/round buttons/CenterButtonSober.png"; sourceTree = SOURCE_ROOT; };
+		A8B7977718EC5F6900686E79 /* DangerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DangerButton.png; path = "Images/round buttons/DangerButton.png"; sourceTree = SOURCE_ROOT; };
+		A8B7977918EC612000686E79 /* DangerButtonSMS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DangerButtonSMS.png; path = "Images/round buttons/DangerButtonSMS.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,24 +340,38 @@
 				89F840D218DFFCDC0048AD95 /* radio-res-ios */,
 				A811E4E418E50A8A00970E77 /* icon.png */,
 				A811E4E618E5139800970E77 /* empty.png */,
+				A8B7976818EC4F2700686E79 /* SoberMain.png */,
+				A8B7976618EC4F2100686E79 /* DangerMain.png */,
 				A811E4E818E5191700970E77 /* Flip.png */,
+				A8B7975818EBCE7B00686E79 /* SettingsScreen.png */,
 				6D6BD5EC18E9E58900B45823 /* AboutUS.png */,
+				A8B7975C18EC42D900686E79 /* AddDrink.png */,
+				A8B7977518EC5A6A00686E79 /* CenterButtonSober.png */,
 				A855253D18CEA23E00567BDA /* Logo.jpg */,
+				A8B7976418EC4F1D00686E79 /* DrunkMain.png */,
 				A811E4D418E39B5C00970E77 /* noButtons.png */,
+				A8B7976A18EC4F4A00686E79 /* TipsyMain.png */,
 				A811E4D818E3AEAF00970E77 /* sampleNavBar1.png */,
+				A8B7976218EC4DD700686E79 /* SoberState.png */,
+				A8B7975E18EC446300686E79 /* AddDrinkedited.png */,
 				A811E4DA18E4AD2E00970E77 /* SoberState.png */,
 				A811E4DC18E4B04700970E77 /* TipsyState.png */,
+				A8B7977718EC5F6900686E79 /* DangerButton.png */,
 				A811E4E018E4B24300970E77 /* DrunkState.png */,
 				A811E4E218E4B2D100970E77 /* DangerState.png */,
+				A8B7977918EC612000686E79 /* DangerButtonSMS.png */,
 				A811E4DE18E4B22E00970E77 /* DeadState.png */,
 				6D0B7B9418C45B6E00419E78 /* background.jpg */,
 				891FEB2F18C7D97D00780C8A /* beer.jpg */,
 				6D6BD5EA18E9E53200B45823 /* 3bar.png */,
 				A811E4D218E3991D00970E77 /* BlurLogoScreen.png */,
 				A855254018CEAB7900567BDA /* Danger.jpg */,
+				A8B7977218EC594500686E79 /* DrunkButton.png */,
+				A8B7975A18EC3EB300686E79 /* NewUserSettings.png */,
 				A855254118CEAB7900567BDA /* DangerInfo.jpg */,
 				A855254218CEAB7900567BDA /* Drunk.jpg */,
 				A855254318CEAB7900567BDA /* DrunkInfo.jpg */,
+				A8B7977018EC594000686E79 /* TipsyButton.png */,
 				A811E4D618E3ACCF00970E77 /* sampleNavBar.png */,
 				A855254418CEAB7900567BDA /* Logo.jpg */,
 				A855254518CEAB7900567BDA /* Tipsy.jpg */,
@@ -415,35 +457,49 @@
 				89F840D718DFFCDC0048AD95 /* checked.png in Resources */,
 				A811E4D918E3AEAF00970E77 /* sampleNavBar1.png in Resources */,
 				A855253E18CEA23E00567BDA /* Logo.jpg in Resources */,
+				A8B7977118EC594000686E79 /* TipsyButton.png in Resources */,
 				A811E4DF18E4B22E00970E77 /* DeadState.png in Resources */,
+				A8B7975B18EC3EB300686E79 /* NewUserSettings.png in Resources */,
 				89F840D818DFFCDC0048AD95 /* checked@2x.png in Resources */,
 				89F840DA18DFFCDC0048AD95 /* unchecked@2x.png in Resources */,
 				A811E4E918E5191700970E77 /* Flip.png in Resources */,
 				8956FC6218BBD6D70018F32B /* InfoPlist.strings in Resources */,
 				8956FC6A18BBD6D70018F32B /* Default.png in Resources */,
+				A8B7976718EC4F2100686E79 /* DangerMain.png in Resources */,
 				8956FC6C18BBD6D70018F32B /* Default@2x.png in Resources */,
 				A855254A18CEAB7900567BDA /* DrunkInfo.jpg in Resources */,
 				A811E4DB18E4AD2E00970E77 /* SoberState.png in Resources */,
 				89F840D918DFFCDC0048AD95 /* unchecked.png in Resources */,
+				A8B7977818EC5F6900686E79 /* DangerButton.png in Resources */,
+				A8B7977A18EC612000686E79 /* DangerButtonSMS.png in Resources */,
 				6D6BD5ED18E9E58900B45823 /* AboutUS.png in Resources */,
+				A8B7975918EBCE7B00686E79 /* SettingsScreen.png in Resources */,
 				A855254D18CEAB7900567BDA /* TipsyInfo.jpg in Resources */,
+				A8B7976518EC4F1D00686E79 /* DrunkMain.png in Resources */,
 				6D0B7B9518C45B6E00419E78 /* background.jpg in Resources */,
 				A811E4E118E4B24300970E77 /* DrunkState.png in Resources */,
 				8956FC6E18BBD6D70018F32B /* Default-568h@2x.png in Resources */,
+				A8B7976B18EC4F4A00686E79 /* TipsyMain.png in Resources */,
 				A855254818CEAB7900567BDA /* DangerInfo.jpg in Resources */,
 				A811E4D718E3ACCF00970E77 /* sampleNavBar.png in Resources */,
 				A855254C18CEAB7900567BDA /* Tipsy.jpg in Resources */,
 				A811E4E718E5139800970E77 /* empty.png in Resources */,
+				A8B7976918EC4F2700686E79 /* SoberMain.png in Resources */,
 				A811E4D518E39B5C00970E77 /* noButtons.png in Resources */,
+				A8B7976318EC4DD700686E79 /* SoberState.png in Resources */,
+				A8B7977618EC5A6A00686E79 /* CenterButtonSober.png in Resources */,
 				89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */,
 				A811E4DD18E4B04700970E77 /* TipsyState.png in Resources */,
 				A855254718CEAB7900567BDA /* Danger.jpg in Resources */,
 				A855254918CEAB7900567BDA /* Drunk.jpg in Resources */,
+				A8B7977318EC594500686E79 /* DrunkButton.png in Resources */,
 				8944D52218E122C700E39EC7 /* gradiantRight.png in Resources */,
 				6D6BD5EB18E9E53200B45823 /* 3bar.png in Resources */,
+				A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */,
 				A811E4E318E4B2D100970E77 /* DangerState.png in Resources */,
 				A811E4E518E50A8A00970E77 /* icon.png in Resources */,
 				891FEB3018C7D97D00780C8A /* beer.jpg in Resources */,
+				A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */,
 				89D59E5C18E37BF500C013C1 /* threelines.png in Resources */,
 				A811E4D318E3991D00970E77 /* BlurLogoScreen.png in Resources */,
 			);

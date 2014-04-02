@@ -156,6 +156,13 @@
 	
     self.navigationItem.hidesBackButton = YES;
     
+    
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"SettingsScreen.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
     // We want the textfields to delegate back to this view controller
     [[self weightTextField] setDelegate:self];
     [[self nameTextField] setDelegate:self];
