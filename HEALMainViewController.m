@@ -14,7 +14,7 @@
     BOOL slidRight;
     UIGestureRecognizer *tapRecognizer;
     UIButton *button;
-    UIButton *smsButton;
+    UIButton *sosButton;
 
 }
 @property (weak, nonatomic) IBOutlet UIButton *nightButton;
@@ -57,11 +57,11 @@
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screen.size.width;
     CGFloat screenHeight = screen.size.height;
-    smsButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [smsButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
-    smsButton.frame = CGRectMake((0.35*screenWidth), (0.55*screenHeight), (0.3*screenWidth), (0.15*screenHeight));
+    sosButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [sosButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
+    sosButton.frame = CGRectMake((0.35*screenWidth), (0.55*screenHeight), (0.3*screenWidth), (0.15*screenHeight));
     //[button setBackgroundColor:[UIColor redColor]];
-    [self.centerView addSubview:smsButton];
+    [self.centerView addSubview:sosButton];
 }
 
 
@@ -156,6 +156,9 @@
     [self updateLabels];
     [self.timeLabel setText:@"Ready to start? Press the plus below!"];
     [self updateBackground:@"Sober"];
+    //[self delete:sosButton];
+    sosButton.hidden = YES;
+    sosButton.UserInteractionEnabled = NO;
 
 }
 
@@ -315,6 +318,8 @@
     } else if (0.2 < self.user.BAC && self.user.BAC < 1)
     {
         [self sosButton];
+        sosButton.hidden = NO;
+        sosButton.UserInteractionEnabled = YES;
         
         //[button setTitle:@"Danger" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
