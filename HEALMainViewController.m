@@ -14,6 +14,7 @@
     BOOL slidRight;
     UIGestureRecognizer *tapRecognizer;
     UIButton *button;
+    UIButton *smsButton;
 
 }
 @property (weak, nonatomic) IBOutlet UIButton *nightButton;
@@ -49,6 +50,18 @@
 
     
     [self.centerView addSubview:button];
+}
+
+- (void)sosButton
+{
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screen.size.width;
+    CGFloat screenHeight = screen.size.height;
+    smsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [smsButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
+    smsButton.frame = CGRectMake((0.35*screenWidth), (0.55*screenHeight), (0.3*screenWidth), (0.15*screenHeight));
+    //[button setBackgroundColor:[UIColor redColor]];
+    [self.centerView addSubview:smsButton];
 }
 
 
@@ -211,6 +224,8 @@
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
+
+        
         self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
         
         UIGraphicsBeginImageContext(self.view.frame.size);
@@ -299,6 +314,8 @@
         
     } else if (0.2 < self.user.BAC && self.user.BAC < 1)
     {
+        [self sosButton];
+        
         //[button setTitle:@"Danger" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
 
