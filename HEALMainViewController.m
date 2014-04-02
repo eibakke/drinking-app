@@ -35,7 +35,9 @@
 - (void)circleButton
 {
     button = [UIButton buttonWithType:UIButtonTypeCustom];
+
     [button setImage:[UIImage imageNamed:@"CenterButtonSober.png"] forState:UIControlStateNormal];
+
     [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screen.size.width;
@@ -44,6 +46,7 @@
     button.clipsToBounds = YES;
     
     button.layer.cornerRadius = (0.8*screenWidth)/2.0;
+
     
     [self.centerView addSubview:button];
 }
