@@ -36,8 +36,9 @@
 {
     button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor colorWithRed:128.0/255.0f green:0.0/255.0f  blue:0.0/255.0f alpha:0.7]];
+    [button setBackgroundImage:[UIImage imageNamed:@"empty.png"] forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:@"" forState:UIControlStateNormal];
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screen.size.width;
     CGFloat screenHeight = screen.size.height;
@@ -45,7 +46,7 @@
     button.clipsToBounds = YES;
     
     button.layer.cornerRadius = (0.8*screenWidth)/2.0;
-    button.layer.borderColor = [UIColor blackColor].CGColor;
+    button.layer.borderColor = [UIColor redColor].CGColor;
     button.layer.borderWidth = 2.0f;
     
     [self.centerView addSubview:button];
