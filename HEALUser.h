@@ -21,13 +21,24 @@ typedef enum
     FEMALE
 } sexes;
 
-@property(nonatomic, setter = sex:) sexes sex;
+typedef enum
+{
+    SOBER,
+    TIPSY,
+    DRUNK,
+    DANGER,
+    DEAD
+} intoxState;
+
+@property(nonatomic, assign) intoxState state;
+@property(nonatomic, assign) sexes sex;
 @property(nonatomic) int weight;
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) HEALNight *currentNight;
 @property(nonatomic) float BAC;
 
 -(void)makeNight:(HEALNight*)night;
+-(NSString*)stateAsString;
 
 
 
