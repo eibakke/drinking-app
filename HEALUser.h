@@ -26,7 +26,8 @@ typedef enum
     SOBER,
     TIPSY,
     DRUNK,
-    DANGER
+    DANGER,
+    DEAD
 } intoxState;
 
 @property(nonatomic, assign) intoxState state;

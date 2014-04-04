@@ -110,9 +110,7 @@
 }
 
 - (IBAction)swipedLeft:(id)sender {
-    if (slidRight) {
-        return;
-    } else {
+    if (!slidRight) {
         [self toggleRightView];
     }
 }
@@ -120,33 +118,28 @@
 - (IBAction)swipedRight:(id)sender {
     if (slidRight) {
         [self toggleRightView];
-    } else {
-        return;
     }
 }
 
 - (void)toggleRightView
 {
+    CGRect frame = self.centerView.frame;
+    
     if(slidRight)
     {
-        CGRect frame = self.centerView.frame;
         frame.origin.x = 0;
-        [UIView animateWithDuration:0.25 animations:^{
-            self.centerView.frame = frame;
-        }];
-        
         slidRight = NO;
     }
     else if(!slidRight)
     {
-        CGRect frame = self.centerView.frame;
         frame.origin.x = -self.rightView.frame.size.width;
-        [UIView animateWithDuration:0.25 animations:^{
-            self.centerView.frame = frame;
-        }];
-        
         slidRight = YES;
     }
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.centerView.frame = frame;
+    }];
+    
 }
 
 - (void)newNight

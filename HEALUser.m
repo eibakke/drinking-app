@@ -29,7 +29,7 @@
     
     if (self) {
         self.currentNight = [[HEALNight alloc] init];
-        self.intoxStateArray = @[@"Sober", @"Tipsy", @"Drunk", @"Danger"];
+        self.intoxStateArray = @[@"Sober", @"Tipsy", @"Drunk", @"Danger", @"Dead"];
     }
     return self;
 }
@@ -57,8 +57,10 @@
         self.state = TIPSY;
     } else if (0.06 < _BAC && _BAC < 0.2) {
         self.state = DRUNK;
-    } else if (0.2 < _BAC) {
+    } else if (0.2 < _BAC && _BAC < 4.0) {
         self.state = DANGER;
+    } else {
+        self.state = DEAD;
     }
 }
 
