@@ -63,6 +63,9 @@
 		A855254A18CEAB7900567BDA /* DrunkInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254318CEAB7900567BDA /* DrunkInfo.jpg */; };
 		A855254C18CEAB7900567BDA /* Tipsy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254518CEAB7900567BDA /* Tipsy.jpg */; };
 		A855254D18CEAB7900567BDA /* TipsyInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A855254618CEAB7900567BDA /* TipsyInfo.jpg */; };
+		A8B3581C18EE5CCD008AF5FE /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581918EE5CCD008AF5FE /* CERoundProgressLayer.m */; };
+		A8B3581D18EE5CCD008AF5FE /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */; };
+		A8B3581F18EE5E55008AF5FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */; };
 		A8B7975918EBCE7B00686E79 /* SettingsScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975818EBCE7B00686E79 /* SettingsScreen.png */; };
 		A8B7975B18EC3EB300686E79 /* NewUserSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975A18EC3EB300686E79 /* NewUserSettings.png */; };
 		A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975C18EC42D900686E79 /* AddDrink.png */; };
@@ -159,6 +162,11 @@
 		A855254418CEAB7900567BDA /* Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.jpg; sourceTree = "<group>"; };
 		A855254518CEAB7900567BDA /* Tipsy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tipsy.jpg; sourceTree = "<group>"; };
 		A855254618CEAB7900567BDA /* TipsyInfo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TipsyInfo.jpg; sourceTree = "<group>"; };
+		A8B3581818EE5CCD008AF5FE /* CERoundProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressLayer.h; sourceTree = "<group>"; };
+		A8B3581918EE5CCD008AF5FE /* CERoundProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressLayer.m; sourceTree = "<group>"; };
+		A8B3581A18EE5CCD008AF5FE /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
+		A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressView.m; sourceTree = "<group>"; };
+		A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A8B7975818EBCE7B00686E79 /* SettingsScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SettingsScreen.png; path = Images/SettingsScreen.png; sourceTree = SOURCE_ROOT; };
 		A8B7975A18EC3EB300686E79 /* NewUserSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewUserSettings.png; path = Images/NewUserSettings.png; sourceTree = SOURCE_ROOT; };
 		A8B7975C18EC42D900686E79 /* AddDrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrink.png; path = Images/AddDrink.png; sourceTree = SOURCE_ROOT; };
@@ -180,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B3581F18EE5E55008AF5FE /* QuartzCore.framework in Frameworks */,
 				6D4118D418DF850E000EBBED /* MessageUI.framework in Frameworks */,
 				8956FC5618BBD6D70018F32B /* UIKit.framework in Frameworks */,
 				8956FC5818BBD6D70018F32B /* Foundation.framework in Frameworks */,
@@ -253,6 +262,7 @@
 		8956FC5418BBD6D70018F32B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */,
 				6D4118D318DF850E000EBBED /* MessageUI.framework */,
 				8956FC5518BBD6D70018F32B /* UIKit.framework */,
 				8956FC5718BBD6D70018F32B /* Foundation.framework */,
@@ -266,6 +276,7 @@
 		8956FC5D18BBD6D70018F32B /* drinkingApp */ = {
 			isa = PBXGroup;
 			children = (
+				A8B3581718EE5CCD008AF5FE /* Third Party Progress Bar */,
 				89F840CB18DFFA6C0048AD95 /* RadioButton */,
 				890792E418D0FDDA001EFA85 /* Model */,
 				A855253F18CEAB7900567BDA /* GraphicsResources */,
@@ -380,6 +391,17 @@
 			name = GraphicsResources;
 			path = ../UI;
 			sourceTree = "<group>";
+		};
+		A8B3581718EE5CCD008AF5FE /* Third Party Progress Bar */ = {
+			isa = PBXGroup;
+			children = (
+				A8B3581818EE5CCD008AF5FE /* CERoundProgressLayer.h */,
+				A8B3581918EE5CCD008AF5FE /* CERoundProgressLayer.m */,
+				A8B3581A18EE5CCD008AF5FE /* CERoundProgressView.h */,
+				A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */,
+			);
+			path = "Third Party Progress Bar";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -540,6 +562,7 @@
 				8956FC6818BBD6D70018F32B /* HEALAppDelegate.m in Sources */,
 				89F840D118DFFB1B0048AD95 /* RadioButton.m in Sources */,
 				8956FC7118BBD6D70018F32B /* drinkingApp.xcdatamodeld in Sources */,
+				A8B3581D18EE5CCD008AF5FE /* CERoundProgressView.m in Sources */,
 				89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */,
 				89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */,
 				8908588418C538D40020383C /* HEALUser.m in Sources */,
@@ -547,6 +570,7 @@
 				890792E118D0FDC1001EFA85 /* HEALDrunkStateViewController.m in Sources */,
 				890792E218D0FDC1001EFA85 /* HEALLogoViewController.m in Sources */,
 				890792E318D0FDC1001EFA85 /* HEALNewUserViewController.m in Sources */,
+				A8B3581C18EE5CCD008AF5FE /* CERoundProgressLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 @property (weak, nonatomic) IBOutlet UIView *rightView;
+
 - (IBAction)rightViewButtonClicked:(id)sender;
 
 @end
@@ -43,7 +44,7 @@
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screen.size.width;
     CGFloat screenHeight = screen.size.height;
-    button.frame = CGRectMake((0.05*screenWidth), (0.2*screenHeight), (0.9*screenWidth), (0.9*screenWidth));
+    button.frame = CGRectMake((0.1*screenWidth), (0.13*screenHeight), (0.8*screenWidth), (0.8*screenWidth));
     button.clipsToBounds = YES;
     
     button.layer.cornerRadius = (0.8*screenWidth)/2.0;
@@ -87,6 +88,9 @@
 {
     self.drinkStepper.value += 1;
     [self valueChanged:_drinkStepper];
+    [UIView animateWithDuration:3.0 animations:^{
+        self.roundProgressView.progress = 0.5;
+    }];
 }
 
 - (IBAction)valueChanged:(UIStepper *)sender
@@ -317,12 +321,12 @@
         
     } else if (0.2 < self.user.BAC && self.user.BAC < 1)
     {
-        [self sosButton];
-        sosButton.hidden = NO;
-        sosButton.UserInteractionEnabled = YES;
+        //[self sosButton];
+        //sosButton.hidden = NO;
+        //sosButton.UserInteractionEnabled = YES;
         
         //[button setTitle:@"Danger" forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
+        //[button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
 
         
         //[self updateBackground:@"Danger"];

@@ -12,6 +12,7 @@
 #import "HEALEditSettingsViewController.h"
 #import "MessageUI/MessageUI.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CERoundProgressView.h"
 
 
 @interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate> {
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *bacLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet CERoundProgressView *roundProgressView;
 
 
 - (IBAction)valueChanged:(UIStepper *)sender;

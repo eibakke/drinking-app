@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5053" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -131,7 +131,7 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAC-UB-fqj">
                                         <rect key="frame" x="71" y="346" width="192" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="192" id="PZ8-ch-XYZ"/>
+                                            <constraint firstAttribute="width" constant="192" type="user" id="PZ8-ch-XYZ"/>
                                             <constraint firstAttribute="height" constant="20" id="XHa-wv-33H"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -149,7 +149,7 @@
                                         <rect key="frame" x="58" y="318" width="205" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="e8G-4C-rws"/>
-                                            <constraint firstAttribute="width" constant="205" id="uGg-wP-mda"/>
+                                            <constraint firstAttribute="width" constant="205" type="user" id="uGg-wP-mda"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -174,6 +174,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-8b-LdB">
                                         <rect key="frame" x="0.0" y="411" width="320" height="60"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="bed-0m-GTL"/>
                                             <constraint firstAttribute="height" constant="60" id="dQS-Pz-slE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
@@ -187,6 +188,11 @@
                                             <action selector="runAddValueChanged:" destination="7uE-MQ-V0L" eventType="touchUpInside" id="odn-kE-dQA"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQ6-pd-30n" customClass="CERoundProgressView">
+                                        <rect key="frame" x="20" y="15" width="269" height="301"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -194,17 +200,21 @@
                                 </accessibility>
                                 <constraints>
                                     <constraint firstItem="xQK-8b-LdB" firstAttribute="top" secondItem="NUb-RN-o9b" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0hR-kZ-XzN"/>
-                                    <constraint firstItem="NUb-RN-o9b" firstAttribute="centerX" secondItem="rFK-Ix-bPj" secondAttribute="centerX" type="default" id="8PU-sF-aeD"/>
+                                    <constraint firstItem="NUb-RN-o9b" firstAttribute="centerX" secondItem="rFK-Ix-bPj" secondAttribute="centerX" type="user" id="8PU-sF-aeD"/>
                                     <constraint firstItem="s13-vD-TeQ" firstAttribute="top" secondItem="c6Z-PG-lOD" secondAttribute="top" type="default" id="9Dx-hi-LKJ"/>
-                                    <constraint firstItem="YAC-UB-fqj" firstAttribute="trailing" secondItem="xnB-j1-dks" secondAttribute="trailing" type="default" id="SII-Hi-0rB"/>
+                                    <constraint firstItem="YQ6-pd-30n" firstAttribute="leading" secondItem="c6Z-PG-lOD" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Fck-kX-j5o"/>
+                                    <constraint firstItem="YQ6-pd-30n" firstAttribute="top" secondItem="c6Z-PG-lOD" secondAttribute="top" constant="15" type="user" id="QU1-Av-jw0"/>
+                                    <constraint firstItem="YAC-UB-fqj" firstAttribute="trailing" secondItem="xnB-j1-dks" secondAttribute="trailing" type="user" id="SII-Hi-0rB"/>
+                                    <constraint firstAttribute="bottom" secondItem="YQ6-pd-30n" secondAttribute="bottom" constant="188" id="Ste-pU-ucV"/>
                                     <constraint firstItem="YAC-UB-fqj" firstAttribute="top" secondItem="xnB-j1-dks" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bgY-aE-NeM"/>
                                     <constraint firstItem="s13-vD-TeQ" firstAttribute="leading" secondItem="c6Z-PG-lOD" secondAttribute="leading" constant="320" id="erq-2B-BbO"/>
-                                    <constraint firstItem="NUb-RN-o9b" firstAttribute="centerX" secondItem="xnB-j1-dks" secondAttribute="centerX" type="default" id="fDD-ce-lY7"/>
-                                    <constraint firstItem="xQK-8b-LdB" firstAttribute="leading" secondItem="c6Z-PG-lOD" secondAttribute="leading" type="default" id="hX8-7C-TpY"/>
+                                    <constraint firstItem="NUb-RN-o9b" firstAttribute="centerX" secondItem="xnB-j1-dks" secondAttribute="centerX" type="user" id="fDD-ce-lY7"/>
+                                    <constraint firstItem="xQK-8b-LdB" firstAttribute="leading" secondItem="c6Z-PG-lOD" secondAttribute="leading" type="user" id="hX8-7C-TpY"/>
                                     <constraint firstAttribute="bottom" secondItem="xQK-8b-LdB" secondAttribute="bottom" constant="33" id="nlh-Lz-IrI"/>
                                     <constraint firstAttribute="bottom" secondItem="YAC-UB-fqj" secondAttribute="bottom" constant="138" id="qEb-Ow-NW8"/>
-                                    <constraint firstItem="xQK-8b-LdB" firstAttribute="trailing" secondItem="c6Z-PG-lOD" secondAttribute="trailing" type="default" id="qGN-LV-Hk2"/>
-                                    <constraint firstItem="xQK-8b-LdB" firstAttribute="centerX" secondItem="rFK-Ix-bPj" secondAttribute="centerX" type="default" id="ueS-nK-1FX"/>
+                                    <constraint firstItem="xQK-8b-LdB" firstAttribute="trailing" secondItem="c6Z-PG-lOD" secondAttribute="trailing" type="user" id="qGN-LV-Hk2"/>
+                                    <constraint firstItem="xQK-8b-LdB" firstAttribute="centerX" secondItem="rFK-Ix-bPj" secondAttribute="centerX" type="user" id="ueS-nK-1FX"/>
+                                    <constraint firstAttribute="trailing" secondItem="YQ6-pd-30n" secondAttribute="trailing" constant="31" type="user" id="xHv-Tg-nkb"/>
                                     <constraint firstAttribute="bottom" secondItem="s13-vD-TeQ" secondAttribute="bottom" type="default" id="y5S-ny-q6W"/>
                                     <constraint firstAttribute="bottom" secondItem="rFK-Ix-bPj" secondAttribute="bottom" constant="42" id="zd8-qp-f39"/>
                                 </constraints>
@@ -218,7 +228,6 @@
                             <constraint firstAttribute="bottom" secondItem="c6Z-PG-lOD" secondAttribute="bottom" type="default" id="UEL-qi-HHV"/>
                             <constraint firstItem="c6Z-PG-lOD" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" type="default" id="WEY-01-UOF"/>
                             <constraint firstItem="eEs-AX-o9k" firstAttribute="leading" secondItem="afE-MJ-Bsx" secondAttribute="leading" constant="105" id="ZNQ-GP-Qaj"/>
-                            <constraint firstAttribute="trailing" secondItem="c6Z-PG-lOD" secondAttribute="trailing" type="default" id="bbi-56-tJg"/>
                             <constraint firstItem="eEs-AX-o9k" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="-1" id="bjx-0J-zUF"/>
                             <constraint firstAttribute="trailing" secondItem="eEs-AX-o9k" secondAttribute="trailing" constant="-3" id="vO1-rH-rGK"/>
                         </constraints>
@@ -269,6 +278,7 @@
                         <outlet property="drinkStepper" destination="rFK-Ix-bPj" id="xAU-C3-NNB"/>
                         <outlet property="nightButton" destination="y8m-xS-FlY" id="XD7-Dh-RNh"/>
                         <outlet property="rightView" destination="eEs-AX-o9k" id="rZ8-hN-MQz"/>
+                        <outlet property="roundProgressView" destination="YQ6-pd-30n" id="Do1-Rr-V4H"/>
                         <outlet property="settingsButton" destination="n5u-nS-Rpc" id="XV3-1U-693"/>
                         <outlet property="smsButton" destination="EMa-lq-n4s" id="v78-bA-R1B"/>
                         <outlet property="timeLabel" destination="NUb-RN-o9b" id="iOk-Rh-k7R"/>
