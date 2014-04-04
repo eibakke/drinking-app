@@ -23,12 +23,7 @@
 -(void)resetStartTime
 {
     NSDate *myDate = [[NSDate alloc] init];
-    _startTime = [self getTimeSec:myDate];
-}
-
--(float)getTimeSec:(NSDate*)date
-{
-    return [date timeIntervalSince1970];
+    _startTime = [myDate timeIntervalSince1970];
 }
 
 -(void)reset
