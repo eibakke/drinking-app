@@ -13,7 +13,7 @@
     
     float userSexMetVal;
 }
-
+@property(strong, nonatomic)NSArray* intoxStateArray; 
 @end
 
 @implementation HEALUser
@@ -29,6 +29,7 @@
     
     if (self) {
         self.currentNight = [[HEALNight alloc] init];
+        self.intoxStateArray = @[@"Sober", @"Tipsy", @"Drunk", @"Danger"];
     }
     return self;
 }
@@ -43,10 +44,30 @@
     
     _BAC = (drinkFactor / userFactor) - (0.15 * timeDrinking);
     
+    [self updateState];
+    
     return(MAX(0, _BAC));
 }
 
--(void)sex:(sexes)sex
+-(void)updateState
+{
+    if (_BAC < 0.02) {
+        self.state = SOBER;
+    } else if (0.02 < _BAC && _BAC < 0.06) {
+        self.state = TIPSY;
+    } else if (0.06 < _BAC && _BAC < 0.2) {
+        self.state = DRUNK;
+    } else if (0.2 < _BAC) {
+        self.state = DANGER;
+    }
+}
+
+-(NSString*)stateAsString
+{
+    return [self.intoxStateArray objectAtIndex:self.state];
+}
+
+-(void)setSex:(sexes)sex
 {
     _sex = sex;
     if(sex == FEMALE)
