@@ -34,12 +34,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HEALMainViewController.m"
-         timestampString = "418096186.173257"
+         timestampString = "418588259.951225"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
          landmarkName = "-runAddValueChanged:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "HEALMainViewController.m"
+         timestampString = "418588463.514482"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "70"
+         endingLineNumber = "70"
+         landmarkName = "-sosDanger:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

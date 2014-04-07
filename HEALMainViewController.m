@@ -65,6 +65,20 @@
     [self.centerView addSubview:sosButton];
 }
 
+- (IBAction)sosDanger:(id)sender
+{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:@"Should probably getText from stored message, maybe something with recipient, too." delegate: self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send", nil];
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        [self sendSMS];        
+    }
+}
+
 
 - (void)resetTimer
 {
@@ -319,8 +333,9 @@
         //sosButton.UserInteractionEnabled = YES;
         
         //[button setTitle:@"Danger" forState:UIControlStateNormal];
-        //[button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
-
+        [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
+        
+        [self sosDanger:self];
         
         //[self updateBackground:@"Danger"];
     }
