@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5053" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,9 +14,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AboutUS.png" translatesAutoresizingMaskIntoConstraints="NO" id="IJm-M6-36M">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AboutUS.png" translatesAutoresizingMaskIntoConstraints="NO" id="IJm-M6-36M"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -55,10 +53,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEs-AX-o9k">
-                                <rect key="frame" x="105" y="-1" width="218" height="505"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5u-nS-Rpc">
-                                        <rect key="frame" x="-2" y="77" width="218" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="Cta-s7-ovP"/>
@@ -77,7 +73,6 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMa-lq-n4s">
-                                        <rect key="frame" x="-2" y="117" width="218" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="BOr-og-BP3"/>
@@ -95,7 +90,6 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-xS-FlY">
-                                        <rect key="frame" x="-2" y="157" width="218" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="rJV-cv-kmG"/>
@@ -126,10 +120,8 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6Z-PG-lOD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAC-UB-fqj">
-                                        <rect key="frame" x="71" y="346" width="192" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="192" type="user" id="PZ8-ch-XYZ"/>
                                             <constraint firstAttribute="height" constant="20" id="XHa-wv-33H"/>
@@ -139,14 +131,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rFK-Ix-bPj">
-                                        <rect key="frame" x="113" y="435" width="94" height="27"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="valueChanged:" destination="7uE-MQ-V0L" eventType="valueChanged" id="WBQ-6w-lHw"/>
                                         </connections>
                                     </stepper>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnB-j1-dks">
-                                        <rect key="frame" x="58" y="318" width="205" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="e8G-4C-rws"/>
                                             <constraint firstAttribute="width" constant="205" type="user" id="uGg-wP-mda"/>
@@ -156,7 +146,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ready to start? Press the below!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-RN-o9b">
-                                        <rect key="frame" x="10" y="379" width="301" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="7Um-Ds-6wj"/>
                                             <constraint firstAttribute="width" constant="301" id="zhl-40-t9k"/>
@@ -166,13 +155,11 @@
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradiantRight.png" translatesAutoresizingMaskIntoConstraints="NO" id="s13-vD-TeQ">
-                                        <rect key="frame" x="320" y="0.0" width="13" height="504"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="13" id="FjN-0Y-VCI"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-8b-LdB">
-                                        <rect key="frame" x="0.0" y="411" width="320" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="bed-0m-GTL"/>
                                             <constraint firstAttribute="height" constant="60" id="dQS-Pz-slE"/>
@@ -189,8 +176,6 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQ6-pd-30n" customClass="CERoundProgressView">
-                                        <rect key="frame" x="20" y="15" width="269" height="301"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -309,7 +294,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="in lbs eg. 150" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C5k-4F-wvV">
-                                <rect key="frame" x="152" y="302" width="148" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" type="user" id="DWp-nf-GmC"/>
                                 </constraints>
@@ -318,7 +302,6 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-W1-GhK">
-                                <rect key="frame" x="152" y="237" width="148" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="148" id="E4l-dR-DOg"/>
                                     <constraint firstAttribute="height" constant="30" type="user" id="eug-5a-nq0"/>
@@ -328,7 +311,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-Yl-kbo">
-                                <rect key="frame" x="183" y="431" width="99" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="99" type="user" id="fcr-75-0Hj"/>
                                 </constraints>
@@ -345,7 +327,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-QR-UZM">
-                                <rect key="frame" x="28" y="431" width="99" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="0F2-vj-RT4"/>
                                     <constraint firstAttribute="width" constant="99" type="user" id="Olp-hl-TqG"/>
@@ -363,7 +344,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="m" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuU-4b-fYL" customClass="RadioButton">
-                                <rect key="frame" x="51" y="348" width="76" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="fEe-OT-Mhh"/>
                                 </constraints>
@@ -379,7 +359,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-hU-g4O" customClass="RadioButton">
-                                <rect key="frame" x="183" y="348" width="94" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="7cj-78-WSu"/>
                                 </constraints>
@@ -392,7 +371,6 @@
                                 <state key="selected" image="checked.png"/>
                             </button>
                         </subviews>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NMa-Yl-kbo" secondAttribute="trailing" constant="38" type="user" id="144-wF-ANb"/>
@@ -449,9 +427,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlurLogoScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qfg-xW-YBV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlurLogoScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qfg-xW-YBV"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -480,7 +456,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bOs-YU-Za9">
-                                <rect key="frame" x="155" y="237" width="145" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="wv8-uO-vSV"/>
                                 </constraints>
@@ -489,7 +464,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="in lbs e.g. 150" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nxr-39-fmt">
-                                <rect key="frame" x="155" y="301" width="145" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Jde-BU-a42"/>
                                 </constraints>
@@ -498,7 +472,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="m" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTn-si-EZ3" customClass="RadioButton">
-                                <rect key="frame" x="47" y="347" width="76" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="dKE-s8-foh"/>
                                 </constraints>
@@ -514,7 +487,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlG-c2-wvX" customClass="RadioButton">
-                                <rect key="frame" x="191" y="347" width="94" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="p9t-2b-OBG"/>
                                 </constraints>
@@ -570,7 +542,79 @@
         <image name="gradiantRight.png" width="16" height="1"/>
         <image name="unchecked.png" width="24" height="24"/>
     </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+    <classes>
+        <class className="CERoundProgressView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CERoundProgressView.h"/>
+        </class>
+        <class className="HEALDrunkStateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALDrunkStateViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="drinkStepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="stateDetails" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="stateLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HEALEditSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALEditSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButton:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="femaleRadioButton" candidateClass="RadioButton"/>
+                <relationship kind="outlet" name="maleRadioButton" candidateClass="RadioButton"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="HEALLogoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALLogoViewController.h"/>
+        </class>
+        <class className="HEALMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="rightViewButtonClicked:"/>
+                <relationship kind="action" name="runAddValueChanged:"/>
+                <relationship kind="action" name="swipedLeft:"/>
+                <relationship kind="action" name="swipedRight:"/>
+                <relationship kind="action" name="threeLinesButtonClicked:"/>
+                <relationship kind="action" name="unwindToMain:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="valueChanged:" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bacLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="centerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="drinkLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="drinkStepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="nightButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rightView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="roundProgressView" candidateClass="CERoundProgressView"/>
+                <relationship kind="outlet" name="settingsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="smsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HEALNewUserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HEALNewUserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButton:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="femaleRadioButton" candidateClass="RadioButton"/>
+                <relationship kind="outlet" name="maleRadioButton" candidateClass="RadioButton"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RadioButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RadioButton.h"/>
+            <relationships>
+                <relationship kind="outletCollection" name="groupButtons" candidateClass="RadioButton"/>
+            </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

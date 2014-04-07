@@ -32,8 +32,14 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:[NSString stringWithFormat:@"%@%@", [self.user stateAsString], @"State.png"]] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 
-    if(self.user.BAC < 0.02)
+    /*if(self.user.BAC < 0.02)
     {
         UIGraphicsBeginImageContext(self.view.frame.size);
         [[UIImage imageNamed:@"SoberState.png"] drawInRect:self.view.bounds];
@@ -81,9 +87,10 @@
         UIGraphicsEndImageContext();
         
         self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    }
+    }*/
 }
 
+    
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -128,7 +128,7 @@
 		8956FC8318BBD6D80018F32B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8956FC8518BBD6D80018F32B /* drinkingAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drinkingAppTests.h; sourceTree = "<group>"; };
 		8956FC8618BBD6D80018F32B /* drinkingAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drinkingAppTests.m; sourceTree = "<group>"; };
-		89D32C5318BE759C003920FE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		89D32C5318BE759C003920FE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		89D32C5518BE7AA1003920FE /* HEALEditSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALEditSettingsViewController.h; path = ../HEALEditSettingsViewController.h; sourceTree = "<group>"; };
 		89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALEditSettingsViewController.m; path = ../HEALEditSettingsViewController.m; sourceTree = "<group>"; };
 		89D32C5818BE7B54003920FE /* HEALMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALMainViewController.h; path = ../HEALMainViewController.h; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		8956FC4918BBD6D70018F32B = {
 			isa = PBXGroup;
 			children = (
-				89D32C5318BE759C003920FE /* MainStoryboard.storyboard */,
+				A8B3581718EE5CCD008AF5FE /* Third Party Progress Bar */,
 				8956FC5D18BBD6D70018F32B /* drinkingApp */,
 				8956FC7F18BBD6D80018F32B /* drinkingAppTests */,
 				8956FC5418BBD6D70018F32B /* Frameworks */,
@@ -276,7 +276,7 @@
 		8956FC5D18BBD6D70018F32B /* drinkingApp */ = {
 			isa = PBXGroup;
 			children = (
-				A8B3581718EE5CCD008AF5FE /* Third Party Progress Bar */,
+				89D32C5318BE759C003920FE /* MainStoryboard.storyboard */,
 				89F840CB18DFFA6C0048AD95 /* RadioButton */,
 				890792E418D0FDDA001EFA85 /* Model */,
 				A855253F18CEAB7900567BDA /* GraphicsResources */,
