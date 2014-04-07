@@ -15,7 +15,7 @@
 #import "CERoundProgressView.h"
 
 
-@interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate> {
+@interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate> {
     
 }
 @property (strong, nonatomic) HEALUser *user;
