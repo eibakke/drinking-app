@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5053" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -319,7 +319,6 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-W1-GhK">
                                 <rect key="frame" x="152" y="237" width="148" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="E4l-dR-DOg"/>
                                     <constraint firstAttribute="height" constant="30" type="user" id="eug-5a-nq0"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -327,8 +326,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-Yl-kbo">
-                                <rect key="frame" x="183" y="431" width="99" height="66"/>
+                                <rect key="frame" x="40" y="426" width="99" height="66"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="3wf-aK-Lvi"/>
                                     <constraint firstAttribute="width" constant="99" type="user" id="fcr-75-0Hj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -344,9 +344,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-QR-UZM">
-                                <rect key="frame" x="28" y="431" width="99" height="66"/>
+                                <rect key="frame" x="177" y="426" width="99" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="0F2-vj-RT4"/>
                                     <constraint firstAttribute="width" constant="99" type="user" id="Olp-hl-TqG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -393,21 +392,26 @@
                         </subviews>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="NMa-Yl-kbo" secondAttribute="trailing" constant="38" type="user" id="144-wF-ANb"/>
+                            <constraint firstItem="fyf-QR-UZM" firstAttribute="centerX" secondItem="C5k-4F-wvV" secondAttribute="centerX" type="default" id="4Ei-5o-GrP"/>
                             <constraint firstAttribute="trailing" secondItem="PKw-W1-GhK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="83Q-ZN-cfw"/>
+                            <constraint firstItem="NMa-Yl-kbo" firstAttribute="baseline" secondItem="fyf-QR-UZM" secondAttribute="baseline" type="default" id="8al-Va-5jW"/>
                             <constraint firstItem="ffh-hU-g4O" firstAttribute="baseline" secondItem="CuU-4b-fYL" secondAttribute="baseline" type="user" id="CvY-ey-SrB"/>
-                            <constraint firstItem="fyf-QR-UZM" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="28" type="user" id="Ek6-eQ-zB1"/>
                             <constraint firstItem="C5k-4F-wvV" firstAttribute="leading" secondItem="PKw-W1-GhK" secondAttribute="leading" type="user" id="FAk-K6-whW"/>
+                            <constraint firstItem="fyf-QR-UZM" firstAttribute="baseline" secondItem="NMa-Yl-kbo" secondAttribute="baseline" type="default" id="IR7-YY-tRx"/>
+                            <constraint firstAttribute="trailing" secondItem="fyf-QR-UZM" secondAttribute="trailing" constant="44" id="RSb-mh-gIN"/>
+                            <constraint firstAttribute="trailing" secondItem="ffh-hU-g4O" secondAttribute="trailing" constant="43" id="Rpj-lx-AfW"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="height" secondItem="C5k-4F-wvV" secondAttribute="height" type="user" id="SB9-8s-0Dq"/>
                             <constraint firstItem="C5k-4F-wvV" firstAttribute="top" secondItem="PKw-W1-GhK" secondAttribute="bottom" constant="35" type="user" id="U4C-HH-kqf"/>
-                            <constraint firstItem="ffh-hU-g4O" firstAttribute="leading" secondItem="NMa-Yl-kbo" secondAttribute="leading" type="default" id="VCC-FD-KPg"/>
                             <constraint firstItem="C5k-4F-wvV" firstAttribute="centerX" secondItem="PKw-W1-GhK" secondAttribute="centerX" type="user" id="Vho-Ky-4ST"/>
-                            <constraint firstItem="NMa-Yl-kbo" firstAttribute="top" secondItem="fyf-QR-UZM" secondAttribute="top" type="default" id="VlR-BE-qWN"/>
+                            <constraint firstItem="NMa-Yl-kbo" firstAttribute="top" secondItem="fyf-QR-UZM" secondAttribute="top" type="default" id="Vls-l9-Plf"/>
                             <constraint firstItem="C5k-4F-wvV" firstAttribute="trailing" secondItem="PKw-W1-GhK" secondAttribute="trailing" type="user" id="Zmt-dk-BHF"/>
+                            <constraint firstItem="NMa-Yl-kbo" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="40" id="dS3-h9-Zmp"/>
+                            <constraint firstAttribute="bottom" secondItem="NMa-Yl-kbo" secondAttribute="bottom" constant="13" id="dwi-Ma-5DE"/>
+                            <constraint firstItem="fyf-QR-UZM" firstAttribute="bottom" secondItem="NMa-Yl-kbo" secondAttribute="bottom" type="default" id="fCY-my-fRt"/>
                             <constraint firstAttribute="bottom" secondItem="CuU-4b-fYL" secondAttribute="bottom" constant="132" id="mG2-ud-7YV"/>
-                            <constraint firstItem="fyf-QR-UZM" firstAttribute="trailing" secondItem="CuU-4b-fYL" secondAttribute="trailing" type="user" id="ohZ-Xm-t43"/>
-                            <constraint firstItem="fyf-QR-UZM" firstAttribute="bottom" secondItem="NMa-Yl-kbo" secondAttribute="bottom" type="default" id="siB-rS-T3d"/>
-                            <constraint firstAttribute="bottom" secondItem="fyf-QR-UZM" secondAttribute="bottom" constant="8" id="snC-eu-a3m"/>
+                            <constraint firstItem="fyf-QR-UZM" firstAttribute="baseline" secondItem="NMa-Yl-kbo" secondAttribute="baseline" type="default" id="q7S-1S-eoP"/>
+                            <constraint firstItem="NMa-Yl-kbo" firstAttribute="centerX" secondItem="CuU-4b-fYL" secondAttribute="centerX" type="default" id="r4S-RC-qfd"/>
+                            <constraint firstItem="NMa-Yl-kbo" firstAttribute="baseline" secondItem="fyf-QR-UZM" secondAttribute="baseline" type="default" id="s7Q-De-ajM"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="centerY" secondItem="GwV-ve-lSs" secondAttribute="centerY" type="default" id="wG0-hu-0HS"/>
                         </constraints>
                     </view>
@@ -422,7 +426,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAf-sU-l2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8bD-cG-gu2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-288" y="-1244"/>
+            <point key="canvasLocation" x="-270" y="-1224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hu9-XL-E5n">
