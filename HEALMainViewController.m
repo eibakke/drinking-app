@@ -29,11 +29,13 @@
 
 @implementation HEALMainViewController
 
+//segue to drunkstate view controller
 - (void)stateSegue
 {
     [self performSegueWithIdentifier:@"toStateViewController" sender:self];
 }
 
+//creates circle button that shows the states
 - (void)circleButton
 {
     button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -53,6 +55,7 @@
     [self.centerView addSubview:button];
 }
 
+//creates SOS button
 - (void)sosButton
 {
     CGRect screen = [[UIScreen mainScreen] bounds];
@@ -80,6 +83,7 @@
 }
 
 
+//resets the Timer
 - (void)resetTimer
 {
     if (timer != nil) {
@@ -89,7 +93,7 @@
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
 }
 
-
+//sets the date label-'youve been drinking since'
 - (void)setDateLabel:(NSDate*)date
 {
     NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
@@ -98,6 +102,7 @@
     [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"You've been drinking since: ", t]];
 }
 
+//action when add drink is clicked
 - (IBAction)runAddValueChanged:(id)sender
 {
     self.drinkStepper.value += 1;
@@ -138,7 +143,6 @@
         [self toggleRightView];
     }
 }
-
 
 -(void)movePanel:(id)sender {
 	[[[(UITapGestureRecognizer*)sender view] layer] removeAllAnimations];
@@ -228,9 +232,9 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.centerView.frame = frame;
     }];
-    
 }
 
+//creates new night
 - (void)newNight
 {
     [self resetTimer];
@@ -241,7 +245,6 @@
     //[self delete:sosButton];
     sosButton.hidden = YES;
     sosButton.UserInteractionEnabled = NO;
-
 }
 
 - (void)countUp
@@ -264,7 +267,7 @@
     return self;
 }
 
-
+//updates background programmatically according to drinking state
 - (void) updateBackground:(NSString*) State
 {
  
@@ -354,12 +357,9 @@
         self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
     }
     
-    
-    
 }
 
-
-
+//updates labels according to BAC values
 - (void) updateLabels
 {
     self.drinkStepper.value = self.user.currentNight.drinks;
@@ -428,8 +428,6 @@
     self.settingsButton.tag = 0;
     self.smsButton.tag = 1;
     self.nightButton.tag = 2;
-    
-
 }
 
 -(void)setupGestures {
@@ -456,6 +454,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//alert Message
 - (void)alertUser:(NSString*) alertMessage
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
@@ -466,6 +465,7 @@
     [alert show];
 }
 
+//handles segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"toStateViewController"])
@@ -481,9 +481,7 @@
     
 }
 
-
-
-
+//send SMS
 -(void)sendSMS{
     
     MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
@@ -506,8 +504,7 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-
-
+//handles right view buttons when clicked
 - (IBAction)rightViewButtonClicked:(id)sender {
     UIButton* senderButton = (UIButton*) sender;
     
