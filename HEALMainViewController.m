@@ -15,7 +15,7 @@
     UIGestureRecognizer *tapRecognizer;
     UIButton *button;
     UIButton *sosButton;
-
+    CGPoint centerViewCenter;
 }
 @property (weak, nonatomic) IBOutlet UIButton *nightButton;
 @property (weak, nonatomic) IBOutlet UIButton *smsButton;
@@ -141,72 +141,28 @@
 
 
 -(void)movePanel:(id)sender {
-	[[[(UITapGestureRecognizer*)sender view] layer] removeAllAnimations];
-    
 	CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self.view];
 	CGPoint velocity = [(UIPanGestureRecognizer*)sender velocityInView:[sender view]];
     
-	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
-        NSLog(@"Started panning!");
-//        UIView *childView = nil;
-//        
-//        if(velocity.x > 0) {
-//            if (!_showingRightPanel) {
-//                childView = [self getLeftView];
-//            }
-//        } else {
-//            if (!_showingLeftPanel) {
-//                childView = [self getRightView];
-//            }
-//			
-//        }
-//        // make sure the view we're working with is front and center
-//        [self.view sendSubviewToBack:childView];
-//        [[sender view] bringSubviewToFront:[(UIPanGestureRecognizer*)sender view]];
-	}
-    
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
-        NSLog(@"Panning ended!");
-//        if(velocity.x > 0) {
-//            // NSLog(@"gesture went right");
-//        } else {
-//            // NSLog(@"gesture went left");
-//        }
-//        
-//        if (!_showPanel) {
-//            [self movePanelToOriginalPosition];
-//        } else {
-//            if (_showingLeftPanel) {
-//                [self movePanelRight];
-//            }  else if (_showingRightPanel) {
-//                [self movePanelLeft];
-//            }
-//        }
+        if (!slidRight && (centerViewCenter.x - self.centerView.center.x > (self.rightView.frame.size.width / 2))) {
+            [self toggleRightView];
+        } else if (slidRight && (self.centerView.center.x > (centerViewCenter.x - (self.rightView.frame.size.width / 2)))) {
+            [self toggleRightView];
+        } else {
+            [self resetViewPlacement];
+        }
 	}
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateChanged) {
-        NSLog(@"Panning changed, and x velocity is %f", velocity.x);
-//        if(velocity.x > 0) {
-//            // NSLog(@"gesture went right");
-//        } else {
-//            // NSLog(@"gesture went left");
-//        }
-//        
-//        // are we more than halfway, if so, show the panel when done dragging by setting this value to YES (1)
-//        _showPanel = abs([sender view].center.x - _centerViewController.view.frame.size.width/2) > _centerViewController.view.frame.size.width/2;
-//        
-//        // allow dragging only in x coordinates by only updating the x coordinate with translation position
-//        [sender view].center = CGPointMake([sender view].center.x + translatedPoint.x, [sender view].center.y);
-//        [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
-//        
-//        // if you needed to check for a change in direction, you could use this code to do so
-//        if(velocity.x*_preVelocity.x + velocity.y*_preVelocity.y > 0) {
-//            // NSLog(@"same direction");
-//        } else {
-//            // NSLog(@"opposite direction");
-//        }
-//        
-//        _preVelocity = velocity;
+        if (!slidRight && velocity.x <= -2000) {
+            [self toggleRightView];
+        } else if (slidRight && velocity.x > 2000) {
+            [self toggleRightView];
+        } else if ((centerViewCenter.x - self.centerView.center.x <= self.rightView.frame.size.width) && (self.centerView.center.x <= centerViewCenter.x)) {
+            self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
+            [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
+        }
 	}
 }
 
@@ -228,7 +184,24 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.centerView.frame = frame;
     }];
+}
+
+- (void)resetViewPlacement
+{
+    CGRect frame = self.centerView.frame;
     
+    if(slidRight)
+    {
+        frame.origin.x = -self.rightView.frame.size.width;
+    }
+    else if(!slidRight)
+    {
+        frame.origin.x = 0;
+    }
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.centerView.frame = frame;
+    }];
 }
 
 - (void)newNight
@@ -420,8 +393,11 @@
     [self updateBackground:@"Sober"];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
+    centerViewCenter.x = self.centerView.frame.size.width / 2;
     [self.view sendSubviewToBack:self.rightView];
     slidRight = NO;
+    
+    
     
     tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewTapped)];
     [self.centerView addGestureRecognizer:tapRecognizer];
@@ -438,15 +414,15 @@
 	[panRecognizer setMaximumNumberOfTouches:1];
 	[panRecognizer setDelegate:self];
     
+    
+    
 	[self.view addGestureRecognizer:panRecognizer];
 }
 
 -(void)centerViewTapped
 {
-    if(!slidRight) return;
-    else {
-        [self toggleRightView];
-    }
+    if(slidRight) [self toggleRightView];
+
 }
 
 
