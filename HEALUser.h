@@ -31,6 +31,7 @@ typedef enum
 } intoxState;
 
 @property(nonatomic, assign) intoxState state;
+@property(nonatomic, assign) intoxState lastState;
 @property(nonatomic, assign) sexes sex;
 @property(nonatomic) int weight;
 @property(strong, nonatomic) NSString *name;
