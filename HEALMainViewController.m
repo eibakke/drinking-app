@@ -68,6 +68,8 @@
     [self.centerView addSubview:sosButton];
 }
 
+
+//SMS sending warning message
 - (IBAction)sosDanger:(id)sender
 {
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:@"Should probably getText from stored message, maybe something with recipient, too." delegate: self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send", nil];
@@ -93,6 +95,8 @@
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
 }
 
+
+
 //sets the date label-'youve been drinking since'
 - (void)setDateLabel:(NSDate*)date
 {
@@ -107,13 +111,38 @@
 {
     self.drinkStepper.value += 1;
     [self valueChanged:_drinkStepper];
-    [UIView animateWithDuration:3.0 animations:^{
-        self.roundProgressView.progress = 0.5;
+    
+    //fills up the progress view bar
+    [UIView animateWithDuration:10.0 animations:^{
+        if (self.user.state==SOBER){
+        self.roundProgressView.progress = self.user.BAC*50;
+        self.roundProgressView.tintColor = [UIColor lightGrayColor];
+        
+        }
+        else if (self.user.state==TIPSY){
+            self.roundProgressView.progress = (self.user.BAC-0.02)*25;
+            self.roundProgressView.tintColor = [UIColor blueColor];
+        }
+        else if (self.user.state==DRUNK){
+           /* if(self.user.lastState == TIPSY){
+                [UIView animateWithDuration:10.0 animations:^{
+                    self.roundProgressView.tintColor = [UIColor blueColor];
+                    self.roundProgressView.progress = 1;
+                    }];
+            }*/
+            self.roundProgressView.progress = (self.user.BAC-0.06)*1/0.14;
+            self.roundProgressView.tintColor = [UIColor orangeColor];
+        }
+        else if (self.user.state==DANGER){
+            self.roundProgressView.progress = (self.user.BAC-0.2)*1/0.8;
+            self.roundProgressView.tintColor = [UIColor redColor];
+        }
     }];
 }
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
+    self.user.lastState = self.user.state;
     if(self.user.weight == 0)
     {
         [self alertUser:@"Please enter weight in settings."];
@@ -245,6 +274,7 @@
     //[self delete:sosButton];
     sosButton.hidden = YES;
     sosButton.UserInteractionEnabled = NO;
+    self.roundProgressView.progress =0;
 }
 
 - (void)countUp
