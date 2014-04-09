@@ -29,8 +29,6 @@
 
 - (IBAction)valueChanged:(UIStepper *)sender;
 - (IBAction)threeLinesButtonClicked:(id)sender;
-- (IBAction)swipedLeft:(id)sender;
-- (IBAction)swipedRight:(id)sender;
 - (IBAction)runAddValueChanged:(id)sender;
 
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue;
