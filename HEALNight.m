@@ -31,5 +31,6 @@
 {
     self.drinks = 0;
     self.startTime = 0;
+    self.sosSent = FALSE;
 }
 @end
