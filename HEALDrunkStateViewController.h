@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 @property (weak, nonatomic) id parent;
 @property (strong, nonatomic) HEALUser *user;
+@property (weak, nonatomic) IBOutlet UILabel *bacLabel;
+
 
 
 @property (weak, nonatomic) IBOutlet UIStepper *drinkStepper;

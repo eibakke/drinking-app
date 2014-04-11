@@ -38,9 +38,28 @@
                     <view key="view" contentMode="scaleToFill" id="gBn-qe-hIX">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgn-e1-cgK">
+                                <rect key="frame" x="86" y="410" width="150" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="gnd-za-T3A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pgn-e1-cgK" secondAttribute="bottom" constant="73" id="L0u-Rd-NKh"/>
+                            <constraint firstItem="pgn-e1-cgK" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" constant="86" id="Oh1-Cc-hqm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EIR-bE-yiJ"/>
+                    <connections>
+                        <outlet property="bacLabel" destination="pgn-e1-cgK" id="FLi-Vq-C8Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bda-C3-qoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,14 +77,14 @@
                                 <rect key="frame" x="105" y="-1" width="218" height="508"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5u-nS-Rpc">
-                                        <rect key="frame" x="-2" y="77" width="218" height="37"/>
+                                        <rect key="frame" x="-2" y="77" width="218" height="33"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="37" id="Cta-s7-ovP"/>
+                                            <constraint firstAttribute="height" constant="33" id="Qea-Uh-GdE"/>
                                             <constraint firstAttribute="width" constant="218" id="uXo-a8-FjV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Settings" backgroundImage="empty.png">
+                                        <state key="normal" backgroundImage="settingsbar.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
@@ -83,7 +102,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Send SOS SMS" backgroundImage="empty.png">
+                                        <state key="normal" backgroundImage="sosbar.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
@@ -101,7 +120,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="New Night" backgroundImage="empty.png">
+                                        <state key="normal" backgroundImage="newnightbar.png">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
@@ -117,10 +136,10 @@
                                     <constraint firstItem="y8m-xS-FlY" firstAttribute="leading" secondItem="EMa-lq-n4s" secondAttribute="leading" type="default" id="MH0-iQ-cWG"/>
                                     <constraint firstItem="n5u-nS-Rpc" firstAttribute="leading" secondItem="eEs-AX-o9k" secondAttribute="leading" constant="-2" id="aGd-7h-uG7"/>
                                     <constraint firstItem="y8m-xS-FlY" firstAttribute="top" secondItem="eEs-AX-o9k" secondAttribute="top" constant="159" id="c2i-z5-akh"/>
-                                    <constraint firstItem="EMa-lq-n4s" firstAttribute="top" secondItem="eEs-AX-o9k" secondAttribute="top" constant="118" id="hue-uk-zBg"/>
                                     <constraint firstItem="n5u-nS-Rpc" firstAttribute="top" secondItem="eEs-AX-o9k" secondAttribute="top" constant="77" id="nqw-1S-nrX"/>
                                     <constraint firstItem="EMa-lq-n4s" firstAttribute="trailing" secondItem="n5u-nS-Rpc" secondAttribute="trailing" type="default" id="qqj-ea-eUY"/>
                                     <constraint firstItem="EMa-lq-n4s" firstAttribute="leading" secondItem="n5u-nS-Rpc" secondAttribute="leading" type="default" id="r5Z-I4-YCn"/>
+                                    <constraint firstItem="EMa-lq-n4s" firstAttribute="top" secondItem="n5u-nS-Rpc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tq5-d6-ucX"/>
                                     <constraint firstItem="y8m-xS-FlY" firstAttribute="trailing" secondItem="EMa-lq-n4s" secondAttribute="trailing" type="default" id="uCG-9R-e0V"/>
                                 </constraints>
                             </view>
@@ -544,7 +563,9 @@
         <image name="AddDrinkedited.png" width="640" height="128"/>
         <image name="BlurLogoScreen.png" width="640" height="1136"/>
         <image name="checked.png" width="24" height="24"/>
-        <image name="empty.png" width="640" height="1136"/>
+        <image name="newnightbar.png" width="640" height="128"/>
+        <image name="settingsbar.png" width="640" height="128"/>
+        <image name="sosbar.png" width="640" height="128"/>
         <image name="unchecked.png" width="24" height="24"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

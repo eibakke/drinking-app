@@ -26,16 +26,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self countUp];
+
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:[NSString stringWithFormat:@"%@%@", [self.user stateAsString], @"State.png"]] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+
 
     }
 
@@ -44,5 +51,13 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+
+
+- (void)countUp
+{
+    [self.bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
+}
+
 
 @end

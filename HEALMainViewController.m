@@ -180,16 +180,12 @@
     
     if (self.drinkStepper.value == 100)
     {
-        //[button setTitle:@"Dead" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"DangerButton.png"] forState:UIControlStateNormal];
         
-        
-        //[self updateBackground:@"Dead"];
     } else if (self.user.BAC < 0.02)
     {
         //[button setTitle:@"Sober" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"CenterButtonSober.png"] forState:UIControlStateNormal];
-        
         //[self updateBackground:@"Sober"];
         
     } else if(0.02 < self.user.BAC && self.user.BAC < 0.06)
@@ -198,15 +194,11 @@
         [button setImage:[UIImage imageNamed:@"TipsyButton.png"] forState:UIControlStateNormal];
         
         
-        //[self updateBackground:@"Tipsy"];
-        
     } else if (0.06 < self.user.BAC && self.user.BAC < 0.2)
     {
         //[button setTitle:@"Drunk" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"DrunkButton.png"] forState:UIControlStateNormal];
         
-        
-        //[self updateBackground:@"Drunk"];
         
     } else if (0.2 < self.user.BAC && self.user.BAC < 1)
     {
@@ -220,8 +212,6 @@
         {
             [self sosDanger:self];
         }
-
-        //[self updateBackground:@"Danger"];
     }
 }
 
