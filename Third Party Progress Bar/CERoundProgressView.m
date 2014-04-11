@@ -50,6 +50,7 @@ const NSTimeInterval CERoundProgressLayerDefaultAnimationDuration = 0.25;
     self.backgroundColor = [UIColor clearColor];
     self.opaque = NO;
     self.tintColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+
     self.trackColor = [UIColor clearColor];
     
     // On Retina displays, the layer must have its resolution doubled so it does not look blocky.

@@ -68,7 +68,7 @@
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screen.size.width;
     CGFloat screenHeight = screen.size.height;
-    button.frame = CGRectMake((0.1*screenWidth), (0.13*screenHeight), (0.8*screenWidth), (0.8*screenWidth));
+    button.frame = CGRectMake((0.05*screenWidth), (0.16*screenHeight), (0.9*screenWidth), (0.9*screenWidth));
     button.clipsToBounds = YES;
     
     button.layer.cornerRadius = (0.8*screenWidth)/2.0;
@@ -360,12 +360,12 @@
     [UIView animateWithDuration:10.0 animations:^{
         if (self.user.state==SOBER){
         self.roundProgressView.progress = self.user.BAC*50;
-        self.roundProgressView.tintColor = [UIColor lightGrayColor];
+        self.roundProgressView.tintColor = [UIColor whiteColor];
         
         }
         else if (self.user.state==TIPSY){
             self.roundProgressView.progress = (self.user.BAC-0.02)*25;
-            self.roundProgressView.tintColor = [UIColor blueColor];
+            self.roundProgressView.tintColor = [UIColor whiteColor];
         }
         else if (self.user.state==DRUNK){
            /* if(self.user.lastState == TIPSY){
@@ -375,11 +375,11 @@
                     }];
             }*/
             self.roundProgressView.progress = (self.user.BAC-0.06)*1/0.14;
-            self.roundProgressView.tintColor = [UIColor orangeColor];
+            self.roundProgressView.tintColor = [UIColor whiteColor];
         }
         else if (self.user.state==DANGER){
             self.roundProgressView.progress = (self.user.BAC-0.2)*1/0.8;
-            self.roundProgressView.tintColor = [UIColor redColor];
+            self.roundProgressView.tintColor = [UIColor whiteColor];
         }
     }];
 }
