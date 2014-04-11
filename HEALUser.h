@@ -34,6 +34,8 @@ typedef enum
 @property(nonatomic, assign) intoxState lastState;
 @property(nonatomic, assign) sexes sex;
 @property(nonatomic) int weight;
+@property(strong, nonatomic) NSString *smsMessage;
+@property(strong, nonatomic) NSString *sosContact;
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) HEALNight *currentNight;
 @property(nonatomic) float BAC;

@@ -13,6 +13,7 @@
 
 @property(nonatomic) int drinks;
 @property(nonatomic) double startTime;
+@property(nonatomic) bool sosSent;
 
 -(void) reset;
 -(void) resetStartTime;

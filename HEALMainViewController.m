@@ -216,9 +216,11 @@
         
         //[button setTitle:@"Danger" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
-        
-        [self sosDanger:self];
-        
+        if (self.user.currentNight.sosSent == FALSE)
+        {
+            [self sosDanger:self];
+        }
+
         //[self updateBackground:@"Danger"];
     }
 }
@@ -345,7 +347,7 @@
 //SMS sending warning message
 - (IBAction)sosDanger:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:@"Should probably getText from stored message, maybe something with recipient, too." delegate: self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send", nil];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@", @"Send message '", self.user.smsMessage, @"' to ", self.user.sosContact, @"?"] delegate: self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send", nil];
     [alertView show];
 }
 
@@ -353,7 +355,8 @@
 {
     if (buttonIndex == 1)
     {
-        [self sendSMS];        
+        [self sendSMS];
+        self.user.currentNight.sosSent = TRUE;
     }
 }
 
@@ -495,7 +498,7 @@
     
     if ([MFMessageComposeViewController canSendText]){ //if text messages can be sent
         [textComposer setRecipients:[NSArray arrayWithObjects: nil]]; //allows user to choose number to send text to (replace nil by number to send it to a predetermined number)
-        [textComposer setBody:@"I am drunk! HELP ME!!!"];
+        [textComposer setBody:self.user.smsMessage];
         [self presentViewController:textComposer animated:YES completion:NULL];
         
     } else { //simulator will not allow text messages to be sent
