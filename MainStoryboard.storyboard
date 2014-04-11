@@ -57,22 +57,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Current BAC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8Y-VI-bit">
-                                <rect key="frame" x="0.0" y="375" width="320" height="21"/>
+                                <rect key="frame" x="0.0" y="398" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="jxx-aj-Dbh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pgn-e1-cgK" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" type="default" id="0i4-Y4-TCv"/>
+                            <constraint firstAttribute="bottom" secondItem="Q8Y-VI-bit" secondAttribute="bottom" constant="85" id="A1w-lq-INR"/>
                             <constraint firstAttribute="bottom" secondItem="pgn-e1-cgK" secondAttribute="bottom" constant="46" id="CER-Id-vSE"/>
-                            <constraint firstAttribute="bottom" secondItem="Q8Y-VI-bit" secondAttribute="bottom" constant="108" id="DOU-q5-4jm"/>
                             <constraint firstAttribute="trailing" secondItem="Q8Y-VI-bit" secondAttribute="trailing" type="default" id="Jsh-ie-t5q"/>
+                            <constraint firstItem="Q8Y-VI-bit" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" type="default" id="Uxi-ID-tHp"/>
                             <constraint firstItem="Q8Y-VI-bit" firstAttribute="leading" secondItem="pgn-e1-cgK" secondAttribute="leading" type="default" id="pm7-Sf-jLF"/>
                             <constraint firstItem="Q8Y-VI-bit" firstAttribute="trailing" secondItem="pgn-e1-cgK" secondAttribute="trailing" type="default" id="sid-0V-Yxx"/>
                         </constraints>

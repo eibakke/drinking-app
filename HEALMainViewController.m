@@ -77,95 +77,53 @@
     [self.centerView addSubview:button];
 }
 
+//Updates the background, currently not changing
+- (void) backgroundUpdate
+{
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
+    UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
+}
 
 //updates background programmatically according to drinking state
 - (void) updateBackground:(NSString*) State
 {
     
-    if ([State  isEqual: @"Sober"]){
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
-        
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
-        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
-        
+    if ([State  isEqual: @"Sober"])
+    {
+        [self backgroundUpdate];
     }
     
     
-    if ([State  isEqual: @"Tipsy"]){
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
-        
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
-        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
+    if ([State  isEqual: @"Tipsy"])
+    {
+        [self backgroundUpdate];
     }
     
     
-    if ([State  isEqual: @"Drunk"]){
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        
-        
-        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
-        
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
-        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
-        
+    if ([State  isEqual: @"Drunk"])
+    {
+        [self backgroundUpdate];
     }
     
-    if ([State  isEqual: @"Danger"]){
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
-        
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
-        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
+    if ([State  isEqual: @"Danger"])
+    {
+        [self backgroundUpdate];
     }
     
-    if ([State  isEqual: @"Dead"]){
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
-        
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
-        UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
+    if ([State  isEqual: @"Dead"])
+    {
+        [self backgroundUpdate];
     }
     
 }
@@ -178,35 +136,28 @@
     [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
     [self countUp];
     
-    if (self.drinkStepper.value == 100)
+    if (self.user.state == DEAD)
     {
         [button setImage:[UIImage imageNamed:@"DangerButton.png"] forState:UIControlStateNormal];
         
-    } else if (self.user.BAC < 0.02)
+    } else if (self.user.state == SOBER)
     {
-        //[button setTitle:@"Sober" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"CenterButtonSober.png"] forState:UIControlStateNormal];
-        //[self updateBackground:@"Sober"];
         
-    } else if(0.02 < self.user.BAC && self.user.BAC < 0.06)
+    } else if(self.user.state == TIPSY)
     {
-        //[button setTitle:@"Tipsy" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"TipsyButton.png"] forState:UIControlStateNormal];
         
-        
-    } else if (0.06 < self.user.BAC && self.user.BAC < 0.2)
+    } else if (self.user.state == DRUNK)
     {
-        //[button setTitle:@"Drunk" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"DrunkButton.png"] forState:UIControlStateNormal];
         
-        
-    } else if (0.2 < self.user.BAC && self.user.BAC < 1)
+    } else if (self.user.state == DANGER)
     {
         //[self sosButton];
         //sosButton.hidden = NO;
         //sosButton.UserInteractionEnabled = YES;
         
-        //[button setTitle:@"Danger" forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
         if (self.user.currentNight.sosSent == FALSE)
         {
@@ -224,7 +175,6 @@
     sosButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [sosButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
     sosButton.frame = CGRectMake((0.35*screenWidth), (0.55*screenHeight), (0.3*screenWidth), (0.15*screenHeight));
-    //[button setBackgroundColor:[UIColor redColor]];
     [self.centerView addSubview:sosButton];
 }
 
