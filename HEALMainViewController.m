@@ -36,6 +36,9 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Flip.png"]]];
     [self setupGestures];
     [self circleButton];
+    [self sosButton];
+    sosButton.hidden = YES;
+    sosButton.UserInteractionEnabled = NO;
     [self updateBackground:@"Sober"];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
@@ -155,9 +158,8 @@
         
     } else if (self.user.state == DANGER)
     {
-        //[self sosButton];
-        //sosButton.hidden = NO;
-        //sosButton.UserInteractionEnabled = YES;
+        sosButton.hidden = NO;
+        sosButton.UserInteractionEnabled = YES;
         
         [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
         if (self.user.currentNight.sosSent == FALSE)
@@ -175,7 +177,7 @@
     CGFloat screenHeight = screen.size.height;
     sosButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [sosButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
-    sosButton.frame = CGRectMake((0.35*screenWidth), (0.55*screenHeight), (0.3*screenWidth), (0.15*screenHeight));
+    sosButton.frame = CGRectMake((0.05*screenWidth), (0.61*screenHeight), (0.9*screenWidth), (0.45*screenWidth));
     [self.centerView addSubview:sosButton];
 }
 
