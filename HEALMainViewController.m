@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Flip.png"]]];
     [self setupGestures];
     [self circleButton];
     [self updateBackground:@"Sober"];
@@ -92,7 +93,7 @@
     UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    self.rightView.backgroundColor = [UIColor colorWithPatternImage:imageBack];
+    self.rightView.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:@"Flip.png"]] colorWithAlphaComponent:0.0];
 }
 
 //updates background programmatically according to drinking state
