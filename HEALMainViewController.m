@@ -177,7 +177,7 @@
     CGFloat screenHeight = screen.size.height;
     sosButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [sosButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
-    sosButton.frame = CGRectMake((0.05*screenWidth), (0.61*screenHeight), (0.9*screenWidth), (0.45*screenWidth));
+    sosButton.frame = CGRectMake((0.05*screenWidth), (0.16*screenHeight + .46*screenWidth), (0.9*screenWidth), (0.45*screenWidth));
     [self.centerView addSubview:sosButton];
 }
 
