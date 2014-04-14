@@ -34,6 +34,7 @@
 		8956FC7C18BBD6D80018F32B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5B18BBD6D70018F32B /* CoreData.framework */; };
 		8956FC8418BBD6D80018F32B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8956FC8218BBD6D80018F32B /* InfoPlist.strings */; };
 		8956FC8718BBD6D80018F32B /* drinkingAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8956FC8618BBD6D80018F32B /* drinkingAppTests.m */; };
+		8999444918FC407100C83A85 /* HEALEditSMSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8999444818FC407100C83A85 /* HEALEditSMSSettingsViewController.m */; };
 		89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D32C5318BE759C003920FE /* MainStoryboard.storyboard */; };
 		89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */; };
 		89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D32C5918BE7B54003920FE /* HEALMainViewController.m */; };
@@ -131,6 +132,8 @@
 		8956FC8318BBD6D80018F32B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8956FC8518BBD6D80018F32B /* drinkingAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drinkingAppTests.h; sourceTree = "<group>"; };
 		8956FC8618BBD6D80018F32B /* drinkingAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drinkingAppTests.m; sourceTree = "<group>"; };
+		8999444718FC407100C83A85 /* HEALEditSMSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALEditSMSSettingsViewController.h; sourceTree = "<group>"; };
+		8999444818FC407100C83A85 /* HEALEditSMSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALEditSMSSettingsViewController.m; sourceTree = "<group>"; };
 		89D32C5318BE759C003920FE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		89D32C5518BE7AA1003920FE /* HEALEditSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALEditSettingsViewController.h; path = ../HEALEditSettingsViewController.h; sourceTree = "<group>"; };
 		89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALEditSettingsViewController.m; path = ../HEALEditSettingsViewController.m; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 		890792E518D0FE12001EFA85 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8999444718FC407100C83A85 /* HEALEditSMSSettingsViewController.h */,
+				8999444818FC407100C83A85 /* HEALEditSMSSettingsViewController.m */,
 				890792DB18D0FDC1001EFA85 /* HEALDrunkStateViewController.h */,
 				890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */,
 				890792DD18D0FDC1001EFA85 /* HEALLogoViewController.h */,
@@ -586,6 +591,7 @@
 				A8B3581D18EE5CCD008AF5FE /* CERoundProgressView.m in Sources */,
 				89D32C5718BE7AA1003920FE /* HEALEditSettingsViewController.m in Sources */,
 				89D32C5A18BE7B54003920FE /* HEALMainViewController.m in Sources */,
+				8999444918FC407100C83A85 /* HEALEditSMSSettingsViewController.m in Sources */,
 				8908588418C538D40020383C /* HEALUser.m in Sources */,
 				89F89D3518C7B37E00143AD4 /* HEALNight.m in Sources */,
 				890792E118D0FDC1001EFA85 /* HEALDrunkStateViewController.m in Sources */,

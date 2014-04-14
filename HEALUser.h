@@ -36,6 +36,7 @@ typedef enum
 @property(nonatomic) int weight;
 @property(strong, nonatomic) NSString *smsMessage;
 @property(strong, nonatomic) NSString *sosContact;
+@property(nonatomic) long contactNumber;
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) HEALNight *currentNight;
 @property(nonatomic) float BAC;

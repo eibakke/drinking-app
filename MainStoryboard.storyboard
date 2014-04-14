@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5053" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -29,7 +29,208 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXO-wh-4sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542" y="-1218"/>
+            <point key="canvasLocation" x="1076" y="-862"/>
+        </scene>
+        <!--EditSMS Settings View Controller-->
+        <scene sceneID="1e9-42-fhM">
+            <objects>
+                <viewController id="l2s-ZE-AdG" customClass="HEALEditSMSSettingsViewController" sceneMemberID="viewController">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fis-VX-2f6">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto sms sending" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teg-9R-FKq">
+                                <rect key="frame" x="20" y="376" width="213" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="213" id="wz1-c5-r5z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDO-4H-MOV" customClass="RadioButton">
+                                <rect key="frame" x="42" y="405" width="94" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="3k1-jL-OXF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Enable" image="unchecked.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="checked.png"/>
+                                <connections>
+                                    <outletCollection property="groupButtons" destination="2f5-jh-E67" id="cOz-Vl-h4o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-jh-E67" customClass="RadioButton">
+                                <rect key="frame" x="170" y="405" width="94" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="MdO-zZ-U1b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Disable" image="unchecked.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="checked.png"/>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send sms when" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT6-eJ-ge2">
+                                <rect key="frame" x="20" y="437" width="129" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="tnb-Qs-qze"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-Kf-JNL" customClass="RadioButton">
+                                <rect key="frame" x="20" y="466" width="94" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="ail-ef-5je"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Tipsy" image="unchecked.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="checked.png"/>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXo-Qp-Hum" customClass="RadioButton">
+                                <rect key="frame" x="20" y="498" width="94" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Drunk" image="unchecked.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="checked.png"/>
+                                <connections>
+                                    <outletCollection property="groupButtons" destination="0zZ-Kf-JNL" id="x75-1E-xCR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCd-cO-PsS" customClass="RadioButton">
+                                <rect key="frame" x="20" y="530" width="94" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Danger" image="unchecked.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="checked.png"/>
+                                <connections>
+                                    <outletCollection property="groupButtons" destination="TXo-Qp-Hum" id="boh-L4-K7f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency contact name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5o-ux-EvS">
+                                <rect key="frame" x="20" y="34" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="aB0-Dq-A2v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency contact number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjE-Mo-vqH">
+                                <rect key="frame" x="20" y="98" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="218" id="Ezj-VP-GED"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0Q-iN-Eof">
+                                <rect key="frame" x="20" y="153" width="174" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="vP0-K5-LOH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHm-GG-UEJ">
+                                <rect key="frame" x="19" y="58" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ArE-HK-u7c"/>
+                                    <constraint firstAttribute="width" constant="281" id="pwt-pT-8qH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Orx-Nz-8ca">
+                                <rect key="frame" x="19" y="121" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MgK-19-FUV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type your emergency message here" translatesAutoresizingMaskIntoConstraints="NO" id="KTf-2m-lhS">
+                                <rect key="frame" x="19" y="182" width="281" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="177" id="AKE-jA-Hqp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="oDO-4H-MOV" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="42" id="2xj-G4-zsw"/>
+                            <constraint firstItem="gHm-GG-UEJ" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="19" id="5jB-KT-xld"/>
+                            <constraint firstItem="r5o-ux-EvS" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="34" id="67Y-H7-46g"/>
+                            <constraint firstItem="Teg-9R-FKq" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="376" id="8pw-G1-q7F"/>
+                            <constraint firstItem="TXo-Qp-Hum" firstAttribute="trailing" secondItem="CCd-cO-PsS" secondAttribute="trailing" type="default" id="GBJ-Ks-dYp"/>
+                            <constraint firstItem="KTf-2m-lhS" firstAttribute="top" secondItem="I0Q-iN-Eof" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JmN-lk-kGa"/>
+                            <constraint firstAttribute="bottom" secondItem="CCd-cO-PsS" secondAttribute="bottom" constant="-6" id="JpT-wx-1cC"/>
+                            <constraint firstItem="0zZ-Kf-JNL" firstAttribute="trailing" secondItem="TXo-Qp-Hum" secondAttribute="trailing" type="default" id="LTi-xs-9zH"/>
+                            <constraint firstItem="TXo-Qp-Hum" firstAttribute="top" secondItem="0zZ-Kf-JNL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PWJ-K3-dIj"/>
+                            <constraint firstItem="0zZ-Kf-JNL" firstAttribute="leading" secondItem="TXo-Qp-Hum" secondAttribute="leading" type="default" id="Q42-kg-RL5"/>
+                            <constraint firstItem="mT6-eJ-ge2" firstAttribute="leading" secondItem="0zZ-Kf-JNL" secondAttribute="leading" type="default" id="QcS-46-Bjx"/>
+                            <constraint firstItem="KTf-2m-lhS" firstAttribute="leading" secondItem="Orx-Nz-8ca" secondAttribute="leading" type="default" id="RD9-LJ-bS1"/>
+                            <constraint firstItem="CCd-cO-PsS" firstAttribute="top" secondItem="TXo-Qp-Hum" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RKb-ry-4aP"/>
+                            <constraint firstItem="I0Q-iN-Eof" firstAttribute="leading" secondItem="qjE-Mo-vqH" secondAttribute="leading" type="default" id="RYc-QK-wCv"/>
+                            <constraint firstItem="r5o-ux-EvS" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WJZ-lk-QEp"/>
+                            <constraint firstItem="gHm-GG-UEJ" firstAttribute="leading" secondItem="Orx-Nz-8ca" secondAttribute="leading" type="default" id="YI8-a8-Wh2"/>
+                            <constraint firstItem="oDO-4H-MOV" firstAttribute="top" secondItem="Teg-9R-FKq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZHH-Lj-pyB"/>
+                            <constraint firstItem="KTf-2m-lhS" firstAttribute="trailing" secondItem="Orx-Nz-8ca" secondAttribute="trailing" type="default" id="dGT-TU-RUW"/>
+                            <constraint firstAttribute="trailing" secondItem="gHm-GG-UEJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="efH-BF-2Hd"/>
+                            <constraint firstItem="2f5-jh-E67" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="170" id="erh-9G-MPR"/>
+                            <constraint firstItem="gHm-GG-UEJ" firstAttribute="trailing" secondItem="Orx-Nz-8ca" secondAttribute="trailing" type="default" id="fow-Td-VU9"/>
+                            <constraint firstItem="qjE-Mo-vqH" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="98" id="fuf-CB-8GB"/>
+                            <constraint firstItem="gHm-GG-UEJ" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="58" id="gd2-BG-en5"/>
+                            <constraint firstItem="mT6-eJ-ge2" firstAttribute="top" secondItem="oDO-4H-MOV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jLn-2c-yLv"/>
+                            <constraint firstItem="qjE-Mo-vqH" firstAttribute="leading" secondItem="r5o-ux-EvS" secondAttribute="leading" type="default" id="jyM-Zb-TP9"/>
+                            <constraint firstItem="I0Q-iN-Eof" firstAttribute="leading" secondItem="Teg-9R-FKq" secondAttribute="leading" type="default" id="lmJ-NG-nkf"/>
+                            <constraint firstItem="0zZ-Kf-JNL" firstAttribute="top" secondItem="mT6-eJ-ge2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="p6x-LA-sso"/>
+                            <constraint firstItem="Orx-Nz-8ca" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="121" id="ppV-2x-SyP"/>
+                            <constraint firstItem="oDO-4H-MOV" firstAttribute="baseline" secondItem="2f5-jh-E67" secondAttribute="baseline" type="default" id="qtz-Ls-fvO"/>
+                            <constraint firstItem="mT6-eJ-ge2" firstAttribute="leading" secondItem="Teg-9R-FKq" secondAttribute="leading" type="default" id="swW-bh-T5D"/>
+                            <constraint firstItem="CCd-cO-PsS" firstAttribute="leading" secondItem="TXo-Qp-Hum" secondAttribute="leading" type="default" id="t7Z-UZ-nKl"/>
+                            <constraint firstItem="I0Q-iN-Eof" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="153" id="zfr-Hc-ySD"/>
+                        </constraints>
+                    </scrollView>
+                    <connections>
+                        <outlet property="contactNameTextField" destination="gHm-GG-UEJ" id="GZY-Lk-bWQ"/>
+                        <outlet property="contactNumberTextField" destination="Orx-Nz-8ca" id="F0d-nq-bDD"/>
+                        <outlet property="dangerRadioButton" destination="CCd-cO-PsS" id="IiG-US-5oV"/>
+                        <outlet property="disableRadioButton" destination="2f5-jh-E67" id="FXv-WA-3QM"/>
+                        <outlet property="drunkRadioButton" destination="TXo-Qp-Hum" id="8bP-kv-mMf"/>
+                        <outlet property="emergencyMessageTextView" destination="KTf-2m-lhS" id="APa-z0-iWK"/>
+                        <outlet property="enableRadioButton" destination="oDO-4H-MOV" id="WN2-ZN-dOb"/>
+                        <outlet property="tipsyRadioButton" destination="0zZ-Kf-JNL" id="XAK-JF-R5q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tdh-Uj-LZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529" y="-1244"/>
         </scene>
         <!--Drunk State View Controller-->
         <scene sceneID="a6j-rc-gSt">
@@ -328,7 +529,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-W1-GhK">
                                 <rect key="frame" x="153" y="237" width="147" height="30"/>
@@ -337,7 +538,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-Yl-kbo">
                                 <rect key="frame" x="40" y="426" width="99" height="66"/>
@@ -436,7 +637,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAf-sU-l2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8bD-cG-gu2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="-1224"/>
+            <point key="canvasLocation" x="-210" y="-1244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hu9-XL-E5n">
@@ -491,14 +692,15 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bOs-YU-Za9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Text" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bOs-YU-Za9">
                                 <rect key="frame" x="155" y="237" width="145" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rVl-VX-BOP"/>
                                     <constraint firstAttribute="width" constant="145" id="wv8-uO-vSV"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="in lbs e.g. 150" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nxr-39-fmt">
                                 <rect key="frame" x="155" y="301" width="145" height="30"/>
@@ -507,7 +709,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="m" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTn-si-EZ3" customClass="RadioButton">
                                 <rect key="frame" x="47" y="347" width="76" height="24"/>
@@ -589,6 +791,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vbM-9D-FZ7"/>
+        <segue reference="TZu-0B-IHY"/>
     </inferredMetricsTieBreakers>
 </document>
