@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 @property (weak, nonatomic) IBOutlet UIView *rightView;
+@property (weak, nonatomic) IBOutlet UIButton *smsSettingsButton;
 
 - (IBAction)rightViewButtonClicked:(id)sender;
 
@@ -51,6 +52,7 @@
     self.settingsButton.tag = 0;
     self.smsButton.tag = 1;
     self.nightButton.tag = 2;
+    self.smsSettingsButton.tag = 3;
 }
 
 -(void)setupGestures {
@@ -369,6 +371,10 @@
         [self newNight];
         [self toggleRightView];
     }
+    else if (senderButton.tag == self.smsSettingsButton.tag) {
+        [self performSegueWithIdentifier:@"toSMSSettingsViewController" sender:sender];
+        [self toggleRightView];
+    }
 }
 
 
@@ -394,10 +400,13 @@
     {
         HEALDrunkStateViewController *controller = [segue destinationViewController];
         controller.user = self.user;
-    }
-    if([segue.identifier isEqualToString:@"toSettingsViewController"])
+    } else if([segue.identifier isEqualToString:@"toSettingsViewController"])
     {
         HEALEditSettingsViewController *controller = [segue destinationViewController];
+        controller.user = self.user;
+    } else if([segue.identifier isEqualToString:@"toSettingsViewController"])
+    {
+        HEALEditSMSSettingsViewController *controller = [segue destinationViewController];
         controller.user = self.user;
     }
     

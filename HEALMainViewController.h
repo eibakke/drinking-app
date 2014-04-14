@@ -10,6 +10,7 @@
 #import "HEALDrunkStateViewController.h"
 #import "HEALUser.h"
 #import "HEALEditSettingsViewController.h"
+#import "HEALEditSMSSettingsViewController.h"
 #import "MessageUI/MessageUI.h"
 #import <QuartzCore/QuartzCore.h>
 #import "CERoundProgressView.h"
