@@ -312,32 +312,29 @@
     [self valueChanged:_drinkStepper];
     
     //fills up the progress view bar
+    if (self.user.lastState!=self.user.state){
+        NSLog(@"They are not the same!");
+        [UIView animateWithDuration:1.0
+                         animations:^{
+                             self.roundProgressView.progress = [self.user getWheelFill:self.user.lastState];
+                             NSLog(@"Did the first animation!");
+                         }
+                         completion:^(BOOL finished) {
+                             [self animateCurrentState];
+                             NSLog(@"Did the second animation!");
+                         }
+         ];
+    } else [self animateCurrentState];
+}
+
+- (void)animateCurrentState
+{
     [UIView animateWithDuration:10.0 animations:^{
-        if (self.user.state==SOBER){
-        self.roundProgressView.progress = self.user.BAC*50;
-        self.roundProgressView.tintColor = [UIColor whiteColor];
-        
-        }
-        else if (self.user.state==TIPSY){
-            self.roundProgressView.progress = (self.user.BAC-0.02)*25;
-            self.roundProgressView.tintColor = [UIColor whiteColor];
-        }
-        else if (self.user.state==DRUNK){
-           /* if(self.user.lastState == TIPSY){
-                [UIView animateWithDuration:10.0 animations:^{
-                    self.roundProgressView.tintColor = [UIColor blueColor];
-                    self.roundProgressView.progress = 1;
-                    }];
-            }*/
-            self.roundProgressView.progress = (self.user.BAC-0.06)*1/0.14;
-            self.roundProgressView.tintColor = [UIColor whiteColor];
-        }
-        else if (self.user.state==DANGER){
-            self.roundProgressView.progress = (self.user.BAC-0.2)*1/0.8;
-            self.roundProgressView.tintColor = [UIColor whiteColor];
-        }
+        self.roundProgressView.progress = [self.user getWheelFill:self.user.state];
     }];
 }
+
+
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {

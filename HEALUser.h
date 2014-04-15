@@ -43,6 +43,7 @@ typedef enum
 
 -(void)makeNight:(HEALNight*)night;
 -(NSString*)stateAsString;
+-(float)getWheelFill:(intoxState)state;
 
 
 
