@@ -30,8 +30,6 @@
     if (self) {
         self.currentNight = [[HEALNight alloc] init];
         self.intoxStateArray = @[@"Sober", @"Tipsy", @"Drunk", @"Danger", @"Dead"];
-        self.smsMessage = @"I am drunk HELLLLLP";
-        self.sosContact = @"STEVE";
     }
     return self;
 }
@@ -50,11 +48,6 @@
     
     return(MAX(0, _BAC));
 }
-
-//-(void)setMessage:(NSString *)smsMessage
-//{
-//    _smsMessage = smsMessage;
-//}
 
 -(void)updateState
 {

@@ -32,14 +32,20 @@ typedef enum
 
 @property(nonatomic, assign) intoxState state;
 @property(nonatomic, assign) intoxState lastState;
+
 @property(nonatomic, assign) sexes sex;
 @property(nonatomic) int weight;
+@property(strong, nonatomic) NSString *name;
+@property(nonatomic) float BAC;
+
+@property(strong, nonatomic) HEALNight *currentNight;
+
 @property(strong, nonatomic) NSString *smsMessage;
 @property(strong, nonatomic) NSString *sosContact;
-@property(nonatomic) long contactNumber;
-@property(strong, nonatomic) NSString *name;
-@property(strong, nonatomic) HEALNight *currentNight;
-@property(nonatomic) float BAC;
+@property(nonatomic) double contactNumber;
+
+@property(nonatomic, assign) intoxState smsState;
+@property(nonatomic) BOOL autoSMS;
 
 -(void)makeNight:(HEALNight*)night;
 -(NSString*)stateAsString;

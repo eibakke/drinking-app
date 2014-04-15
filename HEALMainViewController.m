@@ -95,7 +95,6 @@
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
-    UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.rightView.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:@"Flip.png"]] colorWithAlphaComponent:0.0];
