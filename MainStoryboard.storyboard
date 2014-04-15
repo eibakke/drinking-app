@@ -525,6 +525,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="xQK-8b-LdB" id="djv-pQ-zsS"/>
                         <outlet property="bacLabel" destination="YAC-UB-fqj" id="eSo-02-mB2"/>
                         <outlet property="centerView" destination="c6Z-PG-lOD" id="hg0-AP-SEA"/>
                         <outlet property="drinkLabel" destination="xnB-j1-dks" id="0Pp-1G-aNw"/>

@@ -267,7 +267,8 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.centerView.frame = frame;
     }];
-    [self.centerView setUserInteractionEnabled:!slidRight];
+    [button setUserInteractionEnabled:!slidRight];
+    [self.addButton setUserInteractionEnabled:!slidRight];
 }
 
 - (void)resetViewPlacement
