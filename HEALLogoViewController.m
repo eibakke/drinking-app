@@ -32,6 +32,12 @@
         } else {
             newUser.sex = MALE;
         }
+        
+        newUser.sosContact = [defaults objectForKey:@"sosContact"];
+        newUser.smsMessage = [defaults objectForKey:@"smsMessage"];
+        newUser.smsState = [defaults integerForKey:@"smsState"];
+        newUser.contactNumber = [defaults doubleForKey:@"contactNumber"];
+        newUser.autoSMS = [defaults boolForKey:@"autoSMS"];
 
         [self performSegueWithIdentifier:@"mainSegue" sender:self];
     }

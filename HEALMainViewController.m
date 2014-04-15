@@ -403,7 +403,7 @@
     {
         HEALEditSettingsViewController *controller = [segue destinationViewController];
         controller.user = self.user;
-    } else if([segue.identifier isEqualToString:@"toSettingsViewController"])
+    } else if([segue.identifier isEqualToString:@"toSMSSettingsViewController"])
     {
         HEALEditSMSSettingsViewController *controller = [segue destinationViewController];
         controller.user = self.user;

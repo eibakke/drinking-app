@@ -8,7 +8,10 @@
 
 #import "HEALEditSMSSettingsViewController.h"
 
-@interface HEALEditSMSSettingsViewController ()
+@interface HEALEditSMSSettingsViewController () {
+    intoxState smsState;
+    BOOL sendAutoSMS;
+}
 
 @end
 
@@ -26,14 +29,45 @@
     
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
     [self.view addGestureRecognizer:tapBackground];
+    [self initializeUI];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self initializeUI];
+}
+
+- (void)initializeUI
+{
+    [self.enableRadioButton setSelected:self.user.autoSMS];
+    
+    if (self.user.contactNumber != 0) {
+        NSNumber* contactNumber = [NSNumber numberWithDouble:self.user.contactNumber];
+        self.contactNumberTextField.text = [contactNumber stringValue];
+    }
+    if (self.user.sosContact != nil) {
+        self.contactNameTextField.text = self.user.sosContact;
+    }
+    if (self.user.smsMessage != nil) {
+        self.emergencyMessageTextField.text = self.user.smsMessage;
+    }
+    
+    if (self.user.smsState == TIPSY) {
+        [self.tipsyRadioButton setSelected:YES];
+    } else if (self.user.smsState == DRUNK) {
+        [self.drunkRadioButton setSelected:YES];
+    } else if (self.user.smsState == DANGER) {
+        [self.dangerRadioButton setSelected:YES];
+    }
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
-    BOOL sendAutoSMS = NO;
+    
     if (self.enableRadioButton.isSelected) {
         sendAutoSMS = YES;
-    }
-    intoxState smsState;
+    } else sendAutoSMS = NO;
+    
     if (self.tipsyRadioButton.isSelected){
         smsState = TIPSY;
     } else if (self.drunkRadioButton.isSelected){
@@ -42,12 +76,33 @@
         smsState = DANGER;
     }
     if ([self validInput]) {
-        self.user.contactNumber = [self.contactNumberTextField.text doubleValue];
-        self.user.sosContact = self.contactNameTextField.text;
-        self.user.smsMessage = self.emergencyMessageTextField.text;
-        self.user.smsState = smsState;
+        [self updateUser];
         [self performSegueWithIdentifier:@"backToMain" sender:self];
     }
+}
+
+- (void)updateUser
+{
+    self.user.contactNumber = [self.contactNumberTextField.text doubleValue];
+    self.user.sosContact = self.contactNameTextField.text;
+    self.user.smsMessage = self.emergencyMessageTextField.text;
+    self.user.smsState = smsState;
+    self.user.autoSMS = sendAutoSMS;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
+    [defaults setInteger:smsState forKey:@"smsState"];
+    [defaults setDouble:[self.contactNumberTextField.text doubleValue] forKey:@"contactNumber"];
+    [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
+    [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
+    
+    @try {
+        [defaults synchronize];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Data save failed.");
+    }
+    
 }
 
 - (BOOL)validInput
