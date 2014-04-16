@@ -95,7 +95,6 @@
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
-    UIImage *imageBack = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.rightView.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:@"Flip.png"]] colorWithAlphaComponent:0.0];
@@ -268,7 +267,8 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.centerView.frame = frame;
     }];
-    [self.centerView setUserInteractionEnabled:!slidRight];
+    [button setUserInteractionEnabled:!slidRight];
+    [self.addButton setUserInteractionEnabled:!slidRight];
 }
 
 - (void)resetViewPlacement
@@ -401,7 +401,7 @@
     {
         HEALEditSettingsViewController *controller = [segue destinationViewController];
         controller.user = self.user;
-    } else if([segue.identifier isEqualToString:@"toSettingsViewController"])
+    } else if([segue.identifier isEqualToString:@"toSMSSettingsViewController"])
     {
         HEALEditSMSSettingsViewController *controller = [segue destinationViewController];
         controller.user = self.user;

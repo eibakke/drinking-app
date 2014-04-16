@@ -40,8 +40,6 @@
         [_progFillArray addObject:num2];
         [_progFillArray addObject:num3];
         [_progFillArray addObject:num4];
-        self.smsMessage = @"I am drunk HELLLLLP";
-        self.sosContact = @"STEVE";
     }
     return self;
 }
@@ -60,11 +58,6 @@
     
     return(MAX(0, _BAC));
 }
-
-//-(void)setMessage:(NSString *)smsMessage
-//{
-//    _smsMessage = smsMessage;
-//}
 
 -(void)updateState
 {

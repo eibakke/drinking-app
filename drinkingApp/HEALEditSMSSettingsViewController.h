@@ -10,7 +10,8 @@
 #import "RadioButton.h"
 #import "HEALUser.h"
 
-@interface HEALEditSMSSettingsViewController : UIViewController
+@interface HEALEditSMSSettingsViewController : UIViewController <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet RadioButton *disableRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *enableRadioButton;
 
@@ -20,7 +21,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *contactNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contactNumberTextField;
-@property (weak, nonatomic) IBOutlet UITextView *emergencyMessageTextView;
+@property (weak, nonatomic) IBOutlet UITextField *emergencyMessageTextField;
 
-@property (strong, nonatomic) HEALUser *User;
+@property (strong, nonatomic) HEALUser *user;
+
+- (IBAction)doneButtonPressed:(id)sender;
 @end
