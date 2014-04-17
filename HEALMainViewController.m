@@ -68,7 +68,7 @@
 {
     button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    [button setImage:[UIImage imageNamed:@"CenterButtonSober.png"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"SoberArrow.png"] forState:UIControlStateNormal];
     
     [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
     CGRect screen = [[UIScreen mainScreen] bounds];
@@ -147,15 +147,15 @@
         
     } else if (self.user.state == SOBER)
     {
-        [button setImage:[UIImage imageNamed:@"CenterButtonSober.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"SoberArrow.png"] forState:UIControlStateNormal];
         
     } else if(self.user.state == TIPSY)
     {
-        [button setImage:[UIImage imageNamed:@"TipsyButton.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"TipsyArrow.png"] forState:UIControlStateNormal];
         
     } else if (self.user.state == DRUNK)
     {
-        [button setImage:[UIImage imageNamed:@"DrunkButton.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"DrunkArrow.png"] forState:UIControlStateNormal];
         
     } else if (self.user.state == DANGER)
     {
