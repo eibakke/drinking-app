@@ -16,6 +16,9 @@
     UIButton *button;
     UIButton *sosButton;
     CGPoint centerViewCenter;
+    int smsInt;
+    NSTimer *smsTimer;
+    BOOL sendAutoMessage;
 }
 @property (weak, nonatomic) IBOutlet UIButton *nightButton;
 @property (weak, nonatomic) IBOutlet UIButton *smsButton;
@@ -214,6 +217,26 @@
     [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"You've been drinking since: ", t]];
 }
 
+-(void)countDownDuration
+{
+    smsInt -= 1;
+    if (smsInt == 1)
+    {
+        if (smsTimer != nil)
+        {
+            [smsTimer invalidate];
+            smsTimer = nil;
+        }
+        //THIS LINE SHOULD SOMEHOW DELETE AUTVIEW
+        if(sendAutoMessage == TRUE)
+        {
+            [self sendSMS];
+            self.user.currentNight.sosSent = TRUE;
+        }
+        
+    }
+}
+
 //resets the Timer
 - (void)resetTimer
 {
@@ -319,18 +342,26 @@
     [alertView show];
 }
 
-//- (IBAction)sosAuto:(id)sender
-//{
-//    UIAlertView *autoView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@", @"Message '", self.user.smsMessage, @"' will be sent to ", self.user.sosContact, @" in ", PUTSOMESECONDCOUNTDOWNTHINGHERE, @"seconds. Cancel?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-//}
+- (IBAction)sosAuto:(id)sender
+{
+    sendAutoMessage = TRUE;
+    smsInt = 5;
+    smsTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDownDuration) userInfo:nil repeats:YES];
+    UIAlertView *autoView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@%@%@", @"Message '", self.user.smsMessage, @"' will be sent to ", self.user.sosContact, @" in ", [NSString stringWithFormat:@"%i", smsInt], @" seconds. Cancel?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"REAL CANCEL", nil];
+    [autoView show];
+}
 
-//- (void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    if (buttonIndex == 0)
-//    {
-//        [self sendSMS];
-//    }
-//}
+//Does stuff when cancel is pressed in autoview
+-(void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != [autoView cancelButtonIndex])
+    {
+        NSLog(@"PRESSED FUCKING CANCEL");
+        sendAutoMessage = FALSE;
+        [smsTimer invalidate];
+        smsTimer = nil;
+    }
+}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
