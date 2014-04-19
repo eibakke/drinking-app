@@ -152,10 +152,24 @@
     } else if(self.user.state == TIPSY)
     {
         [button setImage:[UIImage imageNamed:@"TipsyArrow.png"] forState:UIControlStateNormal];
+        if(self.user.smsState == TIPSY)
+        {
+            if (self.user.currentNight.sosSent == FALSE)
+            {
+                [self sosDanger:self];
+            }
+        }
         
     } else if (self.user.state == DRUNK)
     {
         [button setImage:[UIImage imageNamed:@"DrunkArrow.png"] forState:UIControlStateNormal];
+        if(self.user.smsState == DRUNK)
+        {
+            if (self.user.currentNight.sosSent == FALSE)
+            {
+                [self sosDanger:self];
+            }
+        }
         
     } else if (self.user.state == DANGER)
     {
@@ -163,9 +177,18 @@
         sosButton.UserInteractionEnabled = YES;
         
         [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
-        if (self.user.currentNight.sosSent == FALSE)
+        if(self.user.smsState == DANGER)
         {
-            [self sosDanger:self];
+            if (self.user.currentNight.sosSent == FALSE)
+            {
+                if(self.user.autoSMS == FALSE)
+                {
+                    [self sosDanger:self];
+                } //else
+//                {
+//                    [self sosAuto:self];
+//                }
+            }
         }
     }
 }
@@ -295,6 +318,19 @@
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@", @"Send message '", self.user.smsMessage, @"' to ", self.user.sosContact, @"?"] delegate: self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send", nil];
     [alertView show];
 }
+
+//- (IBAction)sosAuto:(id)sender
+//{
+//    UIAlertView *autoView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@", @"Message '", self.user.smsMessage, @"' will be sent to ", self.user.sosContact, @" in ", PUTSOMESECONDCOUNTDOWNTHINGHERE, @"seconds. Cancel?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+//}
+
+//- (void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    if (buttonIndex == 0)
+//    {
+//        [self sendSMS];
+//    }
+//}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -441,12 +477,15 @@
 //send SMS
 - (void)sendSMS{
     
+    self.user.currentNight.sosSent = TRUE;
+    
     MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
     
     [textComposer setMessageComposeDelegate:self];
     
     if ([MFMessageComposeViewController canSendText]){ //if text messages can be sent
-        [textComposer setRecipients:[NSArray arrayWithObjects: nil]]; //allows user to choose number to send text to (replace nil by number to send it to a predetermined number)
+        NSArray *recipients = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%g", self.user.contactNumber], nil];
+        [textComposer setRecipients:recipients];
         [textComposer setBody:self.user.smsMessage];
         [self presentViewController:textComposer animated:YES completion:NULL];
         

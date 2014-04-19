@@ -40,6 +40,7 @@
         [_progFillArray addObject:num2];
         [_progFillArray addObject:num3];
         [_progFillArray addObject:num4];
+        _smsState = DANGER;
     }
     return self;
 }
