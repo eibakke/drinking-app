@@ -51,6 +51,8 @@
 		A811E4E518E50A8A00970E77 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4E418E50A8A00970E77 /* icon.png */; };
 		A811E4E718E5139800970E77 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4E618E5139800970E77 /* empty.png */; };
 		A811E4E918E5191700970E77 /* Flip.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4E818E5191700970E77 /* Flip.png */; };
+		A89E16171903160D000FFCDE /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = A89E16161903160D000FFCDE /* Default~iphone.png */; };
+		A89E161919031A62000FFCDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89E161819031A62000FFCDE /* Images.xcassets */; };
 		A8B3581C18EE5CCD008AF5FE /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581918EE5CCD008AF5FE /* CERoundProgressLayer.m */; };
 		A8B3581D18EE5CCD008AF5FE /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */; };
 		A8B3581F18EE5E55008AF5FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */; };
@@ -148,6 +150,8 @@
 		A811E4E418E50A8A00970E77 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/icon.png; sourceTree = SOURCE_ROOT; };
 		A811E4E618E5139800970E77 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty.png; path = Images/empty.png; sourceTree = SOURCE_ROOT; };
 		A811E4E818E5191700970E77 /* Flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flip.png; path = Images/Flip.png; sourceTree = SOURCE_ROOT; };
+		A89E16161903160D000FFCDE /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iphone.png"; path = "Images/Default~iphone.png"; sourceTree = "<group>"; };
+		A89E161819031A62000FFCDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A8B3581818EE5CCD008AF5FE /* CERoundProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressLayer.h; sourceTree = "<group>"; };
 		A8B3581918EE5CCD008AF5FE /* CERoundProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressLayer.m; sourceTree = "<group>"; };
 		A8B3581A18EE5CCD008AF5FE /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 		8956FC4918BBD6D70018F32B = {
 			isa = PBXGroup;
 			children = (
+				A89E16161903160D000FFCDE /* Default~iphone.png */,
 				A8B3581718EE5CCD008AF5FE /* Third Party Progress Bar */,
 				8956FC5D18BBD6D70018F32B /* drinkingApp */,
 				8956FC7F18BBD6D80018F32B /* drinkingAppTests */,
@@ -283,6 +288,7 @@
 				8956FC6618BBD6D70018F32B /* HEALAppDelegate.h */,
 				8956FC6718BBD6D70018F32B /* HEALAppDelegate.m */,
 				8956FC6F18BBD6D70018F32B /* drinkingApp.xcdatamodeld */,
+				A89E161819031A62000FFCDE /* Images.xcassets */,
 				8956FC5E18BBD6D70018F32B /* Supporting Files */,
 			);
 			path = drinkingApp;
@@ -496,6 +502,7 @@
 				8956FC6C18BBD6D70018F32B /* Default@2x.png in Resources */,
 				A8B3583018F8318B008AF5FE /* newnightbar.png in Resources */,
 				89F840D918DFFCDC0048AD95 /* unchecked.png in Resources */,
+				A89E16171903160D000FFCDE /* Default~iphone.png in Resources */,
 				A8B7977818EC5F6900686E79 /* DangerButton.png in Resources */,
 				A8B7977A18EC612000686E79 /* DangerButtonSMS.png in Resources */,
 				6D6BD5ED18E9E58900B45823 /* AboutUS.png in Resources */,
@@ -503,6 +510,7 @@
 				A8B7975918EBCE7B00686E79 /* SettingsScreen.png in Resources */,
 				A8B7976518EC4F1D00686E79 /* DrunkMain.png in Resources */,
 				8956FC6E18BBD6D70018F32B /* Default-568h@2x.png in Resources */,
+				A89E161919031A62000FFCDE /* Images.xcassets in Resources */,
 				A811E4D718E3ACCF00970E77 /* sampleNavBar.png in Resources */,
 				A811E4E718E5139800970E77 /* empty.png in Resources */,
 				A8B358381900831F008AF5FE /* DrunkArrow.png in Resources */,
@@ -674,6 +682,8 @@
 		8956FC8B18BBD6D80018F32B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "drinkingApp/drinkingApp-Prefix.pch";
 				INFOPLIST_FILE = "drinkingApp/drinkingApp-Info.plist";
@@ -685,6 +695,8 @@
 		8956FC8C18BBD6D80018F32B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "drinkingApp/drinkingApp-Prefix.pch";
 				INFOPLIST_FILE = "drinkingApp/drinkingApp-Info.plist";
