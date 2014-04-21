@@ -42,9 +42,8 @@
 {
     [self.enableRadioButton setSelected:self.user.autoSMS];
     
-    if (self.user.contactNumber != 0) {
-        NSNumber* contactNumber = [NSNumber numberWithDouble:self.user.contactNumber];
-        self.contactNumberTextField.text = [contactNumber stringValue];
+    if (self.user.contactNumber != nil) {
+        self.contactNumberTextField.text = self.user.contactNumber;
     }
     if (self.user.sosContact != nil) {
         self.contactNameTextField.text = self.user.sosContact;
@@ -83,7 +82,7 @@
 
 - (void)updateUser
 {
-    self.user.contactNumber = [self.contactNumberTextField.text doubleValue];
+    self.user.contactNumber = self.contactNumberTextField.text ;
     self.user.sosContact = self.contactNameTextField.text;
     self.user.smsMessage = self.emergencyMessageTextField.text;
     self.user.smsState = smsState;
@@ -92,7 +91,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
     [defaults setInteger:smsState forKey:@"smsState"];
-    [defaults setDouble:[self.contactNumberTextField.text doubleValue] forKey:@"contactNumber"];
+    [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
     [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
     

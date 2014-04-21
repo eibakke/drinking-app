@@ -42,7 +42,7 @@ typedef enum
 
 @property(strong, nonatomic) NSString *smsMessage;
 @property(strong, nonatomic) NSString *sosContact;
-@property(nonatomic) double contactNumber;
+@property(strong, nonatomic) NSString *contactNumber;
 
 @property(nonatomic, assign) intoxState smsState;
 @property(nonatomic) BOOL autoSMS;

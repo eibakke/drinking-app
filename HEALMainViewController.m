@@ -515,7 +515,7 @@
     [textComposer setMessageComposeDelegate:self];
     
     if ([MFMessageComposeViewController canSendText]){ //if text messages can be sent
-        NSArray *recipients = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%g", self.user.contactNumber], nil];
+        NSArray *recipients = [NSArray arrayWithObjects:self.user.contactNumber, nil];
         [textComposer setRecipients:recipients];
         [textComposer setBody:self.user.smsMessage];
         [self presentViewController:textComposer animated:YES completion:NULL];

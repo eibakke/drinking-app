@@ -39,8 +39,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "106"
          endingLineNumber = "106"
-         landmarkName = "-updateBackground:"
-         landmarkType = "5">
+         landmarkName = "@implementation HEALMainViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -53,6 +53,19 @@
          startingLineNumber = "74"
          endingLineNumber = "74"
          landmarkName = "-circleButton"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "HEALMainViewController.m"
+         timestampString = "419798603.183305"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "518"
+         endingLineNumber = "518"
+         landmarkName = "-sendSMS"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
