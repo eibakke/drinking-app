@@ -159,7 +159,13 @@
         {
             if (self.user.currentNight.sosSent == FALSE)
             {
-                [self sosDanger:self];
+                if(self.user.autoSMS == FALSE)
+                {
+                    [self sosDanger:self];
+                } else
+                {
+                    [self sosAuto:self];
+                }
             }
         }
         
@@ -170,7 +176,13 @@
         {
             if (self.user.currentNight.sosSent == FALSE)
             {
-                [self sosDanger:self];
+                if(self.user.autoSMS == FALSE)
+                {
+                    [self sosDanger:self];
+                } else
+                {
+                    [self sosAuto:self];
+                }
             }
         }
         
@@ -187,10 +199,10 @@
                 if(self.user.autoSMS == FALSE)
                 {
                     [self sosDanger:self];
-                } //else
-//                {
-//                    [self sosAuto:self];
-//                }
+                } else
+                {
+                    [self sosAuto:self];
+                }
             }
         }
     }
@@ -484,7 +496,6 @@
     [self resetTimer];
     [self.user.currentNight reset];
     [self updateLabels];
-    [self.timeLabel setText:@"Ready to start? Press the plus below!"];
     [self updateBackground:@"Sober"];
     //[self delete:sosButton];
     sosButton.hidden = YES;
