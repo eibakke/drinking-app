@@ -125,14 +125,8 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     [self.centerView addSubview:button];
 }
 
-//updates labels according to BAC values
-- (void) updateLabels
+- (void)updateCircleButton
 {
-    self.drinkStepper.value = self.user.currentNight.drinks;
-    [self.drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
-    [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
-    [self countUp];
-    
     if (self.user.state == DEAD)
     {
         [button setImage:[UIImage imageNamed:@"DangerButton.png"] forState:UIControlStateNormal];
@@ -195,6 +189,20 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
             }
         }
     }
+
+    
+}
+
+//updates labels according to BAC values
+- (void)updateUI
+{
+    [self.user BAC];
+    self.drinkStepper.value = self.user.currentNight.drinks;
+    [self.drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
+    [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
+    
+    [self updateRoundProgressBar];
+    [self updateCircleButton];
 }
 
 //creates SOS button
@@ -253,7 +261,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 //is called from updateLabels, updates the bacLabel
 - (void)countUp
 {
-    [self.bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
+    [self updateUI];
 }
 
 - (IBAction)threeLinesButtonClicked:(id)sender
@@ -353,7 +361,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 }
 
 //Does stuff when cancel is pressed in autoview
--(void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != [autoView cancelButtonIndex])
     {
@@ -387,11 +395,8 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     self.roundProgressView.tintColor = self.user.wheelColorTint;
 }
 
-
-
 - (IBAction)valueChanged:(UIStepper *)sender
 {
-    self.user.lastState = self.user.state;
     if(self.user.weight == 0)
     {
         [self alertUser:@"Please enter weight in settings."];
@@ -402,7 +407,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
             [self.user.currentNight resetStartTime];
         }
         self.user.currentNight.drinks = [sender value];
-        [self updateLabels];
+        [self updateUI];
     }
 }
 
@@ -433,8 +438,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
     slidRight = NO;
-    [self updateLabels];
-    
+    [self updateUI];
 }
 
 //segue to drunkstate view controller
@@ -469,11 +473,9 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 {
     [self resetTimer];
     [self.user.currentNight reset];
-    [self updateLabels];
-    //[self delete:sosButton];
+    [self updateUI];
     sosButton.hidden = YES;
     sosButton.UserInteractionEnabled = NO;
-    self.roundProgressView.progress =0;
 }
 
 //alert Message
