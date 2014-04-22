@@ -32,6 +32,9 @@ typedef enum
 
 @property(nonatomic, assign) intoxState state;
 @property(nonatomic, assign) intoxState lastState;
+@property(strong, nonatomic) NSString *stateAsString;
+@property(nonatomic) float wheelFill;
+@property(strong, nonatomic) UIColor *wheelColorTint;
 
 @property(nonatomic, assign) sexes sex;
 @property(nonatomic) int weight;
@@ -48,8 +51,7 @@ typedef enum
 @property(nonatomic) BOOL autoSMS;
 
 -(void)makeNight:(HEALNight*)night;
--(NSString*)stateAsString;
--(float)getWheelFill:(intoxState)state;
+
 
 
 

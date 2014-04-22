@@ -31,15 +31,6 @@
     if (self) {
         self.currentNight = [[HEALNight alloc] init];
         self.intoxStateArray = @[@"Sober", @"Tipsy", @"Drunk", @"Danger", @"Dead"];
-        _progFillArray = [[NSMutableArray alloc] init];
-        NSNumber *num1 = [NSNumber numberWithFloat:0.0f];
-        NSNumber *num2 = [NSNumber numberWithFloat:0.0f];
-        NSNumber *num3 = [NSNumber numberWithFloat:0.0f];
-        NSNumber *num4 = [NSNumber numberWithFloat:0.0f];
-        [_progFillArray addObject:num1];
-        [_progFillArray addObject:num2];
-        [_progFillArray addObject:num3];
-        [_progFillArray addObject:num4];
         _smsState = DANGER;
     }
     return self;
@@ -64,16 +55,16 @@
 {
     if (_BAC < 0.02) {
         self.state = SOBER;
-        [_progFillArray replaceObjectAtIndex:SOBER withObject:[NSNumber numberWithFloat: _BAC*50]];
+        self.wheelColorTint = [UIColor whiteColor];
     } else if (0.02 < _BAC && _BAC < 0.06) {
         self.state = TIPSY;
-        [_progFillArray replaceObjectAtIndex:TIPSY withObject:[NSNumber numberWithFloat: (_BAC-0.02)*25]];
+        self.wheelColorTint = [UIColor blueColor];
     } else if (0.06 < _BAC && _BAC < 0.2) {
         self.state = DRUNK;
-        [_progFillArray replaceObjectAtIndex:DRUNK withObject:[NSNumber numberWithFloat: (_BAC-0.06)*1/0.14]];
+        self.wheelColorTint = [UIColor orangeColor];
     } else if (0.2 < _BAC && _BAC < 4.0) {
         self.state = DANGER;
-        [_progFillArray replaceObjectAtIndex:DANGER withObject:[NSNumber numberWithFloat: (_BAC-0.2)*1/0.8]];
+        self.wheelColorTint = [UIColor redColor];
     } else {
         self.state = DEAD;
     }
@@ -98,9 +89,9 @@
 }
 
 
--(float)getWheelFill:(intoxState)state
+-(float)wheelFill
 {
-    return [[self.progFillArray objectAtIndex:state] floatValue];
+    return _BAC / 0.2;
 }
 
 

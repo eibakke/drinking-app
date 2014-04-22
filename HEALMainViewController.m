@@ -389,28 +389,13 @@
 {
     self.drinkStepper.value += 1;
     [self valueChanged:_drinkStepper];
-    
-    //fills up the progress view bar
-    if (self.user.lastState!=self.user.state){
-        NSLog(@"They are not the same!");
-        [UIView animateWithDuration:1.0
-                         animations:^{
-                             self.roundProgressView.progress = [self.user getWheelFill:self.user.lastState];
-                             NSLog(@"Did the first animation!");
-                         }
-                         completion:^(BOOL finished) {
-                             [self animateCurrentState];
-                             NSLog(@"Did the second animation!");
-                         }
-         ];
-    } else [self animateCurrentState];
+    [self updateRoundProgressBar];
 }
 
-- (void)animateCurrentState
+- (void)updateRoundProgressBar
 {
-    [UIView animateWithDuration:10.0 animations:^{
-        self.roundProgressView.progress = [self.user getWheelFill:self.user.state];
-    }];
+    self.roundProgressView.progress = self.user.wheelFill;
+    self.roundProgressView.tintColor = self.user.wheelColorTint;
 }
 
 
