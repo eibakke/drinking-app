@@ -245,7 +245,7 @@
         <scene sceneID="a6j-rc-gSt">
             <objects>
                 <viewController id="bNI-a8-0W6" customClass="HEALDrunkStateViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gBn-qe-hIX">
+                    <view key="view" contentMode="scaleToFill" id="gBn-qe-hIX" customClass="UIImageView">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -279,8 +279,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Q8Y-VI-bit" secondAttribute="bottom" constant="85" id="A1w-lq-INR"/>
                             <constraint firstAttribute="bottom" secondItem="pgn-e1-cgK" secondAttribute="bottom" constant="46" id="CER-Id-vSE"/>
-                            <constraint firstAttribute="trailing" secondItem="Q8Y-VI-bit" secondAttribute="trailing" type="default" id="Jsh-ie-t5q"/>
-                            <constraint firstItem="Q8Y-VI-bit" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" type="default" id="Uxi-ID-tHp"/>
+                            <constraint firstAttribute="trailing" secondItem="pgn-e1-cgK" secondAttribute="trailing" type="default" id="F2e-3p-nkF"/>
+                            <constraint firstItem="Q8Y-VI-bit" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" type="default" id="Myt-dC-wUi"/>
                             <constraint firstItem="Q8Y-VI-bit" firstAttribute="leading" secondItem="pgn-e1-cgK" secondAttribute="leading" type="default" id="pm7-Sf-jLF"/>
                             <constraint firstItem="Q8Y-VI-bit" firstAttribute="trailing" secondItem="pgn-e1-cgK" secondAttribute="trailing" type="default" id="sid-0V-Yxx"/>
                         </constraints>
@@ -288,6 +288,7 @@
                     <navigationItem key="navigationItem" id="EIR-bE-yiJ"/>
                     <connections>
                         <outlet property="bacLabel" destination="pgn-e1-cgK" id="FLi-Vq-C8Y"/>
+                        <outlet property="backgroundImageView" destination="gBn-qe-hIX" id="Puy-Jc-3Jl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bda-C3-qoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,7 +299,7 @@
         <scene sceneID="Shu-mk-anV">
             <objects>
                 <viewController id="7uE-MQ-V0L" customClass="HEALMainViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="afE-MJ-Bsx">
+                    <view key="view" contentMode="scaleToFill" id="afE-MJ-Bsx" customClass="UIImageView">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -527,6 +528,7 @@
                     <connections>
                         <outlet property="addButton" destination="xQK-8b-LdB" id="djv-pQ-zsS"/>
                         <outlet property="bacLabel" destination="YAC-UB-fqj" id="eSo-02-mB2"/>
+                        <outlet property="backgroundImageView" destination="afE-MJ-Bsx" id="LxO-i7-qqB"/>
                         <outlet property="centerView" destination="c6Z-PG-lOD" id="hg0-AP-SEA"/>
                         <outlet property="drinkLabel" destination="xnB-j1-dks" id="0Pp-1G-aNw"/>
                         <outlet property="drinkStepper" destination="rFK-Ix-bPj" id="xAU-C3-NNB"/>

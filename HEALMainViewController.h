@@ -19,6 +19,7 @@
 @interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate> {
     
 }
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) HEALUser *user;
 @property (weak, nonatomic) IBOutlet UIStepper *drinkStepper;
 @property (weak, nonatomic) IBOutlet UILabel *drinkLabel;

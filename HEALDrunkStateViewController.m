@@ -14,50 +14,9 @@
 @end
 
 @implementation HEALDrunkStateViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self countUp];
-
-
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
-    
-
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:[NSString stringWithFormat:@"%@%@", [self.user stateAsString], @"State.png"]] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    
-
-
-    }
-
-    
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-
-
-- (void)countUp
-{
+    self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@", [self.user stateAsString], @"State.png"]];
     [self.bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
 }
-
-
 @end

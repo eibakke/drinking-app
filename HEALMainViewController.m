@@ -19,6 +19,8 @@
     int smsInt;
     NSTimer *smsTimer;
     BOOL sendAutoMessage;
+    
+    
 }
 @property (weak, nonatomic) IBOutlet UIButton *nightButton;
 @property (weak, nonatomic) IBOutlet UIButton *smsButton;
@@ -27,23 +29,32 @@
 @property (weak, nonatomic) IBOutlet UIView *rightView;
 @property (weak, nonatomic) IBOutlet UIButton *smsSettingsButton;
 
+
+
 - (IBAction)rightViewButtonClicked:(id)sender;
 
 @end
 
 @implementation HEALMainViewController
 
+static int const RIGHTVIEW_SETTINGS_BUTTON_TAG = 0;
+static int const RIGHTVIEW_SMS_BUTTON_TAG = 1;
+static int const RIGHTVIEW_NIGHT_BUTTON_TAG = 2;
+static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
+
 //############################################ Setup Views Buttons Gestures and Timer ############################################
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Flip.png"]]];
+    self.backgroundImageView.image = [UIImage imageNamed:@"Flip.png"];
+    [self setupRightViewButtons];
     [self setupGestures];
     [self circleButton];
     [self sosButton];
+    
     sosButton.hidden = YES;
     sosButton.UserInteractionEnabled = NO;
-    [self updateBackground:@"Sober"];
+    [self backgroundUpdate];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.navigationItem.hidesBackButton = YES;
     centerViewCenter.x = self.centerView.frame.size.width / 2;
@@ -52,13 +63,19 @@
     
     tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewTapped)];
     [self.centerView addGestureRecognizer:tapRecognizer];
-    self.settingsButton.tag = 0;
-    self.smsButton.tag = 1;
-    self.nightButton.tag = 2;
-    self.smsSettingsButton.tag = 3;
+    
+    
 }
 
--(void)setupGestures {
+- (void)setupRightViewButtons
+{
+    self.settingsButton.tag = RIGHTVIEW_SETTINGS_BUTTON_TAG;
+    self.smsButton.tag = RIGHTVIEW_SMS_BUTTON_TAG;
+    self.nightButton.tag = RIGHTVIEW_NIGHT_BUTTON_TAG;
+    self.smsSettingsButton.tag = RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG;
+}
+
+- (void)setupGestures {
 	UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panViews:)];
 	[panRecognizer setMinimumNumberOfTouches:1];
 	[panRecognizer setMaximumNumberOfTouches:1];
@@ -101,39 +118,6 @@
     UIGraphicsEndImageContext();
     
     self.rightView.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:@"Flip.png"]] colorWithAlphaComponent:0.0];
-}
-
-//updates background programmatically according to drinking state
-- (void) updateBackground:(NSString*) State
-{
-    
-    if ([State  isEqual: @"Sober"])
-    {
-        [self backgroundUpdate];
-    }
-    
-    
-    if ([State  isEqual: @"Tipsy"])
-    {
-        [self backgroundUpdate];
-    }
-    
-    
-    if ([State  isEqual: @"Drunk"])
-    {
-        [self backgroundUpdate];
-    }
-    
-    if ([State  isEqual: @"Danger"])
-    {
-        [self backgroundUpdate];
-    }
-    
-    if ([State  isEqual: @"Dead"])
-    {
-        [self backgroundUpdate];
-    }
-    
 }
 
 //updates labels according to BAC values
@@ -481,7 +465,7 @@
     [self resetTimer];
     [self.user.currentNight reset];
     [self updateLabels];
-    [self updateBackground:@"Sober"];
+    [self backgroundUpdate];
     //[self delete:sosButton];
     sosButton.hidden = YES;
     sosButton.UserInteractionEnabled = NO;

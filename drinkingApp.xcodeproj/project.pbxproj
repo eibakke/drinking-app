@@ -228,7 +228,6 @@
 				8999444718FC407100C83A85 /* HEALEditSMSSettingsViewController.h */,
 				8999444818FC407100C83A85 /* HEALEditSMSSettingsViewController.m */,
 				890792DB18D0FDC1001EFA85 /* HEALDrunkStateViewController.h */,
-				A8B3583F1900947E008AF5FE /* BACInfo.png */,
 				890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */,
 				890792DD18D0FDC1001EFA85 /* HEALLogoViewController.h */,
 				890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */,
@@ -351,6 +350,7 @@
 		A855253F18CEAB7900567BDA /* GraphicsResources */ = {
 			isa = PBXGroup;
 			children = (
+				A8B3583F1900947E008AF5FE /* BACInfo.png */,
 				A8B3582A18F8318B008AF5FE /* bars */,
 				89D59E5B18E37BF400C013C1 /* threelines.png */,
 				8944D52118E122C700E39EC7 /* gradiantRight.png */,
