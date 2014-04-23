@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HEALMainViewController.m"
-            timestampString = "419965806.482252"
+            timestampString = "419966853.881098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "-updateLabels"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "-updateCircleButton"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HEALMainViewController.m"
-            timestampString = "419965806.482252"
+            timestampString = "419966853.881098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
-            landmarkName = "-resetViewPlacement"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
+            landmarkName = "-toggleRightView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

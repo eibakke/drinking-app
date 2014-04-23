@@ -51,16 +51,13 @@
 
 -(void)setDrunkStateMessages
 {
-    //self.soberMessageNumber = [self randomNumberBetweenMin:1 Max:1];
-    self.soberMessageNumber = 722;
-    self.tipsyMessageNumber = [self randomNumberBetweenMin:2 Max:2];
-    self.drunkMessageNumber = [self randomNumberBetweenMin:3 Max:3];
+
     
     
-    NSArray* messageArray=@[@"Sober Message", @"Tipsy Message", @"Drunk Message"];
-    self.soberMessage = messageArray[[self randomNumberBetweenMin:0 Max:0]];
-    self.drunkMessage = messageArray[[self randomNumberBetweenMin:1 Max:1]];
-    self.tipsyMessage = messageArray[[self randomNumberBetweenMin:2 Max:2]];
+    NSArray* messageArray=@[@"Sober Message 1",@"Sober Message 5",@"Sober Message 2",@"Sober Message 3",@"Sober Message 4", @"Tipsy Message1",@"Tipsy Message 2",@"Tipsy Message 3",@"Tipsy Message 4",@"Tipsy Message 5", @"Drunk Message1", @"Drunk Message2"];
+    self.soberMessage = messageArray[[self randomNumberBetweenMin:0 Max:4]];
+    self.tipsyMessage = messageArray[[self randomNumberBetweenMin:5 Max:9]];
+    self.drunkMessage = messageArray[[self randomNumberBetweenMin:10 Max:11]];
 
 
 }
