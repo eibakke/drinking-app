@@ -139,36 +139,10 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     } else if(self.user.state == TIPSY)
     {
         [button setImage:[UIImage imageNamed:@"TipsyArrow.png"] forState:UIControlStateNormal];
-        if(self.user.smsState == TIPSY)
-        {
-            if (self.user.currentNight.sosSent == FALSE)
-            {
-                if(self.user.autoSMS == FALSE)
-                {
-                    [self sosDanger:self];
-                } else
-                {
-                    [self sosAuto:self];
-                }
-            }
-        }
         
     } else if (self.user.state == DRUNK)
     {
         [button setImage:[UIImage imageNamed:@"DrunkArrow.png"] forState:UIControlStateNormal];
-        if(self.user.smsState == DRUNK)
-        {
-            if (self.user.currentNight.sosSent == FALSE)
-            {
-                if(self.user.autoSMS == FALSE)
-                {
-                    [self sosDanger:self];
-                } else
-                {
-                    [self sosAuto:self];
-                }
-            }
-        }
         
     } else if (self.user.state == DANGER)
     {
@@ -176,19 +150,6 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
         sosButton.UserInteractionEnabled = YES;
         
         [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
-        if(self.user.smsState == DANGER)
-        {
-            if (self.user.currentNight.sosSent == FALSE)
-            {
-                if(self.user.autoSMS == FALSE)
-                {
-                    [self sosDanger:self];
-                } else
-                {
-                    [self sosAuto:self];
-                }
-            }
-        }
     }
 
     
@@ -343,7 +304,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
             [smsTimer invalidate];
             smsTimer = nil;
         }
-//        [autoView setHidden:TRUE];
+        [autoView dismissWithClickedButtonIndex:[autoView cancelButtonIndex] animated:TRUE];
         if(sendAutoMessage == TRUE)
         {
             [self sendSMS];
@@ -356,52 +317,24 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 - (IBAction)sosAuto:(id)sender
 {
     sendAutoMessage = TRUE;
-    smsInt = 5;
+    smsInt = 6;
     smsTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDownDuration) userInfo:nil repeats:YES];
     autoView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@%@%@", @"Message '", self.user.smsMessage, @"' will be sent to ", self.user.sosContact, @" in ", [NSString stringWithFormat:@"%i", smsInt], @" seconds. Cancel?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
     [autoView show];
 }
 
-//Does stuff when cancel is pressed in autoview
-//-(void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    if (buttonIndex != [autoView cancelButtonIndex])
-//    {
-//        NSLog(@"PRESSED FUCKING CANCEL");
-//        sendAutoMessage = FALSE;
-//        smsTimer = nil;
-//        [smsTimer invalidate];
-//    }
-//}
-
-- (void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex != [autoView cancelButtonIndex])
-    {
-        NSLog(@"PRESSED FUCKING CANCEL");
-        sendAutoMessage = FALSE;
-        [smsTimer invalidate];
-        smsTimer = nil;
-    }
-}
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (self.user.autoSMS == FALSE)
+    if (buttonIndex != [alertView cancelButtonIndex])
     {
-        if (buttonIndex != [alertView cancelButtonIndex])
-        {
-            [self sendSMS];
-            self.user.currentNight.sosSent = TRUE;
-        }
-    } else
+        [self sendSMS];
+        self.user.currentNight.sosSent = TRUE;
+    }
+    if (buttonIndex == [alertView cancelButtonIndex])
     {
-        if (buttonIndex == [alertView cancelButtonIndex])
-        {
-            sendAutoMessage = FALSE;
-            smsTimer = nil;
-            [smsTimer invalidate];
-        }
+        sendAutoMessage = FALSE;
+        smsTimer = nil;
+        [smsTimer invalidate];
     }
 }
 
@@ -411,6 +344,19 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     self.drinkStepper.value += 1;
     [self valueChanged:_drinkStepper];
     [self updateRoundProgressBar];
+    if(self.user.smsState == self.user.state)
+    {
+        if (self.user.currentNight.sosSent == FALSE)
+        {
+            if(self.user.autoSMS == FALSE)
+            {
+                [self sosDanger:self];
+            } else
+            {
+                [self sosAuto:self];
+            }
+        }
+    }
 }
 
 - (void)updateRoundProgressBar
