@@ -26,8 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *nightButton;
 @property (weak, nonatomic) IBOutlet UIButton *smsButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
-@property (weak, nonatomic) IBOutlet UIView *centerView;
-@property (weak, nonatomic) IBOutlet UIView *rightView;
+@property (weak, nonatomic) IBOutlet UIImageView *centerView;
+@property (weak, nonatomic) IBOutlet UIImageView *rightView;
 @property (weak, nonatomic) IBOutlet UIButton *smsSettingsButton;
 
 
@@ -38,6 +38,7 @@
 
 @implementation HEALMainViewController
 
+//############################################ Constants ############################################
 static int const RIGHTVIEW_SETTINGS_BUTTON_TAG = 0;
 static int const RIGHTVIEW_SMS_BUTTON_TAG = 1;
 static int const RIGHTVIEW_NIGHT_BUTTON_TAG = 2;
@@ -47,28 +48,44 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.backgroundImageView.image = [UIImage imageNamed:@"purple1.png"];
-    [self setupRightViewButtons];
-    [self setupGestures];
-    [self circleButton];
-    [self sosButton];
-    
-    sosButton.hidden = YES;
-    sosButton.UserInteractionEnabled = NO;
-    [self backgroundUpdate];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.navigationItem.hidesBackButton = YES;
-    centerViewCenter.x = self.centerView.frame.size.width / 2;
-    [self.view sendSubviewToBack:self.rightView];
-    slidRight = NO;
-    
-    tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewTapped)];
-    [self.centerView addGestureRecognizer:tapRecognizer];
-    
-    [self newNight];
-    
+    [self setupUI];
 }
 
+// initializes all UI elements. Right now it only gets called from viewDidLoad. Calls all other setup methods
+- (void)setupUI
+{
+    [self setupBackgroundImages];
+    [self setupRightViewButtons];
+    [self setupCenterViewButtons];
+    [self setupGestures];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.navigationItem.hidesBackButton = YES;
+    [self newNight];
+    [self.view sendSubviewToBack:self.rightView];
+    
+    centerViewCenter.x = self.centerView.frame.size.width / 2;
+    slidRight = NO;
+}
+
+// sets the background images for the parentview, centerview and rightview
+- (void)setupBackgroundImages
+{
+    self.backgroundImageView.image = [UIImage imageNamed:@"purple1.png"];
+    self.centerView.image = [UIImage imageNamed:(@"empty.png")];
+    self.rightView.image = [UIImage imageNamed:(@"Flip.png")];
+}
+
+// sets up all the centerviewbuttons
+- (void)setupCenterViewButtons
+{
+    [self circleButton];
+    [self sosButton];
+    sosButton.hidden = YES;
+    sosButton.UserInteractionEnabled = NO;
+}
+
+// initializes tag values for the rightviewbuttons to identify them
 - (void)setupRightViewButtons
 {
     self.settingsButton.tag = RIGHTVIEW_SETTINGS_BUTTON_TAG;
@@ -77,12 +94,16 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     self.smsSettingsButton.tag = RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG;
 }
 
+// sets up the panning gesture to move the centerview and the tapping gesture to move back from the rightview
 - (void)setupGestures {
 	UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panViews:)];
 	[panRecognizer setMinimumNumberOfTouches:1];
 	[panRecognizer setMaximumNumberOfTouches:1];
 	[panRecognizer setDelegate:self];
 	[self.view addGestureRecognizer:panRecognizer];
+    
+    tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewTapped)];
+    [self.centerView addGestureRecognizer:tapRecognizer];
 }
 
 //creates circle button that shows the states
@@ -105,31 +126,8 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     [self.centerView addSubview:button];
 }
 
-//Updates the background, currently not changing
-- (void) backgroundUpdate
+- (void)updateCircleButton
 {
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:(@"empty.png")] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    self.centerView.backgroundColor = [UIColor colorWithPatternImage:image];
-    
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:(@"Flip.png")] drawInRect:self.view.bounds];
-    UIGraphicsEndImageContext();
-    
-    self.rightView.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:@"Flip.png"]] colorWithAlphaComponent:0.0];
-}
-
-//updates labels according to BAC values
-- (void) updateLabels
-{
-    self.drinkStepper.value = self.user.currentNight.drinks;
-    [self.drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
-    [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
-    [self countUp];
-    
     if (self.user.state == DEAD)
     {
         [button setImage:[UIImage imageNamed:@"DangerButton.png"] forState:UIControlStateNormal];
@@ -192,6 +190,20 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
             }
         }
     }
+
+    
+}
+
+//updates labels according to BAC values
+- (void)updateUI
+{
+    [self.user BAC];
+    self.drinkStepper.value = self.user.currentNight.drinks;
+    [self.drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
+    [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
+    
+    [self updateRoundProgressBar];
+    [self updateCircleButton];
 }
 
 //creates SOS button
@@ -231,7 +243,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 //is called from updateLabels, updates the bacLabel
 - (void)countUp
 {
-    [self.bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
+    [self updateUI];
 }
 
 - (IBAction)threeLinesButtonClicked:(id)sender
@@ -362,6 +374,17 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 //    }
 //}
 
+- (void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != [autoView cancelButtonIndex])
+    {
+        NSLog(@"PRESSED FUCKING CANCEL");
+        sendAutoMessage = FALSE;
+        [smsTimer invalidate];
+        smsTimer = nil;
+    }
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (self.user.autoSMS == FALSE)
@@ -396,11 +419,8 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     self.roundProgressView.tintColor = self.user.wheelColorTint;
 }
 
-
-
 - (IBAction)valueChanged:(UIStepper *)sender
 {
-    self.user.lastState = self.user.state;
     if(self.user.weight == 0)
     {
         [self alertUser:@"Please enter weight in settings."];
@@ -411,7 +431,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
             [self.user.currentNight resetStartTime];
         }
         self.user.currentNight.drinks = [sender value];
-        [self updateLabels];
+        [self updateUI];
     }
 }
 
@@ -442,8 +462,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
     slidRight = NO;
-    [self updateLabels];
-    
+    [self updateUI];
 }
 
 //segue to drunkstate view controller
@@ -478,18 +497,12 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 {
     [self resetTimer];
     [self.user.currentNight reset];
-    [self updateLabels];
-    [self backgroundUpdate];
-    
-    [self.user.currentNight setDrunkStateMessages];
-    
-    
-    //[self delete:sosButton];
+
+    [self updateUI];
     sosButton.hidden = YES;
     sosButton.UserInteractionEnabled = NO;
-    self.roundProgressView.progress =0;
-    
-
+    self.roundProgressView.progress = 0;
+    [self.user.currentNight setDrunkStateMessages];
 }
 
 //alert Message

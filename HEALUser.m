@@ -46,7 +46,6 @@
     float userFactor = userSexMetVal * self.weight;
     
     _BAC = (drinkFactor / userFactor) - (0.15 * timeDrinking);
-    self.lastState = self.state;
     [self updateState];
     
     return(MAX(0, _BAC));

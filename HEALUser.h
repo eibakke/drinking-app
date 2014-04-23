@@ -33,7 +33,6 @@ typedef enum
 
 
 @property(nonatomic, assign) intoxState state;
-@property(nonatomic, assign) intoxState lastState;
 @property(strong, nonatomic) NSString *stateAsString;
 @property(nonatomic) float wheelFill;
 @property(strong, nonatomic) UIColor *wheelColorTint;
