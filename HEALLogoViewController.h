@@ -12,4 +12,5 @@
 
 @interface HEALLogoViewController : UIViewController
 
+
 @end

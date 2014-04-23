@@ -30,6 +30,8 @@ typedef enum
     DEAD
 } intoxState;
 
+
+
 @property(nonatomic, assign) intoxState state;
 @property(nonatomic, assign) intoxState lastState;
 @property(strong, nonatomic) NSString *stateAsString;
@@ -41,6 +43,8 @@ typedef enum
 @property(strong, nonatomic) NSString *name;
 @property(nonatomic) float BAC;
 
+
+
 @property(strong, nonatomic) HEALNight *currentNight;
 
 @property(strong, nonatomic) NSString *smsMessage;
@@ -49,6 +53,8 @@ typedef enum
 
 @property(nonatomic, assign) intoxState smsState;
 @property(nonatomic) BOOL autoSMS;
+
+
 
 -(void)makeNight:(HEALNight*)night;
 

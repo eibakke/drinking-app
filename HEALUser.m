@@ -15,6 +15,7 @@
 }
 @property(strong, nonatomic)NSArray* intoxStateArray;
 @property(strong, nonatomic)NSMutableArray* progFillArray;
+
 @end
 
 @implementation HEALUser
@@ -75,6 +76,8 @@
     return [self.intoxStateArray objectAtIndex:self.state];
 }
 
+
+
 -(void)setSex:(sexes)sex
 {
     _sex = sex;
@@ -93,6 +96,14 @@
 {
     return _BAC / 0.2;
 }
+
+
+
+
+
+
+
+
 
 
 

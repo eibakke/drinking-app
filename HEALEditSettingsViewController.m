@@ -136,6 +136,8 @@
     if (buttonIndex == 1) {
         [self updateUser];
         [self.user.currentNight reset];
+        
+
         [self performSegueWithIdentifier:@"backToMain" sender:self];
     }
 }

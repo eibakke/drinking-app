@@ -19,6 +19,7 @@
     int smsInt;
     NSTimer *smsTimer;
     BOOL sendAutoMessage;
+    UIAlertView *autoView;
     
     
 }
@@ -46,7 +47,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.backgroundImageView.image = [UIImage imageNamed:@"Flip.png"];
+    self.backgroundImageView.image = [UIImage imageNamed:@"purple1.png"];
     [self setupRightViewButtons];
     [self setupGestures];
     [self circleButton];
@@ -64,6 +65,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerViewTapped)];
     [self.centerView addGestureRecognizer:tapRecognizer];
     
+    [self newNight];
     
 }
 
@@ -213,25 +215,6 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"You've been drinking since: ", t]];
 }
 
--(void)countDownDuration
-{
-    smsInt -= 1;
-    if (smsInt == 1)
-    {
-        if (smsTimer != nil)
-        {
-            [smsTimer invalidate];
-            smsTimer = nil;
-        }
-        //THIS LINE SHOULD SOMEHOW DELETE AUTVIEW
-        if(sendAutoMessage == TRUE)
-        {
-            [self sendSMS];
-            self.user.currentNight.sosSent = TRUE;
-        }
-        
-    }
-}
 
 //resets the Timer
 - (void)resetTimer
@@ -338,33 +321,64 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     [alertView show];
 }
 
+-(void)countDownDuration
+{
+    smsInt -= 1;
+    if (smsInt == 1)
+    {
+        if (smsTimer != nil)
+        {
+            [smsTimer invalidate];
+            smsTimer = nil;
+        }
+//        [autoView setHidden:TRUE];
+        if(sendAutoMessage == TRUE)
+        {
+            [self sendSMS];
+            self.user.currentNight.sosSent = TRUE;
+        }
+        
+    }
+}
+
 - (IBAction)sosAuto:(id)sender
 {
     sendAutoMessage = TRUE;
     smsInt = 5;
     smsTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDownDuration) userInfo:nil repeats:YES];
-    UIAlertView *autoView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@%@%@", @"Message '", self.user.smsMessage, @"' will be sent to ", self.user.sosContact, @" in ", [NSString stringWithFormat:@"%i", smsInt], @" seconds. Cancel?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"REAL CANCEL", nil];
+    autoView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@%@%@", @"Message '", self.user.smsMessage, @"' will be sent to ", self.user.sosContact, @" in ", [NSString stringWithFormat:@"%i", smsInt], @" seconds. Cancel?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
     [autoView show];
 }
 
 //Does stuff when cancel is pressed in autoview
--(void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex != [autoView cancelButtonIndex])
-    {
-        NSLog(@"PRESSED FUCKING CANCEL");
-        sendAutoMessage = FALSE;
-        [smsTimer invalidate];
-        smsTimer = nil;
-    }
-}
+//-(void)autoView:(UIAlertView *)autoView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    if (buttonIndex != [autoView cancelButtonIndex])
+//    {
+//        NSLog(@"PRESSED FUCKING CANCEL");
+//        sendAutoMessage = FALSE;
+//        smsTimer = nil;
+//        [smsTimer invalidate];
+//    }
+//}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1)
+    if (self.user.autoSMS == FALSE)
     {
-        [self sendSMS];
-        self.user.currentNight.sosSent = TRUE;
+        if (buttonIndex != [alertView cancelButtonIndex])
+        {
+            [self sendSMS];
+            self.user.currentNight.sosSent = TRUE;
+        }
+    } else
+    {
+        if (buttonIndex == [alertView cancelButtonIndex])
+        {
+            sendAutoMessage = FALSE;
+            smsTimer = nil;
+            [smsTimer invalidate];
+        }
     }
 }
 
@@ -466,10 +480,16 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     [self.user.currentNight reset];
     [self updateLabels];
     [self backgroundUpdate];
+    
+    [self.user.currentNight setDrunkStateMessages];
+    
+    
     //[self delete:sosButton];
     sosButton.hidden = YES;
     sosButton.UserInteractionEnabled = NO;
     self.roundProgressView.progress =0;
+    
+
 }
 
 //alert Message

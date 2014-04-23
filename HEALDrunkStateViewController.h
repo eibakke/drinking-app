@@ -14,10 +14,13 @@
     
 }
 
-@property (weak, nonatomic) IBOutlet UITextView *stateDetails;
-@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+//@property (weak, nonatomic) IBOutlet UITextView *stateDetails;
+//@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 
 @property (strong, nonatomic) HEALUser *user;
+@property (strong, nonatomic) HEALNight *night;
+
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bacLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @end
