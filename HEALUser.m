@@ -53,18 +53,20 @@
 
 -(void)updateState
 {
+    
+    
     if (_BAC < 0.02) {
         self.state = SOBER;
-        self.wheelColorTint = [UIColor whiteColor];
+        self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.2] ;
     } else if (0.02 < _BAC && _BAC < 0.06) {
         self.state = TIPSY;
-        self.wheelColorTint = [UIColor blueColor];
+        self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.4] ;
     } else if (0.06 < _BAC && _BAC < 0.2) {
         self.state = DRUNK;
-        self.wheelColorTint = [UIColor orangeColor];
+        self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.6] ;
     } else if (0.2 < _BAC && _BAC < 4.0) {
         self.state = DANGER;
-        self.wheelColorTint = [UIColor redColor];
+        self.wheelColorTint = [UIColor colorWithRed:(120/255.0) green:(80/255.0) blue:(80/255.0) alpha:1] ;
     } else {
         self.state = DEAD;
     }
@@ -95,6 +97,26 @@
 {
     return _BAC / 0.2;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -51,7 +51,7 @@
 
 -(void)setDrunkStateMessages
 {
-
+   // NSLocalizedStringFromTable([NSString stringWithFormat:@"%@ %i", stateName, [self randomasdfkjaskdjfkasjdfkjasdf]], @"drunkMessages", @"");
     
     
     NSArray* messageArray=@[@"Sober Message 1",@"Sober Message 5",@"Sober Message 2",@"Sober Message 3",@"Sober Message 4", @"Tipsy Message1",@"Tipsy Message 2",@"Tipsy Message 3",@"Tipsy Message 4",@"Tipsy Message 5", @"Drunk Message1", @"Drunk Message2"];
