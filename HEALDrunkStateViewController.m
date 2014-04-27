@@ -15,16 +15,35 @@
 
 
 @implementation HEALDrunkStateViewController
+//@synthesize messageLabel;
+
+- (void)viewDidLoad
+{
+    [_messageLabel setFont:[UIFont fontWithName:@"Cambria" size: 32]];
+    
+    [super viewDidLoad];
+
+    
+}
+
+
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    
+   
+   // [messageLabel setFont:[UIFont fontWithName:@"Cambria" size: messageLabel.font.pointSize]];
+    
+    //[messageLabel setFont:[UIFont fontWithName:@"Cambria" size:40]];
+    
+    
     self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@", [self.user stateAsString], @"State.png"]];
     
     [self.bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
     
     if (self.user.state == SOBER){
         
-        
-    [self.messageLabel setText: self.user.currentNight.soberMessage];
+        [self.messageLabel setText: self.user.currentNight.soberMessage];
     }
     else if (self.user.state == TIPSY)
     {

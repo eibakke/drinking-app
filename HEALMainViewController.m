@@ -73,7 +73,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 {
     self.backgroundImageView.image = [UIImage imageNamed:@"purple1.png"];
     self.centerView.image = [UIImage imageNamed:(@"empty.png")];
-    self.rightView.image = [UIImage imageNamed:(@"Flip.png")];
+    self.rightView.image = [UIImage imageNamed:(@"purple1.png")];
 }
 
 // sets up all the centerviewbuttons
@@ -443,6 +443,8 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 {
     [self resetTimer];
     [self.user.currentNight reset];
+    [self.user.currentNight resetStartTime];//trying to get rid of 6pm
+
 
     [self updateUI];
     sosButton.hidden = YES;

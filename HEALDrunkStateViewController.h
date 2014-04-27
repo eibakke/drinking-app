@@ -12,6 +12,9 @@
 @interface HEALDrunkStateViewController : UIViewController {
     NSString *labelText;
     
+
+    
+    
 }
 
 //@property (weak, nonatomic) IBOutlet UITextView *stateDetails;
@@ -20,7 +23,7 @@
 @property (strong, nonatomic) HEALUser *user;
 @property (strong, nonatomic) HEALNight *night;
 
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (nonatomic, retain) IBOutlet UILabel *messageLabel; //retain?? EI?
 @property (weak, nonatomic) IBOutlet UILabel *bacLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @end

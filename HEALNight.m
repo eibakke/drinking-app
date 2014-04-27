@@ -35,10 +35,6 @@
     self.drinks = 0;
     self.startTime = 0;
     self.sosSent = FALSE;
-    
-    
-    
-    
 }
 
 
@@ -54,11 +50,20 @@
    // NSLocalizedStringFromTable([NSString stringWithFormat:@"%@ %i", stateName, [self randomasdfkjaskdjfkasjdfkjasdf]], @"drunkMessages", @"");
     
     
-    NSArray* messageArray=@[@"Sober Message 1",@"Sober Message 5",@"Sober Message 2",@"Sober Message 3",@"Sober Message 4", @"Tipsy Message1",@"Tipsy Message 2",@"Tipsy Message 3",@"Tipsy Message 4",@"Tipsy Message 5", @"Drunk Message1", @"Drunk Message2"];
-    self.soberMessage = messageArray[[self randomNumberBetweenMin:0 Max:4]];
-    self.tipsyMessage = messageArray[[self randomNumberBetweenMin:5 Max:9]];
-    self.drunkMessage = messageArray[[self randomNumberBetweenMin:10 Max:11]];
+    NSArray* soberMessageArray=@[@"Call Your Grandma!",@"Walk Your Dog",@"Drive Your Car",@"Code",@"Live A Little", @"Fold Laundry",@"Pick Up Cantonese "];
+     NSArray* tipsyMessageArray=@[@"Avoid Karaoke",@"Share An Irrelevant Childhood Story",@"Dance"];
+     NSArray* drunkMessageArray=@[@"Order Jimmy Johns",@"Ponder Meaning of Life",@"Drink Some Water",@"Eat Some Food",@"Kagin?", @"Not Text That Number"];
+//    self.soberMessage = soberMessageArray[[self randomNumberBetweenMin:0 Max:[soberMessageArray count]]];
+//
+//    self.tipsyMessage = tipsyMessageArray[[self randomNumberBetweenMin:0 Max:[tipsyMessageArray count]]];
+//    self.drunkMessage = drunkMessageArray[[self randomNumberBetweenMin:0 Max:[drunkMessageArray count]]];
 
+    
+    
+    self.soberMessage = soberMessageArray[[self randomNumberBetweenMin:0 Max:6]];
+    
+    self.tipsyMessage = tipsyMessageArray[[self randomNumberBetweenMin:0 Max:2]];
+    self.drunkMessage = drunkMessageArray[[self randomNumberBetweenMin:0 Max:5]];
 
 }
 

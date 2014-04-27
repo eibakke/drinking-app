@@ -14,7 +14,6 @@
 		890792E218D0FDC1001EFA85 /* HEALLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */; };
 		890792E318D0FDC1001EFA85 /* HEALNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */; };
 		8908588418C538D40020383C /* HEALUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908588318C538D40020383C /* HEALUser.m */; };
-		891FEB3018C7D97D00780C8A /* beer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 891FEB2F18C7D97D00780C8A /* beer.jpg */; };
 		8944D52218E122C700E39EC7 /* gradiantRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8944D52118E122C700E39EC7 /* gradiantRight.png */; };
 		8956FC5618BBD6D70018F32B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5518BBD6D70018F32B /* UIKit.framework */; };
 		8956FC5818BBD6D70018F32B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5718BBD6D70018F32B /* Foundation.framework */; };
@@ -57,10 +56,6 @@
 		A8B3581C18EE5CCD008AF5FE /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581918EE5CCD008AF5FE /* CERoundProgressLayer.m */; };
 		A8B3581D18EE5CCD008AF5FE /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */; };
 		A8B3581F18EE5E55008AF5FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */; };
-		A8B3582518F82016008AF5FE /* DrunkState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582118F82016008AF5FE /* DrunkState.png */; };
-		A8B3582618F82016008AF5FE /* SoberState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582218F82016008AF5FE /* SoberState.png */; };
-		A8B3582718F82016008AF5FE /* TipsyState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582318F82016008AF5FE /* TipsyState.png */; };
-		A8B3582918F824AA008AF5FE /* DrunkState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582818F824AA008AF5FE /* DrunkState.png */; };
 		A8B3582F18F8318B008AF5FE /* bacbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582B18F8318B008AF5FE /* bacbar.png */; };
 		A8B3583018F8318B008AF5FE /* newnightbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582C18F8318B008AF5FE /* newnightbar.png */; };
 		A8B3583118F8318B008AF5FE /* settingsbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582D18F8318B008AF5FE /* settingsbar.png */; };
@@ -68,19 +63,20 @@
 		A8B35834190080A3008AF5FE /* SoberArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B35833190080A3008AF5FE /* SoberArrow.png */; };
 		A8B35836190080A8008AF5FE /* TipsyArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B35835190080A8008AF5FE /* TipsyArrow.png */; };
 		A8B358381900831F008AF5FE /* DrunkArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B358371900831F008AF5FE /* DrunkArrow.png */; };
-		A8B3583C19008EB5008AF5FE /* DrunkState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3583B19008EB5008AF5FE /* DrunkState.png */; };
-		A8B3583E19008F47008AF5FE /* DrunkState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3583D19008F47008AF5FE /* DrunkState.png */; };
 		A8B358401900947E008AF5FE /* BACInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3583F1900947E008AF5FE /* BACInfo.png */; };
 		A8B7975918EBCE7B00686E79 /* SettingsScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975818EBCE7B00686E79 /* SettingsScreen.png */; };
 		A8B7975B18EC3EB300686E79 /* NewUserSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975A18EC3EB300686E79 /* NewUserSettings.png */; };
 		A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975C18EC42D900686E79 /* AddDrink.png */; };
 		A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975E18EC446300686E79 /* AddDrinkedited.png */; };
-		A8B7976518EC4F1D00686E79 /* DrunkMain.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7976418EC4F1D00686E79 /* DrunkMain.png */; };
 		A8B7977118EC594000686E79 /* TipsyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977018EC594000686E79 /* TipsyButton.png */; };
 		A8B7977318EC594500686E79 /* DrunkButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977218EC594500686E79 /* DrunkButton.png */; };
 		A8B7977618EC5A6A00686E79 /* CenterButtonSober.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977518EC5A6A00686E79 /* CenterButtonSober.png */; };
 		A8B7977818EC5F6900686E79 /* DangerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977718EC5F6900686E79 /* DangerButton.png */; };
 		A8B7977A18EC612000686E79 /* DangerButtonSMS.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977918EC612000686E79 /* DangerButtonSMS.png */; };
+		A8FC61B2190A941B00DAFDC8 /* purple1.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B1190A941B00DAFDC8 /* purple1.png */; };
+		A8FC61B6190A9F8000DAFDC8 /* DrunkState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B3190A9F8000DAFDC8 /* DrunkState.png */; };
+		A8FC61B7190A9F8000DAFDC8 /* SoberState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B4190A9F8000DAFDC8 /* SoberState.png */; };
+		A8FC61B8190A9F8000DAFDC8 /* TipsyState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B5190A9F8000DAFDC8 /* TipsyState.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +101,6 @@
 		890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALNewUserViewController.m; path = ../HEALNewUserViewController.m; sourceTree = "<group>"; };
 		8908588218C538D40020383C /* HEALUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALUser.h; path = ../HEALUser.h; sourceTree = "<group>"; };
 		8908588318C538D40020383C /* HEALUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALUser.m; path = ../HEALUser.m; sourceTree = "<group>"; };
-		891FEB2F18C7D97D00780C8A /* beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beer.jpg; path = ../beer.jpg; sourceTree = "<group>"; };
 		8944D52118E122C700E39EC7 /* gradiantRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradiantRight.png; sourceTree = "<group>"; };
 		8956FC5218BBD6D70018F32B /* drinkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drinkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8956FC5518BBD6D70018F32B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -159,10 +154,6 @@
 		A8B3581A18EE5CCD008AF5FE /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
 		A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressView.m; sourceTree = "<group>"; };
 		A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		A8B3582118F82016008AF5FE /* DrunkState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkState.png; path = Images/StateScreens/DrunkState.png; sourceTree = SOURCE_ROOT; };
-		A8B3582218F82016008AF5FE /* SoberState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SoberState.png; path = Images/StateScreens/SoberState.png; sourceTree = SOURCE_ROOT; };
-		A8B3582318F82016008AF5FE /* TipsyState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TipsyState.png; path = Images/StateScreens/TipsyState.png; sourceTree = SOURCE_ROOT; };
-		A8B3582818F824AA008AF5FE /* DrunkState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkState.png; path = Images/StateScreens/DrunkState.png; sourceTree = SOURCE_ROOT; };
 		A8B3582B18F8318B008AF5FE /* bacbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bacbar.png; sourceTree = "<group>"; };
 		A8B3582C18F8318B008AF5FE /* newnightbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newnightbar.png; sourceTree = "<group>"; };
 		A8B3582D18F8318B008AF5FE /* settingsbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsbar.png; sourceTree = "<group>"; };
@@ -170,19 +161,21 @@
 		A8B35833190080A3008AF5FE /* SoberArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SoberArrow.png; path = "Images/button arrow/SoberArrow.png"; sourceTree = SOURCE_ROOT; };
 		A8B35835190080A8008AF5FE /* TipsyArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TipsyArrow.png; path = "Images/button arrow/TipsyArrow.png"; sourceTree = SOURCE_ROOT; };
 		A8B358371900831F008AF5FE /* DrunkArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkArrow.png; path = "Images/button arrow/DrunkArrow.png"; sourceTree = SOURCE_ROOT; };
-		A8B3583B19008EB5008AF5FE /* DrunkState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkState.png; path = Images/StateScreens/DrunkState.png; sourceTree = SOURCE_ROOT; };
-		A8B3583D19008F47008AF5FE /* DrunkState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkState.png; path = Images/StateScreens/DrunkState.png; sourceTree = SOURCE_ROOT; };
 		A8B3583F1900947E008AF5FE /* BACInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BACInfo.png; path = Images/BACInfo.png; sourceTree = SOURCE_ROOT; };
 		A8B7975818EBCE7B00686E79 /* SettingsScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SettingsScreen.png; path = Images/SettingsScreen.png; sourceTree = SOURCE_ROOT; };
 		A8B7975A18EC3EB300686E79 /* NewUserSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewUserSettings.png; path = Images/NewUserSettings.png; sourceTree = SOURCE_ROOT; };
 		A8B7975C18EC42D900686E79 /* AddDrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrink.png; path = Images/AddDrink.png; sourceTree = SOURCE_ROOT; };
 		A8B7975E18EC446300686E79 /* AddDrinkedited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrinkedited.png; path = Images/AddDrinkedited.png; sourceTree = SOURCE_ROOT; };
-		A8B7976418EC4F1D00686E79 /* DrunkMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkMain.png; path = Images/DrunkMain.png; sourceTree = SOURCE_ROOT; };
 		A8B7977018EC594000686E79 /* TipsyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TipsyButton.png; path = "Images/round buttons/TipsyButton.png"; sourceTree = SOURCE_ROOT; };
 		A8B7977218EC594500686E79 /* DrunkButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkButton.png; path = "Images/round buttons/DrunkButton.png"; sourceTree = SOURCE_ROOT; };
 		A8B7977518EC5A6A00686E79 /* CenterButtonSober.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CenterButtonSober.png; path = "Images/round buttons/CenterButtonSober.png"; sourceTree = SOURCE_ROOT; };
 		A8B7977718EC5F6900686E79 /* DangerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DangerButton.png; path = "Images/round buttons/DangerButton.png"; sourceTree = SOURCE_ROOT; };
 		A8B7977918EC612000686E79 /* DangerButtonSMS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DangerButtonSMS.png; path = "Images/round buttons/DangerButtonSMS.png"; sourceTree = SOURCE_ROOT; };
+		A8FC61B0190A93C600DAFDC8 /* Cambria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cambria.ttf; sourceTree = "<group>"; };
+		A8FC61B1190A941B00DAFDC8 /* purple1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = purple1.png; path = Images/purple1.png; sourceTree = SOURCE_ROOT; };
+		A8FC61B3190A9F8000DAFDC8 /* DrunkState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkState.png; path = "State Screens No Message/DrunkState.png"; sourceTree = SOURCE_ROOT; };
+		A8FC61B4190A9F8000DAFDC8 /* SoberState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SoberState.png; path = "State Screens No Message/SoberState.png"; sourceTree = SOURCE_ROOT; };
+		A8FC61B5190A9F8000DAFDC8 /* TipsyState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TipsyState.png; path = "State Screens No Message/TipsyState.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				A89E16161903160D000FFCDE /* Default~iphone.png */,
+				A8FC61B0190A93C600DAFDC8 /* Cambria.ttf */,
 				A8B3581718EE5CCD008AF5FE /* Third Party Progress Bar */,
 				8956FC5D18BBD6D70018F32B /* drinkingApp */,
 				8956FC7F18BBD6D80018F32B /* drinkingAppTests */,
@@ -358,29 +352,25 @@
 				89D59E5B18E37BF400C013C1 /* threelines.png */,
 				8944D52118E122C700E39EC7 /* gradiantRight.png */,
 				89F840D218DFFCDC0048AD95 /* radio-res-ios */,
-				A811E4E418E50A8A00970E77 /* icon.png */,
-				A8B3582818F824AA008AF5FE /* DrunkState.png */,
-				A8B3582118F82016008AF5FE /* DrunkState.png */,
-				A8B3582218F82016008AF5FE /* SoberState.png */,
+				A8FC61B3190A9F8000DAFDC8 /* DrunkState.png */,
+				A8FC61B4190A9F8000DAFDC8 /* SoberState.png */,
+				A8FC61B5190A9F8000DAFDC8 /* TipsyState.png */,
+				A811E4DE18E4B22E00970E77 /* DeadState.png */,
 				A8B35833190080A3008AF5FE /* SoberArrow.png */,
-				A8B3582318F82016008AF5FE /* TipsyState.png */,
-				A8B3583B19008EB5008AF5FE /* DrunkState.png */,
+				A811E4E418E50A8A00970E77 /* icon.png */,
 				A811E4E618E5139800970E77 /* empty.png */,
 				A8B35835190080A8008AF5FE /* TipsyArrow.png */,
-				A8B3583D19008F47008AF5FE /* DrunkState.png */,
 				A811E4E818E5191700970E77 /* Flip.png */,
 				A8B7975818EBCE7B00686E79 /* SettingsScreen.png */,
 				6D6BD5EC18E9E58900B45823 /* AboutUS.png */,
+				A8FC61B1190A941B00DAFDC8 /* purple1.png */,
 				A8B7975C18EC42D900686E79 /* AddDrink.png */,
 				A8B7977518EC5A6A00686E79 /* CenterButtonSober.png */,
-				A8B7976418EC4F1D00686E79 /* DrunkMain.png */,
 				A811E4D818E3AEAF00970E77 /* sampleNavBar1.png */,
 				A8B7975E18EC446300686E79 /* AddDrinkedited.png */,
 				A8B358371900831F008AF5FE /* DrunkArrow.png */,
 				A8B7977718EC5F6900686E79 /* DangerButton.png */,
 				A8B7977918EC612000686E79 /* DangerButtonSMS.png */,
-				A811E4DE18E4B22E00970E77 /* DeadState.png */,
-				891FEB2F18C7D97D00780C8A /* beer.jpg */,
 				6D6BD5EA18E9E53200B45823 /* 3bar.png */,
 				A811E4D218E3991D00970E77 /* BlurLogoScreen.png */,
 				A8B7977218EC594500686E79 /* DrunkButton.png */,
@@ -493,7 +483,6 @@
 				A8B7977118EC594000686E79 /* TipsyButton.png in Resources */,
 				A811E4DF18E4B22E00970E77 /* DeadState.png in Resources */,
 				A8B7975B18EC3EB300686E79 /* NewUserSettings.png in Resources */,
-				A8B3582918F824AA008AF5FE /* DrunkState.png in Resources */,
 				89F840D818DFFCDC0048AD95 /* checked@2x.png in Resources */,
 				A8B3582F18F8318B008AF5FE /* bacbar.png in Resources */,
 				89F840DA18DFFCDC0048AD95 /* unchecked@2x.png in Resources */,
@@ -506,33 +495,30 @@
 				A8B3583018F8318B008AF5FE /* newnightbar.png in Resources */,
 				89F840D918DFFCDC0048AD95 /* unchecked.png in Resources */,
 				A89E16171903160D000FFCDE /* Default~iphone.png in Resources */,
+				A8FC61B8190A9F8000DAFDC8 /* TipsyState.png in Resources */,
 				A8B7977818EC5F6900686E79 /* DangerButton.png in Resources */,
 				A8B7977A18EC612000686E79 /* DangerButtonSMS.png in Resources */,
 				6D6BD5ED18E9E58900B45823 /* AboutUS.png in Resources */,
-				A8B3582518F82016008AF5FE /* DrunkState.png in Resources */,
 				A8B7975918EBCE7B00686E79 /* SettingsScreen.png in Resources */,
 				A89E162719074118000FFCDE /* purple1.png in Resources */,
-				A8B7976518EC4F1D00686E79 /* DrunkMain.png in Resources */,
 				8956FC6E18BBD6D70018F32B /* Default-568h@2x.png in Resources */,
 				A89E161919031A62000FFCDE /* Images.xcassets in Resources */,
 				A811E4D718E3ACCF00970E77 /* sampleNavBar.png in Resources */,
 				A811E4E718E5139800970E77 /* empty.png in Resources */,
 				A8B358381900831F008AF5FE /* DrunkArrow.png in Resources */,
+				A8FC61B6190A9F8000DAFDC8 /* DrunkState.png in Resources */,
 				A8B35836190080A8008AF5FE /* TipsyArrow.png in Resources */,
 				A8B7977618EC5A6A00686E79 /* CenterButtonSober.png in Resources */,
 				89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */,
-				A8B3582618F82016008AF5FE /* SoberState.png in Resources */,
+				A8FC61B7190A9F8000DAFDC8 /* SoberState.png in Resources */,
 				A8B7977318EC594500686E79 /* DrunkButton.png in Resources */,
 				8944D52218E122C700E39EC7 /* gradiantRight.png in Resources */,
 				6D6BD5EB18E9E53200B45823 /* 3bar.png in Resources */,
 				A8B3583218F8318B008AF5FE /* sosbar.png in Resources */,
-				A8B3582718F82016008AF5FE /* TipsyState.png in Resources */,
+				A8FC61B2190A941B00DAFDC8 /* purple1.png in Resources */,
 				A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */,
-				A8B3583C19008EB5008AF5FE /* DrunkState.png in Resources */,
-				A8B3583E19008F47008AF5FE /* DrunkState.png in Resources */,
 				A8B358401900947E008AF5FE /* BACInfo.png in Resources */,
 				A811E4E518E50A8A00970E77 /* icon.png in Resources */,
-				891FEB3018C7D97D00780C8A /* beer.jpg in Resources */,
 				A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */,
 				89D59E5C18E37BF500C013C1 /* threelines.png in Resources */,
 				A811E4D318E3991D00970E77 /* BlurLogoScreen.png in Resources */,
