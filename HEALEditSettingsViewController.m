@@ -23,7 +23,10 @@
 
 @implementation HEALEditSettingsViewController
 
-
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self doneButton:self];
+}
 
 // Called when the doneButton is pressed
 - (IBAction)doneButton:(id)sender{
@@ -44,11 +47,11 @@
         
         else if([self userInfoUpdated] && (self.user.currentNight.drinks == 0)) {
             [self updateUser];
-            [self performSegueWithIdentifier:@"backToMain" sender:self];
+            //[self performSegueWithIdentifier:@"backToMain" sender:self];
         }
         
         else {
-            [self performSegueWithIdentifier:@"backToMain" sender:self];
+            //[self performSegueWithIdentifier:@"backToMain" sender:self];
         }
         
     }
@@ -138,16 +141,13 @@
         [self.user.currentNight reset];
         
 
-        [self performSegueWithIdentifier:@"backToMain" sender:self];
+        //[self performSegueWithIdentifier:@"backToMain" sender:self];
     }
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	
-    self.navigationItem.hidesBackButton = YES;
-    
+    [super viewDidLoad];    
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"SettingsScreen.png"] drawInRect:self.view.bounds];
