@@ -38,6 +38,11 @@
     [self initializeUI];
 }
 
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [self doneButtonPressed:self];
+}
+
 - (void)initializeUI
 {
     [self.enableRadioButton setSelected:self.user.autoSMS];
@@ -76,7 +81,7 @@
     }
     if ([self validInput]) {
         [self updateUser];
-        [self performSegueWithIdentifier:@"backToMain" sender:self];
+//        [self performSegueWithIdentifier:@"unwindToMain" sender:self];
     }
 }
 
