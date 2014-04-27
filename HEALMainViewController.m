@@ -158,7 +158,6 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 //updates labels according to BAC values
 - (void)updateUI
 {
-    [self.user BAC];
     self.drinkStepper.value = self.user.currentNight.drinks;
     [self.drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
     [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
