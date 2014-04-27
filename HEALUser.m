@@ -53,16 +53,16 @@
 
 -(void)updateState
 {
-    if (self.BAC < 0.02) {
+    if (_BAC < 0.02) {
         self.state = SOBER;
         self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.2] ;
-    } else if (0.02 < self.BAC && self.BAC < 0.06) {
+    } else if (0.02 < _BAC && _BAC < 0.06) {
         self.state = TIPSY;
         self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.4] ;
-    } else if (0.06 < self.BAC && self.BAC < 0.2) {
+    } else if (0.06 < _BAC && _BAC < 0.2) {
         self.state = DRUNK;
         self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.6] ;
-    } else if (0.2 < self.BAC && self.BAC < 4.0) {
+    } else if (0.2 < _BAC && _BAC < 4.0) {
         self.state = DANGER;
         self.wheelColorTint = [UIColor colorWithRed:(120/255.0) green:(80/255.0) blue:(80/255.0) alpha:1] ;
     } else {
