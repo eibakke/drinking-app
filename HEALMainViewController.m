@@ -184,7 +184,20 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
     [dFormatter setDateFormat:@"hh:mm a"];
     NSString *t = [dFormatter stringFromDate: date];
-    [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"You've been drinking since: ", t]];
+    
+    //Getting rid of 6pm
+    if(self.drinkStepper.value == 0)
+    {
+        [self.timeLabel setText:@"Ready to Start? Press Below!"];
+    }
+    
+    else
+    {
+        [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"You've been drinking since: ", t]];
+    }
+    
+    
+    
 }
 
 
