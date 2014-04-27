@@ -261,7 +261,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
         slidRight = YES;
     }
     
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         self.centerView.frame = frame;
     }];
     [button setUserInteractionEnabled:!slidRight];
