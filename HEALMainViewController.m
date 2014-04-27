@@ -344,7 +344,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     self.drinkStepper.value += 1;
     [self valueChanged:_drinkStepper];
     [self updateRoundProgressBar];
-    if(self.user.smsState == self.user.state)
+    if(self.user.state >= self.user.smsState )
     {
         if (self.user.currentNight.sosSent == FALSE)
         {
