@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "RadioButton.h"
 #import "HEALUser.h"
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface HEALEditSMSSettingsViewController : UIViewController <UITextFieldDelegate>
+
+@interface HEALEditSMSSettingsViewController : UIViewController <UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet RadioButton *disableRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *enableRadioButton;
@@ -26,4 +29,9 @@
 @property (strong, nonatomic) HEALUser *user;
 
 - (IBAction)doneButtonPressed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *firstName;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
+- (IBAction)showPicker:(id)sender;
+
 @end

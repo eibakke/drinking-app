@@ -10,6 +10,9 @@
 		6D4118D418DF850E000EBBED /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4118D318DF850E000EBBED /* MessageUI.framework */; };
 		6D6BD5EB18E9E53200B45823 /* 3bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6BD5EA18E9E53200B45823 /* 3bar.png */; };
 		6D6BD5ED18E9E58900B45823 /* AboutUS.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6BD5EC18E9E58900B45823 /* AboutUS.png */; };
+		6DEDF584190DE7610073DBD0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEDF583190DE7610073DBD0 /* AddressBook.framework */; };
+		6DEDF586190DE7670073DBD0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEDF585190DE7670073DBD0 /* AddressBookUI.framework */; };
+		6DEDF588190DE8B60073DBD0 /* add_emergency_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEDF587190DE8B60073DBD0 /* add_emergency_contact.png */; };
 		890792E118D0FDC1001EFA85 /* HEALDrunkStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */; };
 		890792E218D0FDC1001EFA85 /* HEALLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */; };
 		890792E318D0FDC1001EFA85 /* HEALNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */; };
@@ -93,6 +96,9 @@
 		6D4118D318DF850E000EBBED /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6D6BD5EA18E9E53200B45823 /* 3bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3bar.png; sourceTree = "<group>"; };
 		6D6BD5EC18E9E58900B45823 /* AboutUS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AboutUS.png; sourceTree = "<group>"; };
+		6DEDF583190DE7610073DBD0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		6DEDF585190DE7670073DBD0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		6DEDF587190DE8B60073DBD0 /* add_emergency_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_emergency_contact.png; path = ../../Downloads/icon_18831/add_emergency_contact.png; sourceTree = "<group>"; };
 		890792DB18D0FDC1001EFA85 /* HEALDrunkStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALDrunkStateViewController.h; path = ../HEALDrunkStateViewController.h; sourceTree = "<group>"; };
 		890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALDrunkStateViewController.m; path = ../HEALDrunkStateViewController.m; sourceTree = "<group>"; };
 		890792DD18D0FDC1001EFA85 /* HEALLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALLogoViewController.h; path = ../HEALLogoViewController.h; sourceTree = "<group>"; };
@@ -183,12 +189,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEDF586190DE7670073DBD0 /* AddressBookUI.framework in Frameworks */,
+				6DEDF584190DE7610073DBD0 /* AddressBook.framework in Frameworks */,
+				8956FC5C18BBD6D70018F32B /* CoreData.framework in Frameworks */,
 				A8B3581F18EE5E55008AF5FE /* QuartzCore.framework in Frameworks */,
 				6D4118D418DF850E000EBBED /* MessageUI.framework in Frameworks */,
 				8956FC5618BBD6D70018F32B /* UIKit.framework in Frameworks */,
 				8956FC5818BBD6D70018F32B /* Foundation.framework in Frameworks */,
 				8956FC5A18BBD6D70018F32B /* CoreGraphics.framework in Frameworks */,
-				8956FC5C18BBD6D70018F32B /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +269,8 @@
 		8956FC5418BBD6D70018F32B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DEDF585190DE7670073DBD0 /* AddressBookUI.framework */,
+				6DEDF583190DE7610073DBD0 /* AddressBook.framework */,
 				A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */,
 				6D4118D318DF850E000EBBED /* MessageUI.framework */,
 				8956FC5518BBD6D70018F32B /* UIKit.framework */,
@@ -346,6 +356,7 @@
 		A855253F18CEAB7900567BDA /* GraphicsResources */ = {
 			isa = PBXGroup;
 			children = (
+				6DEDF587190DE8B60073DBD0 /* add_emergency_contact.png */,
 				A89E162619074118000FFCDE /* purple1.png */,
 				A8B3583F1900947E008AF5FE /* BACInfo.png */,
 				A8B3582A18F8318B008AF5FE /* bars */,
@@ -479,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89F840D718DFFCDC0048AD95 /* checked.png in Resources */,
+				6DEDF588190DE8B60073DBD0 /* add_emergency_contact.png in Resources */,
 				A811E4D918E3AEAF00970E77 /* sampleNavBar1.png in Resources */,
 				A8B7977118EC594000686E79 /* TipsyButton.png in Resources */,
 				A811E4DF18E4B22E00970E77 /* DeadState.png in Resources */,
