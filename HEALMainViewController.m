@@ -231,12 +231,15 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
             [self toggleRightView];
         } else if (slidRight && velocity.x > 2000) {
             [self toggleRightView];
-        } else if ((centerViewCenter.x - self.centerView.center.x < self.rightView.frame.size.width) && translatedPoint.x < 0) {
+        } else if (!slidRight && (centerViewCenter.x - self.centerView.center.x < self.rightView.frame.size.width) && translatedPoint.x < 0) {
             self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
             [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
-        } else if ((self.centerView.center.x < centerViewCenter.x) && velocity.x > 0){
+            NSLog(@"This should only happen if we are sliding the view left!");
+        } else if (slidRight && (self.centerView.center.x < centerViewCenter.x) && velocity.x > 0){
             self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
             [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
+            
+            NSLog(@"This should only happen if we are sliding the view right!");
         }
 	}
 }
