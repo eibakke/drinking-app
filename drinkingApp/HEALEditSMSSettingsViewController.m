@@ -37,6 +37,7 @@
 {
     [self initializeUI];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"sampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -191,7 +192,8 @@
 - (IBAction)showPicker:(id)sender
 {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:NULL] forBarMetrics:UIBarMetricsDefault];
-    
+    [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
+
     ABPeoplePickerNavigationController *picker =
     [[ABPeoplePickerNavigationController alloc] init];
     picker.peoplePickerDelegate = self;

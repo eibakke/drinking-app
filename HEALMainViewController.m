@@ -55,6 +55,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 - (void)viewWillAppear:(BOOL)animated
 {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"sampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
 // initializes all UI elements. Right now it only gets called from viewDidLoad. Calls all other setup methods
@@ -503,6 +504,8 @@ static float const STANDARD_PAN_DURATION = 0.1;
     
     if ([MFMessageComposeViewController canSendText]){ //if text messages can be sent
         [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:NULL] forBarMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
+
         NSArray *recipients = [NSArray arrayWithObjects:self.user.contactNumber, nil];
         [textComposer setRecipients:recipients];
         [textComposer setBody:self.user.smsMessage];
