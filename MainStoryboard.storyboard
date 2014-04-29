@@ -319,7 +319,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEs-AX-o9k" customClass="UIImageView">
-                                <rect key="frame" x="105" y="-1" width="218" height="508"/>
+                                <rect key="frame" x="105" y="0.0" width="218" height="508"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5u-nS-Rpc">
                                         <rect key="frame" x="-2" y="100" width="218" height="33"/>
@@ -493,12 +493,12 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="c6Z-PG-lOD" secondAttribute="trailing" type="default" id="3Rg-jt-F6E"/>
+                            <constraint firstAttribute="bottom" secondItem="eEs-AX-o9k" secondAttribute="bottom" constant="-4" id="Jrq-p6-40m"/>
                             <constraint firstItem="c6Z-PG-lOD" firstAttribute="leading" secondItem="afE-MJ-Bsx" secondAttribute="leading" type="default" id="PD6-s9-PqF"/>
+                            <constraint firstItem="eEs-AX-o9k" firstAttribute="top" secondItem="c6Z-PG-lOD" secondAttribute="top" type="default" id="SQJ-QP-5lh"/>
                             <constraint firstAttribute="bottom" secondItem="c6Z-PG-lOD" secondAttribute="bottom" type="default" id="UEL-qi-HHV"/>
-                            <constraint firstAttribute="bottom" secondItem="eEs-AX-o9k" secondAttribute="bottom" constant="-3" id="UuL-zn-gZR"/>
                             <constraint firstItem="c6Z-PG-lOD" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" type="default" id="WEY-01-UOF"/>
                             <constraint firstItem="eEs-AX-o9k" firstAttribute="leading" secondItem="afE-MJ-Bsx" secondAttribute="leading" constant="105" id="ZNQ-GP-Qaj"/>
-                            <constraint firstItem="eEs-AX-o9k" firstAttribute="top" secondItem="afE-MJ-Bsx" secondAttribute="top" constant="-1" id="bjx-0J-zUF"/>
                             <constraint firstAttribute="trailing" secondItem="eEs-AX-o9k" secondAttribute="trailing" constant="-3" id="vO1-rH-rGK"/>
                         </constraints>
                     </view>

@@ -75,7 +75,6 @@
 		A8B7977618EC5A6A00686E79 /* CenterButtonSober.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977518EC5A6A00686E79 /* CenterButtonSober.png */; };
 		A8B7977818EC5F6900686E79 /* DangerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977718EC5F6900686E79 /* DangerButton.png */; };
 		A8B7977A18EC612000686E79 /* DangerButtonSMS.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7977918EC612000686E79 /* DangerButtonSMS.png */; };
-		A8FC61B2190A941B00DAFDC8 /* purple1.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B1190A941B00DAFDC8 /* purple1.png */; };
 		A8FC61B6190A9F8000DAFDC8 /* DrunkState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B3190A9F8000DAFDC8 /* DrunkState.png */; };
 		A8FC61B7190A9F8000DAFDC8 /* SoberState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B4190A9F8000DAFDC8 /* SoberState.png */; };
 		A8FC61B8190A9F8000DAFDC8 /* TipsyState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B5190A9F8000DAFDC8 /* TipsyState.png */; };
@@ -460,7 +459,7 @@
 			attributes = {
 				CLASSPREFIX = HEAL;
 				LastTestingUpgradeCheck = 0510;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Halealei;
 			};
 			buildConfigurationList = 8956FC4D18BBD6D70018F32B /* Build configuration list for PBXProject "drinkingApp" */;
@@ -524,7 +523,6 @@
 				8944D52218E122C700E39EC7 /* gradiantRight.png in Resources */,
 				6D6BD5EB18E9E53200B45823 /* 3bar.png in Resources */,
 				A8B3583218F8318B008AF5FE /* sosbar.png in Resources */,
-				A8FC61B2190A941B00DAFDC8 /* purple1.png in Resources */,
 				A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */,
 				A8B358401900947E008AF5FE /* BACInfo.png in Resources */,
 				A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */,

@@ -43,6 +43,7 @@ static int const RIGHTVIEW_SETTINGS_BUTTON_TAG = 0;
 static int const RIGHTVIEW_SMS_BUTTON_TAG = 1;
 static int const RIGHTVIEW_NIGHT_BUTTON_TAG = 2;
 static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
+static float const STANDARD_PAN_DURATION = 0.1;
 
 //############################################ Setup Views Buttons Gestures and Timer ############################################
 - (void)viewDidLoad
@@ -231,33 +232,38 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 
 - (void)panViews:(id)sender
 {
+    float centerRightEdgePos = self.centerView.frame.origin.x + self.centerView.frame.size.width;
+    float parentRightEdgePos = self.view.frame.origin.x + self.view.frame.size.width;
+    float toggleLeftFromPos = self.rightView.frame.origin.x + (0.75 * self.rightView.frame.size.width);
+    float toggleRightFromPos = self.rightView.frame.origin.x + (0.25 * self.rightView.frame.size.width);
+    
 	CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self.view];
-	CGPoint velocity = [(UIPanGestureRecognizer*)sender velocityInView:[sender view]];
     
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
-        if (!slidRight && (centerViewCenter.x - self.centerView.center.x > (self.rightView.frame.origin.x / 2))) {
+        if (!slidRight && (centerRightEdgePos < toggleLeftFromPos)) {
             [self toggleRightView];
-        } else if (slidRight && (self.centerView.center.x > (centerViewCenter.x - (self.rightView.frame.size.width / 2)))) {
+        } else if (slidRight && (centerRightEdgePos > toggleRightFromPos)) {
             [self toggleRightView];
         } else {
             [self resetViewPlacement];
         }
 	}
     
+    if ([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
+        if (-self.rightView.frame.size.width == self.centerView.frame.origin.x && translatedPoint.x > 0){
+            self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
+            [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
+        }
+        else if (centerRightEdgePos == parentRightEdgePos && translatedPoint.x < 0){
+            self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
+            [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
+        }
+    }
+    
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateChanged) {
-        if (!slidRight && velocity.x <= -2000) {
-            [self toggleRightView];
-        } else if (slidRight && velocity.x > 2000) {
-            [self toggleRightView];
-        } else if (!slidRight && (centerViewCenter.x - self.centerView.center.x < self.rightView.frame.size.width) && translatedPoint.x < 0) {
+        if ((-self.rightView.frame.size.width < self.centerView.frame.origin.x) && (centerRightEdgePos < parentRightEdgePos)) {
             self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
             [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
-            NSLog(@"This should only happen if we are sliding the view left!");
-        } else if (slidRight && (self.centerView.center.x < centerViewCenter.x) && velocity.x > 0){
-            self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
-            [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
-            
-            NSLog(@"This should only happen if we are sliding the view right!");
         }
 	}
 }
@@ -278,11 +284,11 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     }
     else if(!slidRight)
     {
-        frame.origin.x = -self.rightView.frame.size.width + 5;
+        frame.origin.x = -self.rightView.frame.size.width;
         slidRight = YES;
     }
     
-    [UIView animateWithDuration:0.1 animations:^{
+    [UIView animateWithDuration:STANDARD_PAN_DURATION animations:^{
         self.centerView.frame = frame;
     }];
     [button setUserInteractionEnabled:!slidRight];
@@ -302,7 +308,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
         frame.origin.x = 0;
     }
     
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:STANDARD_PAN_DURATION animations:^{
         self.centerView.frame = frame;
     }];
 }
