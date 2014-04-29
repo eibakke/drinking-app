@@ -36,6 +36,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self initializeUI];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"sampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -189,6 +190,8 @@
 //presents the picker as a modal view controller
 - (IBAction)showPicker:(id)sender
 {
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:NULL] forBarMetrics:UIBarMetricsDefault];
+    
     ABPeoplePickerNavigationController *picker =
     [[ABPeoplePickerNavigationController alloc] init];
     picker.peoplePickerDelegate = self;

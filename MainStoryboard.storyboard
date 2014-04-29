@@ -649,6 +649,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="bED-9H-xtw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jB7-1T-ynN">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

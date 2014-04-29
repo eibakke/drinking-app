@@ -51,6 +51,11 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     [self setupUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"sampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
+}
+
 // initializes all UI elements. Right now it only gets called from viewDidLoad. Calls all other setup methods
 - (void)setupUI
 {
@@ -491,6 +496,7 @@ static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
     [textComposer setMessageComposeDelegate:self];
     
     if ([MFMessageComposeViewController canSendText]){ //if text messages can be sent
+        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:NULL] forBarMetrics:UIBarMetricsDefault];
         NSArray *recipients = [NSArray arrayWithObjects:self.user.contactNumber, nil];
         [textComposer setRecipients:recipients];
         [textComposer setBody:self.user.smsMessage];

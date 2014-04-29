@@ -12,7 +12,6 @@
 		6D6BD5ED18E9E58900B45823 /* AboutUS.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6BD5EC18E9E58900B45823 /* AboutUS.png */; };
 		6DEDF584190DE7610073DBD0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEDF583190DE7610073DBD0 /* AddressBook.framework */; };
 		6DEDF586190DE7670073DBD0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEDF585190DE7670073DBD0 /* AddressBookUI.framework */; };
-		6DEDF588190DE8B60073DBD0 /* add_emergency_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEDF587190DE8B60073DBD0 /* add_emergency_contact.png */; };
 		890792E118D0FDC1001EFA85 /* HEALDrunkStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */; };
 		890792E218D0FDC1001EFA85 /* HEALLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */; };
 		890792E318D0FDC1001EFA85 /* HEALNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */; };
@@ -46,11 +45,11 @@
 		89F840D918DFFCDC0048AD95 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F840D518DFFCDC0048AD95 /* unchecked.png */; };
 		89F840DA18DFFCDC0048AD95 /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89F840D618DFFCDC0048AD95 /* unchecked@2x.png */; };
 		89F89D3518C7B37E00143AD4 /* HEALNight.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F89D3418C7B37E00143AD4 /* HEALNight.m */; };
+		98846017190F014C00EB4083 /* add_emergency_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 98846016190F014C00EB4083 /* add_emergency_contact.png */; };
 		A811E4D318E3991D00970E77 /* BlurLogoScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4D218E3991D00970E77 /* BlurLogoScreen.png */; };
 		A811E4D718E3ACCF00970E77 /* sampleNavBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4D618E3ACCF00970E77 /* sampleNavBar.png */; };
 		A811E4D918E3AEAF00970E77 /* sampleNavBar1.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4D818E3AEAF00970E77 /* sampleNavBar1.png */; };
 		A811E4DF18E4B22E00970E77 /* DeadState.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4DE18E4B22E00970E77 /* DeadState.png */; };
-		A811E4E518E50A8A00970E77 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4E418E50A8A00970E77 /* icon.png */; };
 		A811E4E718E5139800970E77 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4E618E5139800970E77 /* empty.png */; };
 		A811E4E918E5191700970E77 /* Flip.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4E818E5191700970E77 /* Flip.png */; };
 		A89E16171903160D000FFCDE /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = A89E16161903160D000FFCDE /* Default~iphone.png */; };
@@ -98,7 +97,6 @@
 		6D6BD5EC18E9E58900B45823 /* AboutUS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AboutUS.png; sourceTree = "<group>"; };
 		6DEDF583190DE7610073DBD0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6DEDF585190DE7670073DBD0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		6DEDF587190DE8B60073DBD0 /* add_emergency_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_emergency_contact.png; path = ../../Downloads/icon_18831/add_emergency_contact.png; sourceTree = "<group>"; };
 		890792DB18D0FDC1001EFA85 /* HEALDrunkStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALDrunkStateViewController.h; path = ../HEALDrunkStateViewController.h; sourceTree = "<group>"; };
 		890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALDrunkStateViewController.m; path = ../HEALDrunkStateViewController.m; sourceTree = "<group>"; };
 		890792DD18D0FDC1001EFA85 /* HEALLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALLogoViewController.h; path = ../HEALLogoViewController.h; sourceTree = "<group>"; };
@@ -145,11 +143,11 @@
 		89F840D618DFFCDC0048AD95 /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
 		89F89D3318C7B37E00143AD4 /* HEALNight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALNight.h; path = ../HEALNight.h; sourceTree = "<group>"; };
 		89F89D3418C7B37E00143AD4 /* HEALNight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALNight.m; path = ../HEALNight.m; sourceTree = "<group>"; };
+		98846016190F014C00EB4083 /* add_emergency_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_emergency_contact.png; path = Images/add_emergency_contact.png; sourceTree = SOURCE_ROOT; };
 		A811E4D218E3991D00970E77 /* BlurLogoScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlurLogoScreen.png; path = Images/BlurLogoScreen.png; sourceTree = SOURCE_ROOT; };
 		A811E4D618E3ACCF00970E77 /* sampleNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sampleNavBar.png; path = Images/sampleNavBar.png; sourceTree = SOURCE_ROOT; };
 		A811E4D818E3AEAF00970E77 /* sampleNavBar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sampleNavBar1.png; path = Images/sampleNavBar1.png; sourceTree = SOURCE_ROOT; };
 		A811E4DE18E4B22E00970E77 /* DeadState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DeadState.png; path = Images/DeadState.png; sourceTree = SOURCE_ROOT; };
-		A811E4E418E50A8A00970E77 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/icon.png; sourceTree = SOURCE_ROOT; };
 		A811E4E618E5139800970E77 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty.png; path = Images/empty.png; sourceTree = SOURCE_ROOT; };
 		A811E4E818E5191700970E77 /* Flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Flip.png; path = Images/Flip.png; sourceTree = SOURCE_ROOT; };
 		A89E16161903160D000FFCDE /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iphone.png"; path = "Images/Default~iphone.png"; sourceTree = "<group>"; };
@@ -356,7 +354,7 @@
 		A855253F18CEAB7900567BDA /* GraphicsResources */ = {
 			isa = PBXGroup;
 			children = (
-				6DEDF587190DE8B60073DBD0 /* add_emergency_contact.png */,
+				98846016190F014C00EB4083 /* add_emergency_contact.png */,
 				A89E162619074118000FFCDE /* purple1.png */,
 				A8B3583F1900947E008AF5FE /* BACInfo.png */,
 				A8B3582A18F8318B008AF5FE /* bars */,
@@ -368,7 +366,6 @@
 				A8FC61B5190A9F8000DAFDC8 /* TipsyState.png */,
 				A811E4DE18E4B22E00970E77 /* DeadState.png */,
 				A8B35833190080A3008AF5FE /* SoberArrow.png */,
-				A811E4E418E50A8A00970E77 /* icon.png */,
 				A811E4E618E5139800970E77 /* empty.png */,
 				A8B35835190080A8008AF5FE /* TipsyArrow.png */,
 				A811E4E818E5191700970E77 /* Flip.png */,
@@ -490,7 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89F840D718DFFCDC0048AD95 /* checked.png in Resources */,
-				6DEDF588190DE8B60073DBD0 /* add_emergency_contact.png in Resources */,
+				98846017190F014C00EB4083 /* add_emergency_contact.png in Resources */,
 				A811E4D918E3AEAF00970E77 /* sampleNavBar1.png in Resources */,
 				A8B7977118EC594000686E79 /* TipsyButton.png in Resources */,
 				A811E4DF18E4B22E00970E77 /* DeadState.png in Resources */,
@@ -530,7 +527,6 @@
 				A8FC61B2190A941B00DAFDC8 /* purple1.png in Resources */,
 				A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */,
 				A8B358401900947E008AF5FE /* BACInfo.png in Resources */,
-				A811E4E518E50A8A00970E77 /* icon.png in Resources */,
 				A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */,
 				89D59E5C18E37BF500C013C1 /* threelines.png in Resources */,
 				A811E4D318E3991D00970E77 /* BlurLogoScreen.png in Resources */,
