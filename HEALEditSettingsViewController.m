@@ -97,6 +97,8 @@
 
 -(void)updateUser {
     
+    defaults = [NSUserDefaults standardUserDefaults];
+    
     NSNumber *weight = [NSNumber numberWithDouble:[[self.weightTextField text] doubleValue]];
     [defaults setObject:weight forKey:@"userWeight"];
     [defaults setObject:[self.nameTextField text] forKey:@"userName"];
@@ -159,22 +161,18 @@
     [[self weightTextField] setDelegate:self];
     [[self nameTextField] setDelegate:self];
     
+    self.weightTextField.text = [NSString stringWithFormat:@"%d", self.user.weight];
+    self.nameTextField.text = self.user.name;
+    
     // Set the text in the textfields to come from the user defaults, if they have been set yet
-    defaults = [NSUserDefaults standardUserDefaults];
-    if([defaults objectForKey:@"userWeight"] != nil) {
-        self.weightTextField.text = [[defaults objectForKey:@"userWeight"] stringValue];
-    }
-    if([[defaults objectForKey:@"userSex"] isEqualToString:@"F"])
+    if(self.user.sex == FEMALE)
     {
         [self.femaleRadioButton setSelected:YES];
-    } else if([[defaults objectForKey:@"userSex"] isEqualToString:@"M"])
+    } else if(self.user.sex == MALE)
     {
         [self.maleRadioButton setSelected:YES];
     }
-    if([defaults objectForKey:@"userName"] != nil) {
-        self.nameTextField.text = [defaults objectForKey:@"userName"];
-    }
-    
+
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
     [self.view addGestureRecognizer:tapBackground];
 }
