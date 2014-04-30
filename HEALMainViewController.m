@@ -510,11 +510,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
         [textComposer setRecipients:recipients];
         [textComposer setBody:self.user.smsMessage];
         [self presentViewController:textComposer animated:YES completion:NULL];
-        
     } else { //simulator will not allow text messages to be sent
         NSLog(@"Cannot Open Text.");
     }
-    
+
 }
 
 //for dismissing text messaging in app if we cancel or send it

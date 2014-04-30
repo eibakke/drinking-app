@@ -41,7 +41,7 @@
 {
     NSDate *cTime = [NSDate date];
     
-    double timeDrinking = ([cTime timeIntervalSince1970] - self.currentNight.startTime)/3600000;
+    double timeDrinking = ([cTime timeIntervalSince1970] - self.currentNight.startTime)/36000000;
     float drinkFactor = self.currentNight.drinks * 3.084;
     float userFactor = userSexMetVal * self.weight;
     
