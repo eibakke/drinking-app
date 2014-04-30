@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HEALMainViewController.m"
-         timestampString = "419115144.905188"
+         timestampString = "420575213.754991"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
+         startingLineNumber = "110"
+         endingLineNumber = "110"
          landmarkName = "-setupGestures"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,12 +47,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HEALMainViewController.m"
-         timestampString = "419115144.905188"
+         timestampString = "420575213.754991"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "74"
-         endingLineNumber = "74"
-         landmarkName = "-setupBackgroundImages"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
+         landmarkName = "-setupUI"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -60,13 +60,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HEALMainViewController.m"
-         timestampString = "419804198.590852"
+         timestampString = "420575759.812974"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "517"
-         endingLineNumber = "517"
-         landmarkName = "@implementation HEALMainViewController"
-         landmarkType = "3">
+         startingLineNumber = "539"
+         endingLineNumber = "539"
+         landmarkName = "-sendSMS"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

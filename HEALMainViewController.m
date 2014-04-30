@@ -20,6 +20,7 @@
     NSTimer *smsTimer;
     BOOL sendAutoMessage;
     UIAlertView *autoView;
+    UIButton *envelopeButton;
     
     
 }
@@ -87,9 +88,12 @@ static float const STANDARD_PAN_DURATION = 0.1;
 - (void)setupCenterViewButtons
 {
     [self circleButton];
-    [self sosButton];
-    sosButton.hidden = YES;
-    sosButton.UserInteractionEnabled = NO;
+    //[self sosButton];
+    [self envelopeButton];
+    //sosButton.hidden = YES;
+    //sosButton.UserInteractionEnabled = NO;
+    envelopeButton.hidden = YES;
+    envelopeButton.UserInteractionEnabled = NO;
 }
 
 // initializes tag values for the rightviewbuttons to identify them
@@ -153,8 +157,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
         
     } else if (self.user.state == DANGER)
     {
-        sosButton.hidden = NO;
-        sosButton.UserInteractionEnabled = YES;
+        //sosButton.hidden = NO;
+        //sosButton.UserInteractionEnabled = YES;
+        envelopeButton.hidden = NO;
+        envelopeButton.UserInteractionEnabled = YES;
         
         [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
     }
@@ -183,6 +189,19 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [sosButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
     sosButton.frame = CGRectMake((0.05*screenWidth), (0.16*screenHeight + .46*screenWidth), (0.9*screenWidth), (0.45*screenWidth));
     [self.centerView addSubview:sosButton];
+}
+
+//creates an envelope button
+- (void)envelopeButton
+{
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screen.size.width;
+    CGFloat screenHeight = screen.size.height;
+    envelopeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [envelopeButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
+    [envelopeButton setImage:[UIImage imageNamed:@"AboutUS.png"] forState:UIControlStateNormal];
+    envelopeButton.frame = CGRectMake((0.353*screenWidth), (0.52*screenHeight), (0.3*screenWidth), (0.17*screenWidth));
+    [self.centerView addSubview:envelopeButton];
 }
 
 //sets the date label-'youve been drinking since'
@@ -474,8 +493,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 
     [self updateUI];
-    sosButton.hidden = YES;
-    sosButton.UserInteractionEnabled = NO;
+    //sosButton.hidden = YES;
+    //sosButton.UserInteractionEnabled = NO;
+    envelopeButton.hidden = YES;
+    envelopeButton.UserInteractionEnabled = NO;
     self.roundProgressView.progress = 0;
     [self.user.currentNight setDrunkStateMessages];
 }
