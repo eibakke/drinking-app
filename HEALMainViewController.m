@@ -15,7 +15,6 @@
     UIGestureRecognizer *tapRecognizer;
     UIButton *button;
     UIButton *sosButton;
-    CGPoint centerViewCenter;
     int smsInt;
     NSTimer *smsTimer;
     BOOL sendAutoMessage;
@@ -46,7 +45,7 @@ static int const RIGHTVIEW_NIGHT_BUTTON_TAG = 2;
 static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 static float const STANDARD_PAN_DURATION = 0.1;
 
-//############################################ Setup Views Buttons Gestures and Timer ############################################
+//############################################ Setup Views, Buttons, Gestures and Timer ############################################
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -72,7 +71,6 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self newNight];
     [self.view sendSubviewToBack:self.rightView];
     
-    centerViewCenter.x = self.centerView.frame.size.width / 2;
     slidRight = NO;
 }
 

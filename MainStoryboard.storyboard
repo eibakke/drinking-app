@@ -468,7 +468,7 @@
                                 </accessibility>
                                 <constraints>
                                     <constraint firstItem="xQK-8b-LdB" firstAttribute="top" secondItem="NUb-RN-o9b" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0hR-kZ-XzN"/>
-                                    <constraint firstAttribute="bottom" secondItem="YQ6-pd-30n" secondAttribute="bottom" constant="168" id="1nB-ZV-xDU"/>
+                                    <constraint firstAttribute="bottom" secondItem="YQ6-pd-30n" secondAttribute="bottom" constant="168" type="user" id="1nB-ZV-xDU"/>
                                     <constraint firstAttribute="bottom" secondItem="YAC-UB-fqj" secondAttribute="bottom" constant="127" id="40p-dW-Kea"/>
                                     <constraint firstItem="xnB-j1-dks" firstAttribute="leading" secondItem="rFK-Ix-bPj" secondAttribute="leading" type="default" id="4tZ-dn-qBM"/>
                                     <constraint firstItem="rFK-Ix-bPj" firstAttribute="centerX" secondItem="NUb-RN-o9b" secondAttribute="centerX" type="default" id="65V-65-CB5"/>
