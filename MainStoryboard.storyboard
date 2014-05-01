@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
@@ -561,7 +561,7 @@
         <scene sceneID="tNc-8H-LdE">
             <objects>
                 <viewController id="MqT-Dv-oNL" customClass="HEALEditSettingsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GwV-ve-lSs">
+                    <view key="view" contentMode="scaleToFill" id="GwV-ve-lSs" customClass="UIImageView">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -632,6 +632,7 @@
                     <navigationItem key="navigationItem" id="lEE-ps-550"/>
                     <connections>
                         <outlet property="femaleRadioButton" destination="ffh-hU-g4O" id="rjd-ha-0qY"/>
+                        <outlet property="imageViewBackground" destination="GwV-ve-lSs" id="QGc-T2-G08"/>
                         <outlet property="maleRadioButton" destination="CuU-4b-fYL" id="hMb-Dh-jyE"/>
                         <outlet property="nameTextField" destination="PKw-W1-GhK" id="qNb-Vr-86v"/>
                         <outlet property="weightTextField" destination="C5k-4F-wvV" id="0fg-6L-DmT"/>

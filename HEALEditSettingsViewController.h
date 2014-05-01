@@ -16,9 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet RadioButton *maleRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *femaleRadioButton;
+@property (strong, nonatomic) IBOutlet UIImageView *imageViewBackground;
 
 @property (strong, nonatomic) HEALUser *user;
-
--(IBAction)doneButton:(id)sender;
 
 @end
