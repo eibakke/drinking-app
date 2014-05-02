@@ -42,10 +42,10 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
-//- (void) viewWillDisappear:(BOOL)animated
-//{
-//    [self doneButtonPressed:self];
-//}
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [self doneButtonPressed:self];
+}
 
 - (void)initializeUI
 {
