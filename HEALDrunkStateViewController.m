@@ -20,6 +20,8 @@
 - (void)viewDidLoad
 {
     [_messageLabel setFont:[UIFont fontWithName:@"Cambria" size: 32]];
+    [_bacLabel setFont:[UIFont fontWithName:@"Cambria" size: 32]];
+
     
     [super viewDidLoad];
 

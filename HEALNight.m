@@ -50,7 +50,7 @@
    // NSLocalizedStringFromTable([NSString stringWithFormat:@"%@ %i", stateName, [self randomasdfkjaskdjfkasjdfkjasdf]], @"drunkMessages", @"");
     
     
-    NSArray* soberMessageArray=@[@"Call Your Grandma!",@"Walk Your Dog",@"Drive Your Car",@"Code",@"Live A Little", @"Fold Laundry",@"Pick Up Cantonese "];
+    NSArray* soberMessageArray=@[@"Call Your Grandma!",@"Walk Your Dog",@"Drive Your Car",@"Write Some Code",@"Live A Little", @"Fold Laundry",@"Pick Up Cantonese "];
      NSArray* tipsyMessageArray=@[@"Avoid Karaoke",@"Share An Irrelevant Childhood Story",@"Dance"];
      NSArray* drunkMessageArray=@[@"Order Jimmy Johns",@"Ponder Meaning of Life",@"Drink Some Water",@"Eat Some Food",@"Kagin?", @"Not Text That Number"];
 //    self.soberMessage = soberMessageArray[[self randomNumberBetweenMin:0 Max:[soberMessageArray count]]];

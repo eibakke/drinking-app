@@ -150,7 +150,7 @@
     [super viewDidLoad];    
     
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"SettingsScreen.png"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"USettings.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
@@ -183,6 +183,7 @@
 {
     [[self nameTextField] resignFirstResponder];
     [[self weightTextField] resignFirstResponder];
+
 }
 
 // To get the keyboard to collapse when return is pressed
@@ -196,6 +197,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [self animateTextField: textField up: YES];
+    
 }
 
 // Move it back down when done editing
@@ -218,4 +220,34 @@
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
 }
+
+// Adds a return button to the keypad
+//- (void)addButtonToKeyboard {
+//	// create custom button
+//	UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//	doneButton.frame = CGRectMake(0, 163, 106, 53);
+//	doneButton.adjustsImageWhenHighlighted = NO;
+//	if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.0) {
+//		[doneButton setImage:[UIImage imageNamed:@"DoneUp3.png"] forState:UIControlStateNormal];
+//		[doneButton setImage:[UIImage imageNamed:@"DoneDown3.png"] forState:UIControlStateHighlighted];
+//	} else {
+//		[doneButton setImage:[UIImage imageNamed:@"DoneUp.png"] forState:UIControlStateNormal];
+//		[doneButton setImage:[UIImage imageNamed:@"DoneDown.png"] forState:UIControlStateHighlighted];
+//	}
+//	[doneButton addTarget:self action:@selector(doneButton:) forControlEvents:UIControlEventTouchUpInside];
+//	// locate keyboard view
+//	UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
+//	UIView* keyboard;
+//	for(int i=0; i<[tempWindow.subviews count]; i++) {
+//		keyboard = [tempWindow.subviews objectAtIndex:i];
+//		// keyboard found, add the button
+//		if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
+//			if([[keyboard description] hasPrefix:@"<UIPeripheralHost"] == YES)
+//				[keyboard addSubview:doneButton];
+//		} else {
+//			if([[keyboard description] hasPrefix:@"<UIKeyboard"] == YES)
+//				[keyboard addSubview:doneButton];
+//		}
+//	}
+//}
 @end

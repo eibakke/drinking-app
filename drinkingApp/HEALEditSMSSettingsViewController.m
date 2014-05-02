@@ -11,6 +11,7 @@
 @interface HEALEditSMSSettingsViewController () {
     intoxState smsState;
     BOOL sendAutoSMS;
+    BOOL popDown;
 }
 
 @end
@@ -19,6 +20,7 @@
 
 - (void)viewDidLoad
 {
+    popDown = FALSE;
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"empty.png"]];
     
@@ -111,6 +113,7 @@
     
 }
 
+//NEED TO CHANGE THIS TO SAVE CONTACT INFO CORRECTLY
 - (BOOL)validInput
 {
     NSError *error = NULL;
@@ -145,6 +148,11 @@
 
 - (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
 {
+    if(popDown == TRUE)
+    {
+        [self doneButtonPressed:self];
+    }
+
     [[self contactNameTextField] resignFirstResponder];
     [[self contactNumberTextField] resignFirstResponder];
     [[self emergencyMessageTextField] resignFirstResponder];
@@ -159,12 +167,14 @@
 // Move the whole view up a little when editing a textfield
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    popDown = TRUE;
     [self animateTextField: textField up: YES];
 }
 
 // Move it back down when done editing
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    popDown = FALSE;
     [self animateTextField: textField up: NO];
 }
 
@@ -235,6 +245,7 @@
     NSString* name = (__bridge_transfer NSString*)ABRecordCopyValue(person,
                                                                     kABPersonFirstNameProperty);
     self.firstName.text = name;
+    self.contactNameTextField.text = name;
     
     NSString* phone = nil;
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
@@ -246,6 +257,12 @@
         phone = @"[None]";
     }
     self.phoneNumber.text = phone;
+    self.contactNumberTextField.text = phone;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
+    [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
+    
     CFRelease(phoneNumbers);
 }
 

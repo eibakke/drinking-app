@@ -14,7 +14,6 @@
     BOOL slidRight;
     UIGestureRecognizer *tapRecognizer;
     UIButton *button;
-    UIButton *sosButton;
     CGPoint centerViewCenter;
     int smsInt;
     NSTimer *smsTimer;
@@ -49,6 +48,8 @@ static float const STANDARD_PAN_DURATION = 0.1;
 //############################################ Setup Views Buttons Gestures and Timer ############################################
 - (void)viewDidLoad
 {
+    [_timeLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
+
     [super viewDidLoad];
     [self setupUI];
 }
@@ -88,10 +89,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 - (void)setupCenterViewButtons
 {
     [self circleButton];
-    //[self sosButton];
     [self envelopeButton];
-    //sosButton.hidden = YES;
-    //sosButton.UserInteractionEnabled = NO;
     envelopeButton.hidden = YES;
     envelopeButton.UserInteractionEnabled = NO;
 }
@@ -122,7 +120,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 {
     button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    [button setImage:[UIImage imageNamed:@"SoberArrow.png"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"SoberButton.png"] forState:UIControlStateNormal];
     
     [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
     CGRect screen = [[UIScreen mainScreen] bounds];
@@ -141,28 +139,26 @@ static float const STANDARD_PAN_DURATION = 0.1;
 {
     if (self.user.state == DEAD)
     {
-        [button setImage:[UIImage imageNamed:@"DangerButton.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"PlainDangerButton.png"] forState:UIControlStateNormal];
         
     } else if (self.user.state == SOBER)
     {
-        [button setImage:[UIImage imageNamed:@"SoberArrow.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"SoberButton.png"] forState:UIControlStateNormal];
         
     } else if(self.user.state == TIPSY)
     {
-        [button setImage:[UIImage imageNamed:@"TipsyArrow.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"TipsyButton.png"] forState:UIControlStateNormal];
         
     } else if (self.user.state == DRUNK)
     {
-        [button setImage:[UIImage imageNamed:@"DrunkArrow.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"DrunkButton.png"] forState:UIControlStateNormal];
         
     } else if (self.user.state == DANGER)
     {
-        //sosButton.hidden = NO;
-        //sosButton.UserInteractionEnabled = YES;
         envelopeButton.hidden = NO;
         envelopeButton.UserInteractionEnabled = YES;
         
-        [button setImage:[UIImage imageNamed:@"DangerButtonSMS.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"PlainDangerButton.png"] forState:UIControlStateNormal];
     }
 
     
@@ -179,28 +175,16 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self updateCircleButton];
 }
 
-//creates SOS button
-- (void)sosButton
-{
-    CGRect screen = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screen.size.width;
-    CGFloat screenHeight = screen.size.height;
-    sosButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [sosButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
-    sosButton.frame = CGRectMake((0.05*screenWidth), (0.16*screenHeight + .46*screenWidth), (0.9*screenWidth), (0.45*screenWidth));
-    [self.centerView addSubview:sosButton];
-}
-
 //creates an envelope button
 - (void)envelopeButton
 {
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screen.size.width;
     CGFloat screenHeight = screen.size.height;
-    envelopeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    envelopeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [envelopeButton addTarget:self action:@selector(sendSMS) forControlEvents:UIControlEventTouchUpInside];
-    [envelopeButton setImage:[UIImage imageNamed:@"AboutUS.png"] forState:UIControlStateNormal];
-    envelopeButton.frame = CGRectMake((0.353*screenWidth), (0.52*screenHeight), (0.3*screenWidth), (0.17*screenWidth));
+    [envelopeButton setImage:[UIImage imageNamed:@"SMSEnvelope.png"] forState:UIControlStateNormal];
+    envelopeButton.frame = CGRectMake((0.353*screenWidth), (0.46*screenHeight), (0.3*screenWidth), (0.2*screenWidth));
     [self.centerView addSubview:envelopeButton];
 }
 
@@ -340,6 +324,12 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [alertView show];
 }
 
+- (IBAction)sosSetup
+{
+    UIAlertView *setupView = [[UIAlertView alloc]initWithTitle:@"Whoops!" message:@"Looks like you haven't set your SMS settings! Use the envelope button to send an SMS anyway." delegate: self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [setupView show];
+}
+
 -(void)countDownDuration
 {
     smsInt -= 1;
@@ -394,7 +384,11 @@ static float const STANDARD_PAN_DURATION = 0.1;
     {
         if (self.user.currentNight.sosSent == FALSE)
         {
-            if(self.user.autoSMS == FALSE)
+            if(self.user.sosContact == nil || self.user.smsMessage == nil)
+            {
+                [self sosSetup];
+            }
+            else if(self.user.autoSMS == FALSE)
             {
                 [self sosDanger:self];
             } else
@@ -493,8 +487,6 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 
     [self updateUI];
-    //sosButton.hidden = YES;
-    //sosButton.UserInteractionEnabled = NO;
     envelopeButton.hidden = YES;
     envelopeButton.UserInteractionEnabled = NO;
     self.roundProgressView.progress = 0;
