@@ -134,17 +134,17 @@
                                     <constraint firstAttribute="width" constant="281" id="pwt-pT-8qH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emergency Contact Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Orx-Nz-8ca">
                                 <rect key="frame" x="19" y="121" width="281" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Your emergency text message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHI-4z-8bK">
                                 <rect key="frame" x="20" y="165" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZ7-KW-Pw8">
                                 <rect key="frame" x="63" y="203" width="33" height="24"/>
@@ -561,7 +561,7 @@
         <scene sceneID="tNc-8H-LdE">
             <objects>
                 <viewController id="MqT-Dv-oNL" customClass="HEALEditSettingsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GwV-ve-lSs">
+                    <view key="view" contentMode="scaleToFill" id="GwV-ve-lSs" customClass="UIImageView">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -634,6 +634,7 @@
                     <navigationItem key="navigationItem" id="lEE-ps-550"/>
                     <connections>
                         <outlet property="femaleRadioButton" destination="ffh-hU-g4O" id="rjd-ha-0qY"/>
+                        <outlet property="imageViewBackground" destination="GwV-ve-lSs" id="QGc-T2-G08"/>
                         <outlet property="maleRadioButton" destination="CuU-4b-fYL" id="hMb-Dh-jyE"/>
                         <outlet property="nameTextField" destination="PKw-W1-GhK" id="qNb-Vr-86v"/>
                         <outlet property="weightTextField" destination="C5k-4F-wvV" id="0fg-6L-DmT"/>
@@ -705,7 +706,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="in lbs e.g. 150" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nxr-39-fmt">
                                 <rect key="frame" x="155" y="301" width="145" height="30"/>
@@ -714,7 +715,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="m" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTn-si-EZ3" customClass="RadioButton">
                                 <rect key="frame" x="47" y="347" width="76" height="24"/>

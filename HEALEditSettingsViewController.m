@@ -10,92 +10,131 @@
 
 @interface HEALEditSettingsViewController ()
 {
-    NSUserDefaults *defaults;
-    NSCharacterSet *notDigits;
     sexes newSex;
 }
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
-
-- (IBAction)doneButton:(id)sender;
 
 @end
 
 @implementation HEALEditSettingsViewController
 
+//############################################ Setup Interactive and Initialize SubViews and User Interaction When View Loads ############################################
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setupUI];
+}
+
+// Setup all UI elements in the ViewController called from viewDidLoad only
+- (void)setupUI
+{
+    // Set background image
+    [self.imageViewBackground setImage:[UIImage imageNamed:@"USettings.png"]];
+    
+    // Initialize all the fields to have values from the user object
+    [self initFields];
+    
+    // Setup gestures and textfield delegate
+    UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
+    [self.view addGestureRecognizer:tapBackground];
+    
+    [[self weightTextField] setDelegate:self];
+    [[self nameTextField] setDelegate:self];
+    
+    // We need a custom back button to be able to get the new night warning, but this removes the little arrow next to the button!!! Very annoying I know...
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithTitle: @"Back"
+                                   style:UIBarButtonItemStyleDone
+                                   target:self
+                                   action:@selector(backButtonClicked)];
+    
+    self.navigationItem.leftBarButtonItem = backButton;
+}
+
+// Initializes text fields and radiobuttons to reflect user object info
+- (void)initFields
+{
+    self.weightTextField.text = [NSString stringWithFormat:@"%d", self.user.weight];
+    self.nameTextField.text = self.user.name;
+    
+    // Set the text in the textfields to come from the user defaults, if they have been set yet
+    if(self.user.sex == FEMALE)
+    {
+        [self.femaleRadioButton setSelected:YES];
+    } else if(self.user.sex == MALE)
+    {
+        [self.maleRadioButton setSelected:YES];
+    }
+}
+
+
+//############################################ Selectors to User Interaction ############################################
+
+// Called when the user clicks the non-arrowed back button
+- (void)backButtonClicked
+{
+    if ([self userInfoUpdated] && (self.user.currentNight.drinks != 0)) {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                        message:@"Changing your data will start a new night."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"OK", nil];
+        [alert show];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+// Called when the user interacts with pop up alert views
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) { // Button index 1 is the OK button in the New Night warning
+        [self updateUser];
+        [self.user.currentNight reset];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+// When the user taps the background we want to collapse the keyboard
+- (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
+{
+    [[self nameTextField] resignFirstResponder];
+    [[self weightTextField] resignFirstResponder];
+}
+
+// To get the keyboard to collapse when return is pressed
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return [textField resignFirstResponder];
+}
+
+
+// Move the whole view up a little when editing a textfield
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: YES];
+}
+
+// Move it back down when done editing
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: NO];
+}
+
+//############################################ Everything that happens when we leave the View Controller (Updating User, Checking for New Input etc.) ############################################
+
+// When navigating away from the view controller, we want to save
 - (void)viewDidDisappear:(BOOL)animated
 {
-    [self doneButton:self];
-}
-
-// Called when the doneButton is pressed
-- (IBAction)doneButton:(id)sender{
-    
-    [self setNewSex];
-    
-    if ([self validInfoEntered]) {
-        
-            // If user input is in order store the textfield values and unwind back to the main view
-        if ([self userInfoUpdated] && (self.user.currentNight.drinks != 0)) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                            message:@"Changing your data will start a new night."
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"OK", nil];
-            [alert show];
-        }
-        
-        else if([self userInfoUpdated] && (self.user.currentNight.drinks == 0)) {
-            [self updateUser];
-            //[self performSegueWithIdentifier:@"backToMain" sender:self];
-        }
-        
-        else {
-            //[self performSegueWithIdentifier:@"backToMain" sender:self];
-        }
-        
+    if ([self userInfoUpdated]) {
+        [self updateUser];
     }
 }
 
--(void)setNewSex
+// Updates the user in NSUserDefaults and in the User object
+- (void)updateUser
 {
-    if ([self.maleRadioButton isSelected])
-    {
-        newSex = MALE;
-    }
-    else if([self.femaleRadioButton isSelected])
-    {
-        newSex = FEMALE;
-    }
-}
-
-// Check user input and pop up alerts with directions if the user input is invalid
--(BOOL)validInfoEntered {
-    
-    notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
-    
-    if (([[self.weightTextField text] isEqualToString:@""]) || ([[self.weightTextField text] rangeOfCharacterFromSet:notDigits].location != NSNotFound)) {
-        [self alertUser:@"Please enter a whole number for weight in lbs."];
-        return NO;
-    }
-    
-    return YES;
-}
-
-
-// Checks if the info the user has entered is different from what is stored
--(BOOL)userInfoUpdated {
-    int currWeight = self.user.weight;
-    sexes currSex = self.user.sex;
-    
-    if ((currWeight == [[self.weightTextField text] intValue]) && (currSex == newSex)) {
-        return NO;
-    } else {
-        return YES;
-    }
-}
-
--(void)updateUser {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
     NSNumber *weight = [NSNumber numberWithDouble:[[self.weightTextField text] doubleValue]];
     [defaults setObject:weight forKey:@"userWeight"];
@@ -123,88 +162,41 @@
     }
 }
 
--(void)alertUser:(NSString*) alertMessage
+
+// Checks if the info the user has entered is different from what is stored
+- (BOOL)userInfoUpdated
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
-                                                    message:alertMessage
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        [self updateUser];
-        [self.user.currentNight reset];
-        
-
-        //[self performSegueWithIdentifier:@"backToMain" sender:self];
-    }
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];    
+    [super viewDidLoad];
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"USettings.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    [self setNewSex];
     
-    // We want the textfields to delegate back to this view controller
-    [[self weightTextField] setDelegate:self];
-    [[self nameTextField] setDelegate:self];
+    int currWeight = self.user.weight;
+    sexes currSex = self.user.sex;
     
-    // Set the text in the textfields to come from the user defaults, if they have been set yet
-    defaults = [NSUserDefaults standardUserDefaults];
-    if([defaults objectForKey:@"userWeight"] != nil) {
-        self.weightTextField.text = [[defaults objectForKey:@"userWeight"] stringValue];
+    if ((currWeight == [[self.weightTextField text] intValue]) && (currSex == newSex)) {
+        return NO;
+    } else {
+        return YES;
     }
-    if([[defaults objectForKey:@"userSex"] isEqualToString:@"F"])
-    {
-        [self.femaleRadioButton setSelected:YES];
-    } else if([[defaults objectForKey:@"userSex"] isEqualToString:@"M"])
-    {
-        [self.maleRadioButton setSelected:YES];
+}
+
+// Helper method to get the sex from the radiobuttons called from userInfoUpdated
+- (void)setNewSex
+{
+    if ([self.maleRadioButton isSelected]) {
+        newSex = MALE;
+    } else if([self.femaleRadioButton isSelected]) {
+        newSex = FEMALE;
     }
-    if([defaults objectForKey:@"userName"] != nil) {
-        self.nameTextField.text = [defaults objectForKey:@"userName"];
-    }
-    
-    UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
-    [self.view addGestureRecognizer:tapBackground];
-}
-
-- (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
-{
-    [[self nameTextField] resignFirstResponder];
-    [[self weightTextField] resignFirstResponder];
-
-}
-
-// To get the keyboard to collapse when return is pressed
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    return [textField resignFirstResponder];
 }
 
 
-// Move the whole view up a little when editing a textfield
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    [self animateTextField: textField up: YES];
-    
-}
-
-// Move it back down when done editing
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [self animateTextField: textField up: NO];
-}
+//############################################ Animations ############################################
 
 // The animation with bool for moving up or down. Source: user Amagrammer at stackoverflow. Post URL: http://stackoverflow.com/questions/1247113/iphone-keyboard-covers-uitextfield
 - (void) animateTextField: (UITextField*) textField up: (BOOL) up
