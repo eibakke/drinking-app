@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "HEALUser.h"
 #import "RadioButton.h"
+#import "HEALMainViewController.h"
 
 @interface HEALEditSettingsViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *weightTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *weightWarningLabel;
+
 @property (weak, nonatomic) IBOutlet RadioButton *maleRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *femaleRadioButton;
+
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewBackground;
 
 @property (strong, nonatomic) HEALUser *user;

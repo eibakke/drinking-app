@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -26,10 +26,11 @@
                             <constraint firstItem="IJm-M6-36M" firstAttribute="top" secondItem="ieg-r7-V2r" secondAttribute="top" type="default" id="sSk-MZ-BtU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mps-lL-rZc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXO-wh-4sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="-862"/>
+            <point key="canvasLocation" x="992" y="-322"/>
         </scene>
         <!--EditSMS Settings View Controller-->
         <scene sceneID="1e9-42-fhM">
@@ -238,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdh-Uj-LZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519" y="-1244"/>
+            <point key="canvasLocation" x="596" y="-704"/>
         </scene>
         <!--Drunk State View Controller-->
         <scene sceneID="a6j-rc-gSt">
@@ -305,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bda-C3-qoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="-49"/>
+            <point key="canvasLocation" x="596" y="-5"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Shu-mk-anV">
@@ -548,14 +549,14 @@
                         <outlet property="smsButton" destination="EMa-lq-n4s" id="v78-bA-R1B"/>
                         <outlet property="smsSettingsButton" destination="iZR-vq-shf" id="Fmc-7f-v4i"/>
                         <outlet property="timeLabel" destination="NUb-RN-o9b" id="iOk-Rh-k7R"/>
-                        <segue destination="MqT-Dv-oNL" kind="push" identifier="toSettingsViewController" id="6bM-ju-Tuv"/>
+                        <segue destination="MqT-Dv-oNL" kind="push" identifier="settingsMainSegue" id="6bM-ju-Tuv"/>
                         <segue destination="bNI-a8-0W6" kind="push" identifier="toStateViewController" id="vib-Nc-GRD"/>
                         <segue destination="l2s-ZE-AdG" kind="push" identifier="toSMSSettingsViewController" id="eZb-NC-iju"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-mj-Qyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="-405"/>
+            <point key="canvasLocation" x="-25" y="-322"/>
         </scene>
         <!--Edit Settings View Controller-->
         <scene sceneID="tNc-8H-LdE">
@@ -565,7 +566,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="in lbs eg. 150" borderStyle="roundedRect" placeholder="in lbs eg. 150" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C5k-4F-wvV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="in lbs eg. 150" borderStyle="roundedRect" placeholder="in lbs eg. 150" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C5k-4F-wvV">
                                 <rect key="frame" x="87" y="360" width="147" height="28"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -576,7 +577,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Name" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-W1-GhK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Name" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-W1-GhK">
                                 <rect key="frame" x="87" y="255" width="147" height="30"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -616,19 +617,31 @@
                                 </state>
                                 <state key="selected" image="checked.png"/>
                             </button>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy5-mS-puD">
+                                <rect key="frame" x="80" y="396" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="VY9-zY-QLx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="tintColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="PKw-W1-GhK" secondAttribute="bottom" constant="219" id="0Ab-uw-bxi"/>
-                            <constraint firstAttribute="trailing" secondItem="ffh-hU-g4O" secondAttribute="trailing" constant="37" id="10c-qm-YPe"/>
-                            <constraint firstAttribute="bottom" secondItem="C5k-4F-wvV" secondAttribute="bottom" constant="116" id="Cds-mj-FNE"/>
+                            <constraint firstAttribute="trailing" secondItem="ffh-hU-g4O" secondAttribute="trailing" constant="37" id="7ru-3Z-1SR"/>
                             <constraint firstItem="C5k-4F-wvV" firstAttribute="leading" secondItem="PKw-W1-GhK" secondAttribute="leading" type="default" id="MQ3-GM-0v3"/>
                             <constraint firstAttribute="bottom" secondItem="CuU-4b-fYL" secondAttribute="bottom" constant="64" id="YIi-EJ-lly"/>
-                            <constraint firstItem="PKw-W1-GhK" firstAttribute="centerX" secondItem="GwV-ve-lSs" secondAttribute="centerX" type="default" id="blm-3m-o6P"/>
+                            <constraint firstItem="zy5-mS-puD" firstAttribute="top" secondItem="C5k-4F-wvV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cMo-hz-ceM"/>
                             <constraint firstItem="CuU-4b-fYL" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="59" id="enL-4n-Fgh"/>
+                            <constraint firstItem="zy5-mS-puD" firstAttribute="centerX" secondItem="C5k-4F-wvV" secondAttribute="centerX" type="default" id="hhw-l8-x3j"/>
+                            <constraint firstItem="zy5-mS-puD" firstAttribute="centerX" secondItem="GwV-ve-lSs" secondAttribute="centerX" type="default" id="jya-FS-iX3"/>
                             <constraint firstItem="ffh-hU-g4O" firstAttribute="baseline" secondItem="CuU-4b-fYL" secondAttribute="baseline" type="default" id="kqs-Lp-KQ7"/>
                             <constraint firstItem="C5k-4F-wvV" firstAttribute="trailing" secondItem="PKw-W1-GhK" secondAttribute="trailing" type="default" id="vtS-gt-vmT"/>
+                            <constraint firstAttribute="bottom" secondItem="zy5-mS-puD" secondAttribute="bottom" constant="87" id="ynI-rq-hd6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lEE-ps-550"/>
@@ -638,11 +651,13 @@
                         <outlet property="maleRadioButton" destination="CuU-4b-fYL" id="hMb-Dh-jyE"/>
                         <outlet property="nameTextField" destination="PKw-W1-GhK" id="qNb-Vr-86v"/>
                         <outlet property="weightTextField" destination="C5k-4F-wvV" id="0fg-6L-DmT"/>
+                        <outlet property="weightWarningLabel" destination="zy5-mS-puD" id="NgN-0h-7SN"/>
+                        <segue destination="7uE-MQ-V0L" kind="push" identifier="settingsMainSegue" id="aMJ-9m-g0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAf-sU-l2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="-1142"/>
+            <point key="canvasLocation" x="-25" y="-1734"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hu9-XL-E5n">
@@ -658,7 +673,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKM-lI-kqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1115" y="-403"/>
+            <point key="canvasLocation" x="-1291" y="-322"/>
         </scene>
         <!--Logo View Controller - Logo-->
         <scene sceneID="Iry-56-zRA">
@@ -682,102 +697,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="A3I-S2-lSJ"/>
                     <connections>
-                        <segue destination="JyP-hY-54p" kind="push" identifier="newUserSegue" id="yYk-zq-Sy8"/>
                         <segue destination="7uE-MQ-V0L" kind="push" identifier="mainSegue" id="vbM-9D-FZ7"/>
+                        <segue destination="MqT-Dv-oNL" kind="push" identifier="newUserSegue" id="Ul8-Z9-FeA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skf-bF-LzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-600" y="-403"/>
-        </scene>
-        <!--New User View Controller-->
-        <scene sceneID="bJ2-SP-3HI">
-            <objects>
-                <viewController id="JyP-hY-54p" customClass="HEALNewUserViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nkn-F1-CF3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Text" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bOs-YU-Za9">
-                                <rect key="frame" x="155" y="237" width="145" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="rVl-VX-BOP"/>
-                                    <constraint firstAttribute="width" constant="145" id="wv8-uO-vSV"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="in lbs e.g. 150" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nxr-39-fmt">
-                                <rect key="frame" x="155" y="301" width="145" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Jde-BU-a42"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="m" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTn-si-EZ3" customClass="RadioButton">
-                                <rect key="frame" x="47" y="347" width="76" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="76" id="dKE-s8-foh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title=" Male" image="unchecked.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="checked.png"/>
-                                <connections>
-                                    <outletCollection property="groupButtons" destination="hlG-c2-wvX" id="1b8-uw-0NQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlG-c2-wvX" customClass="RadioButton">
-                                <rect key="frame" x="191" y="347" width="94" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="p9t-2b-OBG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title=" Female" image="unchecked.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="checked.png"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bOs-YU-Za9" firstAttribute="centerY" secondItem="nkn-F1-CF3" secondAttribute="centerY" type="default" id="6r1-lK-i6Q"/>
-                            <constraint firstAttribute="bottom" secondItem="oTn-si-EZ3" secondAttribute="bottom" constant="133" id="EHS-GU-Pn5"/>
-                            <constraint firstItem="nxr-39-fmt" firstAttribute="leading" secondItem="bOs-YU-Za9" secondAttribute="leading" type="default" id="Ktw-Z9-d1D"/>
-                            <constraint firstAttribute="trailing" secondItem="hlG-c2-wvX" secondAttribute="trailing" constant="35" id="TPn-EE-RiP"/>
-                            <constraint firstItem="oTn-si-EZ3" firstAttribute="baseline" secondItem="hlG-c2-wvX" secondAttribute="baseline" type="user" id="XPV-sO-xb4"/>
-                            <constraint firstAttribute="bottom" secondItem="nxr-39-fmt" secondAttribute="bottom" constant="173" id="fwW-PP-ux7"/>
-                            <constraint firstItem="nxr-39-fmt" firstAttribute="trailing" secondItem="bOs-YU-Za9" secondAttribute="trailing" type="default" id="mUb-VU-9H9"/>
-                            <constraint firstItem="oTn-si-EZ3" firstAttribute="leading" secondItem="nkn-F1-CF3" secondAttribute="leading" constant="47" id="oUd-U4-cUi"/>
-                            <constraint firstAttribute="trailing" secondItem="bOs-YU-Za9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tuL-6V-g7G"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="51y-sv-Jqe">
-                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="LMe-mH-nox">
-                            <connections>
-                                <action selector="doneButton:" destination="JyP-hY-54p" id="C4O-7n-kHG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="femaleRadioButton" destination="hlG-c2-wvX" id="pC1-Rr-Cu2"/>
-                        <outlet property="maleRadioButton" destination="oTn-si-EZ3" id="TT8-aO-dw6"/>
-                        <outlet property="nameTextField" destination="bOs-YU-Za9" id="Jn3-01-CvR"/>
-                        <outlet property="weightTextField" destination="nxr-39-fmt" id="RfS-Hz-eKm"/>
-                        <segue destination="7uE-MQ-V0L" kind="push" identifier="newToMainSegue" id="TZu-0B-IHY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zjG-Yy-KK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-622" y="-1244"/>
+            <point key="canvasLocation" x="-764" y="-322"/>
         </scene>
     </scenes>
     <resources>
@@ -795,6 +721,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="TZu-0B-IHY"/>
+        <segue reference="aMJ-9m-g0U"/>
+        <segue reference="Ul8-Z9-FeA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -426,7 +426,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     UIButton* senderButton = (UIButton*) sender;
     
     if (senderButton.tag == self.settingsButton.tag) {
-        [self performSegueWithIdentifier:@"toSettingsViewController" sender:sender];
+        [self performSegueWithIdentifier:@"settingsMainSegue" sender:sender];
         [self toggleRightView];
     }
     else if (senderButton.tag == self.smsButton.tag) {
@@ -464,7 +464,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     {
         HEALDrunkStateViewController *controller = [segue destinationViewController];
         controller.user = self.user;
-    } else if([segue.identifier isEqualToString:@"toSettingsViewController"])
+    } else if([segue.identifier isEqualToString:@"settingsMainSegue"])
     {
         HEALEditSettingsViewController *controller = [segue destinationViewController];
         controller.user = self.user;

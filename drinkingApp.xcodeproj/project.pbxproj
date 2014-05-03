@@ -14,7 +14,6 @@
 		6DEDF586190DE7670073DBD0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEDF585190DE7670073DBD0 /* AddressBookUI.framework */; };
 		890792E118D0FDC1001EFA85 /* HEALDrunkStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */; };
 		890792E218D0FDC1001EFA85 /* HEALLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */; };
-		890792E318D0FDC1001EFA85 /* HEALNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */; };
 		8908588418C538D40020383C /* HEALUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8908588318C538D40020383C /* HEALUser.m */; };
 		8944D52218E122C700E39EC7 /* gradiantRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8944D52118E122C700E39EC7 /* gradiantRight.png */; };
 		8956FC5618BBD6D70018F32B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956FC5518BBD6D70018F32B /* UIKit.framework */; };
@@ -113,8 +112,6 @@
 		890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALDrunkStateViewController.m; path = ../HEALDrunkStateViewController.m; sourceTree = "<group>"; };
 		890792DD18D0FDC1001EFA85 /* HEALLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALLogoViewController.h; path = ../HEALLogoViewController.h; sourceTree = "<group>"; };
 		890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALLogoViewController.m; path = ../HEALLogoViewController.m; sourceTree = "<group>"; };
-		890792DF18D0FDC1001EFA85 /* HEALNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALNewUserViewController.h; path = ../HEALNewUserViewController.h; sourceTree = "<group>"; };
-		890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALNewUserViewController.m; path = ../HEALNewUserViewController.m; sourceTree = "<group>"; };
 		8908588218C538D40020383C /* HEALUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALUser.h; path = ../HEALUser.h; sourceTree = "<group>"; };
 		8908588318C538D40020383C /* HEALUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALUser.m; path = ../HEALUser.m; sourceTree = "<group>"; };
 		8944D52118E122C700E39EC7 /* gradiantRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradiantRight.png; sourceTree = "<group>"; };
@@ -256,8 +253,6 @@
 				890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */,
 				890792DD18D0FDC1001EFA85 /* HEALLogoViewController.h */,
 				890792DE18D0FDC1001EFA85 /* HEALLogoViewController.m */,
-				890792DF18D0FDC1001EFA85 /* HEALNewUserViewController.h */,
-				890792E018D0FDC1001EFA85 /* HEALNewUserViewController.m */,
 				89D32C5818BE7B54003920FE /* HEALMainViewController.h */,
 				89D32C5918BE7B54003920FE /* HEALMainViewController.m */,
 				89D32C5518BE7AA1003920FE /* HEALEditSettingsViewController.h */,
@@ -624,7 +619,6 @@
 				89F89D3518C7B37E00143AD4 /* HEALNight.m in Sources */,
 				890792E118D0FDC1001EFA85 /* HEALDrunkStateViewController.m in Sources */,
 				890792E218D0FDC1001EFA85 /* HEALLogoViewController.m in Sources */,
-				890792E318D0FDC1001EFA85 /* HEALNewUserViewController.m in Sources */,
 				A8B3581C18EE5CCD008AF5FE /* CERoundProgressLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

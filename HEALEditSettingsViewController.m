@@ -11,6 +11,8 @@
 @interface HEALEditSettingsViewController ()
 {
     sexes newSex;
+    
+    BOOL firstUse;
 }
 
 @end
@@ -22,6 +24,13 @@
 {
     [super viewDidLoad];
     [self setupUI];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    if (self.user == NULL) {
+        firstUse = YES;
+        self.user = [[HEALUser alloc]init];
+    }
 }
 
 // Setup all UI elements in the ViewController called from viewDidLoad only
@@ -42,7 +51,7 @@
     
     // We need a custom back button to be able to get the new night warning, but this removes the little arrow next to the button!!! Very annoying I know...
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-                                   initWithTitle: @"Back"
+                                   initWithTitle: @"Done"
                                    style:UIBarButtonItemStyleDone
                                    target:self
                                    action:@selector(backButtonClicked)];
@@ -53,9 +62,10 @@
 // Initializes text fields and radiobuttons to reflect user object info
 - (void)initFields
 {
-    self.weightTextField.text = [NSString stringWithFormat:@"%d", self.user.weight];
-    self.nameTextField.text = self.user.name;
-    
+    if (self.user.weight != 0) {
+        self.weightTextField.text = [NSString stringWithFormat:@"%d", self.user.weight];
+        self.nameTextField.text = self.user.name;
+    }
     // Set the text in the textfields to come from the user defaults, if they have been set yet
     if(self.user.sex == FEMALE)
     {
@@ -79,6 +89,10 @@
                                               cancelButtonTitle:@"Cancel"
                                               otherButtonTitles:@"OK", nil];
         [alert show];
+    } else if (firstUse && [self userInfoUpdated]) {
+        [self performSegueWithIdentifier:@"settingsMainSegue" sender:self];
+    } else if ([self.weightTextField.text integerValue] == 0) {
+        [self.weightWarningLabel setHidden:NO];
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -166,13 +180,6 @@
 // Checks if the info the user has entered is different from what is stored
 - (BOOL)userInfoUpdated
 {
-    [super viewDidLoad];
-    
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"USettings.png"] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     [self setNewSex];
     
     int currWeight = self.user.weight;
@@ -211,6 +218,14 @@
     [UIView setAnimationDuration: movementDuration];
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"settingsMainSegue"]) {
+        HEALMainViewController *controller = [segue destinationViewController];
+        controller.user = self.user;
+    }
 }
 
 // Adds a return button to the keypad
