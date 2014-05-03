@@ -35,7 +35,7 @@
         
         newUser.sosContact = [defaults objectForKey:@"sosContact"];
         newUser.smsMessage = [defaults objectForKey:@"smsMessage"];
-        newUser.smsState = [defaults integerForKey:@"smsState"];
+        newUser.smsState = [defaults doubleForKey:@"smsState"];
         newUser.contactNumber = [defaults stringForKey:@"contactNumber"];
         newUser.autoSMS = [defaults boolForKey:@"autoSMS"];
 
