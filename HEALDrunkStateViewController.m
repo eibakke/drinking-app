@@ -19,47 +19,17 @@
 
 - (void)viewDidLoad
 {
-    [_messageLabel setFont:[UIFont fontWithName:@"Cambria" size: 32]];
-    [_bacLabel setFont:[UIFont fontWithName:@"Cambria" size: 32]];
-
-    
-    [super viewDidLoad];
-
-    
+    [self.messageLabel setFont:[UIFont fontWithName:@"Cambria" size: 32]];
+    [self.bacLabel setFont:[UIFont fontWithName:@"Cambria" size: 32]];
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
-    
-   
-   // [messageLabel setFont:[UIFont fontWithName:@"Cambria" size: messageLabel.font.pointSize]];
-    
-    //[messageLabel setFont:[UIFont fontWithName:@"Cambria" size:40]];
-    
-    
     self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@", [self.user stateAsString], @"State.png"]];
     
     [self.bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
-    
-    if (self.user.state == SOBER){
-        
-        [self.messageLabel setText: self.user.currentNight.soberMessage];
-    }
-    else if (self.user.state == TIPSY)
-    {
-        [self.messageLabel setText:[NSString stringWithFormat:@"%@", self.user.currentNight.tipsyMessage]];
-    }
-    else if (self.user.state == DRUNK)
-    {
-        [self.messageLabel setText:[NSString stringWithFormat:@"%@", self.user.currentNight.drunkMessage]];
-    }
-    else{
-        [self.messageLabel setText:[NSString stringWithFormat:@"%@", self.user.currentNight.drunkMessage]];
-    }
-        
-
+    [self.messageLabel setText: [self.user.currentNight stateMessage:self.user.state]];
 }
 @end
 

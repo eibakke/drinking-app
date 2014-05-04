@@ -11,8 +11,6 @@
 
 @interface HEALUser : NSObject
 {
- 
-   
 }
 
 typedef enum
@@ -44,11 +42,11 @@ typedef enum
 
 
 
-@property(strong, nonatomic) HEALNight *currentNight;
+@property(strong, nonatomic) HEALNight* currentNight;
 
-@property(strong, nonatomic) NSString *smsMessage;
-@property(strong, nonatomic) NSString *sosContact;
-@property(strong, nonatomic) NSString *contactNumber;
+@property(strong, nonatomic) NSString* smsMessage;
+@property(strong, nonatomic) NSString* sosContact;
+@property(strong, nonatomic) NSString* contactNumber;
 
 @property(nonatomic, assign) intoxState smsState;
 @property(nonatomic) BOOL autoSMS;

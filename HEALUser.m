@@ -10,7 +10,6 @@
 #import "HEALNight.h"
 
 @interface HEALUser (){
-    
     float userSexMetVal;
 }
 @property(strong, nonatomic)NSArray* intoxStateArray;
@@ -25,7 +24,7 @@
     self.currentNight = night;
 }
 
--(id)init
+- (id)init
 {
     self = [super init];
     

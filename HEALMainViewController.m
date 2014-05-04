@@ -49,7 +49,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 //############################################ Setup Views, Buttons, Gestures and Timer ############################################
 - (void)viewDidLoad
 {
-    [_timeLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
+    [self.timeLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
 
     [super viewDidLoad];
     [self setupUI];
@@ -414,7 +414,8 @@ static float const STANDARD_PAN_DURATION = 0.1;
     } else {
         if (self.user.currentNight.drinks == 0) {
             [self resetTimer];
-            [self.user.currentNight resetStartTime];
+            NSDate *cTime = [NSDate date];
+            self.user.currentNight.startTime = [cTime timeIntervalSince1970];
         }
         self.user.currentNight.drinks = [sender value];
         [self updateUI];
@@ -483,14 +484,11 @@ static float const STANDARD_PAN_DURATION = 0.1;
 {
     [self resetTimer];
     [self.user.currentNight reset];
-    [self.user.currentNight resetStartTime];//trying to get rid of 6pm
-
 
     [self updateUI];
     envelopeButton.hidden = YES;
     envelopeButton.UserInteractionEnabled = NO;
     self.roundProgressView.progress = 0;
-    [self.user.currentNight setDrunkStateMessages];
 }
 
 //alert Message
