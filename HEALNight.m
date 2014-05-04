@@ -9,9 +9,12 @@
 #import "HEALNight.h"
 
 @interface HEALNight (){
+    // Arrays holding the constant messages to be shown in DrunkStateViewController
     NSArray* soberMessageArray;
     NSArray* tipsyMessageArray;
     NSArray* drunkMessageArray;
+    
+    // Helper structure to hold messages for a given night
     NSArray* sessionMessages;
 }
 
@@ -19,13 +22,14 @@
 
 @implementation HEALNight
 
+//############################################ Initialize the StateMessageArrays, Messages for the Night, and whether an SMS has been sent that night ############################################
 - (id)init
-
 {
     self = [super init];
     
     if (self) {
         self.sosSent = FALSE;
+        
         soberMessageArray = @[@"Call Your Grandma!",@"Walk Your Dog",@"Drive Your Car",@"Write Some Code",@"Live A Little", @"Fold Laundry",@"Pick Up Cantonese "];
         tipsyMessageArray = @[@"Avoid Karaoke",@"Share An Irrelevant Childhood Story",@"Dance"];
         drunkMessageArray = @[@"Order Jimmy Johns",@"Ponder Meaning of Life",@"Drink Some Water",@"Eat Some Food",@"Kagin?", @"Not Text That Number"];
@@ -34,24 +38,7 @@
     }
     return self;
 }
-
-- (void)resetStartTime
-{
-    NSDate *myDate = [[NSDate alloc] init];
-    _startTime = [myDate timeIntervalSince1970];
-}
-
-
-
-- (void)reset
-{
-    self.drinks = 0;
-    self.startTime = 0;
-    self.sosSent = FALSE;
-    [self generateMessages];
-    [self resetStartTime];
-}
-
+// Chooses a random message for each state from the message array for each state, and puts them in an array where the index corresponds to the state
 - (void)generateMessages
 {
     NSString* soberMessage = soberMessageArray[[self randomNumberBetweenMin:0 Max:[soberMessageArray count] - 1]];
@@ -69,7 +56,18 @@
 
 // Returns a random message per night for a given state
 - (NSString*)stateMessage:(int)state
-{    
+{
     return [sessionMessages objectAtIndex:state];
 }
+
+//############################################ Reset Every Property of the night ############################################
+- (void)reset
+{
+    self.drinks = 0;
+    self.startTime = 0;
+    self.sosSent = FALSE;
+    [self generateMessages];
+}
+
+
 @end

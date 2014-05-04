@@ -12,11 +12,11 @@
 }
 
 @property(nonatomic) int drinks;
-@property(nonatomic) double startTime;
-@property(nonatomic) bool sosSent;
+@property(nonatomic) double startTime; // The time in milliseconds (since 1970) of when the user had their first drink
+@property(nonatomic) bool sosSent; // Flags whether a user has sent an sos sms that night
 
-- (void)reset;
-- (NSString*)stateMessage:(int)state;
+- (void)reset; // Resets all the above and generates new random messages
+- (NSString*)stateMessage:(int)state; // Method to get a message for a given state
 
 // What are all of these things for? I commented them out, they don't seem to be used anywhere... - Eivind
 
