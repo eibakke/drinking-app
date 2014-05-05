@@ -33,6 +33,10 @@
     [self.view addGestureRecognizer:tapBackground];
     [self initializeUI];
     
+   //[self.firstName setFont:[UIFont fontWithName:@"Cambria" size: 11]];
+   // [self.phoneNumber setFont:[UIFont fontWithName:@"Cambria" size: 11]];
+   // [self.addContact setFont:[UIFont fontWithName:@"Cambria" size: 16]];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -91,8 +95,8 @@
 
 - (void)updateUser
 {
-    self.user.contactNumber = self.contactNumberTextField.text ;
-    self.user.sosContact = self.contactNameTextField.text;
+    self.user.contactNumber = self.phoneNumber.text ; //edited
+    self.user.sosContact = self.firstName.text; //edited
     self.user.smsMessage = self.emergencyMessageTextField.text;
     self.user.smsState = smsState;
     self.user.autoSMS = sendAutoSMS;
@@ -208,7 +212,8 @@
     [[ABPeoplePickerNavigationController alloc] init];
     picker.peoplePickerDelegate = self;
     
-    [self presentModalViewController:picker animated:YES];
+   // [self presentModalViewController:picker animated:YES];
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 //Responding to user actions in the people picker

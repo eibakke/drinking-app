@@ -30,6 +30,7 @@
 
 - (IBAction)doneButtonPressed:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *addContact;
 @property (weak, nonatomic) IBOutlet UILabel *firstName;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
 - (IBAction)showPicker:(id)sender;
