@@ -24,38 +24,28 @@ typedef enum
     SOBER,
     TIPSY,
     DRUNK,
-    DANGER,
-    DEAD
+    DANGER
 } intoxState;
 
 
-
+// State of intoxication specific properties
 @property(nonatomic, assign) intoxState state;
 @property(strong, nonatomic) NSString *stateAsString;
 @property(nonatomic) float wheelFill;
 @property(strong, nonatomic) UIColor *wheelColorTint;
 
+// General relevant user properties
 @property(nonatomic, assign) sexes sex;
 @property(nonatomic) int weight;
 @property(strong, nonatomic) NSString *name;
 @property(nonatomic) float BAC;
-
-
-
 @property(strong, nonatomic) HEALNight* currentNight;
 
+// SMS specific properties
 @property(strong, nonatomic) NSString* smsMessage;
 @property(strong, nonatomic) NSString* sosContact;
 @property(strong, nonatomic) NSString* contactNumber;
-
 @property(nonatomic, assign) intoxState smsState;
 @property(nonatomic) BOOL autoSMS;
-
-
-
--(void)makeNight:(HEALNight*)night;
-
-
-
 
 @end

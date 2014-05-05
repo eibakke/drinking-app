@@ -46,6 +46,8 @@ static int const RIGHTVIEW_NIGHT_BUTTON_TAG = 2;
 static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
 static float const STANDARD_PAN_DURATION = 0.1;
 
+
+
 //############################################ Setup Views, Buttons, Gestures and Timer ############################################
 - (void)viewDidLoad
 {
@@ -137,40 +139,17 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 - (void)updateCircleButton
 {
-    if (self.user.state == DEAD)
-    {
-        [button setImage:[UIImage imageNamed:@"PlainDangerButton.png"] forState:UIControlStateNormal];
-        
-    } else if (self.user.state == SOBER)
-    {
-        envelopeButton.hidden = YES;
-        envelopeButton.UserInteractionEnabled = NO;
-        
-        [button setImage:[UIImage imageNamed:@"SoberButton.png"] forState:UIControlStateNormal];
-        
-    } else if(self.user.state == TIPSY)
-    {
-        envelopeButton.hidden = YES;
-        envelopeButton.UserInteractionEnabled = NO;
-        
-        [button setImage:[UIImage imageNamed:@"TipsyButton.png"] forState:UIControlStateNormal];
-        
-    } else if (self.user.state == DRUNK)
-    {
-        envelopeButton.hidden = YES;
-        envelopeButton.UserInteractionEnabled = NO;
-        
-        [button setImage:[UIImage imageNamed:@"DrunkButton.png"] forState:UIControlStateNormal];
-        
-    } else if (self.user.state == DANGER)
-    {
+    envelopeButton.hidden = YES;
+    envelopeButton.UserInteractionEnabled = NO;
+    
+    [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@Button.png", self.user.stateAsString]] forState:UIControlStateNormal];
+    
+    if (self.user.state == DANGER) {
         envelopeButton.hidden = NO;
         envelopeButton.UserInteractionEnabled = YES;
         
         [button setImage:[UIImage imageNamed:@"PlainDangerButton.png"] forState:UIControlStateNormal];
     }
-
-    
 }
 
 //updates labels according to BAC values
@@ -205,18 +184,11 @@ static float const STANDARD_PAN_DURATION = 0.1;
     NSString *t = [dFormatter stringFromDate: date];
     
     //Getting rid of 6pm
-    if(self.drinkStepper.value == 0)
-    {
+    if(self.drinkStepper.value == 0) {
         [self.timeLabel setText:@"Ready to Start? Press Below!"];
-    }
-    
-    else
-    {
+    } else {
         [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"You've been drinking since: ", t]];
     }
-    
-    
-    
 }
 
 
@@ -290,13 +262,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
 {
     CGRect frame = self.centerView.frame;
     
-    if(slidRight)
-    {
+    if (slidRight) {
         frame.origin.x = 0;
         slidRight = NO;
-    }
-    else if(!slidRight)
-    {
+    } else if (!slidRight) {
         frame.origin.x = -self.rightView.frame.size.width;
         slidRight = YES;
     }
@@ -312,12 +281,9 @@ static float const STANDARD_PAN_DURATION = 0.1;
 {
     CGRect frame = self.centerView.frame;
     
-    if(slidRight)
-    {
+    if (slidRight) {
         frame.origin.x = -self.rightView.frame.size.width;
-    }
-    else if(!slidRight)
-    {
+    } else if (!slidRight) {
         frame.origin.x = 0;
     }
     
@@ -470,20 +436,16 @@ static float const STANDARD_PAN_DURATION = 0.1;
 //handles segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"toStateViewController"])
-    {
+    if ([segue.identifier isEqualToString:@"toStateViewController"]) {
         HEALDrunkStateViewController *controller = [segue destinationViewController];
         controller.user = self.user;
-    } else if([segue.identifier isEqualToString:@"settingsMainSegue"])
-    {
+    } else if ([segue.identifier isEqualToString:@"settingsMainSegue"]) {
         HEALEditSettingsViewController *controller = [segue destinationViewController];
         controller.user = self.user;
-    } else if([segue.identifier isEqualToString:@"toSMSSettingsViewController"])
-    {
+    } else if ([segue.identifier isEqualToString:@"toSMSSettingsViewController"]) {
         HEALEditSMSSettingsViewController *controller = [segue destinationViewController];
         controller.user = self.user;
     }
-    
 }
 
 //############################################ Other Methods for Abstractions etc. ############################################
@@ -514,8 +476,8 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 
 //send SMS
-- (void)sendSMS{
-    
+- (void)sendSMS
+{
     self.user.currentNight.sosSent = TRUE;
     
     MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
@@ -537,7 +499,8 @@ static float const STANDARD_PAN_DURATION = 0.1;
 }
 
 //for dismissing text messaging in app if we cancel or send it
-- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 @end
