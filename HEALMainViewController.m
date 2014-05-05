@@ -143,14 +143,23 @@ static float const STANDARD_PAN_DURATION = 0.1;
         
     } else if (self.user.state == SOBER)
     {
+        envelopeButton.hidden = YES;
+        envelopeButton.UserInteractionEnabled = NO;
+        
         [button setImage:[UIImage imageNamed:@"SoberButton.png"] forState:UIControlStateNormal];
         
     } else if(self.user.state == TIPSY)
     {
+        envelopeButton.hidden = YES;
+        envelopeButton.UserInteractionEnabled = NO;
+        
         [button setImage:[UIImage imageNamed:@"TipsyButton.png"] forState:UIControlStateNormal];
         
     } else if (self.user.state == DRUNK)
     {
+        envelopeButton.hidden = YES;
+        envelopeButton.UserInteractionEnabled = NO;
+        
         [button setImage:[UIImage imageNamed:@"DrunkButton.png"] forState:UIControlStateNormal];
         
     } else if (self.user.state == DANGER)
