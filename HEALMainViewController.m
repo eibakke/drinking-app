@@ -483,15 +483,14 @@ static float const STANDARD_PAN_DURATION = 0.1;
     MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
     
     [textComposer setMessageComposeDelegate:self];
+    [textComposer.navigationBar setBackgroundImage:[UIImage imageNamed:nil] forBarMetrics:UIBarMetricsDefault];
+    [textComposer.navigationBar setTintColor:[UIColor blueColor]];
     
     if ([MFMessageComposeViewController canSendText]){ //if text messages can be sent
-        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:NULL] forBarMetrics:UIBarMetricsDefault];
-        [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
-
         NSArray *recipients = [NSArray arrayWithObjects:self.user.contactNumber, nil];
         [textComposer setRecipients:recipients];
         [textComposer setBody:self.user.smsMessage];
-        [self presentViewController:textComposer animated:YES completion:NULL];
+        [self presentViewController:textComposer animated:YES completion:nil];
     } else { //simulator will not allow text messages to be sent
         NSLog(@"Cannot Open Text.");
     }
@@ -501,6 +500,6 @@ static float const STANDARD_PAN_DURATION = 0.1;
 //for dismissing text messaging in app if we cancel or send it
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
