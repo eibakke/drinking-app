@@ -23,7 +23,7 @@
 @property (strong, nonatomic) HEALUser *user;
 @property (strong, nonatomic) HEALNight *night;
 
-@property (strong, nonatomic) IBOutlet UILabel *messageLabel; //retain?? EI?
+@property (strong, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bacLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @end
