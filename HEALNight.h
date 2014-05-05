@@ -18,19 +18,4 @@
 - (void)reset; // Resets all the above and generates new random messages
 - (NSString*)stateMessage:(int)state; // Method to get a message for a given state
 
-// What are all of these things for? I commented them out, they don't seem to be used anywhere... - Eivind
-
-//@property(strong,nonatomic)NSArray *messageArray;
-//@property(nonatomic) int soberMessageNumber;
-//@property(nonatomic) int tipsyMessageNumber;
-//@property(nonatomic) int drunkMessageNumber;
-//
-//@property(nonatomic) NSString *soberMessage;
-//@property(nonatomic) NSString *tipsyMessage;
-//@property(nonatomic) NSString *drunkMessage;
-
-
-
-
-
 @end
