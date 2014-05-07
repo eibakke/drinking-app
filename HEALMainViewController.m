@@ -314,16 +314,14 @@ static float const STANDARD_PAN_DURATION = 0.1;
 -(void)countDownDuration
 {
     smsInt -= 1;
-    if (smsInt == 1)
-    {
-        if (smsTimer != nil)
-        {
+    if (smsInt == 1) {
+        if (smsTimer != nil) {
             [smsTimer invalidate];
             smsTimer = nil;
         }
         [autoView dismissWithClickedButtonIndex:[autoView cancelButtonIndex] animated:TRUE];
-        if(sendAutoMessage == TRUE)
-        {
+        
+        if (sendAutoMessage == TRUE) {
             [self sendSMS];
             self.user.currentNight.sosSent = TRUE;
         }
@@ -342,13 +340,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex != [alertView cancelButtonIndex])
-    {
+    if (buttonIndex != [alertView cancelButtonIndex]) {
         [self sendSMS];
         self.user.currentNight.sosSent = TRUE;
-    }
-    if (buttonIndex == [alertView cancelButtonIndex])
-    {
+    } if (buttonIndex == [alertView cancelButtonIndex]) {
         sendAutoMessage = FALSE;
         smsTimer = nil;
         [smsTimer invalidate];
@@ -361,19 +356,14 @@ static float const STANDARD_PAN_DURATION = 0.1;
     self.drinkStepper.value += 1;
     [self valueChanged:_drinkStepper];
     [self updateRoundProgressBar];
-    if(self.user.state >= self.user.smsState )
-    {
-        if (self.user.currentNight.sosSent == FALSE)
-        {
-            if(self.user.sosContact == nil || self.user.smsMessage == nil)
-            {
+    
+    if (self.user.state >= self.user.smsState ) {
+        if (self.user.currentNight.sosSent == FALSE) {
+            if (self.user.sosContact == nil || self.user.smsMessage == nil) {
                 [self sosSetup];
-            }
-            else if(self.user.autoSMS == FALSE)
-            {
+            } else if(self.user.autoSMS == FALSE) {
                 [self sosDanger:self];
-            } else
-            {
+            } else {
                 [self sosAuto:self];
             }
         }
@@ -388,8 +378,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 - (IBAction)valueChanged:(UIStepper *)sender
 {
-    if(self.user.weight == 0)
-    {
+    if (self.user.weight == 0) {
         [self alertUser:@"Please enter weight in settings."];
         sender.value = 0;
     } else {
@@ -410,15 +399,12 @@ static float const STANDARD_PAN_DURATION = 0.1;
     if (senderButton.tag == self.settingsButton.tag) {
         [self performSegueWithIdentifier:@"settingsMainSegue" sender:sender];
         [self toggleRightView];
-    }
-    else if (senderButton.tag == self.smsButton.tag) {
+    } else if (senderButton.tag == self.smsButton.tag) {
         [self sendSMS];
-    }
-    else if (senderButton.tag == self.nightButton.tag) {
+    } else if (senderButton.tag == self.nightButton.tag) {
         [self newNight];
         [self toggleRightView];
-    }
-    else if (senderButton.tag == self.smsSettingsButton.tag) {
+    } else if (senderButton.tag == self.smsSettingsButton.tag) {
         [self performSegueWithIdentifier:@"toSMSSettingsViewController" sender:sender];
         [self toggleRightView];
     }
