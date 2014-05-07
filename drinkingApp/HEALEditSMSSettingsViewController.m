@@ -100,8 +100,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
     [defaults setInteger:smsState forKey:@"smsState"];
-    [defaults setObject:self.contactNumber forKey:@"contactNumber"];
-    [defaults setObject:self.contactName forKey:@"sosContact"];
+    [defaults setObject:self.phoneNumber.text forKey:@"contactNumber"];
+    [defaults setObject:self.firstName.text forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
     
     @try {
