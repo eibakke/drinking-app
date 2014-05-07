@@ -51,6 +51,9 @@
 
 - (void)initializeUI
 {
+    self.contactName = self.user.sosContact;
+    self.contactNumber = self.user.contactNumber;
+    
     [self.enableRadioButton setSelected:self.user.autoSMS];
     
     if (self.user.contactNumber != nil) {
@@ -218,24 +221,22 @@
 
 - (void)displayPerson:(ABRecordRef)person
 {
-    _contactName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
+    self.contactName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
                                                                     kABPersonFirstNameProperty);
-    self.firstName.text = _contactName;
+    self.firstName.text = self.contactName;
     
-    _contactNumber = nil;
+    self.contactNumber = nil;
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
                                                      kABPersonPhoneProperty);
     if (ABMultiValueGetCount(phoneNumbers) > 0) {
-        _contactNumber = (__bridge_transfer NSString*)
+        self.contactNumber = (__bridge_transfer NSString*)
         ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
     } else {
-        _contactNumber = @"[None]";
+        self.contactNumber = @"[None]";
     }
     self.phoneNumber.text = self.contactNumber;
     
     CFRelease(phoneNumbers);
-    
-    [self updateUser];
 }
 
 
