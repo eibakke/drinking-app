@@ -87,13 +87,12 @@
     }
     
     [self updateUser];
-    //[self performSegueWithIdentifier:@"unwindToMain" sender:self];
 }
 
 - (void)updateUser
 {
-    self.user.contactNumber = self.phoneNumber.text; //edited
-    self.user.sosContact = self.firstName.text; //edited
+    self.user.contactNumber = self.contactNumber; //edited
+    self.user.sosContact = self.contactName; //edited
     self.user.smsMessage = self.emergencyMessageTextField.text;
     self.user.smsState = smsState;
     self.user.autoSMS = sendAutoSMS;
@@ -101,8 +100,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
     [defaults setInteger:smsState forKey:@"smsState"];
-    [defaults setObject:self.phoneNumber.text forKey:@"contactNumber"];
-    [defaults setObject:self.firstName.text forKey:@"sosContact"];
+    [defaults setObject:self.contactNumber forKey:@"contactNumber"];
+    [defaults setObject:self.contactName forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
     
     @try {
