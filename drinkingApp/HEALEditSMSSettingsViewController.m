@@ -253,14 +253,14 @@
     self.firstName.text = _contactName;
     //self.contactNameTextField.text = name;
     
-    NSString* phone = nil;
+    _contactNumber = nil;
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
                                                      kABPersonPhoneProperty);
     if (ABMultiValueGetCount(phoneNumbers) > 0) {
-        phone = (__bridge_transfer NSString*)
+        _contactNumber = (__bridge_transfer NSString*)
         ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
     } else {
-        phone = @"[None]";
+        _contactNumber = @"[None]";
     }
     self.phoneNumber.text = self.contactNumber;
     
