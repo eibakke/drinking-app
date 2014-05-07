@@ -26,8 +26,6 @@
     
     // We want the textfields to delegate back to this view controller
     [[self emergencyMessageTextField] setDelegate:self];
-   // [[self contactNameTextField] setDelegate:self];
-   // [[self contactNumberTextField] setDelegate:self];
     
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
     [self.view addGestureRecognizer:tapBackground];
@@ -87,10 +85,10 @@
     } else if (self.dangerRadioButton.isSelected){
         smsState = DANGER;
     }
-    //if ([self validInput]) {
-     //   [self updateUser];
-//        [self performSegueWithIdentifier:@"unwindToMain" sender:self];
-    //}
+    if ([self validInput]) {
+        [self updateUser];
+        [self performSegueWithIdentifier:@"unwindToMain" sender:self];
+    }
 }
 
 - (void)updateUser
@@ -265,8 +263,6 @@
     self.phoneNumber.text = self.contactNumber;
     
     CFRelease(phoneNumbers);
-    
-    [self updateUser];
 }
 
 
