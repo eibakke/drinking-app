@@ -32,8 +32,8 @@
     [self initializeUI];
     
    //[self.firstName setFont:[UIFont fontWithName:@"Cambria" size: 11]];
-   // [self.phoneNumber setFont:[UIFont fontWithName:@"Cambria" size: 11]];
-   // [self.addContact setFont:[UIFont fontWithName:@"Cambria" size: 16]];
+   //[self.phoneNumber setFont:[UIFont fontWithName:@"Cambria" size: 11]];
+   //[self.addContact setFont:[UIFont fontWithName:@"Cambria" size: 16]];
     
 }
 
