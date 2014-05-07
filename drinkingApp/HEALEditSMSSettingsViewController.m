@@ -85,10 +85,10 @@
     } else if (self.dangerRadioButton.isSelected){
         smsState = DANGER;
     }
-    if ([self validInput]) {
+//    if ([self validInput]) {
         [self updateUser];
         [self performSegueWithIdentifier:@"unwindToMain" sender:self];
-    }
+//    }
 }
 
 - (void)updateUser
@@ -117,28 +117,28 @@
 
 //NEED TO CHANGE THIS TO SAVE CONTACT INFO CORRECTLY
 
-- (BOOL)validInput
-{
-    NSError *error = NULL;
-    NSRegularExpression *phoneNumberFormat = [NSRegularExpression regularExpressionWithPattern:@"\\d{10}"
-                                                                                       options:NSRegularExpressionCaseInsensitive
-                                                                                         error:&error];
-    
-   NSRange textRange = NSMakeRange(0, self.phoneNumber.text.length);
-    
-   NSRange matchRange = [phoneNumberFormat rangeOfFirstMatchInString:self.phoneNumber.text options:NSMatchingReportProgress range:textRange];
-    
-    BOOL validPhoneNumber = NO;
-    
-    if (matchRange.location != NSNotFound){
-        validPhoneNumber = YES;
-    } else {
-        [self alertUser:@"Invalid phone number entered"];
-    }
-    
-    return validPhoneNumber;
-}
- 
+//- (BOOL)validInput
+//{
+//    NSError *error = NULL;
+//    NSRegularExpression *phoneNumberFormat = [NSRegularExpression regularExpressionWithPattern:@"\\d{10}"
+//                                                                                       options:NSRegularExpressionCaseInsensitive
+//                                                                                         error:&error];
+//    
+//   NSRange textRange = NSMakeRange(0, self.phoneNumber.text.length);
+//    
+//   NSRange matchRange = [phoneNumberFormat rangeOfFirstMatchInString:self.phoneNumber.text options:NSMatchingReportProgress range:textRange];
+//    
+//    BOOL validPhoneNumber = NO;
+//    
+//    if (matchRange.location != NSNotFound){
+//        validPhoneNumber = YES;
+//    } else {
+//        [self alertUser:@"Invalid phone number entered"];
+//    }
+//    
+//    return validPhoneNumber;
+//}
+
 -(void)alertUser:(NSString*) alertMessage
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
