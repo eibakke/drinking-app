@@ -29,10 +29,9 @@
 
 - (void)checkSettings
 {
-    NSLog(@"YES IT IS CALLED!");
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 
-    if (![defaults objectForKey:@"userWeight"]) {
+    if ([defaults boolForKey:@"userMade"]) {
         newUser = [[HEALUser alloc] init];
         newUser.name = [defaults objectForKey:@"userName"];
         newUser.weight = [[defaults objectForKey:@"userWeight"]intValue];

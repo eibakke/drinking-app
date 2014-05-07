@@ -175,6 +175,10 @@
     
     self.user.sex = newSex;
     
+    if (firstUse) {
+        [defaults setBool:YES forKey:@"userMade"];
+    }
+    
     @try {
         [defaults synchronize];
     }
