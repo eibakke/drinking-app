@@ -104,8 +104,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
     [defaults setInteger:smsState forKey:@"smsState"];
-    [defaults setObject:self.contactNumber forKey:@"contactNumber"];
-    [defaults setObject:self.contactName forKey:@"sosContact"];
+    [defaults setObject:self.phoneNumber.text forKey:@"contactNumber"];
+    [defaults setObject:self.firstName.text forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
     
     @try {
@@ -118,7 +118,7 @@
 }
 
 //NEED TO CHANGE THIS TO SAVE CONTACT INFO CORRECTLY
-/*
+
 - (BOOL)validInput
 {
     NSError *error = NULL;
@@ -126,9 +126,9 @@
                                                                                        options:NSRegularExpressionCaseInsensitive
                                                                                          error:&error];
     
-   NSRange textRange = NSMakeRange(0, self.contactNumberTextField.text.length);
+   NSRange textRange = NSMakeRange(0, self.phoneNumber.text.length);
     
-   NSRange matchRange = [phoneNumberFormat rangeOfFirstMatchInString:self.contactNumberTextField.text options:NSMatchingReportProgress range:textRange];
+   NSRange matchRange = [phoneNumberFormat rangeOfFirstMatchInString:self.phoneNumber.text options:NSMatchingReportProgress range:textRange];
     
     BOOL validPhoneNumber = NO;
     
@@ -140,7 +140,7 @@
     
     return validPhoneNumber;
 }
-*/
+ 
 -(void)alertUser:(NSString*) alertMessage
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
@@ -264,9 +264,9 @@
     }
     self.phoneNumber.text = self.contactNumber;
     
-
-    
     CFRelease(phoneNumbers);
+    
+    [self updateUser];
 }
 
 
