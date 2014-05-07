@@ -95,8 +95,8 @@
 
 - (void)updateUser
 {
-    self.user.contactNumber = self.phoneNumber.text ; //edited
-    self.user.sosContact = self.firstName.text; //edited
+    self.user.contactNumber = self.contactNumber; //edited
+    self.user.sosContact = self.contactName; //edited
     self.user.smsMessage = self.emergencyMessageTextField.text;
     self.user.smsState = smsState;
     self.user.autoSMS = sendAutoSMS;
@@ -248,9 +248,9 @@
 
 - (void)displayPerson:(ABRecordRef)person
 {
-    NSString* name = (__bridge_transfer NSString*)ABRecordCopyValue(person,
+    _contactName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
                                                                     kABPersonFirstNameProperty);
-    self.firstName.text = name;
+    self.firstName.text = _contactName;
     //self.contactNameTextField.text = name;
     
     NSString* phone = nil;
@@ -262,12 +262,9 @@
     } else {
         phone = @"[None]";
     }
-    self.phoneNumber.text = phone;
-    //self.contactNumberTextField.text = phone;
+    self.phoneNumber.text = self.contactNumber;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-   // [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
-   // [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
+
     
     CFRelease(phoneNumbers);
 }

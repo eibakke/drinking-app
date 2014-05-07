@@ -32,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *addContact;
 @property (weak, nonatomic) IBOutlet UILabel *firstName;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
+@property (strong, nonatomic) NSString *contactName;
+@property (strong, nonatomic) NSString *contactNumber;
 - (IBAction)showPicker:(id)sender;
 
 @end
