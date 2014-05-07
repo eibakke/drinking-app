@@ -95,8 +95,8 @@
 
 - (void)updateUser
 {
-    self.user.contactNumber = self.contactNumber; //edited
-    self.user.sosContact = self.contactName; //edited
+    self.user.contactNumber = self.phoneNumber.text; //edited
+    self.user.sosContact = self.firstName.text; //edited
     self.user.smsMessage = self.emergencyMessageTextField.text;
     self.user.smsState = smsState;
     self.user.autoSMS = sendAutoSMS;
