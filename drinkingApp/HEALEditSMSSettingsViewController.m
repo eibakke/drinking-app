@@ -26,8 +26,8 @@
     
     // We want the textfields to delegate back to this view controller
     [[self emergencyMessageTextField] setDelegate:self];
-    [[self contactNameTextField] setDelegate:self];
-    [[self contactNumberTextField] setDelegate:self];
+   // [[self contactNameTextField] setDelegate:self];
+   // [[self contactNumberTextField] setDelegate:self];
     
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
     [self.view addGestureRecognizer:tapBackground];
@@ -56,10 +56,10 @@
     [self.enableRadioButton setSelected:self.user.autoSMS];
     
     if (self.user.contactNumber != nil) {
-        self.contactNumberTextField.text = self.user.contactNumber;
+        self.phoneNumber.text  = self.user.contactNumber;
     }
     if (self.user.sosContact != nil) {
-        self.contactNameTextField.text = self.user.sosContact;
+        self.firstName.text = self.user.sosContact;
     }
     if (self.user.smsMessage != nil) {
         self.emergencyMessageTextField.text = self.user.smsMessage;
@@ -87,11 +87,11 @@
     } else if (self.dangerRadioButton.isSelected){
         smsState = DANGER;
     }
-    if ([self validInput]) {
-        [self updateUser];
+    //if ([self validInput]) {
+     //   [self updateUser];
 //        [self performSegueWithIdentifier:@"unwindToMain" sender:self];
     }
-}
+//}
 
 - (void)updateUser
 {
@@ -104,8 +104,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
     [defaults setInteger:smsState forKey:@"smsState"];
-    [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
-    [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
+   // [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
+   // [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
     
     @try {
@@ -118,6 +118,7 @@
 }
 
 //NEED TO CHANGE THIS TO SAVE CONTACT INFO CORRECTLY
+/*
 - (BOOL)validInput
 {
     NSError *error = NULL;
@@ -125,9 +126,9 @@
                                                                                        options:NSRegularExpressionCaseInsensitive
                                                                                          error:&error];
     
-    NSRange textRange = NSMakeRange(0, self.contactNumberTextField.text.length);
+   NSRange textRange = NSMakeRange(0, self.contactNumberTextField.text.length);
     
-    NSRange matchRange = [phoneNumberFormat rangeOfFirstMatchInString:self.contactNumberTextField.text options:NSMatchingReportProgress range:textRange];
+   NSRange matchRange = [phoneNumberFormat rangeOfFirstMatchInString:self.contactNumberTextField.text options:NSMatchingReportProgress range:textRange];
     
     BOOL validPhoneNumber = NO;
     
@@ -139,7 +140,7 @@
     
     return validPhoneNumber;
 }
-
+*/
 -(void)alertUser:(NSString*) alertMessage
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
@@ -157,8 +158,8 @@
         [self doneButtonPressed:self];
     }
 
-    [[self contactNameTextField] resignFirstResponder];
-    [[self contactNumberTextField] resignFirstResponder];
+   // [[self contactNameTextField] resignFirstResponder];
+  //  [[self contactNumberTextField] resignFirstResponder];
     [[self emergencyMessageTextField] resignFirstResponder];
 }
 
@@ -221,6 +222,7 @@
 (ABPeoplePickerNavigationController *)peoplePicker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 
@@ -249,7 +251,7 @@
     NSString* name = (__bridge_transfer NSString*)ABRecordCopyValue(person,
                                                                     kABPersonFirstNameProperty);
     self.firstName.text = name;
-    self.contactNameTextField.text = name;
+    //self.contactNameTextField.text = name;
     
     NSString* phone = nil;
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
@@ -261,11 +263,11 @@
         phone = @"[None]";
     }
     self.phoneNumber.text = phone;
-    self.contactNumberTextField.text = phone;
+    //self.contactNumberTextField.text = phone;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
-    [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
+   // [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
+   // [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
     
     CFRelease(phoneNumbers);
 }

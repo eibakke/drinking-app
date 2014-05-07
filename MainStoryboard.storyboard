@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
@@ -132,19 +132,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emergency Contact Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHm-GG-UEJ">
-                                <rect key="frame" x="24" y="488" width="281" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="281" id="Tiu-9j-bJI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emergency Contact Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Orx-Nz-8ca">
-                                <rect key="frame" x="24" y="526" width="281" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Your emergency text message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHI-4z-8bK">
                                 <rect key="frame" x="35" y="216" width="254" height="30"/>
                                 <constraints>
@@ -196,34 +183,29 @@
                             <constraint firstItem="8QJ-OO-63A" firstAttribute="leading" secondItem="cU7-de-sZD" secondAttribute="leading" type="default" id="0Xx-Vf-Y1m"/>
                             <constraint firstItem="I0Q-iN-Eof" firstAttribute="centerX" secondItem="fis-VX-2f6" secondAttribute="centerX" type="user" id="1oD-Uo-Tb1"/>
                             <constraint firstItem="Teg-9R-FKq" firstAttribute="leading" secondItem="oDO-4H-MOV" secondAttribute="leading" type="default" id="4DM-Pe-a0E"/>
-                            <constraint firstItem="gHm-GG-UEJ" firstAttribute="leading" secondItem="qZ7-KW-Pw8" secondAttribute="leading" type="default" id="4EW-kp-IGN"/>
                             <constraint firstItem="0zZ-Kf-JNL" firstAttribute="trailing" secondItem="oDO-4H-MOV" secondAttribute="trailing" type="default" id="5xZ-gy-Mvt"/>
+                            <constraint firstItem="qZ7-KW-Pw8" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="24" id="98h-AB-pnY"/>
                             <constraint firstItem="8QJ-OO-63A" firstAttribute="top" secondItem="cU7-de-sZD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9dF-Qh-Yog"/>
                             <constraint firstItem="Teg-9R-FKq" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="37" id="ACc-VO-67I"/>
                             <constraint firstItem="8QJ-OO-63A" firstAttribute="trailing" secondItem="cU7-de-sZD" secondAttribute="trailing" type="default" id="G13-xJ-Zot"/>
                             <constraint firstItem="TXo-Qp-Hum" firstAttribute="trailing" secondItem="CCd-cO-PsS" secondAttribute="trailing" type="default" id="GBJ-Ks-dYp"/>
-                            <constraint firstItem="gHm-GG-UEJ" firstAttribute="top" secondItem="CCd-cO-PsS" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Gq5-h3-9nh"/>
                             <constraint firstItem="0zZ-Kf-JNL" firstAttribute="trailing" secondItem="TXo-Qp-Hum" secondAttribute="trailing" type="default" id="LTi-xs-9zH"/>
                             <constraint firstItem="oDO-4H-MOV" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="309" id="P8z-wp-S3T"/>
                             <constraint firstItem="TXo-Qp-Hum" firstAttribute="top" secondItem="0zZ-Kf-JNL" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="PWJ-K3-dIj"/>
                             <constraint firstItem="cU7-de-sZD" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="63" id="Q1z-p2-RwU"/>
-                            <constraint firstItem="Orx-Nz-8ca" firstAttribute="trailing" secondItem="gHm-GG-UEJ" secondAttribute="trailing" type="default" id="RNW-0o-A3w"/>
                             <constraint firstItem="CCd-cO-PsS" firstAttribute="top" secondItem="TXo-Qp-Hum" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="YDs-rP-l0k"/>
-                            <constraint firstItem="gHm-GG-UEJ" firstAttribute="leading" secondItem="Orx-Nz-8ca" secondAttribute="leading" type="default" id="YI8-a8-Wh2"/>
                             <constraint firstItem="Teg-9R-FKq" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="267" id="YVJ-p9-47m"/>
                             <constraint firstItem="mT6-eJ-ge2" firstAttribute="leading" secondItem="0zZ-Kf-JNL" secondAttribute="leading" type="default" id="ZcU-co-fak"/>
                             <constraint firstItem="cU7-de-sZD" firstAttribute="top" secondItem="qZ7-KW-Pw8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="aF7-vw-ZUE"/>
-                            <constraint firstAttribute="bottom" secondItem="Orx-Nz-8ca" secondAttribute="bottom" constant="-8" type="user" id="aZb-xG-TGL"/>
                             <constraint firstItem="oDO-4H-MOV" firstAttribute="leading" secondItem="mT6-eJ-ge2" secondAttribute="leading" type="default" id="cBr-Wb-0hl"/>
                             <constraint firstItem="2f5-jh-E67" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="165" id="cQI-Ir-bo4"/>
                             <constraint firstItem="qZ7-KW-Pw8" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="95" id="j3m-nM-9eh"/>
-                            <constraint firstItem="I0Q-iN-Eof" firstAttribute="trailing" secondItem="gHm-GG-UEJ" secondAttribute="trailing" type="default" id="jHS-3t-z9f"/>
                             <constraint firstItem="TXo-Qp-Hum" firstAttribute="leading" secondItem="CCd-cO-PsS" secondAttribute="leading" type="default" id="lem-c7-MFy"/>
-                            <constraint firstItem="Orx-Nz-8ca" firstAttribute="top" secondItem="gHm-GG-UEJ" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="o5O-N4-6ez"/>
                             <constraint firstItem="0zZ-Kf-JNL" firstAttribute="top" secondItem="mT6-eJ-ge2" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="p6x-LA-sso"/>
                             <constraint firstItem="oDO-4H-MOV" firstAttribute="baseline" secondItem="2f5-jh-E67" secondAttribute="baseline" type="default" id="qtz-Ls-fvO"/>
                             <constraint firstItem="mT6-eJ-ge2" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="359" type="user" id="u8B-E3-E8g"/>
                             <constraint firstAttribute="trailing" secondItem="I0Q-iN-Eof" secondAttribute="trailing" constant="15" type="user" id="uSB-d8-DVc"/>
+                            <constraint firstAttribute="bottom" secondItem="CCd-cO-PsS" secondAttribute="bottom" constant="68" id="ubg-en-4Z1"/>
                             <constraint firstItem="LHI-4z-8bK" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="35" type="user" id="wc2-y6-2u1"/>
                             <constraint firstItem="I0Q-iN-Eof" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="51" id="xNv-yg-3en"/>
                             <constraint firstItem="TXo-Qp-Hum" firstAttribute="leading" secondItem="0zZ-Kf-JNL" secondAttribute="leading" type="default" id="xao-zM-l6h"/>
@@ -232,8 +214,6 @@
                     <navigationItem key="navigationItem" id="jau-mi-MMc"/>
                     <connections>
                         <outlet property="addContact" destination="qZ7-KW-Pw8" id="WMY-DV-Wax"/>
-                        <outlet property="contactNameTextField" destination="gHm-GG-UEJ" id="GZY-Lk-bWQ"/>
-                        <outlet property="contactNumberTextField" destination="Orx-Nz-8ca" id="F0d-nq-bDD"/>
                         <outlet property="dangerRadioButton" destination="CCd-cO-PsS" id="IiG-US-5oV"/>
                         <outlet property="disableRadioButton" destination="2f5-jh-E67" id="FXv-WA-3QM"/>
                         <outlet property="drunkRadioButton" destination="TXo-Qp-Hum" id="8bP-kv-mMf"/>

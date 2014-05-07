@@ -22,8 +22,7 @@
 @property (weak, nonatomic) IBOutlet RadioButton *drunkRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *dangerRadioButton;
 
-@property (weak, nonatomic) IBOutlet UITextField *contactNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *contactNumberTextField;
+
 @property (weak, nonatomic) IBOutlet UITextField *emergencyMessageTextField;
 
 @property (strong, nonatomic) HEALUser *user;
