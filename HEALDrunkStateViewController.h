@@ -9,21 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "HEALUser.h"
 
-@interface HEALDrunkStateViewController : UIViewController {
-    NSString *labelText;
-    
-
-    
-    
+@interface HEALDrunkStateViewController : UIViewController { 
 }
 
-//@property (weak, nonatomic) IBOutlet UITextView *stateDetails;
-//@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+@property (strong, nonatomic) HEALUser *user; // Needs to be able to access the user's info to display the correct info on the screen
 
-@property (strong, nonatomic) HEALUser *user;
-@property (strong, nonatomic) HEALNight *night;
-
-@property (strong, nonatomic) IBOutlet UILabel *messageLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bacLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (strong, nonatomic) IBOutlet UILabel *messageLabel;   // Shows a message gotten from the user's current night
+@property (weak, nonatomic) IBOutlet UILabel *bacLabel;         // Shows the user's BAC
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView; // The ImageView that holds the background image
 @end
