@@ -90,8 +90,8 @@
     //if ([self validInput]) {
      //   [self updateUser];
 //        [self performSegueWithIdentifier:@"unwindToMain" sender:self];
-    }
-//}
+    //}
+}
 
 - (void)updateUser
 {
@@ -104,8 +104,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
     [defaults setInteger:smsState forKey:@"smsState"];
-   // [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
-   // [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
+    [defaults setObject:self.contactNumber forKey:@"contactNumber"];
+    [defaults setObject:self.contactName forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
     
     @try {
