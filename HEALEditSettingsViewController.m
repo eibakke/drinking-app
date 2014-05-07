@@ -27,7 +27,7 @@
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
-    if (self.user == NULL) {
+    if (!self.user) {
         firstUse = YES;
         self.user = [[HEALUser alloc]init];
     }
@@ -230,8 +230,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"settingsMainSegue"]) {
-        HEALMainViewController *controller = [segue destinationViewController];
-        controller.user = self.user;
+        HEALMainViewController *mainController = [segue destinationViewController];
+        mainController.user = self.user;
     }
 }
 

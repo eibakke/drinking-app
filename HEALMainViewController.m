@@ -65,6 +65,9 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if (!self.user) {
+        [self performSegueWithIdentifier:@"settingsMainSegue" sender:self];
+    }
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"sampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
