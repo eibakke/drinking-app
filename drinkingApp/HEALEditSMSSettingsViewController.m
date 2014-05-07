@@ -234,6 +234,8 @@
     self.phoneNumber.text = self.contactNumber;
     
     CFRelease(phoneNumbers);
+    
+    [self updateUser];
 }
 
 
