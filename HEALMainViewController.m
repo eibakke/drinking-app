@@ -362,7 +362,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     
     if (self.user.state >= self.user.smsState ) {
         if (self.user.currentNight.sosSent == FALSE) {
-            if (self.user.sosContact == nil || self.user.smsMessage == nil) {
+            if (self.user.sosContact == nil) {
                 [self sosSetup];
             } else if(self.user.autoSMS == FALSE) {
                 [self sosDanger:self];
