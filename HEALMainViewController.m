@@ -488,6 +488,9 @@ static float const STANDARD_PAN_DURATION = 0.1;
     
     MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
     
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"sampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
     [textComposer setMessageComposeDelegate:self];
     [textComposer.navigationBar setBackgroundImage:[UIImage imageNamed:nil] forBarMetrics:UIBarMetricsDefault];
     [textComposer.navigationBar setTintColor:[UIColor blueColor]];
