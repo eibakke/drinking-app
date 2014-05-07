@@ -56,7 +56,6 @@
 		A894A75D1912F519009B88EB /* IconDS120.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A75A1912F519009B88EB /* IconDS120.png */; };
 		A894A75F1912F7A0009B88EB /* DSIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A75E1912F7A0009B88EB /* DSIcon57.png */; };
 		A894A7611912F8F8009B88EB /* DSIcon40.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A7601912F8F8009B88EB /* DSIcon40.png */; };
-		A894A7651913344E009B88EB /* USettings.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A7641913344E009B88EB /* USettings.png */; };
 		A894A767191351F7009B88EB /* PlainDangerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A766191351F7009B88EB /* PlainDangerButton.png */; };
 		A894A76D19135905009B88EB /* SMSEnvelope.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A76C19135905009B88EB /* SMSEnvelope.png */; };
 		A898146419198AC70081FC18 /* EmptySettings.png in Resources */ = {isa = PBXBuildFile; fileRef = A898146319198AC70081FC18 /* EmptySettings.png */; };
@@ -66,11 +65,6 @@
 		A8B3581C18EE5CCD008AF5FE /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581918EE5CCD008AF5FE /* CERoundProgressLayer.m */; };
 		A8B3581D18EE5CCD008AF5FE /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */; };
 		A8B3581F18EE5E55008AF5FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */; };
-		A8B3582F18F8318B008AF5FE /* bacbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582B18F8318B008AF5FE /* bacbar.png */; };
-		A8B3583018F8318B008AF5FE /* newnightbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582C18F8318B008AF5FE /* newnightbar.png */; };
-		A8B3583118F8318B008AF5FE /* settingsbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582D18F8318B008AF5FE /* settingsbar.png */; };
-		A8B3583218F8318B008AF5FE /* sosbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3582E18F8318B008AF5FE /* sosbar.png */; };
-		A8B358381900831F008AF5FE /* DrunkArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B358371900831F008AF5FE /* DrunkArrow.png */; };
 		A8B358401900947E008AF5FE /* BACInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3583F1900947E008AF5FE /* BACInfo.png */; };
 		A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975C18EC42D900686E79 /* AddDrink.png */; };
 		A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975E18EC446300686E79 /* AddDrinkedited.png */; };
@@ -152,7 +146,6 @@
 		A894A75A1912F519009B88EB /* IconDS120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconDS120.png; sourceTree = "<group>"; };
 		A894A75E1912F7A0009B88EB /* DSIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSIcon57.png; sourceTree = "<group>"; };
 		A894A7601912F8F8009B88EB /* DSIcon40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSIcon40.png; sourceTree = "<group>"; };
-		A894A7641913344E009B88EB /* USettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USettings.png; sourceTree = "<group>"; };
 		A894A766191351F7009B88EB /* PlainDangerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlainDangerButton.png; sourceTree = "<group>"; };
 		A894A76C19135905009B88EB /* SMSEnvelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SMSEnvelope.png; sourceTree = "<group>"; };
 		A898146319198AC70081FC18 /* EmptySettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmptySettings.png; sourceTree = "<group>"; };
@@ -164,11 +157,6 @@
 		A8B3581A18EE5CCD008AF5FE /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressView.h; sourceTree = "<group>"; };
 		A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressView.m; sourceTree = "<group>"; };
 		A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		A8B3582B18F8318B008AF5FE /* bacbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bacbar.png; sourceTree = "<group>"; };
-		A8B3582C18F8318B008AF5FE /* newnightbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newnightbar.png; sourceTree = "<group>"; };
-		A8B3582D18F8318B008AF5FE /* settingsbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsbar.png; sourceTree = "<group>"; };
-		A8B3582E18F8318B008AF5FE /* sosbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sosbar.png; sourceTree = "<group>"; };
-		A8B358371900831F008AF5FE /* DrunkArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DrunkArrow.png; path = "Images/button arrow/DrunkArrow.png"; sourceTree = SOURCE_ROOT; };
 		A8B3583F1900947E008AF5FE /* BACInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BACInfo.png; path = Images/BACInfo.png; sourceTree = SOURCE_ROOT; };
 		A8B7975C18EC42D900686E79 /* AddDrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrink.png; path = Images/AddDrink.png; sourceTree = SOURCE_ROOT; };
 		A8B7975E18EC446300686E79 /* AddDrinkedited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrinkedited.png; path = Images/AddDrinkedited.png; sourceTree = SOURCE_ROOT; };
@@ -358,11 +346,8 @@
 				A894A7511912C9E3009B88EB /* SoberButton.png */,
 				A894A7521912C9E3009B88EB /* TipsyButton.png */,
 				A898146319198AC70081FC18 /* EmptySettings.png */,
-				A894A7641913344E009B88EB /* USettings.png */,
 				A894A76C19135905009B88EB /* SMSEnvelope.png */,
-				98846016190F014C00EB4083 /* add_emergency_contact.png */,
 				A8B3583F1900947E008AF5FE /* BACInfo.png */,
-				A8B3582A18F8318B008AF5FE /* bars */,
 				89F840D218DFFCDC0048AD95 /* radio-res-ios */,
 				A8FC61B3190A9F8000DAFDC8 /* DrunkState.png */,
 				A8FC61B4190A9F8000DAFDC8 /* SoberState.png */,
@@ -376,7 +361,6 @@
 				A8B7975C18EC42D900686E79 /* AddDrink.png */,
 				A811E4D818E3AEAF00970E77 /* sampleNavBar1.png */,
 				A8B7975E18EC446300686E79 /* AddDrinkedited.png */,
-				A8B358371900831F008AF5FE /* DrunkArrow.png */,
 				6D6BD5EA18E9E53200B45823 /* 3bar.png */,
 				A811E4D218E3991D00970E77 /* BlurLogoScreen.png */,
 				A811E4D618E3ACCF00970E77 /* sampleNavBar.png */,
@@ -394,18 +378,6 @@
 				A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */,
 			);
 			path = "Third Party Progress Bar";
-			sourceTree = SOURCE_ROOT;
-		};
-		A8B3582A18F8318B008AF5FE /* bars */ = {
-			isa = PBXGroup;
-			children = (
-				A8B3582B18F8318B008AF5FE /* bacbar.png */,
-				A8B3582C18F8318B008AF5FE /* newnightbar.png */,
-				A8B3582D18F8318B008AF5FE /* settingsbar.png */,
-				A8B3582E18F8318B008AF5FE /* sosbar.png */,
-			);
-			name = bars;
-			path = Images/bars;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -482,20 +454,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				89F840D718DFFCDC0048AD95 /* checked.png in Resources */,
-				98846017190F014C00EB4083 /* add_emergency_contact.png in Resources */,
 				A811E4D918E3AEAF00970E77 /* sampleNavBar1.png in Resources */,
 				A811E4DF18E4B22E00970E77 /* DeadState.png in Resources */,
 				89F840D818DFFCDC0048AD95 /* checked@2x.png in Resources */,
-				A8B3582F18F8318B008AF5FE /* bacbar.png in Resources */,
 				A894A7611912F8F8009B88EB /* DSIcon40.png in Resources */,
 				A894A76D19135905009B88EB /* SMSEnvelope.png in Resources */,
 				89F840DA18DFFCDC0048AD95 /* unchecked@2x.png in Resources */,
 				8956FC6218BBD6D70018F32B /* InfoPlist.strings in Resources */,
 				8956FC6A18BBD6D70018F32B /* Default.png in Resources */,
-				A8B3583118F8318B008AF5FE /* settingsbar.png in Resources */,
 				8956FC6C18BBD6D70018F32B /* Default@2x.png in Resources */,
-				A8B3583018F8318B008AF5FE /* newnightbar.png in Resources */,
-				A894A7651913344E009B88EB /* USettings.png in Resources */,
 				89F840D918DFFCDC0048AD95 /* unchecked.png in Resources */,
 				A89E16171903160D000FFCDE /* Default~iphone.png in Resources */,
 				A894A75F1912F7A0009B88EB /* DSIcon57.png in Resources */,
@@ -508,7 +475,6 @@
 				A811E4D718E3ACCF00970E77 /* sampleNavBar.png in Resources */,
 				A894A75D1912F519009B88EB /* IconDS120.png in Resources */,
 				A811E4E718E5139800970E77 /* empty.png in Resources */,
-				A8B358381900831F008AF5FE /* DrunkArrow.png in Resources */,
 				A8FC61B6190A9F8000DAFDC8 /* DrunkState.png in Resources */,
 				A894A7551912C9E3009B88EB /* TipsyButton.png in Resources */,
 				89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */,
@@ -516,7 +482,6 @@
 				A8981466191A728A0081FC18 /* DangerState.png in Resources */,
 				A894A7541912C9E3009B88EB /* SoberButton.png in Resources */,
 				6D6BD5EB18E9E53200B45823 /* 3bar.png in Resources */,
-				A8B3583218F8318B008AF5FE /* sosbar.png in Resources */,
 				A894A7531912C9E3009B88EB /* DrunkButton.png in Resources */,
 				A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */,
 				A8B358401900947E008AF5FE /* BACInfo.png in Resources */,
