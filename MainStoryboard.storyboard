@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bED-9H-xtw">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
@@ -573,30 +573,23 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="in lbs eg. 150" borderStyle="roundedRect" placeholder="in lbs eg. 150" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C5k-4F-wvV">
-                                <rect key="frame" x="87" y="404" width="147" height="28"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Weight in lbs (eg. 150)" borderStyle="roundedRect" placeholder="Weight in lbs (eg. 150)" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C5k-4F-wvV">
+                                <rect key="frame" x="54" y="244" width="213" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" type="user" id="DWp-nf-GmC"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Name" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-W1-GhK">
-                                <rect key="frame" x="87" y="299" width="147" height="30"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="147" id="RSZ-4G-j2b"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Enter Name" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-W1-GhK">
+                                <rect key="frame" x="54" y="185" width="213" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="m" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuU-4b-fYL" customClass="RadioButton">
-                                <rect key="frame" x="59" y="460" width="76" height="24"/>
+                                <rect key="frame" x="43" y="303" width="76" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="fEe-OT-Mhh"/>
                                 </constraints>
@@ -604,7 +597,7 @@
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Male" image="unchecked.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="selected" image="checked.png"/>
                                 <connections>
@@ -612,15 +605,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="f" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-hU-g4O" customClass="RadioButton">
-                                <rect key="frame" x="189" y="460" width="94" height="24"/>
+                                <rect key="frame" x="187" y="303" width="94" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="7cj-78-WSu"/>
+                                    <constraint firstAttribute="width" constant="94" type="user" id="7cj-78-WSu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Female" image="unchecked.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="selected" image="checked.png"/>
                             </button>
@@ -635,19 +628,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="tintColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="PKw-W1-GhK" secondAttribute="bottom" constant="219" id="0Ab-uw-bxi"/>
-                            <constraint firstAttribute="trailing" secondItem="ffh-hU-g4O" secondAttribute="trailing" constant="37" id="7ru-3Z-1SR"/>
-                            <constraint firstItem="C5k-4F-wvV" firstAttribute="leading" secondItem="PKw-W1-GhK" secondAttribute="leading" type="default" id="MQ3-GM-0v3"/>
-                            <constraint firstAttribute="bottom" secondItem="CuU-4b-fYL" secondAttribute="bottom" constant="64" id="YIi-EJ-lly"/>
-                            <constraint firstItem="zy5-mS-puD" firstAttribute="top" secondItem="C5k-4F-wvV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cMo-hz-ceM"/>
-                            <constraint firstItem="CuU-4b-fYL" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="59" id="enL-4n-Fgh"/>
-                            <constraint firstItem="zy5-mS-puD" firstAttribute="centerX" secondItem="C5k-4F-wvV" secondAttribute="centerX" type="default" id="hhw-l8-x3j"/>
-                            <constraint firstItem="zy5-mS-puD" firstAttribute="centerX" secondItem="GwV-ve-lSs" secondAttribute="centerX" type="default" id="jya-FS-iX3"/>
-                            <constraint firstItem="ffh-hU-g4O" firstAttribute="baseline" secondItem="CuU-4b-fYL" secondAttribute="baseline" type="default" id="kqs-Lp-KQ7"/>
-                            <constraint firstItem="C5k-4F-wvV" firstAttribute="trailing" secondItem="PKw-W1-GhK" secondAttribute="trailing" type="default" id="vtS-gt-vmT"/>
+                            <constraint firstItem="PKw-W1-GhK" firstAttribute="centerX" secondItem="GwV-ve-lSs" secondAttribute="centerX" type="user" id="5rn-sA-nYk"/>
+                            <constraint firstItem="C5k-4F-wvV" firstAttribute="top" secondItem="GwV-ve-lSs" secondAttribute="top" constant="244" id="6Zb-Xw-qop"/>
+                            <constraint firstItem="CuU-4b-fYL" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="43" id="79b-3J-BAi"/>
+                            <constraint firstAttribute="bottom" secondItem="CuU-4b-fYL" secondAttribute="bottom" constant="221" type="user" id="DEO-00-Z88"/>
+                            <constraint firstItem="PKw-W1-GhK" firstAttribute="width" secondItem="C5k-4F-wvV" secondAttribute="width" type="user" id="Nsg-0Q-yhr"/>
+                            <constraint firstItem="PKw-W1-GhK" firstAttribute="top" secondItem="GwV-ve-lSs" secondAttribute="top" constant="185" type="user" id="OE9-RF-hdx"/>
+                            <constraint firstItem="zy5-mS-puD" firstAttribute="centerX" secondItem="C5k-4F-wvV" secondAttribute="centerX" type="user" id="PK5-ef-HeA"/>
+                            <constraint firstItem="ffh-hU-g4O" firstAttribute="top" secondItem="GwV-ve-lSs" secondAttribute="top" constant="303" type="user" id="gef-wI-YCc"/>
+                            <constraint firstItem="ffh-hU-g4O" firstAttribute="baseline" secondItem="CuU-4b-fYL" secondAttribute="baseline" type="user" id="mb8-hs-7ch"/>
+                            <constraint firstItem="PKw-W1-GhK" firstAttribute="leading" secondItem="C5k-4F-wvV" secondAttribute="leading" type="default" id="mon-tQ-M3P"/>
+                            <constraint firstItem="CuU-4b-fYL" firstAttribute="height" secondItem="ffh-hU-g4O" secondAttribute="height" type="user" id="nOL-hx-xbW"/>
+                            <constraint firstItem="CuU-4b-fYL" firstAttribute="top" secondItem="GwV-ve-lSs" secondAttribute="top" constant="303" type="user" id="sVS-q7-eQi"/>
+                            <constraint firstAttribute="trailing" secondItem="ffh-hU-g4O" secondAttribute="trailing" constant="39" id="xNu-UB-Dhc"/>
                             <constraint firstAttribute="bottom" secondItem="zy5-mS-puD" secondAttribute="bottom" constant="87" id="ynI-rq-hd6"/>
                         </constraints>
                     </view>

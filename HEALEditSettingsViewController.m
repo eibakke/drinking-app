@@ -37,7 +37,7 @@
 - (void)setupUI
 {
     // Set background image
-    [self.imageViewBackground setImage:[UIImage imageNamed:@"USettings.png"]];
+    [self.imageViewBackground setImage:[UIImage imageNamed:@"EmptySettings.png"]];
     
     // Initialize all the fields to have values from the user object
     [self initFields];
@@ -123,17 +123,24 @@
 }
 
 
-// Move the whole view up a little when editing a textfield
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    [self animateTextField: textField up: YES];
-}
 
-// Move it back down when done editing
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [self animateTextField: textField up: NO];
-}
+
+
+//// Move the whole view up a little when editing a textfield
+//- (void)textFieldDidBeginEditing:(UITextField *)textField
+//{
+//    [self animateTextField: textField up: YES];
+//}
+
+//// Move it back down when done editing
+//- (void)textFieldDidEndEditing:(UITextField *)textField
+//{
+//    [self animateTextField: textField up: NO];
+//}
+
+
+
+
 
 //############################################ Everything that happens when we leave the View Controller (Updating User, Checking for New Input etc.) ############################################
 

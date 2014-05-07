@@ -59,6 +59,7 @@
 		A894A7651913344E009B88EB /* USettings.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A7641913344E009B88EB /* USettings.png */; };
 		A894A767191351F7009B88EB /* PlainDangerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A766191351F7009B88EB /* PlainDangerButton.png */; };
 		A894A76D19135905009B88EB /* SMSEnvelope.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A76C19135905009B88EB /* SMSEnvelope.png */; };
+		A898146419198AC70081FC18 /* EmptySettings.png in Resources */ = {isa = PBXBuildFile; fileRef = A898146319198AC70081FC18 /* EmptySettings.png */; };
 		A89E16171903160D000FFCDE /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = A89E16161903160D000FFCDE /* Default~iphone.png */; };
 		A89E161919031A62000FFCDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89E161819031A62000FFCDE /* Images.xcassets */; };
 		A8B3581C18EE5CCD008AF5FE /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581918EE5CCD008AF5FE /* CERoundProgressLayer.m */; };
@@ -153,6 +154,7 @@
 		A894A7641913344E009B88EB /* USettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USettings.png; sourceTree = "<group>"; };
 		A894A766191351F7009B88EB /* PlainDangerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlainDangerButton.png; sourceTree = "<group>"; };
 		A894A76C19135905009B88EB /* SMSEnvelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SMSEnvelope.png; sourceTree = "<group>"; };
+		A898146319198AC70081FC18 /* EmptySettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmptySettings.png; sourceTree = "<group>"; };
 		A89E16161903160D000FFCDE /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iphone.png"; path = "Images/Default~iphone.png"; sourceTree = "<group>"; };
 		A89E161819031A62000FFCDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A8B3581818EE5CCD008AF5FE /* CERoundProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressLayer.h; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				A894A7501912C9E3009B88EB /* DrunkButton.png */,
 				A894A7511912C9E3009B88EB /* SoberButton.png */,
 				A894A7521912C9E3009B88EB /* TipsyButton.png */,
+				A898146319198AC70081FC18 /* EmptySettings.png */,
 				A894A7641913344E009B88EB /* USettings.png */,
 				A894A76C19135905009B88EB /* SMSEnvelope.png */,
 				98846016190F014C00EB4083 /* add_emergency_contact.png */,
@@ -516,6 +519,7 @@
 				A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */,
 				A894A767191351F7009B88EB /* PlainDangerButton.png in Resources */,
 				A811E4D318E3991D00970E77 /* BlurLogoScreen.png in Resources */,
+				A898146419198AC70081FC18 /* EmptySettings.png in Resources */,
 				A8E4FA7819117E3700662843 /* Cambria.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

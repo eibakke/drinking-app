@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HEALMainViewController.m"
-            timestampString = "420703008.16206"
+            timestampString = "421163115.340862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "-panViews:"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "-toggleRightView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

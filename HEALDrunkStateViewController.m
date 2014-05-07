@@ -29,6 +29,7 @@
     self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@", [self.user stateAsString], @"State.png"]];
     
     [self.bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
+    
     [self.messageLabel setText: [self.user.currentNight stateMessage:self.user.state]];
 }
 @end

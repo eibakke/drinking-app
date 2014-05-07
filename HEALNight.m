@@ -13,6 +13,8 @@
     NSArray* soberMessageArray;
     NSArray* tipsyMessageArray;
     NSArray* drunkMessageArray;
+    NSArray* dangerMessageArray;
+
     
     // Helper structure to hold messages for a given night
     NSArray* sessionMessages;
@@ -33,6 +35,7 @@
         soberMessageArray = @[@"Call Your Grandma!",@"Walk Your Dog",@"Drive Your Car",@"Write Some Code",@"Live A Little", @"Fold Laundry",@"Pick Up Cantonese "];
         tipsyMessageArray = @[@"Avoid Karaoke",@"Share An Irrelevant Childhood Story",@"Dance"];
         drunkMessageArray = @[@"Order Jimmy Johns",@"Ponder Meaning of Life",@"Drink Some Water",@"Eat Some Food",@"Kagin?", @"Not Text That Number"];
+        dangerMessageArray = @[@"DANGER (test)"];
 
         [self generateMessages];
     }
@@ -44,11 +47,14 @@
     NSString* soberMessage = soberMessageArray[[self randomNumberBetweenMin:0 Max:[soberMessageArray count] - 1]];
     NSString* tipsyMessage = tipsyMessageArray[[self randomNumberBetweenMin:0 Max:[tipsyMessageArray count] - 1]];
     NSString* drunkMessage = drunkMessageArray[[self randomNumberBetweenMin:0 Max:[drunkMessageArray count] - 1]];
+    NSString* dangerMessage = dangerMessageArray[[self randomNumberBetweenMin:0 Max:[dangerMessageArray count] - 1]];
     
-    sessionMessages = @[soberMessage, tipsyMessage, drunkMessage];
+    
+    
+    sessionMessages = @[soberMessage, tipsyMessage, drunkMessage, dangerMessage];
 }
 
-// Generate random numbers within range
+// Generate random numbers within range min to max
 - (long)randomNumberBetweenMin:(long)min Max:(long)max
 {
     return ( (arc4random() % (max-min+1)) + min );
