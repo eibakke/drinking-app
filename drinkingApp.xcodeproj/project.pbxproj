@@ -60,6 +60,7 @@
 		A894A767191351F7009B88EB /* PlainDangerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A766191351F7009B88EB /* PlainDangerButton.png */; };
 		A894A76D19135905009B88EB /* SMSEnvelope.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A76C19135905009B88EB /* SMSEnvelope.png */; };
 		A898146419198AC70081FC18 /* EmptySettings.png in Resources */ = {isa = PBXBuildFile; fileRef = A898146319198AC70081FC18 /* EmptySettings.png */; };
+		A8981466191A728A0081FC18 /* DangerState.png in Resources */ = {isa = PBXBuildFile; fileRef = A8981465191A728A0081FC18 /* DangerState.png */; };
 		A89E16171903160D000FFCDE /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = A89E16161903160D000FFCDE /* Default~iphone.png */; };
 		A89E161919031A62000FFCDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89E161819031A62000FFCDE /* Images.xcassets */; };
 		A8B3581C18EE5CCD008AF5FE /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581918EE5CCD008AF5FE /* CERoundProgressLayer.m */; };
@@ -155,6 +156,7 @@
 		A894A766191351F7009B88EB /* PlainDangerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlainDangerButton.png; sourceTree = "<group>"; };
 		A894A76C19135905009B88EB /* SMSEnvelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SMSEnvelope.png; sourceTree = "<group>"; };
 		A898146319198AC70081FC18 /* EmptySettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmptySettings.png; sourceTree = "<group>"; };
+		A8981465191A728A0081FC18 /* DangerState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DangerState.png; sourceTree = "<group>"; };
 		A89E16161903160D000FFCDE /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iphone.png"; path = "Images/Default~iphone.png"; sourceTree = "<group>"; };
 		A89E161819031A62000FFCDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A8B3581818EE5CCD008AF5FE /* CERoundProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERoundProgressLayer.h; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				89F840D218DFFCDC0048AD95 /* radio-res-ios */,
 				A8FC61B3190A9F8000DAFDC8 /* DrunkState.png */,
 				A8FC61B4190A9F8000DAFDC8 /* SoberState.png */,
+				A8981465191A728A0081FC18 /* DangerState.png */,
 				A8FC61B5190A9F8000DAFDC8 /* TipsyState.png */,
 				A811E4DE18E4B22E00970E77 /* DeadState.png */,
 				A811E4E618E5139800970E77 /* empty.png */,
@@ -510,6 +513,7 @@
 				A894A7551912C9E3009B88EB /* TipsyButton.png in Resources */,
 				89D32C5418BE759C003920FE /* MainStoryboard.storyboard in Resources */,
 				A8FC61B7190A9F8000DAFDC8 /* SoberState.png in Resources */,
+				A8981466191A728A0081FC18 /* DangerState.png in Resources */,
 				A894A7541912C9E3009B88EB /* SoberButton.png in Resources */,
 				6D6BD5EB18E9E53200B45823 /* 3bar.png in Resources */,
 				A8B3583218F8318B008AF5FE /* sosbar.png in Resources */,

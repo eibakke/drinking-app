@@ -257,9 +257,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgn-e1-cgK">
-                                <rect key="frame" x="0.0" y="481" width="320" height="21"/>
+                                <rect key="frame" x="-5" y="450" width="320" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="jVH-C9-siA"/>
+                                    <constraint firstAttribute="height" constant="40" id="XEA-dD-q8S"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="0.0000">
@@ -273,8 +273,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Current BAC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8Y-VI-bit">
-                                <rect key="frame" x="0.0" y="442" width="320" height="21"/>
+                                <rect key="frame" x="-5" y="421" width="320" height="21"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="50D-P3-mgc"/>
                                     <constraint firstAttribute="height" constant="21" id="jxx-aj-Dbh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -293,15 +294,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Q8Y-VI-bit" secondAttribute="bottom" constant="85" id="A1w-lq-INR"/>
-                            <constraint firstItem="MTo-0A-tfg" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" type="default" id="Ag0-Ii-vsZ"/>
-                            <constraint firstAttribute="bottom" secondItem="pgn-e1-cgK" secondAttribute="bottom" constant="46" id="CER-Id-vSE"/>
+                            <constraint firstItem="Q8Y-VI-bit" firstAttribute="top" secondItem="gBn-qe-hIX" secondAttribute="top" constant="421" id="7KO-08-S9g"/>
                             <constraint firstItem="MTo-0A-tfg" firstAttribute="top" secondItem="gBn-qe-hIX" secondAttribute="top" constant="137" id="Ebp-qO-Pzm"/>
                             <constraint firstAttribute="trailing" secondItem="MTo-0A-tfg" secondAttribute="trailing" type="default" id="GAR-bK-qYj"/>
-                            <constraint firstItem="Q8Y-VI-bit" firstAttribute="leading" secondItem="MTo-0A-tfg" secondAttribute="leading" type="default" id="hAm-Il-kSV"/>
-                            <constraint firstItem="Q8Y-VI-bit" firstAttribute="leading" secondItem="pgn-e1-cgK" secondAttribute="leading" type="default" id="pm7-Sf-jLF"/>
-                            <constraint firstItem="Q8Y-VI-bit" firstAttribute="trailing" secondItem="pgn-e1-cgK" secondAttribute="trailing" type="default" id="sid-0V-Yxx"/>
-                            <constraint firstItem="MTo-0A-tfg" firstAttribute="trailing" secondItem="Q8Y-VI-bit" secondAttribute="trailing" type="default" id="upd-s6-GhA"/>
+                            <constraint firstItem="Q8Y-VI-bit" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" constant="-5" id="M7n-sB-qAG"/>
+                            <constraint firstItem="pgn-e1-cgK" firstAttribute="leading" secondItem="Q8Y-VI-bit" secondAttribute="leading" type="default" id="c04-7D-iEa"/>
+                            <constraint firstItem="pgn-e1-cgK" firstAttribute="top" secondItem="Q8Y-VI-bit" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jYE-dt-f1G"/>
+                            <constraint firstItem="pgn-e1-cgK" firstAttribute="trailing" secondItem="Q8Y-VI-bit" secondAttribute="trailing" type="default" id="mZe-XZ-ziC"/>
+                            <constraint firstItem="MTo-0A-tfg" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" type="default" id="w4C-t9-Jx4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EIR-bE-yiJ"/>
