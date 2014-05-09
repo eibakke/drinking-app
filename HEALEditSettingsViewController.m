@@ -67,11 +67,9 @@
         self.nameTextField.text = self.user.name;
     }
     // Set the text in the textfields to come from the user defaults, if they have been set yet
-    if(self.user.sex == FEMALE)
-    {
+    if(self.user.sex == SEXES_FEMALE) {
         [self.femaleRadioButton setSelected:YES];
-    } else if(self.user.sex == MALE)
-    {
+    } else if(self.user.sex == SEXES_MALE) {
         [self.maleRadioButton setSelected:YES];
     }
 }
@@ -121,25 +119,6 @@
 {
     return [textField resignFirstResponder];
 }
-
-
-
-
-
-//// Move the whole view up a little when editing a textfield
-//- (void)textFieldDidBeginEditing:(UITextField *)textField
-//{
-//    [self animateTextField: textField up: YES];
-//}
-
-//// Move it back down when done editing
-//- (void)textFieldDidEndEditing:(UITextField *)textField
-//{
-//    [self animateTextField: textField up: NO];
-//}
-
-
-
 
 
 //############################################ Everything that happens when we leave the View Controller (Updating User, Checking for New Input etc.) ############################################
@@ -207,29 +186,14 @@
 - (void)setNewSex
 {
     if ([self.maleRadioButton isSelected]) {
-        newSex = MALE;
+        newSex = SEXES_MALE;
     } else if([self.femaleRadioButton isSelected]) {
-        newSex = FEMALE;
+        newSex = SEXES_FEMALE;
     }
 }
 
 
 //############################################ Animations ############################################
-
-// The animation with bool for moving up or down. Source: user Amagrammer at stackoverflow. Post URL: http://stackoverflow.com/questions/1247113/iphone-keyboard-covers-uitextfield
-- (void) animateTextField: (UITextField*) textField up: (BOOL) up
-{
-    const int movementDistance = 50;
-    const float movementDuration = 0.1f;
-    
-    int movement = (up ? -movementDistance : movementDistance);
-    
-    [UIView beginAnimations: @"anim" context: nil];
-    [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: movementDuration];
-    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
-    [UIView commitAnimations];
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -239,33 +203,4 @@
     }
 }
 
-// Adds a return button to the keypad
-//- (void)addButtonToKeyboard {
-//	// create custom button
-//	UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//	doneButton.frame = CGRectMake(0, 163, 106, 53);
-//	doneButton.adjustsImageWhenHighlighted = NO;
-//	if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.0) {
-//		[doneButton setImage:[UIImage imageNamed:@"DoneUp3.png"] forState:UIControlStateNormal];
-//		[doneButton setImage:[UIImage imageNamed:@"DoneDown3.png"] forState:UIControlStateHighlighted];
-//	} else {
-//		[doneButton setImage:[UIImage imageNamed:@"DoneUp.png"] forState:UIControlStateNormal];
-//		[doneButton setImage:[UIImage imageNamed:@"DoneDown.png"] forState:UIControlStateHighlighted];
-//	}
-//	[doneButton addTarget:self action:@selector(doneButton:) forControlEvents:UIControlEventTouchUpInside];
-//	// locate keyboard view
-//	UIWindow* tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
-//	UIView* keyboard;
-//	for(int i=0; i<[tempWindow.subviews count]; i++) {
-//		keyboard = [tempWindow.subviews objectAtIndex:i];
-//		// keyboard found, add the button
-//		if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 3.2) {
-//			if([[keyboard description] hasPrefix:@"<UIPeripheralHost"] == YES)
-//				[keyboard addSubview:doneButton];
-//		} else {
-//			if([[keyboard description] hasPrefix:@"<UIKeyboard"] == YES)
-//				[keyboard addSubview:doneButton];
-//		}
-//	}
-//}
 @end

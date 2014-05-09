@@ -33,9 +33,9 @@
         newUser.weight = [[defaults objectForKey:@"userWeight"]intValue];
         
         if ([[defaults objectForKey:@"userSex"] isEqualToString:@"F"]) {
-            newUser.sex = FEMALE;
+            newUser.sex = SEXES_FEMALE;
         } else {
-            newUser.sex = MALE;
+            newUser.sex = SEXES_MALE;
         }
         
         newUser.sosContact = [defaults objectForKey:@"sosContact"];

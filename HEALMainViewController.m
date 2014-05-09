@@ -46,7 +46,6 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 
 
-    [super viewDidLoad];
     [self setupUI];
 }
 
@@ -126,10 +125,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     CGFloat screenHeight = screen.size.height;
     circleStateButton.frame = CGRectMake((0.05*screenWidth), (0.16*screenHeight), (0.9*screenWidth), (0.9*screenWidth));
     circleStateButton.clipsToBounds = YES;
-    
-    circleStateButton.layer.cornerRadius = (0.8*screenWidth)/2.0;
-    
-    
+        
     [self.centerView addSubview:circleStateButton];
 }
 
@@ -140,7 +136,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     
     [circleStateButton setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@Button.png", self.user.stateAsString]] forState:UIControlStateNormal];
     
-    if (self.user.state == DANGER) {
+    if (self.user.state == INTOXSTATE_DANGER) {
         envelopeButton.hidden = NO;
         envelopeButton.UserInteractionEnabled = YES;
         
@@ -304,7 +300,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
         }
         [autoView dismissWithClickedButtonIndex:[autoView cancelButtonIndex] animated:TRUE];
         
-        if (sendAutoMessage == TRUE) {
+        if (sendAutoMessage) {
             [self sendSMS];
             self.user.currentNight.sosSent = TRUE;
         }
@@ -341,10 +337,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self updateRoundProgressBar];
     
     if (self.user.state >= self.user.smsState ) {
-        if (self.user.currentNight.sosSent == FALSE) {
-            if (self.user.sosContact == nil || [self.user.sosContact  isEqualToString:@"Emergency contact Name"]) {
+        if (!self.user.currentNight.sosSent) {
+            if (!self.user.sosContact || [self.user.sosContact  isEqualToString:@"Emergency contact Name"]) {
                 [self sosSetup];
-            } else if(self.user.autoSMS == FALSE) {
+            } else if(!self.user.autoSMS) {
                 [self sosDanger:self];
             } else {
                 [self sosAuto:self];

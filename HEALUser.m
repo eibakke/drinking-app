@@ -36,7 +36,7 @@ static int const MILLI_SEC_PR_HOUR = 3600000;
     if (self) {
         self.currentNight = [[HEALNight alloc] init];
         self.intoxStateArray = @[@"Sober", @"Tipsy", @"Drunk", @"Danger"];
-        self.smsState = DANGER;
+        self.smsState = INTOXSTATE_DANGER;
     }
     return self;
 }
@@ -62,16 +62,16 @@ static int const MILLI_SEC_PR_HOUR = 3600000;
 {
     if (self.BAC < TIPSY_LOWER_BAC_LIMIT) {
         self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.2];
-        return SOBER;
+        return INTOXSTATE_SOBER;
     } else if (TIPSY_LOWER_BAC_LIMIT <= self.BAC && self.BAC < DRUNK_LOWER_BAC_LIMIT) {
         self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.4];
-        return TIPSY;
+        return INTOXSTATE_TIPSY;
     } else if (DRUNK_LOWER_BAC_LIMIT <= self.BAC && self.BAC < DANGER_LOWER_BAC_LIMIT) {
         self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.6];
-        return DRUNK;
+        return INTOXSTATE_DRUNK;
     } else {
         self.wheelColorTint = [UIColor colorWithRed:(120/255.0) green:(80/255.0) blue:(80/255.0) alpha:1];
-        return DANGER;
+        return INTOXSTATE_DANGER;
     }
 }
 
@@ -85,7 +85,7 @@ static int const MILLI_SEC_PR_HOUR = 3600000;
 - (void)setSex:(sexes)sex
 {
     _sex = sex;
-    if(sex == FEMALE){
+    if(sex == SEXES_FEMALE){
         userSexMetVal = FEMALE_ALC_MET_VAL;
     } else {
         userSexMetVal = MALE_ALC_MET_VAL;

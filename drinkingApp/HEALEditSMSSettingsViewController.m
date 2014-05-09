@@ -66,11 +66,11 @@
         self.emergencyMessageTextField.text = self.user.smsMessage;
     }
     
-    if (self.user.smsState == TIPSY) {
+    if (self.user.smsState == INTOXSTATE_TIPSY) {
         [self.tipsyRadioButton setSelected:YES];
-    } else if (self.user.smsState == DRUNK) {
+    } else if (self.user.smsState == INTOXSTATE_DRUNK) {
         [self.drunkRadioButton setSelected:YES];
-    } else if (self.user.smsState == DANGER) {
+    } else if (self.user.smsState == INTOXSTATE_DANGER) {
         [self.dangerRadioButton setSelected:YES];
     }
 }
@@ -82,11 +82,11 @@
     } else sendAutoSMS = NO;
     
     if (self.tipsyRadioButton.isSelected){
-        smsState = TIPSY;
+        smsState = INTOXSTATE_TIPSY;
     } else if (self.drunkRadioButton.isSelected){
-        smsState = DRUNK;
+        smsState = INTOXSTATE_DRUNK;
     } else if (self.dangerRadioButton.isSelected){
-        smsState = DANGER;
+        smsState = INTOXSTATE_DANGER;
     }
     
     [self updateUser];
