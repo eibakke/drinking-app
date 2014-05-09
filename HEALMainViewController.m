@@ -7,6 +7,7 @@
 //
 
 #import "HEALMainViewController.h"
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 @interface HEALMainViewController ()
 {
@@ -85,7 +86,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 // sets up all the centerviewbuttons
 - (void)setupCenterViewButtons
 {
-    [self circleButton];
+    [self setupCircleButton];
     [self envelopeButton];
     envelopeButton.hidden = YES;
     envelopeButton.UserInteractionEnabled = NO;
@@ -113,20 +114,23 @@ static float const STANDARD_PAN_DURATION = 0.1;
 }
 
 //creates circle button that shows the states
-- (void)circleButton
+- (void)setupCircleButton
 {
-    circleStateButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    [circleStateButton setImage:[UIImage imageNamed:@"SoberButton.png"] forState:UIControlStateNormal];
-    
-    [circleStateButton addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
-    CGRect screen = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screen.size.width;
-    CGFloat screenHeight = screen.size.height;
-    circleStateButton.frame = CGRectMake((0.05*screenWidth), (0.16*screenHeight), (0.9*screenWidth), (0.9*screenWidth));
-    circleStateButton.clipsToBounds = YES;
+    if (IS_WIDESCREEN) {
+        self.longScreenButton.hidden = NO;
+        self.longScreenButton.userInteractionEnabled = YES;
         
-    [self.centerView addSubview:circleStateButton];
+        self.shortScreenButton.hidden = YES;
+        self.shortScreenButton.userInteractionEnabled = NO;
+        circleStateButton = self.longScreenButton;
+    } else {
+        self.shortScreenButton.hidden = NO;
+        self.shortScreenButton.userInteractionEnabled = YES;
+        
+        self.longScreenButton.hidden = YES;
+        self.longScreenButton.userInteractionEnabled = NO;
+        circleStateButton = self.shortScreenButton;
+    }
 }
 
 - (void)updateCircleButton
@@ -389,6 +393,11 @@ static float const STANDARD_PAN_DURATION = 0.1;
     }
 }
 
+- (IBAction)centerCircleButtonClick:(id)sender
+{
+    [self performSegueWithIdentifier:@"toStateViewController" sender:self];
+}
+
 
 //############################################ Segue Related Methods ############################################
 //called when another viewController exits to mainViewController
@@ -399,10 +408,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 }
 
 //segue to drunkstate view controller
-- (void)stateSegue
-{
-    [self performSegueWithIdentifier:@"toStateViewController" sender:self];
-}
+
 
 //handles segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

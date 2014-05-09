@@ -32,9 +32,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *rightView;
 @property (weak, nonatomic) IBOutlet UIButton *smsSettingsButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *longScreenButton;
+@property (weak, nonatomic) IBOutlet UIButton *shortScreenButton;
 
 
 - (IBAction)rightViewButtonClicked:(id)sender;
+- (IBAction)centerCircleButtonClick:(id)sender;
 
 
 - (IBAction)valueChanged:(UIStepper *)sender;
