@@ -10,30 +10,17 @@
 
 @interface HEALMainViewController ()
 {
-    NSTimer *timer;
+    NSTimer* uiUpdateTimer;
     BOOL slidRight;
     UIGestureRecognizer *tapRecognizer;
-    UIButton *button;
-    CGPoint centerViewCenter;
-
+    UIButton* circleStateButton;
+    
     int smsInt;
-    NSTimer *smsTimer;
+    NSTimer* smsTimer;
     BOOL sendAutoMessage;
-    UIAlertView *autoView;
-    UIButton *envelopeButton;
-    
-    
+    UIAlertView* autoView;
+    UIButton* envelopeButton;
 }
-@property (weak, nonatomic) IBOutlet UIButton *nightButton;
-@property (weak, nonatomic) IBOutlet UIButton *smsButton;
-@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
-@property (weak, nonatomic) IBOutlet UIImageView *centerView;
-@property (weak, nonatomic) IBOutlet UIImageView *rightView;
-@property (weak, nonatomic) IBOutlet UIButton *smsSettingsButton;
-
-
-
-- (IBAction)rightViewButtonClicked:(id)sender;
 
 @end
 
@@ -129,21 +116,21 @@ static float const STANDARD_PAN_DURATION = 0.1;
 //creates circle button that shows the states
 - (void)circleButton
 {
-    button = [UIButton buttonWithType:UIButtonTypeCustom];
+    circleStateButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    [button setImage:[UIImage imageNamed:@"SoberButton.png"] forState:UIControlStateNormal];
+    [circleStateButton setImage:[UIImage imageNamed:@"SoberButton.png"] forState:UIControlStateNormal];
     
-    [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
+    [circleStateButton addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screen.size.width;
     CGFloat screenHeight = screen.size.height;
-    button.frame = CGRectMake((0.05*screenWidth), (0.16*screenHeight), (0.9*screenWidth), (0.9*screenWidth));
-    button.clipsToBounds = YES;
+    circleStateButton.frame = CGRectMake((0.05*screenWidth), (0.16*screenHeight), (0.9*screenWidth), (0.9*screenWidth));
+    circleStateButton.clipsToBounds = YES;
     
-    button.layer.cornerRadius = (0.8*screenWidth)/2.0;
+    circleStateButton.layer.cornerRadius = (0.8*screenWidth)/2.0;
     
     
-    [self.centerView addSubview:button];
+    [self.centerView addSubview:circleStateButton];
 }
 
 - (void)updateCircleButton
@@ -151,13 +138,13 @@ static float const STANDARD_PAN_DURATION = 0.1;
     envelopeButton.hidden = YES;
     envelopeButton.UserInteractionEnabled = NO;
     
-    [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@Button.png", self.user.stateAsString]] forState:UIControlStateNormal];
+    [circleStateButton setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@Button.png", self.user.stateAsString]] forState:UIControlStateNormal];
     
     if (self.user.state == DANGER) {
         envelopeButton.hidden = NO;
         envelopeButton.UserInteractionEnabled = YES;
         
-        [button setImage:[UIImage imageNamed:@"PlainDangerButton.png"] forState:UIControlStateNormal];
+        [circleStateButton setImage:[UIImage imageNamed:@"PlainDangerButton.png"] forState:UIControlStateNormal];
     }
 }
 
@@ -203,21 +190,15 @@ static float const STANDARD_PAN_DURATION = 0.1;
 //resets the Timer
 - (void)resetTimer
 {
-    if (timer != nil) {
-        [timer invalidate];
-        timer = nil;
+    if (!uiUpdateTimer) {
+        [uiUpdateTimer invalidate];
+        uiUpdateTimer = nil;
     }
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+    uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
 }
 
 
 //############################################ Button and View Responders ############################################
-//is called from updateLabels, updates the bacLabel
-- (void)countUp
-{
-    [self updateUI];
-}
-
 - (IBAction)threeLinesButtonClicked:(id)sender
 {
     [self toggleRightView];
@@ -281,7 +262,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [UIView animateWithDuration:STANDARD_PAN_DURATION animations:^{
         self.centerView.frame = frame;
     }];
-    [button setUserInteractionEnabled:!slidRight];
+    [circleStateButton setUserInteractionEnabled:!slidRight];
     [self.addButton setUserInteractionEnabled:!slidRight];
 }
 
