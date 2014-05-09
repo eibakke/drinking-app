@@ -22,8 +22,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) HEALUser *user;
 @property (weak, nonatomic) IBOutlet UIStepper *drinkStepper;
-@property (weak, nonatomic) IBOutlet UILabel *drinkLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bacLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet CERoundProgressView *roundProgressView;

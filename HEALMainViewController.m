@@ -165,7 +165,6 @@ static float const STANDARD_PAN_DURATION = 0.1;
 - (void)updateUI
 {
     self.drinkStepper.value = self.user.currentNight.drinks;
-    [self.drinkLabel setText:[NSString stringWithFormat:@"%d", self.user.currentNight.drinks]];
     [self setDateLabel:[NSDate dateWithTimeIntervalSince1970:self.user.currentNight.startTime]];
     
     [self updateRoundProgressBar];

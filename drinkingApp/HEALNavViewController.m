@@ -17,15 +17,11 @@
 @end
 
 @implementation HEALNavViewController
-//
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        [self checkSettings];
-//    }
-//    return self;
-//}
+
+- (void)viewDidLoad
+{
+    [self checkSettings];
+}
 
 - (void)checkSettings
 {
@@ -54,10 +50,5 @@
     mainViewController.user = newUser;
     
     [self setViewControllers:@[mainViewController]];
-}
-
-- (void)viewDidLoad
-{
-    [self checkSettings];
 }
 @end
