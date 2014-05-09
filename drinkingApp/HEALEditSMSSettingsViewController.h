@@ -15,15 +15,16 @@
 
 @interface HEALEditSMSSettingsViewController : UIViewController <UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *contactNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *contactNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emergencyMessageTextField;
+
 @property (weak, nonatomic) IBOutlet RadioButton *disableRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *enableRadioButton;
 
 @property (weak, nonatomic) IBOutlet RadioButton *tipsyRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *drunkRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *dangerRadioButton;
-
-
-@property (weak, nonatomic) IBOutlet UITextField *emergencyMessageTextField;
 
 @property (strong, nonatomic) HEALUser *user;
 
@@ -32,8 +33,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addContact;
 @property (weak, nonatomic) IBOutlet UILabel *firstName;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
-@property (strong, nonatomic) NSString *contactName;
-@property (strong, nonatomic) NSString *contactNumber;
+
 - (IBAction)showPicker:(id)sender;
 
 @end
