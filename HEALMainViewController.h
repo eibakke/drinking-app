@@ -25,6 +25,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet CERoundProgressView *roundProgressView;
+@property (weak, nonatomic) IBOutlet UIButton *nightButton;
+@property (weak, nonatomic) IBOutlet UIButton *smsButton;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+@property (weak, nonatomic) IBOutlet UIImageView *centerView;
+@property (weak, nonatomic) IBOutlet UIImageView *rightView;
+@property (weak, nonatomic) IBOutlet UIButton *smsSettingsButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *longScreenButton;
+@property (weak, nonatomic) IBOutlet UIButton *shortScreenButton;
+
+
+- (IBAction)rightViewButtonClicked:(id)sender;
+- (IBAction)centerCircleButtonClick:(id)sender;
 
 
 - (IBAction)valueChanged:(UIStepper *)sender;

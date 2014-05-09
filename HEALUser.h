@@ -15,16 +15,16 @@
 
 typedef enum
 {
-    MALE,
-    FEMALE
+    SEXES_MALE,
+    SEXES_FEMALE
 } sexes;
 
 typedef enum
 {
-    SOBER,
-    TIPSY,
-    DRUNK,
-    DANGER
+    INTOXSTATE_SOBER,
+    INTOXSTATE_TIPSY,
+    INTOXSTATE_DRUNK,
+    INTOXSTATE_DANGER
 } intoxState;
 
 

@@ -7,33 +7,21 @@
 //
 
 #import "HEALMainViewController.h"
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 @interface HEALMainViewController ()
 {
-    NSTimer *timer;
+    NSTimer* uiUpdateTimer;
     BOOL slidRight;
     UIGestureRecognizer *tapRecognizer;
-    UIButton *button;
-    CGPoint centerViewCenter;
-
+    UIButton* circleStateButton;
+    
     int smsInt;
-    NSTimer *smsTimer;
+    NSTimer* smsTimer;
     BOOL sendAutoMessage;
-    UIAlertView *autoView;
-    UIButton *envelopeButton;
-    
-    
+    UIAlertView* autoView;
+    UIButton* envelopeButton;
 }
-@property (weak, nonatomic) IBOutlet UIButton *nightButton;
-@property (weak, nonatomic) IBOutlet UIButton *smsButton;
-@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
-@property (weak, nonatomic) IBOutlet UIImageView *centerView;
-@property (weak, nonatomic) IBOutlet UIImageView *rightView;
-@property (weak, nonatomic) IBOutlet UIButton *smsSettingsButton;
-
-
-
-- (IBAction)rightViewButtonClicked:(id)sender;
 
 @end
 
@@ -59,7 +47,6 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 
 
-    [super viewDidLoad];
     [self setupUI];
 }
 
@@ -99,7 +86,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 // sets up all the centerviewbuttons
 - (void)setupCenterViewButtons
 {
-    [self circleButton];
+    [self setupCircleButton];
     [self envelopeButton];
     envelopeButton.hidden = YES;
     envelopeButton.UserInteractionEnabled = NO;
@@ -127,23 +114,23 @@ static float const STANDARD_PAN_DURATION = 0.1;
 }
 
 //creates circle button that shows the states
-- (void)circleButton
+- (void)setupCircleButton
 {
-    button = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    [button setImage:[UIImage imageNamed:@"SoberButton.png"] forState:UIControlStateNormal];
-    
-    [button addTarget:self action:@selector(stateSegue) forControlEvents:UIControlEventTouchUpInside];
-    CGRect screen = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screen.size.width;
-    CGFloat screenHeight = screen.size.height;
-    button.frame = CGRectMake((0.05*screenWidth), (0.16*screenHeight), (0.9*screenWidth), (0.9*screenWidth));
-    button.clipsToBounds = YES;
-    
-    button.layer.cornerRadius = (0.8*screenWidth)/2.0;
-    
-    
-    [self.centerView addSubview:button];
+    if (IS_WIDESCREEN) {
+        self.longScreenButton.hidden = NO;
+        self.longScreenButton.userInteractionEnabled = YES;
+        
+        self.shortScreenButton.hidden = YES;
+        self.shortScreenButton.userInteractionEnabled = NO;
+        circleStateButton = self.longScreenButton;
+    } else {
+        self.shortScreenButton.hidden = NO;
+        self.shortScreenButton.userInteractionEnabled = YES;
+        
+        self.longScreenButton.hidden = YES;
+        self.longScreenButton.userInteractionEnabled = NO;
+        circleStateButton = self.shortScreenButton;
+    }
 }
 
 - (void)updateCircleButton
@@ -151,13 +138,13 @@ static float const STANDARD_PAN_DURATION = 0.1;
     envelopeButton.hidden = YES;
     envelopeButton.UserInteractionEnabled = NO;
     
-    [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@Button.png", self.user.stateAsString]] forState:UIControlStateNormal];
+    [circleStateButton setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@Button.png", self.user.stateAsString]] forState:UIControlStateNormal];
     
-    if (self.user.state == DANGER) {
+    if (self.user.state == INTOXSTATE_DANGER) {
         envelopeButton.hidden = NO;
         envelopeButton.UserInteractionEnabled = YES;
         
-        [button setImage:[UIImage imageNamed:@"PlainDangerButton.png"] forState:UIControlStateNormal];
+        [circleStateButton setImage:[UIImage imageNamed:@"PlainDangerButton.png"] forState:UIControlStateNormal];
     }
 }
 
@@ -203,21 +190,15 @@ static float const STANDARD_PAN_DURATION = 0.1;
 //resets the Timer
 - (void)resetTimer
 {
-    if (timer != nil) {
-        [timer invalidate];
-        timer = nil;
+    if (!uiUpdateTimer) {
+        [uiUpdateTimer invalidate];
+        uiUpdateTimer = nil;
     }
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+    uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
 }
 
 
 //############################################ Button and View Responders ############################################
-//is called from updateLabels, updates the bacLabel
-- (void)countUp
-{
-    [self updateUI];
-}
-
 - (IBAction)threeLinesButtonClicked:(id)sender
 {
     [self toggleRightView];
@@ -281,7 +262,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [UIView animateWithDuration:STANDARD_PAN_DURATION animations:^{
         self.centerView.frame = frame;
     }];
-    [button setUserInteractionEnabled:!slidRight];
+    [circleStateButton setUserInteractionEnabled:!slidRight];
     [self.addButton setUserInteractionEnabled:!slidRight];
 }
 
@@ -323,7 +304,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
         }
         [autoView dismissWithClickedButtonIndex:[autoView cancelButtonIndex] animated:TRUE];
         
-        if (sendAutoMessage == TRUE) {
+        if (sendAutoMessage) {
             [self sendSMS];
             self.user.currentNight.sosSent = TRUE;
         }
@@ -360,10 +341,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self updateRoundProgressBar];
     
     if (self.user.state >= self.user.smsState ) {
-        if (self.user.currentNight.sosSent == FALSE) {
-            if (self.user.sosContact == nil || [self.user.sosContact  isEqualToString:@"Emergency contact Name"]) {
+        if (!self.user.currentNight.sosSent) {
+            if (!self.user.sosContact || [self.user.sosContact  isEqualToString:@"Emergency contact Name"]) {
                 [self sosSetup];
-            } else if(self.user.autoSMS == FALSE) {
+            } else if(!self.user.autoSMS) {
                 [self sosDanger:self];
             } else {
                 [self sosAuto:self];
@@ -412,6 +393,11 @@ static float const STANDARD_PAN_DURATION = 0.1;
     }
 }
 
+- (IBAction)centerCircleButtonClick:(id)sender
+{
+    [self performSegueWithIdentifier:@"toStateViewController" sender:self];
+}
+
 
 //############################################ Segue Related Methods ############################################
 //called when another viewController exits to mainViewController
@@ -422,10 +408,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 }
 
 //segue to drunkstate view controller
-- (void)stateSegue
-{
-    [self performSegueWithIdentifier:@"toStateViewController" sender:self];
-}
+
 
 //handles segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

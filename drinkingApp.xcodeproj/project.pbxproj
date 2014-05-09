@@ -229,6 +229,7 @@
 			children = (
 				A89E16161903160D000FFCDE /* Default~iphone.png */,
 				A8FC61B0190A93C600DAFDC8 /* Cambria.ttf */,
+				89F840CB18DFFA6C0048AD95 /* RadioButton */,
 				A8B3581718EE5CCD008AF5FE /* Third Party Progress Bar */,
 				8956FC5D18BBD6D70018F32B /* drinkingApp */,
 				8956FC7F18BBD6D80018F32B /* drinkingAppTests */,
@@ -266,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				89D32C5318BE759C003920FE /* MainStoryboard.storyboard */,
-				89F840CB18DFFA6C0048AD95 /* RadioButton */,
 				890792E418D0FDDA001EFA85 /* Model */,
 				A855253F18CEAB7900567BDA /* GraphicsResources */,
 				890792E518D0FE12001EFA85 /* ViewControllers */,
@@ -324,6 +324,7 @@
 				89F840D018DFFB1B0048AD95 /* RadioButton.m */,
 			);
 			name = RadioButton;
+			path = drinkingApp;
 			sourceTree = "<group>";
 		};
 		A81503DF191AA41C0018D218 /* radio-res-ios */ = {

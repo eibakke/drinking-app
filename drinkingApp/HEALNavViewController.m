@@ -17,15 +17,11 @@
 @end
 
 @implementation HEALNavViewController
-//
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        [self checkSettings];
-//    }
-//    return self;
-//}
+
+- (void)viewDidLoad
+{
+    [self checkSettings];
+}
 
 - (void)checkSettings
 {
@@ -37,9 +33,9 @@
         newUser.weight = [[defaults objectForKey:@"userWeight"]intValue];
         
         if ([[defaults objectForKey:@"userSex"] isEqualToString:@"F"]) {
-            newUser.sex = FEMALE;
+            newUser.sex = SEXES_FEMALE;
         } else {
-            newUser.sex = MALE;
+            newUser.sex = SEXES_MALE;
         }
         
         newUser.sosContact = [defaults objectForKey:@"sosContact"];
@@ -54,10 +50,5 @@
     mainViewController.user = newUser;
     
     [self setViewControllers:@[mainViewController]];
-}
-
-- (void)viewDidLoad
-{
-    [self checkSettings];
 }
 @end

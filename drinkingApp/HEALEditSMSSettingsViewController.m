@@ -59,15 +59,15 @@
         self.emergencyMessageTextField.text = self.user.smsMessage;
     }
     
-    if (self.user.smsState == TIPSY) {
+    if (self.user.smsState == INTOXSTATE_TIPSY) {
         [self.tipsyRadioButton setSelected:YES];
-        smsState = TIPSY;
-    } else if (self.user.smsState == DRUNK) {
+        smsState = INTOXSTATE_TIPSY;
+    } else if (self.user.smsState == INTOXSTATE_DRUNK) {
         [self.drunkRadioButton setSelected:YES];
-        smsState = DRUNK;
-    } else if (self.user.smsState == DANGER) {
+        smsState = INTOXSTATE_DRUNK;
+    } else if (self.user.smsState == INTOXSTATE_DANGER) {
         [self.dangerRadioButton setSelected:YES];
-        smsState = DANGER;
+        smsState = INTOXSTATE_DANGER;
     }
 }
 
@@ -76,7 +76,7 @@
     if (self.enableRadioButton.isSelected) {
         sendAutoSMS = YES;
     } else sendAutoSMS = NO;
-    
+
     [self updateUser];
 }
 
@@ -91,14 +91,14 @@
     //[defaults setInteger:smsState forKey:@"smsState"];
     
     if ([self.tipsyRadioButton isSelected]){
-        [defaults setInteger:TIPSY forKey:@"smsState"];
-        smsState = TIPSY;
+        [defaults setInteger:INTOXSTATE_TIPSY forKey:@"smsState"];
+        smsState = INTOXSTATE_TIPSY;
     } else if ([self.drunkRadioButton isSelected]){
-        [defaults setInteger:DRUNK forKey:@"smsState"];
-        smsState = DRUNK;
+        [defaults setInteger:INTOXSTATE_DRUNK forKey:@"smsState"];
+        smsState = INTOXSTATE_DRUNK;
     } else if ([self.dangerRadioButton isSelected]){
-        [defaults setInteger:DANGER forKey:@"smsState"];
-        smsState = DANGER;
+        [defaults setInteger:INTOXSTATE_DANGER forKey:@"smsState"];
+        smsState = INTOXSTATE_DANGER;
     }
     
     self.user.contactNumber = self.contactNumberTextField.text;
