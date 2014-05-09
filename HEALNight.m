@@ -33,7 +33,7 @@
         self.sosSent = FALSE;
         
         soberMessageArray = @[@"Call Your Grandma!",@"Walk Your Dog",@"Drive Your Car",@"Write Some Code",@"Live A Little", @"Fold Laundry",@"Pick Up Cantonese "];
-        tipsyMessageArray = @[@"Avoid Karaoke",@"Share An Irrelevant Childhood Story",@"Dance"];
+        tipsyMessageArray = @[@"Avoid Karaoke",@"Share A Childhood Story",@"Dance"];
         drunkMessageArray = @[@"Order Jimmy Johns",@"Ponder Meaning of Life",@"Drink Some Water",@"Eat Some Food",@"Kagin?", @"Not Text That Number"];
         dangerMessageArray = @[@"DANGER (test)"];
 

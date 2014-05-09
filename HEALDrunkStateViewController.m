@@ -20,8 +20,11 @@
 // Set fonts of all labels to be Cambria, size 32
 - (void)viewDidLoad
 {
+    
     [self.messageLabel setFont:[UIFont fontWithName:@"Cambria" size: 32]];
-    [self.bacLabel setFont:[UIFont fontWithName:@"Cambria" size: 32]];
+    [self.bacLabel setFont:[UIFont fontWithName:@"Cambria" size: 26]];
+    [self.drinksLabel setFont:[UIFont fontWithName:@"Cambria" size: 26]];
+
 }
 
 // Every time this viewcontroller's view appears, we want to display information pertinent to the user's state
@@ -29,9 +32,13 @@
 {
     self.backgroundImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@", [self.user stateAsString], @"State.png"]];
     
-    [self.bacLabel setText:[NSString stringWithFormat:@"%f", self.user.BAC]];
+    NSString *roundedBAC = [NSString stringWithFormat:@"%.3f", self.user.BAC];
+    [self.bacLabel setText:[NSString stringWithFormat:@"Current BAC: %@", roundedBAC]];
     
     [self.messageLabel setText: [self.user.currentNight stateMessage:self.user.state]];
+    
+    [self.drinksLabel setText:[NSString stringWithFormat:@"Number of Drinks: %d", self.user.currentNight.drinks]];
+
 }
 @end
 
