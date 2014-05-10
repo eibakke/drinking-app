@@ -741,19 +741,28 @@
                                 <rect key="frame" x="54" y="351" width="213" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="197" type="user" id="Hpi-hU-v8d"/>
+                                    <constraint firstAttribute="height" constant="197" id="Hpi-hU-v8d"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsHeader.png" translatesAutoresizingMaskIntoConstraints="NO" id="9gp-i6-G8x">
+                                <rect key="frame" x="0.0" y="65" width="320" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="XKv-7q-h47"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Nei-zJ-f4c" secondAttribute="bottom" type="user" id="4Gk-g4-3bB"/>
+                            <constraint firstAttribute="bottom" secondItem="Nei-zJ-f4c" secondAttribute="bottom" type="default" id="4Gk-g4-3bB"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="centerX" secondItem="GwV-ve-lSs" secondAttribute="centerX" type="user" id="5rn-sA-nYk"/>
                             <constraint firstItem="CuU-4b-fYL" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="43" id="79b-3J-BAi"/>
+                            <constraint firstItem="9gp-i6-G8x" firstAttribute="top" secondItem="GwV-ve-lSs" secondAttribute="top" constant="65" id="7cK-pC-EsO"/>
                             <constraint firstAttribute="bottom" secondItem="C5k-4F-wvV" secondAttribute="bottom" constant="272" type="user" id="BWd-HY-cT6"/>
                             <constraint firstItem="C5k-4F-wvV" firstAttribute="trailing" secondItem="Nei-zJ-f4c" secondAttribute="trailing" type="default" id="DIf-Za-vP2"/>
                             <constraint firstItem="Nei-zJ-f4c" firstAttribute="leading" secondItem="C5k-4F-wvV" secondAttribute="leading" type="default" id="J6y-aT-UaV"/>
+                            <constraint firstItem="9gp-i6-G8x" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" type="default" id="MeH-TL-a4V"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="width" secondItem="C5k-4F-wvV" secondAttribute="width" type="user" id="Nsg-0Q-yhr"/>
                             <constraint firstItem="zy5-mS-puD" firstAttribute="centerX" secondItem="C5k-4F-wvV" secondAttribute="centerX" type="user" id="PK5-ef-HeA"/>
                             <constraint firstAttribute="bottom" secondItem="CuU-4b-fYL" secondAttribute="bottom" constant="221" type="user" id="SFE-WG-GqM"/>
@@ -762,7 +771,7 @@
                             <constraint firstItem="ffh-hU-g4O" firstAttribute="baseline" secondItem="CuU-4b-fYL" secondAttribute="baseline" type="user" id="mb8-hs-7ch"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="leading" secondItem="C5k-4F-wvV" secondAttribute="leading" type="default" id="mon-tQ-M3P"/>
                             <constraint firstItem="CuU-4b-fYL" firstAttribute="height" secondItem="ffh-hU-g4O" secondAttribute="height" type="user" id="nOL-hx-xbW"/>
-                            <constraint firstItem="Nei-zJ-f4c" firstAttribute="top" secondItem="C5k-4F-wvV" secondAttribute="bottom" constant="75" type="user" id="wcu-2C-QOg"/>
+                            <constraint firstItem="9gp-i6-G8x" firstAttribute="centerX" secondItem="PKw-W1-GhK" secondAttribute="centerX" type="default" id="vy3-Ug-5OU"/>
                             <constraint firstAttribute="trailing" secondItem="ffh-hU-g4O" secondAttribute="trailing" constant="39" id="xNu-UB-Dhc"/>
                         </constraints>
                     </view>
@@ -772,6 +781,7 @@
                         <outlet property="imageViewBackground" destination="GwV-ve-lSs" id="QGc-T2-G08"/>
                         <outlet property="maleRadioButton" destination="CuU-4b-fYL" id="hMb-Dh-jyE"/>
                         <outlet property="nameTextField" destination="PKw-W1-GhK" id="qNb-Vr-86v"/>
+                        <outlet property="settingsHeader" destination="9gp-i6-G8x" id="a5Y-59-SkE"/>
                         <outlet property="weightTextField" destination="C5k-4F-wvV" id="0fg-6L-DmT"/>
                         <outlet property="weightWarningLabel" destination="zy5-mS-puD" id="NgN-0h-7SN"/>
                         <segue destination="7uE-MQ-V0L" kind="push" identifier="settingsMainSegue" id="aMJ-9m-g0U"/>
@@ -810,6 +820,7 @@
         <image name="empty.png" width="640" height="1136"/>
         <image name="gear.png" width="561" height="558"/>
         <image name="plus.png" width="466" height="467"/>
+        <image name="settingsHeader.png" width="536" height="223"/>
         <image name="unchecked.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

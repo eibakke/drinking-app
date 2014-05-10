@@ -7,6 +7,7 @@
 //
 
 #import "HEALEditSettingsViewController.h"
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 @interface HEALEditSettingsViewController ()
 {
@@ -38,6 +39,10 @@
 {
     // Set background image
     [self.imageViewBackground setImage:[UIImage imageNamed:@"empty.png"]];
+    
+    if (IS_WIDESCREEN) {
+        [self.settingsHeader setHidden:NO];
+    }
     
     // Initialize all the fields to have values from the user object
     [self initFields];
