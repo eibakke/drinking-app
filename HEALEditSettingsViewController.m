@@ -37,7 +37,7 @@
 - (void)setupUI
 {
     // Set background image
-    [self.imageViewBackground setImage:[UIImage imageNamed:@"EmptySettings.png"]];
+    [self.imageViewBackground setImage:[UIImage imageNamed:@"empty.png"]];
     
     // Initialize all the fields to have values from the user object
     [self initFields];

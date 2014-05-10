@@ -687,6 +687,9 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-W1-GhK">
                                 <rect key="frame" x="54" y="187" width="213" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="213" id="00o-Tj-pkG"/>
+                                </constraints>
                                 <color key="textColor" red="0.21176470589999999" green="0.18039215689999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -730,13 +733,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gear.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nei-zJ-f4c">
+                                <rect key="frame" x="54" y="351" width="213" height="197"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="197" type="user" id="Hpi-hU-v8d"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Nei-zJ-f4c" secondAttribute="bottom" type="user" id="4Gk-g4-3bB"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="centerX" secondItem="GwV-ve-lSs" secondAttribute="centerX" type="user" id="5rn-sA-nYk"/>
                             <constraint firstItem="CuU-4b-fYL" firstAttribute="leading" secondItem="GwV-ve-lSs" secondAttribute="leading" constant="43" id="79b-3J-BAi"/>
                             <constraint firstAttribute="bottom" secondItem="C5k-4F-wvV" secondAttribute="bottom" constant="272" type="user" id="BWd-HY-cT6"/>
+                            <constraint firstItem="C5k-4F-wvV" firstAttribute="trailing" secondItem="Nei-zJ-f4c" secondAttribute="trailing" type="default" id="DIf-Za-vP2"/>
+                            <constraint firstItem="Nei-zJ-f4c" firstAttribute="leading" secondItem="C5k-4F-wvV" secondAttribute="leading" type="default" id="J6y-aT-UaV"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="width" secondItem="C5k-4F-wvV" secondAttribute="width" type="user" id="Nsg-0Q-yhr"/>
                             <constraint firstItem="zy5-mS-puD" firstAttribute="centerX" secondItem="C5k-4F-wvV" secondAttribute="centerX" type="user" id="PK5-ef-HeA"/>
                             <constraint firstAttribute="bottom" secondItem="CuU-4b-fYL" secondAttribute="bottom" constant="221" type="user" id="SFE-WG-GqM"/>
@@ -745,6 +758,7 @@
                             <constraint firstItem="ffh-hU-g4O" firstAttribute="baseline" secondItem="CuU-4b-fYL" secondAttribute="baseline" type="user" id="mb8-hs-7ch"/>
                             <constraint firstItem="PKw-W1-GhK" firstAttribute="leading" secondItem="C5k-4F-wvV" secondAttribute="leading" type="default" id="mon-tQ-M3P"/>
                             <constraint firstItem="CuU-4b-fYL" firstAttribute="height" secondItem="ffh-hU-g4O" secondAttribute="height" type="user" id="nOL-hx-xbW"/>
+                            <constraint firstItem="Nei-zJ-f4c" firstAttribute="top" secondItem="C5k-4F-wvV" secondAttribute="bottom" constant="75" type="user" id="wcu-2C-QOg"/>
                             <constraint firstAttribute="trailing" secondItem="ffh-hU-g4O" secondAttribute="trailing" constant="39" id="xNu-UB-Dhc"/>
                         </constraints>
                     </view>
@@ -790,6 +804,7 @@
         <image name="bacTerms.png" width="640" height="380"/>
         <image name="checked.png" width="24" height="24"/>
         <image name="empty.png" width="640" height="1136"/>
+        <image name="gear.png" width="561" height="558"/>
         <image name="unchecked.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
