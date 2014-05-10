@@ -474,8 +474,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [textComposer.navigationBar setBackgroundImage:[UIImage imageNamed:nil] forBarMetrics:UIBarMetricsDefault];
     [textComposer.navigationBar setTintColor:[UIColor blueColor]];
     
-    if ([MFMessageComposeViewController canSendText]){ //if text messages can be sent
-        NSArray *recipients = [NSArray arrayWithObjects:self.user.contactNumber, nil];
+    //if text messages can be sent
+    if ([MFMessageComposeViewController canSendText]){
+        [self toggleRightView];
+        NSArray *recipients = @[self.user.contactNumber];
         [textComposer setRecipients:recipients];
         [textComposer setBody:self.user.smsMessage];
         [self presentViewController:textComposer animated:YES completion:nil];
