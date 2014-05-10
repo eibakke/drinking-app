@@ -7,6 +7,7 @@
 //
 
 #import "HEALEditSMSSettingsViewController.h"
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 @interface HEALEditSMSSettingsViewController () {
     NSString *contactName;
@@ -65,6 +66,9 @@
 // Sets the contents of the text fields and the checked radio buttons.
 - (void)initializeUI
 {
+    if (IS_WIDESCREEN) {
+        [self.sosMessageHeader setHidden:NO];
+    }
     [self.enableRadioButton setSelected:self.user.autoSMS];
     
     if (self.user.contactNumber != nil) {
