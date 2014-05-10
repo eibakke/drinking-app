@@ -6,7 +6,7 @@ Provides users with a simple way to track their BAC and state of intoxication, a
 
 In this repository you'll find the iOS application and all resources it requires, including code from two third party repositories that provide us with the round progress view (https://github.com/Ceroce/CERoundProgressView) in the Main View Controller, and radio buttons throughout (https://github.com/onegray/RadioButton-ios). The application follows a model-view-controller pattern, where the user and night classes make up the model, the view is contained in the storyboard, and the controller is implemented as UIViewControllers. For persistent storage, the application makes use of NSUserDefaults. See the image below for how individual UIViewControllers interact with the data objects. For a more detailed description of individual elements and interactions, see comments in code.
 
-[<img src="doc/DrinkSmart_Architecture.jpg" width="652" height="483">]
+[<img src="DrinkSmart Presentation Resources/DrinkSmart_Architecture.jpg" width="652" height="483">]
 
 Unidirectional arrows represent read only interactions, bidirectional arrows represent read + write interactions. Whenever the user object is written to, the change is reflected in NSUserDefaults.
 
