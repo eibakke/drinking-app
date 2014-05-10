@@ -45,11 +45,11 @@ static float const STANDARD_PAN_DURATION = 0.1;
 {
     [self.timeLabel setFont:[UIFont fontWithName:@"Cambria" size: 22]];
     
-    [self.settingsButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
-    [self.smsButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
-    [self.nightButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
-    [self.smsSettingsButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
-    [self.bacDisclaimerButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
+    self.settingsButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:20.0f];
+    self.smsButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:20.0f];
+    self.nightButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:20.0f];
+    self.bacDisclaimerButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:20.0f];
+    self.smsSettingsButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:20.0f];
     
     
     
