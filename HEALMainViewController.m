@@ -212,7 +212,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self toggleRightView];
 }
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Is called when the user pans the finger across the screen
 - (void)panViews:(id)sender
 {
     float centerRightEdgePos = self.centerView.frame.origin.x + self.centerView.frame.size.width;
@@ -220,30 +220,36 @@ static float const STANDARD_PAN_DURATION = 0.1;
     float toggleLeftFromPos = self.rightView.frame.origin.x + (0.75 * self.rightView.frame.size.width);
     float toggleRightFromPos = self.rightView.frame.origin.x + (0.25 * self.rightView.frame.size.width);
     
-	CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self.view];
+	CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self.view]; // The diff point when panning
     
+    // Happens when the user lifts the finger from the screen after panning
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
+        // If the user finishes panning and the centerview has been pulled past more than a quarter of the rightview, either way, we toggle views
         if (!slidRight && (centerRightEdgePos < toggleLeftFromPos)) {
             [self toggleRightView];
         } else if (slidRight && (centerRightEdgePos > toggleRightFromPos)) {
             [self toggleRightView];
         } else {
-            [self resetViewPlacement];
+            [self resetViewPlacement]; // if the user finishes panning and the centerview has not been pulled past more than a quarter of the way, we just let the views go back to where they were before the panning started
         }
 	}
     
+    // Happens when the user first starts the panning gesture
     if ([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
+
+        // If the panning is begun when the centerview is slid over and the movement is going right, or if the centerview is is in the center and the movement is going left, we want the centerview to track the user's finger movement
         if (-self.rightView.frame.size.width == self.centerView.frame.origin.x && translatedPoint.x > 0){
             self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
             [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
-        }
-        else if (centerRightEdgePos == parentRightEdgePos && translatedPoint.x < 0){
+        } else if (centerRightEdgePos == parentRightEdgePos && translatedPoint.x < 0){
             self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
             [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
         }
     }
     
+    // Happens when the user has moved their finger at all
 	if([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateChanged) {
+        // If the centerview is within the right boundaries, we want it's x position to track the user's finger
         if ((-self.rightView.frame.size.width < self.centerView.frame.origin.x) && (centerRightEdgePos < parentRightEdgePos)) {
             self.centerView.center = CGPointMake(self.centerView.center.x + translatedPoint.x, self.centerView.center.y);
             [(UIPanGestureRecognizer*)sender setTranslation:CGPointMake(0,0) inView:self.view];
@@ -257,7 +263,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     if(slidRight) [self toggleRightView];
 }
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Called when we want to toggle the centerview's position to the opposite default position
 - (void)toggleRightView
 {
     CGRect frame = self.centerView.frame;
@@ -277,7 +283,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self.addButton setUserInteractionEnabled:!slidRight];
 }
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Basically just resets the centerview's placement to the standard place corresponding to slidright and not slidright
 - (void)resetViewPlacement
 {
     CGRect frame = self.centerView.frame;
