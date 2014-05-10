@@ -19,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *contactNumberLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emergencyMessageTextField;
 
+@property (weak, nonatomic) IBOutlet UILabel *autoSMSLabel;
+@property (weak, nonatomic) IBOutlet UILabel *smsStateLabel;
+
 @property (weak, nonatomic) IBOutlet RadioButton *disableRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *enableRadioButton;
 

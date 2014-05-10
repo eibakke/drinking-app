@@ -27,6 +27,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"empty.png"]];
     
+    [self.contactNameLabel setFont:[UIFont fontWithName:@"Cambria" size: 16]];
+    [self.contactNumberLabel setFont:[UIFont fontWithName:@"Cambria" size: 16]];
+    [self.autoSMSLabel setFont:[UIFont fontWithName:@"Cambria" size:22]];
+    [self.smsStateLabel setFont:[UIFont fontWithName:@"Cambria" size:22]];
+    
     // We want the textfields to delegate back to this view controller
     [[self emergencyMessageTextField] setDelegate:self];
     

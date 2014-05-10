@@ -38,17 +38,17 @@
         <scene sceneID="1e9-42-fhM">
             <objects>
                 <viewController id="l2s-ZE-AdG" customClass="HEALEditSMSSettingsViewController" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fis-VX-2f6">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" id="fis-VX-2f6">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto sms sending" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teg-9R-FKq">
-                                <rect key="frame" x="37" y="268" width="213" height="21"/>
+                                <rect key="frame" x="37" y="270" width="213" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="0O6-vY-A5B"/>
+                                    <constraint firstAttribute="height" constant="31" id="5Pb-lj-PM5"/>
                                     <constraint firstAttribute="width" constant="213" id="wz1-c5-r5z"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
@@ -84,36 +84,26 @@
                                     <constraint firstAttribute="width" constant="177" id="JUI-L8-00v"/>
                                     <constraint firstAttribute="height" constant="25" id="rxl-Dp-Ufm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-Kf-JNL" customClass="RadioButton">
-                                <rect key="frame" x="37" y="392" width="94" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title=" Tipsy" image="unchecked.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" image="checked.png"/>
-                            </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXo-Qp-Hum" customClass="RadioButton">
-                                <rect key="frame" x="37" y="424" width="94" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="37" y="395" width="94" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Drunk" image="unchecked.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="selected" image="checked.png"/>
-                                <connections>
-                                    <outletCollection property="groupButtons" destination="0zZ-Kf-JNL" id="x75-1E-xCR"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCd-cO-PsS" customClass="RadioButton">
-                                <rect key="frame" x="37" y="458" width="94" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="165" y="395" width="94" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="Sa4-29-1U1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Danger" image="unchecked.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,36 +177,33 @@
                             <constraint firstItem="Teg-9R-FKq" firstAttribute="leading" secondItem="oDO-4H-MOV" secondAttribute="leading" type="default" id="4DM-Pe-a0E"/>
                             <constraint firstItem="I0Q-iN-Eof" firstAttribute="centerX" secondItem="qZ7-KW-Pw8" secondAttribute="centerX" type="default" id="4eO-1m-tvM"/>
                             <constraint firstItem="heW-On-kUn" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="147" id="544-Gx-gUc"/>
-                            <constraint firstItem="0zZ-Kf-JNL" firstAttribute="trailing" secondItem="oDO-4H-MOV" secondAttribute="trailing" type="default" id="5xZ-gy-Mvt"/>
+                            <constraint firstItem="CCd-cO-PsS" firstAttribute="baseline" secondItem="TXo-Qp-Hum" secondAttribute="baseline" type="default" id="58L-Rx-l2z"/>
                             <constraint firstItem="I0Q-iN-Eof" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="52" id="6Qq-Tu-QaS"/>
                             <constraint firstItem="LHI-4z-8bK" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="217" id="6fw-f5-aUJ"/>
+                            <constraint firstItem="oDO-4H-MOV" firstAttribute="top" secondItem="Teg-9R-FKq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9yT-97-aiC"/>
+                            <constraint firstItem="mT6-eJ-ge2" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="362" id="BXF-xU-Knj"/>
                             <constraint firstItem="8QJ-OO-63A" firstAttribute="leading" secondItem="heW-On-kUn" secondAttribute="leading" type="default" id="E9U-NI-VW6"/>
                             <constraint firstItem="8QJ-OO-63A" firstAttribute="trailing" secondItem="heW-On-kUn" secondAttribute="trailing" type="default" id="EYq-Ty-t4e"/>
-                            <constraint firstItem="TXo-Qp-Hum" firstAttribute="trailing" secondItem="CCd-cO-PsS" secondAttribute="trailing" type="default" id="GBJ-Ks-dYp"/>
-                            <constraint firstItem="0zZ-Kf-JNL" firstAttribute="trailing" secondItem="TXo-Qp-Hum" secondAttribute="trailing" type="default" id="LTi-xs-9zH"/>
+                            <constraint firstItem="Teg-9R-FKq" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="270" id="IaI-w5-K81"/>
                             <constraint firstItem="qZ7-KW-Pw8" firstAttribute="top" secondItem="I0Q-iN-Eof" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LZX-7s-eQX"/>
-                            <constraint firstAttribute="bottom" secondItem="CCd-cO-PsS" secondAttribute="bottom" constant="66" id="OV7-O8-NXa"/>
-                            <constraint firstItem="0zZ-Kf-JNL" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="392" id="Rvc-z8-IUk"/>
-                            <constraint firstItem="mT6-eJ-ge2" firstAttribute="leading" secondItem="0zZ-Kf-JNL" secondAttribute="leading" type="default" id="ZcU-co-fak"/>
+                            <constraint firstItem="TXo-Qp-Hum" firstAttribute="top" secondItem="mT6-eJ-ge2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OWv-fl-PXo"/>
+                            <constraint firstItem="TXo-Qp-Hum" firstAttribute="leading" secondItem="mT6-eJ-ge2" secondAttribute="leading" type="default" id="PZP-RU-AH1"/>
+                            <constraint firstItem="TXo-Qp-Hum" firstAttribute="trailing" secondItem="oDO-4H-MOV" secondAttribute="trailing" type="default" id="TJ3-1D-ilg"/>
                             <constraint firstItem="LHI-4z-8bK" firstAttribute="leading" secondItem="8QJ-OO-63A" secondAttribute="leading" type="default" id="aU4-EE-L14"/>
                             <constraint firstItem="oDO-4H-MOV" firstAttribute="leading" secondItem="mT6-eJ-ge2" secondAttribute="leading" type="default" id="cBr-Wb-0hl"/>
                             <constraint firstItem="2f5-jh-E67" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="165" id="cQI-Ir-bo4"/>
-                            <constraint firstItem="oDO-4H-MOV" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="309" id="dQJ-Oj-soG"/>
-                            <constraint firstItem="Teg-9R-FKq" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="268" id="g1L-j8-Ys3"/>
-                            <constraint firstItem="CCd-cO-PsS" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="458" id="jmQ-Ys-xPK"/>
-                            <constraint firstItem="TXo-Qp-Hum" firstAttribute="leading" secondItem="CCd-cO-PsS" secondAttribute="leading" type="default" id="lem-c7-MFy"/>
+                            <constraint firstItem="CCd-cO-PsS" firstAttribute="leading" secondItem="2f5-jh-E67" secondAttribute="leading" type="default" id="dwq-my-Mj7"/>
                             <constraint firstItem="LHI-4z-8bK" firstAttribute="trailing" secondItem="8QJ-OO-63A" secondAttribute="trailing" type="default" id="n0U-BG-HYm"/>
-                            <constraint firstItem="TXo-Qp-Hum" firstAttribute="top" secondItem="0zZ-Kf-JNL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="n7o-B5-Smf"/>
                             <constraint firstItem="oDO-4H-MOV" firstAttribute="baseline" secondItem="2f5-jh-E67" secondAttribute="baseline" type="default" id="qtz-Ls-fvO"/>
                             <constraint firstAttribute="trailing" secondItem="I0Q-iN-Eof" secondAttribute="trailing" constant="15" type="user" id="uSB-d8-DVc"/>
                             <constraint firstItem="LHI-4z-8bK" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="35" type="user" id="wc2-y6-2u1"/>
-                            <constraint firstItem="mT6-eJ-ge2" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="362" id="xEg-sN-5jK"/>
-                            <constraint firstItem="TXo-Qp-Hum" firstAttribute="leading" secondItem="0zZ-Kf-JNL" secondAttribute="leading" type="default" id="xao-zM-l6h"/>
+                            <constraint firstAttribute="bottom" secondItem="TXo-Qp-Hum" secondAttribute="bottom" constant="129" id="ytQ-WK-1wb"/>
                         </constraints>
                     </scrollView>
                     <navigationItem key="navigationItem" id="jau-mi-MMc"/>
                     <connections>
                         <outlet property="addContact" destination="qZ7-KW-Pw8" id="WMY-DV-Wax"/>
+                        <outlet property="autoSMSLabel" destination="Teg-9R-FKq" id="4TL-6w-8e3"/>
                         <outlet property="contactNameLabel" destination="heW-On-kUn" id="QFF-tP-7ul"/>
                         <outlet property="contactNumberLabel" destination="8QJ-OO-63A" id="H7q-Yy-5fR"/>
                         <outlet property="dangerRadioButton" destination="CCd-cO-PsS" id="IiG-US-5oV"/>
@@ -224,7 +211,7 @@
                         <outlet property="drunkRadioButton" destination="TXo-Qp-Hum" id="8bP-kv-mMf"/>
                         <outlet property="emergencyMessageTextField" destination="LHI-4z-8bK" id="8hF-jB-eVZ"/>
                         <outlet property="enableRadioButton" destination="oDO-4H-MOV" id="WN2-ZN-dOb"/>
-                        <outlet property="tipsyRadioButton" destination="0zZ-Kf-JNL" id="XAK-JF-R5q"/>
+                        <outlet property="smsStateLabel" destination="mT6-eJ-ge2" id="rhg-6z-JJY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdh-Uj-LZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
