@@ -25,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet RadioButton *disableRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *enableRadioButton;
 
-@property (weak, nonatomic) IBOutlet RadioButton *tipsyRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *drunkRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *dangerRadioButton;
 

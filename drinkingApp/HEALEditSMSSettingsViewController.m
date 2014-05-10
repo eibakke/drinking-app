@@ -27,10 +27,14 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"empty.png"]];
     
-    [self.contactNameLabel setFont:[UIFont fontWithName:@"Cambria" size: 16]];
-    [self.contactNumberLabel setFont:[UIFont fontWithName:@"Cambria" size: 16]];
+    [self.contactNameLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
+    [self.contactNumberLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
     [self.autoSMSLabel setFont:[UIFont fontWithName:@"Cambria" size:22]];
     [self.smsStateLabel setFont:[UIFont fontWithName:@"Cambria" size:22]];
+    [self.enableRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
+    [self.disableRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
+    [self.drunkRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
+    [self.dangerRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
     
     // We want the textfields to delegate back to this view controller
     [[self emergencyMessageTextField] setDelegate:self];
@@ -69,10 +73,7 @@
         self.emergencyMessageTextField.text = self.user.smsMessage;
     }
     
-    if (self.user.smsState == INTOXSTATE_TIPSY) {
-        [self.tipsyRadioButton setSelected:YES];
-        smsState = INTOXSTATE_TIPSY;
-    } else if (self.user.smsState == INTOXSTATE_DRUNK) {
+    if (self.user.smsState == INTOXSTATE_DRUNK) {
         [self.drunkRadioButton setSelected:YES];
         smsState = INTOXSTATE_DRUNK;
     } else if (self.user.smsState == INTOXSTATE_DANGER) {
@@ -116,10 +117,7 @@
     [defaults setObject:self.contactNameLabel.text forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
     
-    if ([self.tipsyRadioButton isSelected]){
-        [defaults setInteger:INTOXSTATE_TIPSY forKey:@"smsState"];
-        smsState = INTOXSTATE_TIPSY;
-    } else if ([self.drunkRadioButton isSelected]){
+    if ([self.drunkRadioButton isSelected]){
         [defaults setInteger:INTOXSTATE_DRUNK forKey:@"smsState"];
         smsState = INTOXSTATE_DRUNK;
     } else if ([self.dangerRadioButton isSelected]){
@@ -164,30 +162,30 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     popDown = TRUE;
-    [self animateTextField: textField up: YES];
+   // [self animateTextField: textField up: YES];
 }
 
 // Move it back down when done editing
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     popDown = FALSE;
-    [self animateTextField: textField up: NO];
+   // [self animateTextField: textField up: NO];
 }
-
-// The animation with bool for moving up or down. Source: user Amagrammer at stackoverflow. Post URL: http://stackoverflow.com/questions/1247113/iphone-keyboard-covers-uitextfield
-- (void) animateTextField: (UITextField*) textField up: (BOOL) up
-{
-    const int movementDistance = 50;
-    const float movementDuration = 0.1f;
-    
-    int movement = (up ? -movementDistance : movementDistance);
-    
-    [UIView beginAnimations: @"anim" context: nil];
-    [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: movementDuration];
-    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
-    [UIView commitAnimations];
-}
+//
+//// The animation with bool for moving up or down. Source: user Amagrammer at stackoverflow. Post URL: http://stackoverflow.com/questions/1247113/iphone-keyboard-covers-uitextfield
+//- (void) animateTextField: (UITextField*) textField up: (BOOL) up
+//{
+//    const int movementDistance = 50;
+//    const float movementDuration = 0.1f;
+//    
+//    int movement = (up ? -movementDistance : movementDistance);
+//    
+//    [UIView beginAnimations: @"anim" context: nil];
+//    [UIView setAnimationBeginsFromCurrentState: YES];
+//    [UIView setAnimationDuration: movementDuration];
+//    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+//    [UIView commitAnimations];
+//}
 
 //////////////////////////////////////////GETTING CONTACT INFO FROM ADDRESSBOOK////////////////////////////////////////////////////
 

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6D4118D418DF850E000EBBED /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4118D318DF850E000EBBED /* MessageUI.framework */; };
 		6D6BD5EB18E9E53200B45823 /* 3bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6BD5EA18E9E53200B45823 /* 3bar.png */; };
-		6D6BD5ED18E9E58900B45823 /* AboutUS.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6BD5EC18E9E58900B45823 /* AboutUS.png */; };
 		6DEDF584190DE7610073DBD0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEDF583190DE7610073DBD0 /* AddressBook.framework */; };
 		6DEDF586190DE7670073DBD0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEDF585190DE7670073DBD0 /* AddressBookUI.framework */; };
 		890792E118D0FDC1001EFA85 /* HEALDrunkStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */; };
@@ -68,6 +67,10 @@
 		A87F429F191DC61D009B441B /* settingsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F429D191DC61D009B441B /* settingsHeader.png */; };
 		A87F42A1191DD0AF009B441B /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F42A0191DD0AF009B441B /* plus.png */; };
 		A87F42A3191DE5F6009B441B /* smsSettingsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F42A2191DE5F6009B441B /* smsSettingsHeader.png */; };
+		A87F42A5191DF571009B441B /* addContact.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F42A4191DF571009B441B /* addContact.png */; };
+		A87F42A7191E56DB009B441B /* addContactEdited.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F42A6191E56DB009B441B /* addContactEdited.png */; };
+		A87F42AD191E5C2F009B441B /* finalAboutUs.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F42AC191E5C2F009B441B /* finalAboutUs.png */; };
+		A87F42AF191E642D009B441B /* newAboutUs.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F42AE191E642D009B441B /* newAboutUs.png */; };
 		A894A75B1912F519009B88EB /* IconDS58.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A7581912F519009B88EB /* IconDS58.png */; };
 		A894A75C1912F519009B88EB /* IconDS80.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A7591912F519009B88EB /* IconDS80.png */; };
 		A894A75D1912F519009B88EB /* IconDS120.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A75A1912F519009B88EB /* IconDS120.png */; };
@@ -99,7 +102,6 @@
 /* Begin PBXFileReference section */
 		6D4118D318DF850E000EBBED /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6D6BD5EA18E9E53200B45823 /* 3bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3bar.png; sourceTree = "<group>"; };
-		6D6BD5EC18E9E58900B45823 /* AboutUS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AboutUS.png; path = ../../UI/AboutUS.png; sourceTree = "<group>"; };
 		6DEDF583190DE7610073DBD0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6DEDF585190DE7670073DBD0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		890792DB18D0FDC1001EFA85 /* HEALDrunkStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HEALDrunkStateViewController.h; path = ../HEALDrunkStateViewController.h; sourceTree = "<group>"; };
@@ -170,6 +172,10 @@
 		A87F429D191DC61D009B441B /* settingsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsHeader.png; sourceTree = "<group>"; };
 		A87F42A0191DD0AF009B441B /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		A87F42A2191DE5F6009B441B /* smsSettingsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smsSettingsHeader.png; sourceTree = "<group>"; };
+		A87F42A4191DF571009B441B /* addContact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addContact.png; sourceTree = "<group>"; };
+		A87F42A6191E56DB009B441B /* addContactEdited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addContactEdited.png; sourceTree = "<group>"; };
+		A87F42AC191E5C2F009B441B /* finalAboutUs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finalAboutUs.png; sourceTree = "<group>"; };
+		A87F42AE191E642D009B441B /* newAboutUs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newAboutUs.png; sourceTree = "<group>"; };
 		A894A7581912F519009B88EB /* IconDS58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconDS58.png; sourceTree = "<group>"; };
 		A894A7591912F519009B88EB /* IconDS80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconDS80.png; sourceTree = "<group>"; };
 		A894A75A1912F519009B88EB /* IconDS120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconDS120.png; sourceTree = "<group>"; };
@@ -394,7 +400,8 @@
 		A8150400191AF9F90018D218 /* backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				6D6BD5EC18E9E58900B45823 /* AboutUS.png */,
+				A87F42AE191E642D009B441B /* newAboutUs.png */,
+				A87F42AC191E5C2F009B441B /* finalAboutUs.png */,
 				A811E4D218E3991D00970E77 /* BlurLogoScreen.png */,
 				A8B3583F1900947E008AF5FE /* BACInfo.png */,
 				A8150401191AF9F90018D218 /* empty.png */,
@@ -454,6 +461,8 @@
 			children = (
 				A87F429C191DC61D009B441B /* gear.png */,
 				A87F42A0191DD0AF009B441B /* plus.png */,
+				A87F42A6191E56DB009B441B /* addContactEdited.png */,
+				A87F42A4191DF571009B441B /* addContact.png */,
 				A87F42A2191DE5F6009B441B /* smsSettingsHeader.png */,
 				A87F429D191DC61D009B441B /* settingsHeader.png */,
 			);
@@ -561,14 +570,16 @@
 				A87F429A191DC609009B441B /* TipsyHeader.png in Resources */,
 				8956FC6218BBD6D70018F32B /* InfoPlist.strings in Resources */,
 				8956FC6A18BBD6D70018F32B /* Default.png in Resources */,
+				A87F42A5191DF571009B441B /* addContact.png in Resources */,
+				A87F42AD191E5C2F009B441B /* finalAboutUs.png in Resources */,
 				8956FC6C18BBD6D70018F32B /* Default@2x.png in Resources */,
 				A89E16171903160D000FFCDE /* Default~iphone.png in Resources */,
 				A894A75F1912F7A0009B88EB /* DSIcon57.png in Resources */,
-				6D6BD5ED18E9E58900B45823 /* AboutUS.png in Resources */,
 				A894A75B1912F519009B88EB /* IconDS58.png in Resources */,
 				A81503F4191AF8670018D218 /* DrunkState.png in Resources */,
 				A81503FE191AF8E40018D218 /* SoberButton.png in Resources */,
 				8956FC6E18BBD6D70018F32B /* Default-568h@2x.png in Resources */,
+				A87F42A7191E56DB009B441B /* addContactEdited.png in Resources */,
 				A894A75C1912F519009B88EB /* IconDS80.png in Resources */,
 				A89E161919031A62000FFCDE /* Images.xcassets in Resources */,
 				A87F4290191DC5FF009B441B /* bacMath.png in Resources */,
@@ -585,6 +596,7 @@
 				A81503F5191AF8670018D218 /* SoberState.png in Resources */,
 				A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */,
 				A8150405191AF9F90018D218 /* EmptySettings.png in Resources */,
+				A87F42AF191E642D009B441B /* newAboutUs.png in Resources */,
 				A8B358401900947E008AF5FE /* BACInfo.png in Resources */,
 				A81503E6191AA41C0018D218 /* unchecked.png in Resources */,
 				A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */,
