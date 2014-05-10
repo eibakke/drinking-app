@@ -50,13 +50,6 @@ static float const STANDARD_PAN_DURATION = 0.1;
     self.nightButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:20.0f];
     self.bacDisclaimerButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:20.0f];
     self.smsSettingsButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:20.0f];
-    
-    
-    
-    //###cant set button text the same as labels. working on it
-    //[[_settingsButton.titleLabel setFont:[UIFont fontWithName:@"Cambria" size: 20] ];
-
-
 
     [self setupUI];
 }
@@ -68,7 +61,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     if (!self.user) {
         [self performSegueWithIdentifier:@"settingsMainSegue" sender:self];
     }
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"sampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"emptyNav.png"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
@@ -396,7 +389,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     self.roundProgressView.tintColor = self.user.wheelColorTint;
 }
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Gets called from the stepper hidden underneath the Add Drink Button
 - (IBAction)valueChanged:(UIStepper *)sender
 {
     if (self.user.weight == 0) {

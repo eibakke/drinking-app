@@ -15,19 +15,34 @@
     NSString *smsMessage;
     BOOL sendAutoSMS;
     int smsState;
-    BOOL popDown;
 }
 
 @end
 
 @implementation HEALEditSMSSettingsViewController
 
-// Sets text field delegates, background image, and gesture recognizers.
-- (void)viewDidLoad
+//############################################ Setup and Initialize SubViews and User Interaction When View Loads ############################################
+
+// Reinitializes the UI whenever the view appears.
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [self setupUI];
+}
+
+// Runs doneButtonPressed whenever the view disappers. For instance when the back button is pressed
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [self doneButtonPressed:self];
+}
+
+// Sets the contents of the text fields and the checked radio buttons, as well as the background image and the navigation bar
+- (void)setupUI
+{
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"empty.png"]];
     
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"emptyNav.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
     [self.contactNameLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
     [self.contactNumberLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
     [self.autoSMSLabel setFont:[UIFont fontWithName:@"Cambria" size:22]];
@@ -36,36 +51,10 @@
     self.disableRadioButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:18];
     self.drunkRadioButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:18];
     self.dangerRadioButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:18];
-//    [self.enableRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
-//    [self.disableRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
-//    [self.drunkRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
-//    [self.dangerRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
     
     // We want the textfields to delegate back to this view controller
     [[self emergencyMessageTextField] setDelegate:self];
     
-    UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
-    [self.view addGestureRecognizer:tapBackground];
-}
-
-// Reinitializes the UI whenever the view appears.
-- (void)viewWillAppear:(BOOL)animated
-{
-    popDown = FALSE;
-    [self initializeUI];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"sampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-}
-
-// Runs doneButtonPressed whenever the view disappers.
-- (void) viewWillDisappear:(BOOL)animated
-{
-    [self doneButtonPressed:self];
-}
-
-// Sets the contents of the text fields and the checked radio buttons.
-- (void)initializeUI
-{
     if (IS_WIDESCREEN) {
         [self.sosMessageHeader setHidden:NO];
     }
@@ -88,8 +77,12 @@
         [self.dangerRadioButton setSelected:YES];
         smsState = INTOXSTATE_DANGER;
     }
+    
+    UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
+    [self.view addGestureRecognizer:tapBackground];
 }
 
+//############################################ Reactions to Buttons ############################################
 // Sets local sendAutoSMS variable and runs updateUser
 - (IBAction)doneButtonPressed:(id)sender
 {
@@ -100,21 +93,31 @@
     [self updateUser];
 }
 
+// Runs when the background is tapped. Resigns the keyboards and runs doneButtonPressed if it's the first time the background
+// has been tapped since text fields have been active.
+- (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
+{
+    [[self emergencyMessageTextField] resignFirstResponder];
+}
+
+// To get the keyboard to collapse when return is pressed
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return [textField resignFirstResponder];
+}
+
 // Updates user properties, sets user defaults, sets the local smsState variable, and sets the contact name and number text fields.
 - (void)updateUser
 {
-    if (contactName != nil)
-    {
+    if (contactName != nil) {
         self.contactNameLabel.text = contactName;
     }
     
-    if (contactNumber != nil)
-    {
+    if (contactNumber != nil) {
         self.contactNumberLabel.text = contactNumber;
     }
     
-    if (smsMessage != nil)
-    {
+    if (smsMessage != nil) {
         self.emergencyMessageTextField.text = smsMessage;
     }
     
@@ -145,57 +148,11 @@
     @catch (NSException *exception) {
         NSLog(@"Data save failed.");
     }
-    
 }
 
-// Runs when the background is tapped. Resigns the keyboards and runs doneButtonPressed if it's the first time the background
-// has been tapped since text fields have been active.
-- (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
-{
-    if(popDown == TRUE)
-    {
-        [self doneButtonPressed:self];
-    }
 
-    [[self emergencyMessageTextField] resignFirstResponder];
-}
 
-// To get the keyboard to collapse when return is pressed
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    return [textField resignFirstResponder];
-}
-
-// Move the whole view up a little when editing a textfield
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    popDown = TRUE;
-   // [self animateTextField: textField up: YES];
-}
-
-// Move it back down when done editing
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    popDown = FALSE;
-   // [self animateTextField: textField up: NO];
-}
-//
-//// The animation with bool for moving up or down. Source: user Amagrammer at stackoverflow. Post URL: http://stackoverflow.com/questions/1247113/iphone-keyboard-covers-uitextfield
-//- (void) animateTextField: (UITextField*) textField up: (BOOL) up
-//{
-//    const int movementDistance = 50;
-//    const float movementDuration = 0.1f;
-//    
-//    int movement = (up ? -movementDistance : movementDistance);
-//    
-//    [UIView beginAnimations: @"anim" context: nil];
-//    [UIView setAnimationBeginsFromCurrentState: YES];
-//    [UIView setAnimationDuration: movementDuration];
-//    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
-//    [UIView commitAnimations];
-//}
-
-//////////////////////////////////////////GETTING CONTACT INFO FROM ADDRESSBOOK////////////////////////////////////////////////////
+//############################################ GETTING CONTACT INFO FROM ADDRESSBOOK ############################################
 
 //presents the picker as a modal view controller
 - (IBAction)showPicker:(id)sender
@@ -210,26 +167,21 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
-//Responding to user actions in the people picker
-- (void)peoplePickerNavigationControllerDidCancel:
-(ABPeoplePickerNavigationController *)peoplePicker
+// Responding to user actions in the people picker
+- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
-// HAROON WHAT DOES THIS DO. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-- (BOOL)peoplePickerNavigationController:
-(ABPeoplePickerNavigationController *)peoplePicker
-      shouldContinueAfterSelectingPerson:(ABRecordRef)person {
-    
+// View Controller to pick contacts
+- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person
+{
     [self displayPerson:person];
     [self dismissViewControllerAnimated:YES completion:nil];    
     return NO;
 }
 
-- (BOOL)peoplePickerNavigationController:
-(ABPeoplePickerNavigationController *)peoplePicker
+- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker
       shouldContinueAfterSelectingPerson:(ABRecordRef)person
                                 property:(ABPropertyID)property
                               identifier:(ABMultiValueIdentifier)identifier
@@ -237,12 +189,10 @@
     return NO;
 }
 
-//Displaying a person’s information
-
+// Displaying a person’s information
 - (void)displayPerson:(ABRecordRef)person
 {
-    contactName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
-                                                                    kABPersonFirstNameProperty);
+    contactName = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
 
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
                                                      kABPersonPhoneProperty);
