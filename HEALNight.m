@@ -32,10 +32,10 @@
     if (self) {
         self.sosSent = FALSE;
         
-        soberMessageArray = @[@"Call Your Grandma!",@"Walk Your Dog",@"Drive Your Car",@"Write Some Code",@"Live A Little", @"Fold Laundry",@"Pick Up Cantonese "];
-        tipsyMessageArray = @[@"Avoid Karaoke",@"Share A Childhood Story",@"Dance"];
-        drunkMessageArray = @[@"Order Jimmy Johns",@"Ponder Meaning of Life",@"Drink Some Water",@"Eat Some Food",@"Kagin?", @"Not Text That Number"];
-        dangerMessageArray = @[@"DANGER (test)"];
+        soberMessageArray = @[@"Call Your Grandma!", @"Walk Your Dog", @"Drive Your Car", @"Write Some Code", @"Live A Little", @"Fold Laundry", @"Pick Up Cantonese "];
+        tipsyMessageArray = @[@"Avoid Karaoke", @"Share A Childhood Story", @"Dance", @"Not drive"];
+        drunkMessageArray = @[@"Order Jimmy Johns", @"Ponder Meaning of Life", @"Drink Some Water", @"Eat Some Food", @"Kagin?", @"Not Text That Number"];
+        dangerMessageArray = @[@"Go home", @"Relax", @"Stop drinking", @"Call SafeWalk", @"Definitely not drive"];
 
         [self generateMessages];
     }
