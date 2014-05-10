@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet RadioButton *femaleRadioButton;
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewBackground;
+@property (weak, nonatomic) IBOutlet UIImageView *settingsHeader;
 
 @property (strong, nonatomic) HEALUser *user;
 
