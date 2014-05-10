@@ -623,42 +623,42 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bacHeader.png" translatesAutoresizingMaskIntoConstraints="NO" id="AMh-Xb-Sb2">
-                                <rect key="frame" x="71" y="75" width="179" height="102"/>
+                                <rect key="frame" x="40" y="75" width="240" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="TGT-lS-rGc"/>
-                                    <constraint firstAttribute="width" constant="179" id="XO9-Sp-345"/>
+                                    <constraint firstAttribute="width" constant="240" id="enC-MW-v6M"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bacTerms.png" translatesAutoresizingMaskIntoConstraints="NO" id="CQK-Wn-daP">
-                                <rect key="frame" x="40" y="185" width="240" height="128"/>
+                                <rect key="frame" x="9" y="185" width="303" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="30k-18-cyu"/>
-                                    <constraint firstAttribute="width" constant="240" id="AGA-zf-A7H"/>
+                                    <constraint firstAttribute="width" constant="303" id="6B4-lG-MU1"/>
+                                    <constraint firstAttribute="height" constant="171" id="HxZ-RK-E6v"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bacMath.png" translatesAutoresizingMaskIntoConstraints="NO" id="7ME-ho-R6o">
-                                <rect key="frame" x="40" y="321" width="240" height="39"/>
+                                <rect key="frame" x="14" y="353" width="292" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="292" id="b2g-h2-pQc"/>
                                     <constraint firstAttribute="height" constant="39" id="d9G-bh-cCi"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CQK-Wn-daP" firstAttribute="top" secondItem="K3z-kE-vYq" secondAttribute="top" constant="185" id="7QJ-6f-qo3"/>
-                            <constraint firstItem="7ME-ho-R6o" firstAttribute="top" secondItem="CQK-Wn-daP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Fs2-1Y-Ehs"/>
-                            <constraint firstItem="CQK-Wn-daP" firstAttribute="centerX" secondItem="AMh-Xb-Sb2" secondAttribute="centerX" type="default" id="KdG-Ix-5ex"/>
-                            <constraint firstAttribute="trailing" secondItem="eB5-Oo-FNc" secondAttribute="trailing" type="default" id="MJo-tl-sbX"/>
-                            <constraint firstItem="7ME-ho-R6o" firstAttribute="centerX" secondItem="eB5-Oo-FNc" secondAttribute="centerX" type="default" id="Tt2-a8-8Mj"/>
+                            <constraint firstItem="CQK-Wn-daP" firstAttribute="centerX" secondItem="K3z-kE-vYq" secondAttribute="centerX" type="default" id="Nj7-iz-KYs"/>
+                            <constraint firstItem="AMh-Xb-Sb2" firstAttribute="centerX" secondItem="eB5-Oo-FNc" secondAttribute="centerX" type="default" id="Q6b-Le-nmy"/>
+                            <constraint firstItem="AMh-Xb-Sb2" firstAttribute="centerX" secondItem="CQK-Wn-daP" secondAttribute="centerX" type="default" id="j1G-mu-R8N"/>
                             <constraint firstItem="eB5-Oo-FNc" firstAttribute="top" secondItem="K3z-kE-vYq" secondAttribute="top" type="default" id="kLS-9S-Fss"/>
-                            <constraint firstItem="CQK-Wn-daP" firstAttribute="top" secondItem="AMh-Xb-Sb2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oeq-1I-iYB"/>
+                            <constraint firstAttribute="bottom" secondItem="7ME-ho-R6o" secondAttribute="bottom" constant="156" id="lSK-zN-ucO"/>
                             <constraint firstItem="eB5-Oo-FNc" firstAttribute="leading" secondItem="K3z-kE-vYq" secondAttribute="leading" type="default" id="qMn-77-Vxg"/>
-                            <constraint firstItem="7ME-ho-R6o" firstAttribute="trailing" secondItem="CQK-Wn-daP" secondAttribute="trailing" type="default" id="qtK-bC-n9z"/>
+                            <constraint firstItem="AMh-Xb-Sb2" firstAttribute="top" secondItem="K3z-kE-vYq" secondAttribute="top" constant="75" id="sc4-Sk-7AJ"/>
                             <constraint firstAttribute="bottom" secondItem="eB5-Oo-FNc" secondAttribute="bottom" type="default" id="tqx-Jt-Vkg"/>
-                            <constraint firstItem="7ME-ho-R6o" firstAttribute="leading" secondItem="CQK-Wn-daP" secondAttribute="leading" type="default" id="wSt-9l-4Rt"/>
+                            <constraint firstItem="CQK-Wn-daP" firstAttribute="top" secondItem="AMh-Xb-Sb2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xmP-id-cZu"/>
+                            <constraint firstItem="CQK-Wn-daP" firstAttribute="centerX" secondItem="7ME-ho-R6o" secondAttribute="centerX" type="default" id="zBF-r3-yVl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LAh-EB-iPA"/>
