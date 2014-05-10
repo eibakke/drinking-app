@@ -82,6 +82,16 @@
 
 - (void)updateUser
 {
+    if (contactName != nil)
+    {
+        self.contactNameTextField.text = contactName;
+    }
+    
+    if (contactNumber != nil)
+    {
+        self.contactNumberTextField.text = contactNumber;
+    }
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
@@ -196,7 +206,6 @@
 - (void)peoplePickerNavigationControllerDidCancel:
 (ABPeoplePickerNavigationController *)peoplePicker
 {
-    [self doneButtonPressed:self];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
@@ -237,6 +246,8 @@
     }
 
     CFRelease(phoneNumbers);
+    
+    [self doneButtonPressed:self];
 }
 
 @end
