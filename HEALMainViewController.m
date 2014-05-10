@@ -43,7 +43,14 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 - (void)viewDidLoad
 {
-    [self.timeLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
+    [self.timeLabel setFont:[UIFont fontWithName:@"Cambria" size: 22]];
+    
+    [self.settingsButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
+    [self.smsButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
+    [self.nightButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
+    [self.smsSettingsButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
+    [self.bacDisclaimerButton setFont:[UIFont fontWithName:@"Cambria" size:20]];
+    
     
     
     //###cant set button text the same as labels. working on it
