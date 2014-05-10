@@ -72,6 +72,7 @@
 		A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975C18EC42D900686E79 /* AddDrink.png */; };
 		A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975E18EC446300686E79 /* AddDrinkedited.png */; };
 		A8E4FA7819117E3700662843 /* Cambria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B0190A93C600DAFDC8 /* Cambria.ttf */; };
+		C49BC63F191D995F00BC32E8 /* HEALBacDisclaimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49BC63E191D995F00BC32E8 /* HEALBacDisclaimerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,8 @@
 		A8B7975C18EC42D900686E79 /* AddDrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrink.png; path = Images/AddDrink.png; sourceTree = SOURCE_ROOT; };
 		A8B7975E18EC446300686E79 /* AddDrinkedited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrinkedited.png; path = Images/AddDrinkedited.png; sourceTree = SOURCE_ROOT; };
 		A8FC61B0190A93C600DAFDC8 /* Cambria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cambria.ttf; sourceTree = "<group>"; };
+		C49BC63D191D995F00BC32E8 /* HEALBacDisclaimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALBacDisclaimerViewController.h; sourceTree = "<group>"; };
+		C49BC63E191D995F00BC32E8 /* HEALBacDisclaimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALBacDisclaimerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,8 @@
 				890792DC18D0FDC1001EFA85 /* HEALDrunkStateViewController.m */,
 				89D32C5818BE7B54003920FE /* HEALMainViewController.h */,
 				89D32C5918BE7B54003920FE /* HEALMainViewController.m */,
+				C49BC63D191D995F00BC32E8 /* HEALBacDisclaimerViewController.h */,
+				C49BC63E191D995F00BC32E8 /* HEALBacDisclaimerViewController.m */,
 				89D32C5518BE7AA1003920FE /* HEALEditSettingsViewController.h */,
 				89D32C5618BE7AA1003920FE /* HEALEditSettingsViewController.m */,
 				98F004E1191A83B90043E40F /* HEALNavViewController.h */,
@@ -552,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49BC63F191D995F00BC32E8 /* HEALBacDisclaimerViewController.m in Sources */,
 				8956FC6418BBD6D70018F32B /* main.m in Sources */,
 				8956FC6818BBD6D70018F32B /* HEALAppDelegate.m in Sources */,
 				89F840D118DFFB1B0048AD95 /* RadioButton.m in Sources */,

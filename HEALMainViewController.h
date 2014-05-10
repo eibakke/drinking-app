@@ -11,6 +11,7 @@
 #import "HEALUser.h"
 #import "HEALEditSettingsViewController.h"
 #import "HEALEditSMSSettingsViewController.h"
+#import "HEALBacDisclaimerViewController.h"
 #import "MessageUI/MessageUI.h"
 #import <QuartzCore/QuartzCore.h>
 #import "CERoundProgressView.h"
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *nightButton;
 @property (weak, nonatomic) IBOutlet UIButton *smsButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+@property (weak, nonatomic) IBOutlet UIButton *bacDisclaimerButton;
 @property (weak, nonatomic) IBOutlet UIImageView *centerView;
 @property (weak, nonatomic) IBOutlet UIImageView *rightView;
 @property (weak, nonatomic) IBOutlet UIButton *smsSettingsButton;
