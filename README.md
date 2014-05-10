@@ -16,6 +16,10 @@ The iOS application was developed using xCode 5, targeting iOS 7.
 
 It makes use of several of Apple's frameworks and libraries, all listed under "Linked Frameworks and Libraries".
 
+## Known Bugs
+
+Navigation bar image for messaging view controller does not comply with the rest of the app
+
 ## HaLeAlEi Team
 
 Thank you for taking the time to check out our work. Feel free to contribute as you please.
