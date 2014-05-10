@@ -31,10 +31,14 @@
     [self.contactNumberLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
     [self.autoSMSLabel setFont:[UIFont fontWithName:@"Cambria" size:22]];
     [self.smsStateLabel setFont:[UIFont fontWithName:@"Cambria" size:22]];
-    [self.enableRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
-    [self.disableRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
-    [self.drunkRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
-    [self.dangerRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
+    self.enableRadioButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:18];
+    self.disableRadioButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:18];
+    self.drunkRadioButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:18];
+    self.dangerRadioButton.titleLabel.font = [UIFont fontWithName:@"Cambria" size:18];
+//    [self.enableRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
+//    [self.disableRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
+//    [self.drunkRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
+//    [self.dangerRadioButton setFont:[UIFont fontWithName:@"Cambria" size:18]];
     
     // We want the textfields to delegate back to this view controller
     [[self emergencyMessageTextField] setDelegate:self];
