@@ -359,7 +359,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     
     if (self.user.state >= self.user.smsState ) {
         if (!self.user.currentNight.sosSent) {
-            if (!self.user.sosContact || [self.user.sosContact  isEqualToString:@"Emergency contact Name"]) {
+            if (self.user.sosContact == nil || [self.user.sosContact  isEqualToString:@""]) {
                 [self sosSetup];
             } else if(!self.user.autoSMS) {
                 [self sosDanger:self];
