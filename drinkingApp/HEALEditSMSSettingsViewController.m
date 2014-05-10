@@ -28,8 +28,6 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"empty.png"]];
     
     // We want the textfields to delegate back to this view controller
-    [[self contactNameTextField] setDelegate:self];
-    [[self contactNumberTextField] setDelegate:self];
     [[self emergencyMessageTextField] setDelegate:self];
     
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
@@ -57,10 +55,10 @@
     [self.enableRadioButton setSelected:self.user.autoSMS];
     
     if (self.user.contactNumber != nil) {
-        self.contactNumberTextField.text  = self.user.contactNumber;
+        self.contactNumberLabel.text  = self.user.contactNumber;
     }
     if (self.user.sosContact != nil) {
-        self.contactNameTextField.text = self.user.sosContact;
+        self.contactNameLabel.text = self.user.sosContact;
     }
     if (self.user.smsMessage != nil) {
         self.emergencyMessageTextField.text = self.user.smsMessage;
@@ -93,12 +91,12 @@
 {
     if (contactName != nil)
     {
-        self.contactNameTextField.text = contactName;
+        self.contactNameLabel.text = contactName;
     }
     
     if (contactNumber != nil)
     {
-        self.contactNumberTextField.text = contactNumber;
+        self.contactNumberLabel.text = contactNumber;
     }
     
     if (smsMessage != nil)
@@ -109,8 +107,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
-    [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
-    [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
+    [defaults setObject:self.contactNumberLabel.text forKey:@"contactNumber"];
+    [defaults setObject:self.contactNameLabel.text forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
     
     if ([self.tipsyRadioButton isSelected]){
@@ -124,8 +122,8 @@
         smsState = INTOXSTATE_DANGER;
     }
     
-    self.user.contactNumber = self.contactNumberTextField.text;
-    self.user.sosContact = self.contactNameTextField.text;
+    self.user.contactNumber = self.contactNumberLabel.text;
+    self.user.sosContact = self.contactNameLabel.text;
     self.user.smsMessage = self.emergencyMessageTextField.text;
     self.user.autoSMS = sendAutoSMS;
     self.user.smsState = smsState;
@@ -149,8 +147,6 @@
     }
 
     [[self emergencyMessageTextField] resignFirstResponder];
-    [[self contactNameTextField] resignFirstResponder];
-    [[self contactNumberTextField] resignFirstResponder];
 }
 
 // To get the keyboard to collapse when return is pressed
