@@ -9,8 +9,10 @@
 #import "HEALEditSMSSettingsViewController.h"
 
 @interface HEALEditSMSSettingsViewController () {
-    intoxState smsState;
+    NSString *contactName;
+    NSString *contactNumber;
     BOOL sendAutoSMS;
+    int smsState;
     BOOL popDown;
 }
 
@@ -29,12 +31,6 @@
     
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
     [self.view addGestureRecognizer:tapBackground];
-    [self initializeUI];
-    
-   //[self.firstName setFont:[UIFont fontWithName:@"Cambria" size: 11]];
-   //[self.phoneNumber setFont:[UIFont fontWithName:@"Cambria" size: 11]];
-   //[self.addContact setFont:[UIFont fontWithName:@"Cambria" size: 16]];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -51,16 +47,13 @@
 
 - (void)initializeUI
 {
-    self.contactName = self.user.sosContact;
-    self.contactNumber = self.user.contactNumber;
-    
     [self.enableRadioButton setSelected:self.user.autoSMS];
     
     if (self.user.contactNumber != nil) {
-        self.phoneNumber.text  = self.user.contactNumber;
+        self.contactNumberTextField.text  = self.user.contactNumber;
     }
     if (self.user.sosContact != nil) {
-        self.firstName.text = self.user.sosContact;
+        self.contactNameTextField.text = self.user.sosContact;
     }
     if (self.user.smsMessage != nil) {
         self.emergencyMessageTextField.text = self.user.smsMessage;
@@ -68,44 +61,51 @@
     
     if (self.user.smsState == INTOXSTATE_TIPSY) {
         [self.tipsyRadioButton setSelected:YES];
+        smsState = INTOXSTATE_TIPSY;
     } else if (self.user.smsState == INTOXSTATE_DRUNK) {
         [self.drunkRadioButton setSelected:YES];
+        smsState = INTOXSTATE_DRUNK;
     } else if (self.user.smsState == INTOXSTATE_DANGER) {
         [self.dangerRadioButton setSelected:YES];
+        smsState = INTOXSTATE_DANGER;
     }
 }
 
-- (IBAction)doneButtonPressed:(id)sender {
-    
+- (IBAction)doneButtonPressed:(id)sender
+{
     if (self.enableRadioButton.isSelected) {
         sendAutoSMS = YES;
     } else sendAutoSMS = NO;
-    
-    if (self.tipsyRadioButton.isSelected){
-        smsState = INTOXSTATE_TIPSY;
-    } else if (self.drunkRadioButton.isSelected){
-        smsState = INTOXSTATE_DRUNK;
-    } else if (self.dangerRadioButton.isSelected){
-        smsState = INTOXSTATE_DANGER;
-    }
-    
+
     [self updateUser];
 }
 
 - (void)updateUser
 {
-    self.user.contactNumber = self.contactNumber; //edited
-    self.user.sosContact = self.contactName; //edited
-    self.user.smsMessage = self.emergencyMessageTextField.text;
-    self.user.smsState = smsState;
-    self.user.autoSMS = sendAutoSMS;
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     [defaults setBool:sendAutoSMS forKey:@"autoSMS"];
-    [defaults setInteger:smsState forKey:@"smsState"];
-    [defaults setObject:self.phoneNumber.text forKey:@"contactNumber"];
-    [defaults setObject:self.firstName.text forKey:@"sosContact"];
+    [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
+    [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
+    //[defaults setInteger:smsState forKey:@"smsState"];
+    
+    if ([self.tipsyRadioButton isSelected]){
+        [defaults setInteger:INTOXSTATE_TIPSY forKey:@"smsState"];
+        smsState = INTOXSTATE_TIPSY;
+    } else if ([self.drunkRadioButton isSelected]){
+        [defaults setInteger:INTOXSTATE_DRUNK forKey:@"smsState"];
+        smsState = INTOXSTATE_DRUNK;
+    } else if ([self.dangerRadioButton isSelected]){
+        [defaults setInteger:INTOXSTATE_DANGER forKey:@"smsState"];
+        smsState = INTOXSTATE_DANGER;
+    }
+    
+    self.user.contactNumber = self.contactNumberTextField.text;
+    self.user.sosContact = self.contactNameTextField.text;
+    self.user.smsMessage = self.emergencyMessageTextField.text;
+    self.user.autoSMS = sendAutoSMS;
+    self.user.smsState = smsState;
     
     @try {
         [defaults synchronize];
@@ -134,6 +134,8 @@
     }
 
     [[self emergencyMessageTextField] resignFirstResponder];
+    [[self contactNameTextField] resignFirstResponder];
+    [[self contactNumberTextField] resignFirstResponder];
 }
 
 // To get the keyboard to collapse when return is pressed
@@ -174,7 +176,7 @@
 
 
 
-//GETTING CONTACT INFO FROM ADDRESSBOOK
+//////////////////////////////////////////GETTING CONTACT INFO FROM ADDRESSBOOK////////////////////////////////////////////////////
 
 //presents the picker as a modal view controller
 - (IBAction)showPicker:(id)sender
@@ -194,6 +196,7 @@
 - (void)peoplePickerNavigationControllerDidCancel:
 (ABPeoplePickerNavigationController *)peoplePicker
 {
+    [self doneButtonPressed:self];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
@@ -221,23 +224,19 @@
 
 - (void)displayPerson:(ABRecordRef)person
 {
-    self.contactName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
+    contactName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
                                                                     kABPersonFirstNameProperty);
-    self.firstName.text = self.contactName;
-    
-    self.contactNumber = nil;
+
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
                                                      kABPersonPhoneProperty);
     if (ABMultiValueGetCount(phoneNumbers) > 0) {
-        self.contactNumber = (__bridge_transfer NSString*)
+        contactNumber = (__bridge_transfer NSString*)
         ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
     } else {
-        self.contactNumber = @"[None]";
+        contactNumber = @"[None]";
     }
-    self.phoneNumber.text = self.contactNumber;
-    
+
     CFRelease(phoneNumbers);
 }
-
 
 @end
