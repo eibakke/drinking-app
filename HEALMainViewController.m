@@ -32,6 +32,7 @@ static int const RIGHTVIEW_SETTINGS_BUTTON_TAG = 0;
 static int const RIGHTVIEW_SMS_BUTTON_TAG = 1;
 static int const RIGHTVIEW_NIGHT_BUTTON_TAG = 2;
 static int const RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG = 3;
+static int const RIGHTVIEW_BAC_DISCLAIMER_BUTTON_TAG = 4;
 static float const STANDARD_PAN_DURATION = 0.1;
 
 
@@ -99,6 +100,8 @@ static float const STANDARD_PAN_DURATION = 0.1;
     self.smsButton.tag = RIGHTVIEW_SMS_BUTTON_TAG;
     self.nightButton.tag = RIGHTVIEW_NIGHT_BUTTON_TAG;
     self.smsSettingsButton.tag = RIGHTVIEW_SMS_SETTINGS_BUTTON_TAG;
+    self.bacDisclaimerButton.tag = RIGHTVIEW_BAC_DISCLAIMER_BUTTON_TAG;
+
 }
 
 // sets up the panning gesture to move the centerview and the tapping gesture to move back from the rightview
@@ -390,7 +393,9 @@ static float const STANDARD_PAN_DURATION = 0.1;
     } else if (senderButton.tag == self.smsSettingsButton.tag) {
         [self performSegueWithIdentifier:@"toSMSSettingsViewController" sender:sender];
         [self toggleRightView];
-    }
+    } else if (senderButton.tag == self.bacDisclaimerButton.tag) {
+        [self performSegueWithIdentifier:@"bacSegue" sender:sender];
+        [self toggleRightView];}
 }
 
 - (IBAction)centerCircleButtonClick:(id)sender
@@ -421,6 +426,9 @@ static float const STANDARD_PAN_DURATION = 0.1;
         controller.user = self.user;
     } else if ([segue.identifier isEqualToString:@"toSMSSettingsViewController"]) {
         HEALEditSMSSettingsViewController *controller = [segue destinationViewController];
+        controller.user = self.user;
+    } else if ([segue.identifier isEqualToString:@"bacSegue"]) {
+        HEALBacDisclaimerViewController *controller = [segue destinationViewController];
         controller.user = self.user;
     }
 }
