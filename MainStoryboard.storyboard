@@ -808,8 +808,8 @@
         <image name="bacTerms.png" width="640" height="380"/>
         <image name="checked.png" width="24" height="24"/>
         <image name="empty.png" width="640" height="1136"/>
-        <image name="plus.png" width="466" height="467"/>
         <image name="gear.png" width="561" height="558"/>
+        <image name="plus.png" width="466" height="467"/>
         <image name="unchecked.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
