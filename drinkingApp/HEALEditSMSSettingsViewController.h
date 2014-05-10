@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet RadioButton *drunkRadioButton;
 @property (weak, nonatomic) IBOutlet RadioButton *dangerRadioButton;
+@property (weak, nonatomic) IBOutlet UIImageView *sosMessageHeader;
 
 @property (strong, nonatomic) HEALUser *user;
 
