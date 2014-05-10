@@ -37,7 +37,8 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 
 
-//############################################ Setup Views, Buttons, Gestures and Timer ############################################
+//########################################## Setup Views, Buttons, Gestures and Timer ############################################
+
 - (void)viewDidLoad
 {
     [self.timeLabel setFont:[UIFont fontWithName:@"Cambria" size: 20]];
@@ -51,8 +52,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self setupUI];
 }
 
+// Checks to see that a user object exists and sets the navbar's appearance.
 - (void)viewWillAppear:(BOOL)animated
 {
+    // If no user object exists, sends the user to the edit settings screen.
     if (!self.user) {
         [self performSegueWithIdentifier:@"settingsMainSegue" sender:self];
     }
@@ -116,7 +119,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self.centerView addGestureRecognizer:tapRecognizer];
 }
 
-//creates circle button that shows the states
+// Creates circle button that shows the states
 - (void)setupCircleButton
 {
     if (IS_WIDESCREEN) {
@@ -136,6 +139,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     }
 }
 
+// Updates the circle button based on users current state. Also enables the envelope button.
 - (void)updateCircleButton
 {
     envelopeButton.hidden = YES;
@@ -151,7 +155,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     }
 }
 
-//updates labels according to BAC values
+// Updates labels according to BAC values
 - (void)updateUI
 {
     self.drinkStepper.value = self.user.currentNight.drinks;
@@ -161,7 +165,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self updateCircleButton];
 }
 
-//creates an envelope button
+// Creates an envelope button, used to send SMS messages
 - (void)envelopeButton
 {
     CGRect screen = [[UIScreen mainScreen] bounds];
@@ -174,14 +178,13 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self.centerView addSubview:envelopeButton];
 }
 
-//sets the date label-'youve been drinking since'
+// Sets the date label-'youve been drinking since'
 - (void)setDateLabel:(NSDate*)date
 {
     NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
     [dFormatter setDateFormat:@"hh:mm a"];
     NSString *t = [dFormatter stringFromDate: date];
     
-    //Getting rid of 6pm
     if(self.drinkStepper.value == 0) {
         [self.timeLabel setText:@"Ready to Start? Press Below!"];
     } else {
@@ -190,7 +193,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 }
 
 
-//resets the Timer
+// Resets the Timer
 - (void)resetTimer
 {
     if (!uiUpdateTimer) {
@@ -202,11 +205,14 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 
 //############################################ Button and View Responders ############################################
+
+// Toggles to the settings sidebar
 - (IBAction)threeLinesButtonClicked:(id)sender
 {
     [self toggleRightView];
 }
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - (void)panViews:(id)sender
 {
     float centerRightEdgePos = self.centerView.frame.origin.x + self.centerView.frame.size.width;
@@ -245,11 +251,13 @@ static float const STANDARD_PAN_DURATION = 0.1;
 	}
 }
 
+// Toggles away from the settings sidebar when the main screen is clicked
 - (void)centerViewTapped
 {
     if(slidRight) [self toggleRightView];
 }
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - (void)toggleRightView
 {
     CGRect frame = self.centerView.frame;
@@ -269,6 +277,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self.addButton setUserInteractionEnabled:!slidRight];
 }
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - (void)resetViewPlacement
 {
     CGRect frame = self.centerView.frame;
@@ -284,19 +293,22 @@ static float const STANDARD_PAN_DURATION = 0.1;
     }];
 }
 
-//SMS sending warning message
+// SMS message prompt that appears when autoSMS is not enabled.
 - (IBAction)sosDanger:(id)sender
 {
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@", @"Send message '", self.user.smsMessage, @"' to ", self.user.sosContact, @"?"] delegate: self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Send", nil];
     [alertView show];
 }
 
+// SMS message prompt that appears when no SOS contact has been specified.
 - (IBAction)sosSetup
 {
     UIAlertView *setupView = [[UIAlertView alloc]initWithTitle:@"Whoops!" message:@"Looks like you haven't set your SMS settings! Use the envelope button to send an SMS anyway." delegate: self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [setupView show];
 }
 
+// Counts down from a value specified in sosAuto and attempts to send an SMS messaage when the countdown ends if cancel
+// hasn't been pressed.
 -(void)countDownDuration
 {
     smsInt -= 1;
@@ -315,6 +327,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     }
 }
 
+// SMS message prompt that appears when autoSMS is enabled. Also sets countdown time.
 - (IBAction)sosAuto:(id)sender
 {
     sendAutoMessage = TRUE;
@@ -324,6 +337,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [autoView show];
 }
 
+// Sets what different buttons in the various alertviews do.
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != [alertView cancelButtonIndex]) {
@@ -336,7 +350,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     }
 }
 
-//action when add drink is clicked
+//action when add drink is clicked (THIS NEEDS TO HAVE ITS NAME CHANGED)
 - (IBAction)runAddValueChanged:(id)sender
 {
     self.drinkStepper.value += 1;
@@ -356,12 +370,14 @@ static float const STANDARD_PAN_DURATION = 0.1;
     }
 }
 
+// Updates the fill of the round progress bar and changes its color.
 - (void)updateRoundProgressBar
 {
     self.roundProgressView.progress = self.user.wheelFill;
     self.roundProgressView.tintColor = self.user.wheelColorTint;
 }
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - (IBAction)valueChanged:(UIStepper *)sender
 {
     if (self.user.weight == 0) {
@@ -378,7 +394,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     }
 }
 
-//handles right view buttons when clicked
+// Handles what happens when buttons are clicked in the settings sidebar.
 - (IBAction)rightViewButtonClicked:(id)sender {
     UIButton* senderButton = (UIButton*) sender;
     
@@ -398,6 +414,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
         [self toggleRightView];}
 }
 
+// Handles what happens when the center button is clicked.
 - (IBAction)centerCircleButtonClick:(id)sender
 {
     [self performSegueWithIdentifier:@"toStateViewController" sender:self];
@@ -405,15 +422,13 @@ static float const STANDARD_PAN_DURATION = 0.1;
 
 
 //############################################ Segue Related Methods ############################################
+
 //called when another viewController exits to mainViewController
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
     slidRight = NO;
     [self updateUI];
 }
-
-//segue to drunkstate view controller
-
 
 //handles segues
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

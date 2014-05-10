@@ -20,31 +20,37 @@
 
 @implementation HEALEditSMSSettingsViewController
 
+// Sets text field delegates, background image, and gesture recognizers.
 - (void)viewDidLoad
 {
-    popDown = FALSE;
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"empty.png"]];
     
     // We want the textfields to delegate back to this view controller
+    [[self contactNameTextField] setDelegate:self];
+    [[self contactNumberTextField] setDelegate:self];
     [[self emergencyMessageTextField] setDelegate:self];
     
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackground:)];
     [self.view addGestureRecognizer:tapBackground];
 }
 
+// Reinitializes the UI whenever the view appears.
 - (void)viewWillAppear:(BOOL)animated
 {
+    popDown = FALSE;
     [self initializeUI];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"sampleNavBar1.png"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
+// Runs doneButtonPressed whenever the view disappers.
 - (void) viewWillDisappear:(BOOL)animated
 {
     [self doneButtonPressed:self];
 }
 
+// Sets the contents of the text fields and the checked radio buttons.
 - (void)initializeUI
 {
     [self.enableRadioButton setSelected:self.user.autoSMS];
@@ -71,6 +77,7 @@
     }
 }
 
+// Sets local sendAutoSMS variable and runs updateUser
 - (IBAction)doneButtonPressed:(id)sender
 {
     if (self.enableRadioButton.isSelected) {
@@ -80,6 +87,7 @@
     [self updateUser];
 }
 
+// Updates user properties, sets user defaults, sets the local smsState variable, and sets the contact name and number text fields.
 - (void)updateUser
 {
     if (contactName != nil)
@@ -98,7 +106,6 @@
     [defaults setObject:self.contactNumberTextField.text forKey:@"contactNumber"];
     [defaults setObject:self.contactNameTextField.text forKey:@"sosContact"];
     [defaults setObject:self.emergencyMessageTextField.text forKey:@"smsMessage"];
-    //[defaults setInteger:smsState forKey:@"smsState"];
     
     if ([self.tipsyRadioButton isSelected]){
         [defaults setInteger:INTOXSTATE_TIPSY forKey:@"smsState"];
@@ -126,16 +133,8 @@
     
 }
 
--(void)alertUser:(NSString*) alertMessage
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Input"
-                                                    message:alertMessage
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
-
+// Runs when the background is tapped. Resigns the keyboards and runs doneButtonPressed if it's the first time the background
+// has been tapped since text fields have been active.
 - (void)tapBackground:(UIGestureRecognizer *)gestureRecognizer;
 {
     if(popDown == TRUE)
@@ -183,9 +182,6 @@
     [UIView commitAnimations];
 }
 
-
-
-
 //////////////////////////////////////////GETTING CONTACT INFO FROM ADDRESSBOOK////////////////////////////////////////////////////
 
 //presents the picker as a modal view controller
@@ -198,7 +194,6 @@
     [[ABPeoplePickerNavigationController alloc] init];
     picker.peoplePickerDelegate = self;
     
-   // [self presentModalViewController:picker animated:YES];
     [self presentViewController:picker animated:YES completion:nil];
 }
 
@@ -210,7 +205,7 @@
     
 }
 
-
+// HAROON WHAT DOES THIS DO. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - (BOOL)peoplePickerNavigationController:
 (ABPeoplePickerNavigationController *)peoplePicker
       shouldContinueAfterSelectingPerson:(ABRecordRef)person {
