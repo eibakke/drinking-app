@@ -178,7 +178,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self.centerView addSubview:envelopeButton];
 }
 
-// Sets the date label-'youve been drinking since'
+// Sets the label below the circle button
 - (void)setDateLabel:(NSDate*)date
 {
     NSDateFormatter *dFormatter = [[NSDateFormatter alloc] init];
@@ -187,9 +187,13 @@ static float const STANDARD_PAN_DURATION = 0.1;
     
     if(self.drinkStepper.value == 0) {
         [self.timeLabel setText:@"Ready to Start? Press Below!"];
+    } else if (self.drinkStepper.value == 1) {
+        [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"You've had 1 drink since: ", t]];
     } else {
-        [self.timeLabel setText:[NSString stringWithFormat:@"%@%@", @"You've been drinking since: ", t]];
+        [self.timeLabel setText:[NSString stringWithFormat:@"%@%@%@%@", @"You've had ", [NSString stringWithFormat:@"%i", self.user.currentNight.drinks], @" drinks since: ", t]];
     }
+    
+    
 }
 
 
