@@ -7,6 +7,8 @@
 //
 
 #import "HEALMainViewController.h"
+
+// From Macmade's answer http://stackoverflow.com/questions/12446990/how-to-detect-iphone-5-widescreen-devices
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 @interface HEALMainViewController ()
