@@ -11,6 +11,7 @@
 @interface HEALEditSMSSettingsViewController () {
     NSString *contactName;
     NSString *contactNumber;
+    NSString *smsMessage;
     BOOL sendAutoSMS;
     int smsState;
     BOOL popDown;
@@ -98,6 +99,11 @@
     if (contactNumber != nil)
     {
         self.contactNumberTextField.text = contactNumber;
+    }
+    
+    if (smsMessage != nil)
+    {
+        self.emergencyMessageTextField.text = smsMessage;
     }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

@@ -37,6 +37,7 @@ static int const MILLI_SEC_PR_HOUR = 3600000;
         self.currentNight = [[HEALNight alloc] init];
         self.intoxStateArray = @[@"Sober", @"Tipsy", @"Drunk", @"Danger"];
         self.smsState = INTOXSTATE_DANGER;
+        self.smsMessage = @"I've had a fair amount to drink!";
     }
     return self;
 }
