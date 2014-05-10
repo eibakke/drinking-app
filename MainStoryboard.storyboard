@@ -261,7 +261,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgn-e1-cgK">
-                                <rect key="frame" x="20" y="456" width="280" height="40"/>
+                                <rect key="frame" x="20" y="456" width="281" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="XEA-dD-q8S"/>
                                 </constraints>
@@ -277,7 +277,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="MTo-0A-tfg">
-                                <rect key="frame" x="0.0" y="250" width="320" height="70"/>
+                                <rect key="frame" x="1" y="274" width="319" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="OZ9-NZ-Fve"/>
                                 </constraints>
@@ -286,7 +286,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpD-uG-2hu">
-                                <rect key="frame" x="20" y="405" width="280" height="31"/>
+                                <rect key="frame" x="20" y="417" width="281" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="4FT-W0-xRR"/>
@@ -295,19 +295,42 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-EN-GU6">
+                                <rect key="frame" x="0.0" y="90" width="320" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="JW1-hT-kdO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Should:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xd-np-TVC">
+                                <rect key="frame" x="1" y="233" width="319" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="hTs-Aa-TwN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0Xd-np-TVC" firstAttribute="trailing" secondItem="MTo-0A-tfg" secondAttribute="trailing" type="default" id="38t-uU-9FN"/>
+                            <constraint firstItem="MTo-0A-tfg" firstAttribute="top" secondItem="0Xd-np-TVC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3ym-vS-Y7I"/>
                             <constraint firstAttribute="bottom" secondItem="pgn-e1-cgK" secondAttribute="bottom" constant="52" id="BEw-tI-Car"/>
+                            <constraint firstItem="pgn-e1-cgK" firstAttribute="top" secondItem="SpD-uG-2hu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HWG-fg-HUS"/>
+                            <constraint firstItem="Foj-EN-GU6" firstAttribute="trailing" secondItem="0Xd-np-TVC" secondAttribute="trailing" type="default" id="Hcf-B3-pjn"/>
                             <constraint firstItem="SpD-uG-2hu" firstAttribute="leading" secondItem="pgn-e1-cgK" secondAttribute="leading" type="default" id="M0b-1D-ENI"/>
+                            <constraint firstItem="SpD-uG-2hu" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="MrO-8t-7ee"/>
+                            <constraint firstItem="Foj-EN-GU6" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" type="default" id="WIa-b6-hNU"/>
+                            <constraint firstItem="MTo-0A-tfg" firstAttribute="leading" secondItem="0Xd-np-TVC" secondAttribute="leading" type="default" id="ZbC-uR-g3r"/>
                             <constraint firstItem="pgn-e1-cgK" firstAttribute="trailing" secondItem="SpD-uG-2hu" secondAttribute="trailing" type="default" id="bdg-4n-fUZ"/>
+                            <constraint firstItem="Foj-EN-GU6" firstAttribute="centerX" secondItem="0Xd-np-TVC" secondAttribute="centerX" type="default" id="dOn-rh-seV"/>
+                            <constraint firstItem="SpD-uG-2hu" firstAttribute="centerX" secondItem="MTo-0A-tfg" secondAttribute="centerX" type="default" id="i7s-7Y-kn6"/>
                             <constraint firstAttribute="centerX" secondItem="MTo-0A-tfg" secondAttribute="centerX" type="user" id="l8W-8J-pY1"/>
-                            <constraint firstAttribute="trailing" secondItem="SpD-uG-2hu" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="nb0-fd-qUn"/>
-                            <constraint firstItem="SpD-uG-2hu" firstAttribute="centerX" secondItem="MTo-0A-tfg" secondAttribute="centerX" type="user" id="nff-sd-3Tt"/>
-                            <constraint firstItem="SpD-uG-2hu" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="pbs-g8-qAM"/>
-                            <constraint firstItem="MTo-0A-tfg" firstAttribute="top" secondItem="gBn-qe-hIX" secondAttribute="top" constant="250" id="qk9-jW-CQO"/>
-                            <constraint firstItem="MTo-0A-tfg" firstAttribute="leading" secondItem="gBn-qe-hIX" secondAttribute="leading" type="default" id="w4C-t9-Jx4"/>
-                            <constraint firstAttribute="bottom" secondItem="SpD-uG-2hu" secondAttribute="bottom" constant="112" id="zZQ-S1-pXE"/>
+                            <constraint firstItem="0Xd-np-TVC" firstAttribute="top" secondItem="Foj-EN-GU6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pnh-r3-ApB"/>
+                            <constraint firstItem="Foj-EN-GU6" firstAttribute="top" secondItem="gBn-qe-hIX" secondAttribute="top" constant="90" id="tE4-Ih-I0n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EIR-bE-yiJ"/>
@@ -315,7 +338,9 @@
                         <outlet property="bacLabel" destination="pgn-e1-cgK" id="FLi-Vq-C8Y"/>
                         <outlet property="backgroundImageView" destination="gBn-qe-hIX" id="Puy-Jc-3Jl"/>
                         <outlet property="drinksLabel" destination="SpD-uG-2hu" id="vDS-HQ-gcH"/>
+                        <outlet property="headerImageView" destination="Foj-EN-GU6" id="7Ff-x4-PHk"/>
                         <outlet property="messageLabel" destination="MTo-0A-tfg" id="M9b-15-Zbk"/>
+                        <outlet property="shouldLabel" destination="0Xd-np-TVC" id="EpB-B7-MdX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bda-C3-qoy" userLabel="First Responder" sceneMemberID="firstResponder"/>

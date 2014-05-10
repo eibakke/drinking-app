@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *bacLabel;         // Shows the user's BAC
 @property (weak, nonatomic) IBOutlet UILabel *drinksLabel;      //Shows the user's Drink count
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView; // The ImageView that holds the background image
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+@property (weak, nonatomic) IBOutlet UILabel *shouldLabel;
 @end
