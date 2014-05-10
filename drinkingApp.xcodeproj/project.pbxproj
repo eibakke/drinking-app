@@ -67,6 +67,7 @@
 		A87F429E191DC61D009B441B /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F429C191DC61D009B441B /* gear.png */; };
 		A87F429F191DC61D009B441B /* settingsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F429D191DC61D009B441B /* settingsHeader.png */; };
 		A87F42A1191DD0AF009B441B /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F42A0191DD0AF009B441B /* plus.png */; };
+		A87F42A3191DE5F6009B441B /* smsSettingsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F42A2191DE5F6009B441B /* smsSettingsHeader.png */; };
 		A894A75B1912F519009B88EB /* IconDS58.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A7581912F519009B88EB /* IconDS58.png */; };
 		A894A75C1912F519009B88EB /* IconDS80.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A7591912F519009B88EB /* IconDS80.png */; };
 		A894A75D1912F519009B88EB /* IconDS120.png in Resources */ = {isa = PBXBuildFile; fileRef = A894A75A1912F519009B88EB /* IconDS120.png */; };
@@ -168,6 +169,7 @@
 		A87F429C191DC61D009B441B /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		A87F429D191DC61D009B441B /* settingsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsHeader.png; sourceTree = "<group>"; };
 		A87F42A0191DD0AF009B441B /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		A87F42A2191DE5F6009B441B /* smsSettingsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smsSettingsHeader.png; sourceTree = "<group>"; };
 		A894A7581912F519009B88EB /* IconDS58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconDS58.png; sourceTree = "<group>"; };
 		A894A7591912F519009B88EB /* IconDS80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconDS80.png; sourceTree = "<group>"; };
 		A894A75A1912F519009B88EB /* IconDS120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconDS120.png; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 			children = (
 				A87F429C191DC61D009B441B /* gear.png */,
 				A87F42A0191DD0AF009B441B /* plus.png */,
+				A87F42A2191DE5F6009B441B /* smsSettingsHeader.png */,
 				A87F429D191DC61D009B441B /* settingsHeader.png */,
 			);
 			name = "edit settings ";
@@ -550,6 +553,7 @@
 				A87F428F191DC5FF009B441B /* bacHeader.png in Resources */,
 				A894A7611912F8F8009B88EB /* DSIcon40.png in Resources */,
 				A81503E5191AA41C0018D218 /* checked@2x.png in Resources */,
+				A87F42A3191DE5F6009B441B /* smsSettingsHeader.png in Resources */,
 				A81503E4191AA41C0018D218 /* checked.png in Resources */,
 				A894A76D19135905009B88EB /* SMSEnvelope.png in Resources */,
 				A87F4299191DC609009B441B /* SoberHeader.png in Resources */,
