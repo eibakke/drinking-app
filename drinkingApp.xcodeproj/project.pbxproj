@@ -38,6 +38,7 @@
 		89F89D3518C7B37E00143AD4 /* HEALNight.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F89D3418C7B37E00143AD4 /* HEALNight.m */; };
 		98004940191EEBC800FCC9AF /* emptyNav.png in Resources */ = {isa = PBXBuildFile; fileRef = 9800493F191EEBC800FCC9AF /* emptyNav.png */; };
 		98004942191EEBE700FCC9AF /* aboutUsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 98004941191EEBE700FCC9AF /* aboutUsButton.png */; };
+		98004944191F01C400FCC9AF /* sosMessageHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 98004943191F01C400FCC9AF /* sosMessageHeader.png */; };
 		98F004E3191A83B90043E40F /* HEALNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F004E2191A83B90043E40F /* HEALNavViewController.m */; };
 		A811E4D318E3991D00970E77 /* BlurLogoScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A811E4D218E3991D00970E77 /* BlurLogoScreen.png */; };
 		A81503E4191AA41C0018D218 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = A81503E0191AA41C0018D218 /* checked.png */; };
@@ -49,7 +50,6 @@
 		A81503FE191AF8E40018D218 /* SoberButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A81503FA191AF8E40018D218 /* SoberButton.png */; };
 		A81503FF191AF8E40018D218 /* TipsyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A81503FB191AF8E40018D218 /* TipsyButton.png */; };
 		A8150404191AF9F90018D218 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = A8150401191AF9F90018D218 /* empty.png */; };
-		A8150405191AF9F90018D218 /* EmptySettings.png in Resources */ = {isa = PBXBuildFile; fileRef = A8150402191AF9F90018D218 /* EmptySettings.png */; };
 		A8150406191AF9F90018D218 /* purple1.png in Resources */ = {isa = PBXBuildFile; fileRef = A8150403191AF9F90018D218 /* purple1.png */; };
 		A87F428F191DC5FF009B441B /* bacHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F428C191DC5FF009B441B /* bacHeader.png */; };
 		A87F4290191DC5FF009B441B /* bacMath.png in Resources */ = {isa = PBXBuildFile; fileRef = A87F428D191DC5FF009B441B /* bacMath.png */; };
@@ -76,7 +76,6 @@
 		A8B3581D18EE5CCD008AF5FE /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */; };
 		A8B3581F18EE5E55008AF5FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */; };
 		A8B358401900947E008AF5FE /* BACInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B3583F1900947E008AF5FE /* BACInfo.png */; };
-		A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975C18EC42D900686E79 /* AddDrink.png */; };
 		A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B7975E18EC446300686E79 /* AddDrinkedited.png */; };
 		A8E4FA7819117E3700662843 /* Cambria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8FC61B0190A93C600DAFDC8 /* Cambria.ttf */; };
 		C49BC63F191D995F00BC32E8 /* HEALBacDisclaimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49BC63E191D995F00BC32E8 /* HEALBacDisclaimerViewController.m */; };
@@ -135,6 +134,7 @@
 		89F89D3418C7B37E00143AD4 /* HEALNight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HEALNight.m; path = ../HEALNight.m; sourceTree = "<group>"; };
 		9800493F191EEBC800FCC9AF /* emptyNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = emptyNav.png; path = Images/emptyNav.png; sourceTree = SOURCE_ROOT; };
 		98004941191EEBE700FCC9AF /* aboutUsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = aboutUsButton.png; path = Images/aboutUsButton.png; sourceTree = SOURCE_ROOT; };
+		98004943191F01C400FCC9AF /* sosMessageHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sosMessageHeader.png; path = "Images/edit settings /sosMessageHeader.png"; sourceTree = SOURCE_ROOT; };
 		98F004E1191A83B90043E40F /* HEALNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALNavViewController.h; sourceTree = "<group>"; };
 		98F004E2191A83B90043E40F /* HEALNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEALNavViewController.m; sourceTree = "<group>"; };
 		A811E4D218E3991D00970E77 /* BlurLogoScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlurLogoScreen.png; path = Images/BlurLogoScreen.png; sourceTree = SOURCE_ROOT; };
@@ -147,7 +147,6 @@
 		A81503FA191AF8E40018D218 /* SoberButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoberButton.png; sourceTree = "<group>"; };
 		A81503FB191AF8E40018D218 /* TipsyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TipsyButton.png; sourceTree = "<group>"; };
 		A8150401191AF9F90018D218 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
-		A8150402191AF9F90018D218 /* EmptySettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmptySettings.png; sourceTree = "<group>"; };
 		A8150403191AF9F90018D218 /* purple1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple1.png; sourceTree = "<group>"; };
 		A87F428C191DC5FF009B441B /* bacHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bacHeader.png; sourceTree = "<group>"; };
 		A87F428D191DC5FF009B441B /* bacMath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bacMath.png; sourceTree = "<group>"; };
@@ -176,7 +175,6 @@
 		A8B3581B18EE5CCD008AF5FE /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CERoundProgressView.m; sourceTree = "<group>"; };
 		A8B3581E18EE5E55008AF5FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A8B3583F1900947E008AF5FE /* BACInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BACInfo.png; path = Images/BACInfo.png; sourceTree = SOURCE_ROOT; };
-		A8B7975C18EC42D900686E79 /* AddDrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrink.png; path = Images/AddDrink.png; sourceTree = SOURCE_ROOT; };
 		A8B7975E18EC446300686E79 /* AddDrinkedited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddDrinkedited.png; path = Images/AddDrinkedited.png; sourceTree = SOURCE_ROOT; };
 		A8FC61B0190A93C600DAFDC8 /* Cambria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cambria.ttf; sourceTree = "<group>"; };
 		C49BC63D191D995F00BC32E8 /* HEALBacDisclaimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEALBacDisclaimerViewController.h; sourceTree = "<group>"; };
@@ -378,7 +376,6 @@
 				A811E4D218E3991D00970E77 /* BlurLogoScreen.png */,
 				A8B3583F1900947E008AF5FE /* BACInfo.png */,
 				A8150401191AF9F90018D218 /* empty.png */,
-				A8150402191AF9F90018D218 /* EmptySettings.png */,
 				A8150403191AF9F90018D218 /* purple1.png */,
 			);
 			name = backgrounds;
@@ -394,7 +391,6 @@
 				A81503F7191AF8E40018D218 /* State Buttons */,
 				A81503DF191AA41C0018D218 /* radio-res-ios */,
 				A8150400191AF9F90018D218 /* backgrounds */,
-				A8B7975C18EC42D900686E79 /* AddDrink.png */,
 				A894A76C19135905009B88EB /* SMSEnvelope.png */,
 				98004941191EEBE700FCC9AF /* aboutUsButton.png */,
 				9800493F191EEBC800FCC9AF /* emptyNav.png */,
@@ -431,6 +427,7 @@
 		A87F429B191DC61D009B441B /* edit settings  */ = {
 			isa = PBXGroup;
 			children = (
+				98004943191F01C400FCC9AF /* sosMessageHeader.png */,
 				A87F429C191DC61D009B441B /* gear.png */,
 				A87F42A6191E56DB009B441B /* addContactEdited.png */,
 				A87F42A2191DE5F6009B441B /* smsSettingsHeader.png */,
@@ -558,12 +555,11 @@
 				6D6BD5EB18E9E53200B45823 /* 3bar.png in Resources */,
 				A8B7975F18EC446300686E79 /* AddDrinkedited.png in Resources */,
 				98004940191EEBC800FCC9AF /* emptyNav.png in Resources */,
-				A8150405191AF9F90018D218 /* EmptySettings.png in Resources */,
 				A87F42AF191E642D009B441B /* newAboutUs.png in Resources */,
 				A8B358401900947E008AF5FE /* BACInfo.png in Resources */,
 				A81503E6191AA41C0018D218 /* unchecked.png in Resources */,
-				A8B7975D18EC42D900686E79 /* AddDrink.png in Resources */,
 				A811E4D318E3991D00970E77 /* BlurLogoScreen.png in Resources */,
+				98004944191F01C400FCC9AF /* sosMessageHeader.png in Resources */,
 				A81503FF191AF8E40018D218 /* TipsyButton.png in Resources */,
 				98004942191EEBE700FCC9AF /* aboutUsButton.png in Resources */,
 				A87F4297191DC609009B441B /* DangerHeader.png in Resources */,

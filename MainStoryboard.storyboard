@@ -166,22 +166,24 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smsSettingsHeader.png" translatesAutoresizingMaskIntoConstraints="NO" id="u5p-pw-zun">
-                                <rect key="frame" x="0.0" y="13" width="320" height="120"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sosMessageHeader.png" translatesAutoresizingMaskIntoConstraints="NO" id="u5p-pw-zun">
+                                <rect key="frame" x="35" y="1" width="251" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="L6K-Xb-1Fi"/>
+                                    <constraint firstAttribute="height" constant="86" id="H5N-it-coJ"/>
+                                    <constraint firstAttribute="width" constant="251" id="fTc-xT-msu"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="oDO-4H-MOV" firstAttribute="leading" secondItem="mT6-eJ-ge2" secondAttribute="leading" type="default" id="1Ie-uK-Fw9"/>
-                            <constraint firstItem="Teg-9R-FKq" firstAttribute="centerX" secondItem="fis-VX-2f6" secondAttribute="centerX" type="default" id="2NA-Cb-y7e"/>
                             <constraint firstItem="Teg-9R-FKq" firstAttribute="trailing" secondItem="LHI-4z-8bK" secondAttribute="trailing" type="user" id="30c-H5-MCf"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="heW-On-kUn" secondAttribute="bottom" constant="140" type="user" id="58e-eD-kIk"/>
+                            <constraint firstItem="u5p-pw-zun" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="1" id="7Rg-eV-pum"/>
                             <constraint firstItem="TXo-Qp-Hum" firstAttribute="leading" secondItem="mT6-eJ-ge2" secondAttribute="leading" type="default" id="8db-A7-hBa"/>
                             <constraint firstItem="Teg-9R-FKq" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="125" id="ELS-Jo-30N"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CCd-cO-PsS" secondAttribute="bottom" constant="219" type="user" id="FB9-Ch-cpD"/>
+                            <constraint firstItem="LHI-4z-8bK" firstAttribute="centerX" secondItem="u5p-pw-zun" secondAttribute="centerX" type="default" id="FKd-Aj-9wD"/>
                             <constraint firstItem="mT6-eJ-ge2" firstAttribute="top" relation="lessThanOrEqual" secondItem="fis-VX-2f6" secondAttribute="top" constant="271" type="user" id="G9B-8I-rZL"/>
                             <constraint firstItem="LHI-4z-8bK" firstAttribute="top" relation="lessThanOrEqual" secondItem="fis-VX-2f6" secondAttribute="top" constant="158" type="user" id="GYN-AI-k9P"/>
                             <constraint firstItem="Teg-9R-FKq" firstAttribute="leading" secondItem="oDO-4H-MOV" secondAttribute="leading" type="default" id="JYy-TO-9eU"/>
@@ -190,6 +192,7 @@
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TXo-Qp-Hum" secondAttribute="bottom" constant="219" type="user" id="Njp-bT-Unm"/>
                             <constraint firstItem="heW-On-kUn" firstAttribute="top" relation="lessThanOrEqual" secondItem="fis-VX-2f6" secondAttribute="top" constant="387" type="user" id="O16-zF-rnL"/>
                             <constraint firstItem="TXo-Qp-Hum" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="231" id="OE1-kC-Q5J"/>
+                            <constraint firstItem="heW-On-kUn" firstAttribute="centerX" secondItem="qZ7-KW-Pw8" secondAttribute="centerX" type="default" id="Ozq-lg-Af3"/>
                             <constraint firstItem="8QJ-OO-63A" firstAttribute="leading" secondItem="heW-On-kUn" secondAttribute="leading" type="default" id="PMh-zx-4tS"/>
                             <constraint firstItem="oDO-4H-MOV" firstAttribute="top" secondItem="Teg-9R-FKq" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="PTb-g4-Xsn"/>
                             <constraint firstItem="8QJ-OO-63A" firstAttribute="trailing" secondItem="Teg-9R-FKq" secondAttribute="trailing" type="default" id="Pv3-Eg-g58"/>
@@ -198,12 +201,12 @@
                             <constraint firstItem="LHI-4z-8bK" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="84" id="URQ-vA-uiE"/>
                             <constraint firstItem="oDO-4H-MOV" firstAttribute="baseline" secondItem="2f5-jh-E67" secondAttribute="baseline" type="user" id="VNJ-BK-OUI"/>
                             <constraint firstItem="CCd-cO-PsS" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" constant="126" id="W52-SH-mdN"/>
-                            <constraint firstItem="u5p-pw-zun" firstAttribute="trailing" secondItem="qZ7-KW-Pw8" secondAttribute="trailing" type="default" id="WFd-Ns-Ulu"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8QJ-OO-63A" secondAttribute="bottom" constant="164" type="user" id="Waj-QJ-9Cb"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Teg-9R-FKq" secondAttribute="bottom" constant="318" type="user" id="XFx-26-65z"/>
+                            <constraint firstItem="qZ7-KW-Pw8" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" type="default" id="Xj2-Q8-ddm"/>
+                            <constraint firstItem="u5p-pw-zun" firstAttribute="centerX" secondItem="fis-VX-2f6" secondAttribute="centerX" type="default" id="ZAm-Va-Arj"/>
                             <constraint firstItem="2f5-jh-E67" firstAttribute="leading" secondItem="oDO-4H-MOV" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ZTZ-6M-qwH"/>
-                            <constraint firstItem="qZ7-KW-Pw8" firstAttribute="leading" secondItem="fis-VX-2f6" secondAttribute="leading" type="default" id="aYw-RS-5C1"/>
-                            <constraint firstItem="u5p-pw-zun" firstAttribute="leading" secondItem="qZ7-KW-Pw8" secondAttribute="leading" type="default" id="ajc-ZN-aNE"/>
+                            <constraint firstAttribute="trailing" secondItem="qZ7-KW-Pw8" secondAttribute="trailing" type="default" id="bnk-Dx-81m"/>
                             <constraint firstItem="heW-On-kUn" firstAttribute="trailing" secondItem="8QJ-OO-63A" secondAttribute="trailing" type="default" id="cLl-Xy-eMf"/>
                             <constraint firstItem="Teg-9R-FKq" firstAttribute="leading" secondItem="LHI-4z-8bK" secondAttribute="leading" type="user" id="cmh-5M-yBA"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LHI-4z-8bK" secondAttribute="bottom" constant="360" type="user" id="crz-Rc-Xo6"/>
@@ -220,9 +223,6 @@
                             <constraint firstItem="qZ7-KW-Pw8" firstAttribute="top" relation="lessThanOrEqual" secondItem="fis-VX-2f6" secondAttribute="top" constant="432" type="user" id="mhC-mh-vnN"/>
                             <constraint firstItem="TXo-Qp-Hum" firstAttribute="leading" secondItem="8QJ-OO-63A" secondAttribute="leading" type="default" id="qYO-ej-b5r"/>
                             <constraint firstItem="8QJ-OO-63A" firstAttribute="top" relation="lessThanOrEqual" secondItem="fis-VX-2f6" secondAttribute="top" constant="351" type="user" id="sk8-Z6-0ER"/>
-                            <constraint firstItem="heW-On-kUn" firstAttribute="centerX" secondItem="qZ7-KW-Pw8" secondAttribute="centerX" type="default" id="tsh-iS-YWU"/>
-                            <constraint firstItem="u5p-pw-zun" firstAttribute="top" secondItem="fis-VX-2f6" secondAttribute="top" constant="13" id="uHX-i1-u8g"/>
-                            <constraint firstAttribute="trailing" secondItem="qZ7-KW-Pw8" secondAttribute="trailing" type="default" id="uvM-67-Uq3"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oDO-4H-MOV" secondAttribute="bottom" constant="286" type="user" id="wl7-85-0pa"/>
                         </constraints>
                     </scrollView>
@@ -835,7 +835,7 @@
         <image name="gear.png" width="561" height="558"/>
         <image name="newAboutUs.png" width="640" height="1136"/>
         <image name="settingsHeader.png" width="536" height="223"/>
-        <image name="smsSettingsHeader.png" width="527" height="233"/>
+        <image name="sosMessageHeader.png" width="543" height="232"/>
         <image name="unchecked.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

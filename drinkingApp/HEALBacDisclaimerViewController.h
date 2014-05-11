@@ -2,7 +2,7 @@
 //  HEALBacDisclaimerViewController.h
 //  drinkingApp
 //
-//  Created by Leo Zoeckler on 5/9/14.
+//  Created by Alexandra Bassen on 5/9/14.
 //  Copyright (c) 2014 Halealei. All rights reserved.
 //
 

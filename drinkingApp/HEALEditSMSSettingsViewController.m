@@ -54,10 +54,7 @@
     
     // We want the textfields to delegate back to this view controller
     [[self emergencyMessageTextField] setDelegate:self];
-    
-    if (IS_WIDESCREEN) {
-        [self.sosMessageHeader setHidden:NO];
-    }
+
     [self.enableRadioButton setSelected:self.user.autoSMS];
     
     if (self.user.contactNumber != nil) {
@@ -154,7 +151,7 @@
 
 //############################################ GETTING CONTACT INFO FROM ADDRESSBOOK ############################################
 
-//presents the picker as a modal view controller
+// Presents the picker as a modal view controller
 - (IBAction)showPicker:(id)sender
 {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:NULL] forBarMetrics:UIBarMetricsDefault];

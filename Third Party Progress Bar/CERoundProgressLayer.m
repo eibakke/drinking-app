@@ -55,12 +55,7 @@
 {
     CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height)/2.0;
     
-    
-    ///change code here to change center location??
-    
     CGPoint center = CGPointMake(self.bounds.size.width/2.0, self.bounds.size.height/2.0);
-    
-    //CGPoint center = CGPointMake(self.bounds.size.width/2.0, self.bounds.size.height/1.75);
     
     // Background circle
     CGRect circleRect = CGRectMake(center.x-radius, center.y-radius, radius*2.0, radius*2.0);
