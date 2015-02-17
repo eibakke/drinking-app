@@ -17,7 +17,7 @@
 #import "CERoundProgressView.h"
 
 
-@interface HEALMainViewController : UIViewController <MFMessageComposeViewControllerDelegate, UIGestureRecognizerDelegate> {
+@interface HEALMainViewController : UIViewController < UIGestureRecognizerDelegate> {
     
 }
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;

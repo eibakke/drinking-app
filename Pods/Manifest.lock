@@ -18,14 +18,20 @@ PODS:
   - AFNetworking/UIKit (2.2.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CERoundProgressView (0.0.1)
   - ObjectiveSugar (0.9)
+  - RadioButton (1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - CERoundProgressView (= 0.0.1)
   - ObjectiveSugar (~> 0.5)
+  - RadioButton (= 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
+  CERoundProgressView: 36506033625fa0be42683df9ace5c6618760eba6
   ObjectiveSugar: a799ab2bac00846d38e881bde3ec0d38e8ea8762
+  RadioButton: 694b2eec7af41a88ae4dc8c7a638980918e46216
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.2

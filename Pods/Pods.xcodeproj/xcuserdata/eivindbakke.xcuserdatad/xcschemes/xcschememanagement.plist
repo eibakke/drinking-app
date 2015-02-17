@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CERoundProgressView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ObjectiveSugar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RadioButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09D5C89F3FB149C6BF662807</key>
+		<key>3444A87FC70AEA100AF8DD0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2EE3D1B80907411CB41EF2E4</key>
+		<key>8A2FF223CCC17814C6589D0F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA44F1ED9506413CBDA5D90D</key>
+		<key>AD11FDB10E0D327C40952185</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C58CDA58D31A0B5B46AA95FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2F631B8661DAECA6A0904B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

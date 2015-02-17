@@ -22,7 +22,9 @@
     NSTimer* smsTimer;
     BOOL sendAutoMessage;
     UIAlertView* autoView;
-    UIButton* envelopeButton;
+    
+//    UIButton* envelopeButton;
+    
 }
 
 @end
@@ -93,9 +95,11 @@ static float const STANDARD_PAN_DURATION = 0.1;
 - (void)setupCenterViewButtons
 {
     [self setupCircleButton];
+    /*
     [self envelopeButton];
     envelopeButton.hidden = YES;
     envelopeButton.UserInteractionEnabled = NO;
+     */
 }
 
 // initializes tag values for the rightviewbuttons to identify them
@@ -144,17 +148,19 @@ static float const STANDARD_PAN_DURATION = 0.1;
 // Updates the circle button based on users current state. Also enables the envelope button.
 - (void)updateCircleButton
 {
-    envelopeButton.hidden = YES;
-    envelopeButton.UserInteractionEnabled = NO;
+//    envelopeButton.hidden = YES;
+//    envelopeButton.UserInteractionEnabled = NO;
     
     [circleStateButton setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@Button.png", self.user.stateAsString]] forState:UIControlStateNormal];
     
+    /*
     if (self.user.state == INTOXSTATE_DANGER) {
         envelopeButton.hidden = NO;
         envelopeButton.UserInteractionEnabled = YES;
         
         [circleStateButton setImage:[UIImage imageNamed:@"PlainDangerButton.png"] forState:UIControlStateNormal];
     }
+     */
 }
 
 // Updates labels according to BAC values
@@ -166,7 +172,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self updateRoundProgressBar];
     [self updateCircleButton];
 }
-
+/*
 // Creates an envelope button, used to send SMS messages
 - (void)envelopeButton
 {
@@ -179,7 +185,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     envelopeButton.frame = CGRectMake((0.353*screenWidth), (0.46*screenHeight), (0.3*screenWidth), (0.2*screenWidth));
     [self.centerView addSubview:envelopeButton];
 }
-
+*/
 // Sets the label below the circle button
 - (void)setDateLabel:(NSDate*)date
 {
@@ -304,7 +310,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
         self.centerView.frame = frame;
     }];
 }
-
+/*
 // SMS message prompt that appears when autoSMS is not enabled.
 - (IBAction)sosDanger:(id)sender
 {
@@ -318,6 +324,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     UIAlertView *setupView = [[UIAlertView alloc]initWithTitle:@"Whoops!" message:@"Looks like you haven't set your SMS settings! Use the envelope button to send an SMS anyway." delegate: self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [setupView show];
 }
+ */
 
 // Counts down from a value specified in sosAuto and attempts to send an SMS messaage when the countdown ends if cancel
 // hasn't been pressed.
@@ -330,15 +337,16 @@ static float const STANDARD_PAN_DURATION = 0.1;
             smsTimer = nil;
         }
         [autoView dismissWithClickedButtonIndex:[autoView cancelButtonIndex] animated:TRUE];
-        
+        /*
         if (sendAutoMessage) {
             [self sendSMS];
             self.user.currentNight.sosSent = TRUE;
         }
-        
+        */
     }
 }
 
+/*
 // SMS message prompt that appears when autoSMS is enabled. Also sets countdown time.
 - (IBAction)sosAuto:(id)sender
 {
@@ -348,6 +356,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     autoView = [[UIAlertView alloc]initWithTitle:@"SOS SMS" message:[NSString stringWithFormat:@"%@%@%@%@%@%@%@", @"Message '", self.user.smsMessage, @"' will be sent to ", self.user.sosContact, @" in ", [NSString stringWithFormat:@"%i", smsInt], @" seconds. Cancel?"] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
     [autoView show];
 }
+ 
 
 // Sets what different buttons in the various alertviews do.
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -361,6 +370,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
         [smsTimer invalidate];
     }
 }
+*/
 
 //action when add drink is clicked (THIS NEEDS TO HAVE ITS NAME CHANGED)
 - (IBAction)runAddValueChanged:(id)sender
@@ -368,7 +378,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
     self.drinkStepper.value += 1;
     [self valueChanged:_drinkStepper];
     [self updateRoundProgressBar];
-    
+    /*
     if (self.user.state >= self.user.smsState ) {
         if (!self.user.currentNight.sosSent) {
             if (self.user.sosContact == nil || [self.user.sosContact  isEqualToString:@""] || [self.user.sosContact  isEqualToString:@"SOS Contact Name"]) {
@@ -380,6 +390,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
             }
         }
     }
+     */
 }
 
 // Updates the fill of the round progress bar and changes its color.
@@ -413,9 +424,12 @@ static float const STANDARD_PAN_DURATION = 0.1;
     if (senderButton.tag == self.settingsButton.tag) {
         [self performSegueWithIdentifier:@"settingsMainSegue" sender:sender];
         [self toggleRightView];
-    } else if (senderButton.tag == self.smsButton.tag) {
+    }
+    /*else if (senderButton.tag == self.smsButton.tag) {
         [self sendSMS];
-    } else if (senderButton.tag == self.nightButton.tag) {
+    }*/
+    
+    else if (senderButton.tag == self.nightButton.tag) {
         [self newNight];
         [self toggleRightView];
     } else if (senderButton.tag == self.smsSettingsButton.tag) {
@@ -469,8 +483,10 @@ static float const STANDARD_PAN_DURATION = 0.1;
     [self.user.currentNight reset];
 
     [self updateUI];
+    /*
     envelopeButton.hidden = YES;
     envelopeButton.UserInteractionEnabled = NO;
+     */
     self.roundProgressView.progress = 0;
 }
 
@@ -486,7 +502,7 @@ static float const STANDARD_PAN_DURATION = 0.1;
 }
 
 
-
+/*
 //send SMS
 - (void)sendSMS
 {
@@ -521,4 +537,5 @@ static float const STANDARD_PAN_DURATION = 0.1;
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+ */
 @end
