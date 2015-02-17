@@ -32,7 +32,7 @@
     if (self) {
         self.sosSent = FALSE;
         
-        soberMessageArray = @[@"Call Your Grandma!", @"Walk Your Dog", @"Drive Your Car", @"Write Some Code", @"Live A Little", @"Fold Laundry", @"Pick Up Cantonese "];
+        soberMessageArray = @[@"Call Your Grandma! To show a long sentence you have to write a long sentence -e", @"Walk Your Dog", @"Drive Your Car", @"Write Some Code", @"Live A Little", @"Fold Laundry", @"Pick Up Cantonese "];
         tipsyMessageArray = @[@"Avoid Karaoke", @"Share A Childhood Story", @"Dance", @"Not drive"];
         drunkMessageArray = @[@"Order Jimmy Johns", @"Ponder Meaning of Life", @"Drink Some Water", @"Eat Some Food", @"Kagin?", @"Not Text That Number"];
         dangerMessageArray = @[@"Go home", @"Relax", @"Stop drinking", @"Call SafeWalk", @"Definitely not drive"];

@@ -30,13 +30,14 @@
 // Every time this viewcontroller's view appears, we want to display information pertinent to the user's state
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.backgroundImageView.image = [UIImage imageNamed:@"empty.png"];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"empty.png"]];
     self.headerImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Header.png", [self.user stateAsString]]];
     
     NSString *roundedBAC = [NSString stringWithFormat:@"%.3f", self.user.BAC];
     [self.bacLabel setText:[NSString stringWithFormat:@"Current BAC: %@", roundedBAC]];
     
     [self.messageLabel setText: [self.user.currentNight stateMessage:self.user.state]];
+    [self.messageLabel setTextColor:self.user.stateColor];
     
     [self.drinksLabel setText:[NSString stringWithFormat:@"Number of Drinks: %d", self.user.currentNight.drinks]];
 

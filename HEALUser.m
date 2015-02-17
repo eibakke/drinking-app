@@ -63,12 +63,15 @@ static int const MILLI_SEC_PR_HOUR = 3600000;
 {
     if (self.BAC < TIPSY_LOWER_BAC_LIMIT) {
         self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.2];
+        self.stateColor = [UIColor greenColor];
         return INTOXSTATE_SOBER;
     } else if (TIPSY_LOWER_BAC_LIMIT <= self.BAC && self.BAC < DRUNK_LOWER_BAC_LIMIT) {
         self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.4];
+        self.stateColor = [UIColor yellowColor];
         return INTOXSTATE_TIPSY;
     } else if (DRUNK_LOWER_BAC_LIMIT <= self.BAC && self.BAC < DANGER_LOWER_BAC_LIMIT) {
         self.wheelColorTint = [UIColor colorWithRed:(90/255.0) green:(80/255.0) blue:(80/255.0) alpha:.6];
+        self.stateColor = [UIColor redColor];
         return INTOXSTATE_DRUNK;
     } else {
         self.wheelColorTint = [UIColor colorWithRed:(120/255.0) green:(80/255.0) blue:(80/255.0) alpha:1];
@@ -98,4 +101,5 @@ static int const MILLI_SEC_PR_HOUR = 3600000;
 {
     return self.BAC / DANGER_LOWER_BAC_LIMIT;
 }
+
 @end

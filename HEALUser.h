@@ -33,6 +33,7 @@ typedef enum
 @property(strong, nonatomic) NSString *stateAsString;
 @property(nonatomic) float wheelFill;
 @property(strong, nonatomic) UIColor *wheelColorTint;
+@property(strong, nonatomic) UIColor *stateColor;
 
 // General relevant user properties
 @property(nonatomic, assign) sexes sex;
